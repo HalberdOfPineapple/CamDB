@@ -280,3 +280,38 @@
 [2023-12-09 15:52:42,817:postgresql_db.py#L294:INFO]: Knob wal_buffers is not successfully set to 234515 (actual value: 1876120kB)
 [2023-12-09 15:52:42,848:postgresql_db.py#L294:INFO]: Knob wal_writer_flush_after is not successfully set to 364708048 (actual value: 2917664384kB)
 [2023-12-09 15:52:42,857:postgresql_db.py#L282:INFO]: [2023-12-09 15:52:42] Knobs applied offline!
+[2023-12-13 10:28:15,892:postgresql_db.py#L142:INFO]: Close db successfully
+[2023-12-13 10:28:15,893:postgresql_db.py#L150:INFO]: postgresql is shut down remotely
+[2023-12-13 10:28:16,453:postgresql_db.py#L125:INFO]: generated config file done
+[2023-12-13 10:28:16,717:postgresql_db.py#L202:INFO]: wait for connection
+[2023-12-13 10:28:18,737:postgresql_db.py#L212:INFO]: Connected to PostgreSQL db
+[2023-12-13 10:28:18,737:postgresql_db.py#L229:INFO]: finish 2 seconds waiting for connection
+[2023-12-13 10:28:18,737:postgresql_db.py#L230:INFO]: postgres --config_file=/var/lib/postgresql/experiment/conf/tune_cnf.conf
+[2023-12-13 10:28:18,737:postgresql_db.py#L231:INFO]: postgres is up
+[2023-12-13 10:28:18,737:postgresql_db.py#L268:INFO]: sleeping for 0 seconds after restarting postgres
+[2023-12-13 10:28:18,746:postgresql_db.py#L292:INFO]: Knob backend_flush_after is not successfully set to 107 (actual value: 856kB)
+[2023-12-13 10:28:18,749:postgresql_db.py#L292:INFO]: Knob checkpoint_flush_after is not successfully set to 47 (actual value: 376kB)
+[2023-12-13 10:28:18,750:postgresql_db.py#L292:INFO]: Knob effective_cache_size is not successfully set to 204453 (actual value: 1635624kB)
+[2023-12-13 10:28:18,753:postgresql_db.py#L292:INFO]: Knob shared_buffers is not successfully set to 692328 (actual value: 5538624kB)
+[2023-12-13 10:28:18,754:postgresql_db.py#L292:INFO]: Knob temp_buffers is not successfully set to 8777 (actual value: 70216kB)
+[2023-12-13 10:28:18,754:postgresql_db.py#L292:INFO]: Knob wal_buffers is not successfully set to 234515 (actual value: 1876120kB)
+[2023-12-13 10:28:18,755:postgresql_db.py#L292:INFO]: Knob wal_writer_flush_after is not successfully set to 364708048 (actual value: 2917664384kB)
+[2023-12-13 10:28:18,756:postgresql_db.py#L280:INFO]: [2023-12-13 10:28:18] Knobs applied offline!
+[2023-12-13 10:29:32,287:postgresql_db.py#L142:INFO]: Close db successfully
+[2023-12-13 10:29:32,287:postgresql_db.py#L150:INFO]: postgresql is shut down remotely
+[2023-12-13 10:29:32,865:postgresql_db.py#L125:INFO]: generated config file done
+[2023-12-13 10:29:33,136:postgresql_db.py#L202:INFO]: wait for connection
+[2023-12-13 10:29:36,152:postgresql_db.py#L212:INFO]: Connected to PostgreSQL db
+[2023-12-13 10:29:36,152:postgresql_db.py#L229:INFO]: finish 3 seconds waiting for connection
+[2023-12-13 10:29:36,152:postgresql_db.py#L230:INFO]: postgres --config_file=/var/lib/postgresql/experiment/conf/tune_cnf.conf
+[2023-12-13 10:29:36,153:postgresql_db.py#L231:INFO]: postgres is up
+[2023-12-13 10:29:36,153:postgresql_db.py#L268:INFO]: sleeping for 0 seconds after restarting postgres
+[2023-12-13 10:29:36,153:postgresql_db.py#L277:INFO]: No Knobs need to be applied online
+[2023-12-13 10:29:36,166:postgresql_db.py#L294:INFO]: Knob backend_flush_after is not successfully set to 107 (actual value: 856kB)
+[2023-12-13 10:29:36,169:postgresql_db.py#L294:INFO]: Knob checkpoint_flush_after is not successfully set to 47 (actual value: 376kB)
+[2023-12-13 10:29:36,172:postgresql_db.py#L294:INFO]: Knob effective_cache_size is not successfully set to 204453 (actual value: 1635624kB)
+[2023-12-13 10:29:36,175:postgresql_db.py#L294:INFO]: Knob shared_buffers is not successfully set to 692328 (actual value: 5538624kB)
+[2023-12-13 10:29:36,176:postgresql_db.py#L294:INFO]: Knob temp_buffers is not successfully set to 8777 (actual value: 70216kB)
+[2023-12-13 10:29:36,176:postgresql_db.py#L294:INFO]: Knob wal_buffers is not successfully set to 234515 (actual value: 1876120kB)
+[2023-12-13 10:29:36,177:postgresql_db.py#L294:INFO]: Knob wal_writer_flush_after is not successfully set to 364708048 (actual value: 2917664384kB)
+[2023-12-13 10:29:36,178:postgresql_db.py#L282:INFO]: [2023-12-13 10:29:36] Knobs applied offline!
