@@ -1,0 +1,17 @@
+[2023-12-13 10:06:45,306:postgresql_db.py#L144:INFO]: Close db successfully
+[2023-12-13 10:06:45,307:postgresql_db.py#L152:INFO]: postgresql is shut down remotely
+[2023-12-13 10:06:45,909:postgresql_db.py#L127:INFO]: generated config file done
+[2023-12-13 10:06:46,267:postgresql_db.py#L204:INFO]: wait for connection
+[2023-12-13 10:06:55,293:postgresql_db.py#L214:INFO]: Connected to PostgreSQL db
+[2023-12-13 10:06:55,294:postgresql_db.py#L231:INFO]: finish 9 seconds waiting for connection
+[2023-12-13 10:06:55,294:postgresql_db.py#L232:INFO]: postgres --config_file=/var/lib/postgresql/experiment/conf/tune_cnf.conf
+[2023-12-13 10:06:55,294:postgresql_db.py#L233:INFO]: postgres is up
+[2023-12-13 10:06:55,294:postgresql_db.py#L269:INFO]: sleeping for 0 seconds after restarting postgres
+[2023-12-13 10:06:55,306:postgresql_db.py#L294:INFO]: Knob backend_flush_after is not successfully set to 107 (actual value: 856kB)
+[2023-12-13 10:06:55,307:postgresql_db.py#L294:INFO]: Knob checkpoint_flush_after is not successfully set to 47 (actual value: 376kB)
+[2023-12-13 10:06:55,310:postgresql_db.py#L294:INFO]: Knob effective_cache_size is not successfully set to 204453 (actual value: 1635624kB)
+[2023-12-13 10:06:55,311:postgresql_db.py#L294:INFO]: Knob shared_buffers is not successfully set to 692328 (actual value: 5538624kB)
+[2023-12-13 10:06:55,313:postgresql_db.py#L294:INFO]: Knob temp_buffers is not successfully set to 8777 (actual value: 70216kB)
+[2023-12-13 10:06:55,313:postgresql_db.py#L294:INFO]: Knob wal_buffers is not successfully set to 234515 (actual value: 1876120kB)
+[2023-12-13 10:06:55,314:postgresql_db.py#L294:INFO]: Knob wal_writer_flush_after is not successfully set to 364708048 (actual value: 2917664384kB)
+[2023-12-13 10:06:55,314:postgresql_db.py#L282:INFO]: [2023-12-13 10:06:55] Knobs applied offline!

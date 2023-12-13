@@ -1,0 +1,282 @@
+[2023-12-09 12:44:05,269:postgresql_db.py#L143:INFO]: Force close DB!
+[2023-12-09 12:44:05,375:postgresql_db.py#L148:INFO]: postgresql is shut down remotely
+[2023-12-09 12:44:05,685:postgresql_db.py#L91:INFO]: PGCNF not exists!
+[2023-12-09 12:44:05,924:postgresql_db.py#L119:INFO]: PGCNF not exists!
+[2023-12-09 12:44:05,924:postgresql_db.py#L123:INFO]: generated config file done
+[2023-12-09 12:44:06,214:postgresql_db.py#L185:INFO]: Failed: add 6121 to memory,cpuset:server
+[2023-12-09 12:44:06,214:postgresql_db.py#L200:INFO]: wait for connection
+[2023-12-09 12:54:11,335:postgresql_db.py#L163:INFO]: postgresql is shut down
+[2023-12-09 12:54:11,341:postgresql_db.py#L125:INFO]: generated config file done
+[2023-12-09 12:54:11,362:postgresql_db.py#L198:INFO]: Failed: add 6280 to memory,cpuset:server
+[2023-12-09 12:54:11,362:postgresql_db.py#L202:INFO]: wait for connection
+[2023-12-09 12:55:03,312:postgresql_db.py#L163:INFO]: postgresql is shut down
+[2023-12-09 12:55:03,315:postgresql_db.py#L125:INFO]: generated config file done
+[2023-12-09 12:55:03,334:postgresql_db.py#L198:INFO]: Failed: add 6304 to memory,cpuset:server
+[2023-12-09 12:55:03,334:postgresql_db.py#L202:INFO]: wait for connection
+
+[2023-12-09 12:59:18,015:postgresql_db.py#L145:INFO]: Force close DB!
+[2023-12-09 12:59:18,081:postgresql_db.py#L150:INFO]: postgresql is shut down remotely
+[2023-12-09 12:59:18,339:postgresql_db.py#L93:INFO]: PGCNF not exists!
+[2023-12-09 12:59:18,611:postgresql_db.py#L121:INFO]: PGCNF not exists!
+[2023-12-09 12:59:18,611:postgresql_db.py#L125:INFO]: generated config file done
+[2023-12-09 12:59:18,982:postgresql_db.py#L187:INFO]: Failed: add 6515 to memory,cpuset:server
+[2023-12-09 12:59:18,982:postgresql_db.py#L202:INFO]: wait for connection
+[2023-12-09 12:59:50,398:postgresql_db.py#L222:INFO]: can not connect to DB
+[2023-12-09 12:59:50,399:postgresql_db.py#L226:INFO]: kill all postgres process
+[2023-12-09 12:59:50,399:postgresql_db.py#L229:INFO]: finish 31 seconds waiting for connection
+[2023-12-09 12:59:50,399:postgresql_db.py#L230:INFO]: postgres --config_file=./pg_confs/tune_cnf.conf
+[2023-12-09 12:59:50,399:postgresql_db.py#L231:INFO]: postgres is up
+[2023-12-09 12:59:50,399:postgresql_db.py#L267:INFO]: sleeping for 20 seconds after restarting postgres
+
+[2023-12-09 14:55:37,394:postgresql_db.py#L147:INFO]: Force close DB!
+[2023-12-09 14:55:37,466:postgresql_db.py#L152:INFO]: postgresql is shut down remotely
+
+[2023-12-09 14:55:38,126:postgresql_db.py#L127:INFO]: generated config file done
+
+[2023-12-09 14:55:38,497:postgresql_db.py#L189:INFO]: Failed: add 8364 to memory,cpuset:server
+
+[2023-12-09 14:55:38,498:postgresql_db.py#L204:INFO]: wait for connection
+[2023-12-09 14:56:09,872:postgresql_db.py#L224:INFO]: can not connect to DB
+[2023-12-09 14:56:09,877:postgresql_db.py#L228:INFO]: kill all postgres process
+[2023-12-09 14:56:09,877:postgresql_db.py#L231:INFO]: finish 31 seconds waiting for connection
+
+[2023-12-09 14:56:09,877:postgresql_db.py#L232:INFO]: postgres --config_file=/var/lib/postgresql/experiment/conf/tune_cnf.conf
+[2023-12-09 14:56:09,878:postgresql_db.py#L233:INFO]: postgres is up
+[2023-12-09 14:56:09,878:postgresql_db.py#L269:INFO]: sleeping for 20 seconds after restarting postgres
+[2023-12-09 15:14:56,973:postgresql_db.py#L144:INFO]: Close db successfully
+[2023-12-09 15:14:56,974:postgresql_db.py#L152:INFO]: postgresql is shut down remotely
+[2023-12-09 15:14:57,870:postgresql_db.py#L127:INFO]: generated config file done
+[2023-12-09 15:14:58,453:postgresql_db.py#L189:INFO]: Failed: add 8750 to memory,cpuset:server
+[2023-12-09 15:14:58,453:postgresql_db.py#L204:INFO]: wait for connection
+[2023-12-09 15:15:02,470:postgresql_db.py#L214:INFO]: Connected to PostgreSQL db
+[2023-12-09 15:15:02,473:postgresql_db.py#L231:INFO]: finish 4 seconds waiting for connection
+[2023-12-09 15:15:02,473:postgresql_db.py#L232:INFO]: postgres --config_file=/var/lib/postgresql/experiment/conf/tune_cnf.conf
+[2023-12-09 15:15:02,473:postgresql_db.py#L233:INFO]: postgres is up
+[2023-12-09 15:15:02,473:postgresql_db.py#L269:INFO]: sleeping for 20 seconds after restarting postgres
+[2023-12-09 15:18:55,220:postgresql_db.py#L144:INFO]: Close db successfully
+[2023-12-09 15:18:55,221:postgresql_db.py#L152:INFO]: postgresql is shut down remotely
+[2023-12-09 15:18:56,321:postgresql_db.py#L127:INFO]: generated config file done
+[2023-12-09 15:18:56,773:postgresql_db.py#L204:INFO]: wait for connection
+[2023-12-09 15:19:01,802:postgresql_db.py#L214:INFO]: Connected to PostgreSQL db
+[2023-12-09 15:19:01,805:postgresql_db.py#L231:INFO]: finish 5 seconds waiting for connection
+[2023-12-09 15:19:01,805:postgresql_db.py#L232:INFO]: postgres --config_file=/var/lib/postgresql/experiment/conf/tune_cnf.conf
+[2023-12-09 15:19:01,805:postgresql_db.py#L233:INFO]: postgres is up
+[2023-12-09 15:19:01,805:postgresql_db.py#L269:INFO]: sleeping for 0 seconds after restarting postgres
+[2023-12-09 15:24:44,113:postgresql_db.py#L144:INFO]: Close db successfully
+[2023-12-09 15:24:44,113:postgresql_db.py#L152:INFO]: postgresql is shut down remotely
+[2023-12-09 15:24:45,073:postgresql_db.py#L127:INFO]: generated config file done
+[2023-12-09 15:24:45,545:postgresql_db.py#L204:INFO]: wait for connection
+[2023-12-09 15:24:50,581:postgresql_db.py#L214:INFO]: Connected to PostgreSQL db
+[2023-12-09 15:24:50,581:postgresql_db.py#L231:INFO]: finish 5 seconds waiting for connection
+[2023-12-09 15:24:50,581:postgresql_db.py#L232:INFO]: postgres --config_file=/var/lib/postgresql/experiment/conf/tune_cnf.conf
+[2023-12-09 15:24:50,581:postgresql_db.py#L233:INFO]: postgres is up
+[2023-12-09 15:24:50,581:postgresql_db.py#L269:INFO]: sleeping for 0 seconds after restarting postgres
+[2023-12-09 15:25:52,020:postgresql_db.py#L144:INFO]: Close db successfully
+[2023-12-09 15:25:52,021:postgresql_db.py#L152:INFO]: postgresql is shut down remotely
+[2023-12-09 15:25:53,073:postgresql_db.py#L127:INFO]: generated config file done
+[2023-12-09 15:25:53,601:postgresql_db.py#L204:INFO]: wait for connection
+[2023-12-09 15:25:58,640:postgresql_db.py#L214:INFO]: Connected to PostgreSQL db
+[2023-12-09 15:25:58,641:postgresql_db.py#L231:INFO]: finish 5 seconds waiting for connection
+[2023-12-09 15:25:58,641:postgresql_db.py#L232:INFO]: postgres --config_file=/var/lib/postgresql/experiment/conf/tune_cnf.conf
+[2023-12-09 15:25:58,641:postgresql_db.py#L233:INFO]: postgres is up
+[2023-12-09 15:25:58,641:postgresql_db.py#L269:INFO]: sleeping for 0 seconds after restarting postgres
+[2023-12-09 15:25:58,665:postgresql_db.py#L293:INFO]: Knob backend_flush_after is not successfully set to 107.
+[2023-12-09 15:25:58,668:postgresql_db.py#L293:INFO]: Knob bgwriter_delay is not successfully set to 7206.
+[2023-12-09 15:25:58,669:postgresql_db.py#L293:INFO]: Knob bgwriter_flush_after is not successfully set to 0.
+[2023-12-09 15:25:58,669:postgresql_db.py#L293:INFO]: Knob bgwriter_lru_maxpages is not successfully set to 324627127.
+[2023-12-09 15:25:58,669:postgresql_db.py#L293:INFO]: Knob bgwriter_lru_multiplier is not successfully set to 1.4675589081711304.
+[2023-12-09 15:25:58,672:postgresql_db.py#L293:INFO]: Knob checkpoint_completion_target is not successfully set to 0.0923385947687978.
+[2023-12-09 15:25:58,673:postgresql_db.py#L293:INFO]: Knob checkpoint_flush_after is not successfully set to 47.
+[2023-12-09 15:25:58,673:postgresql_db.py#L293:INFO]: Knob checkpoint_timeout is not successfully set to 29876.
+[2023-12-09 15:25:58,673:postgresql_db.py#L293:INFO]: Knob commit_delay is not successfully set to 39677.
+[2023-12-09 15:25:58,673:postgresql_db.py#L293:INFO]: Knob commit_siblings is not successfully set to 539.
+[2023-12-09 15:25:58,676:postgresql_db.py#L293:INFO]: Knob deadlock_timeout is not successfully set to 900213365.
+[2023-12-09 15:25:58,677:postgresql_db.py#L293:INFO]: Knob default_statistics_target is not successfully set to 6853.
+[2023-12-09 15:25:58,680:postgresql_db.py#L293:INFO]: Knob effective_cache_size is not successfully set to 204453.
+[2023-12-09 15:25:58,681:postgresql_db.py#L293:INFO]: Knob effective_io_concurrency is not successfully set to 878.
+[2023-12-09 15:25:58,681:postgresql_db.py#L293:INFO]: Knob from_collapse_limit is not successfully set to 58814409.
+[2023-12-09 15:25:58,681:postgresql_db.py#L293:INFO]: Knob join_collapse_limit is not successfully set to 1439818014.
+[2023-12-09 15:25:58,684:postgresql_db.py#L293:INFO]: Knob maintenance_work_mem is not successfully set to 417901.
+[2023-12-09 15:25:58,685:postgresql_db.py#L293:INFO]: Knob max_parallel_workers_per_gather is not successfully set to 572.
+[2023-12-09 15:25:58,685:postgresql_db.py#L293:INFO]: Knob max_wal_size is not successfully set to 1124.
+[2023-12-09 15:25:58,685:postgresql_db.py#L293:INFO]: Knob max_worker_processes is not successfully set to 51931.
+[2023-12-09 15:25:58,688:postgresql_db.py#L293:INFO]: Knob min_wal_size is not successfully set to 6407.
+[2023-12-09 15:25:58,689:postgresql_db.py#L293:INFO]: Knob random_page_cost is not successfully set to 96.82615757193975.
+[2023-12-09 15:25:58,689:postgresql_db.py#L293:INFO]: Knob seq_page_cost is not successfully set to 31.342417815924286.
+[2023-12-09 15:25:58,689:postgresql_db.py#L293:INFO]: Knob shared_buffers is not successfully set to 692328.
+[2023-12-09 15:25:58,689:postgresql_db.py#L293:INFO]: Knob temp_buffers is not successfully set to 8777.
+[2023-12-09 15:25:58,689:postgresql_db.py#L293:INFO]: Knob wal_buffers is not successfully set to 234515.
+[2023-12-09 15:25:58,693:postgresql_db.py#L293:INFO]: Knob wal_writer_delay is not successfully set to 391.
+[2023-12-09 15:25:58,693:postgresql_db.py#L293:INFO]: Knob wal_writer_flush_after is not successfully set to 364708048.
+[2023-12-09 15:25:58,696:postgresql_db.py#L293:INFO]: Knob work_mem is not successfully set to 878151.
+[2023-12-09 15:25:58,697:postgresql_db.py#L282:INFO]: [2023-12-09 15:25:58] Knobs applied offline!
+
+[2023-12-09 15:27:39,285:postgresql_db.py#L144:INFO]: Close db successfully
+[2023-12-09 15:27:39,288:postgresql_db.py#L152:INFO]: postgresql is shut down remotely
+[2023-12-09 15:27:40,649:postgresql_db.py#L127:INFO]: generated config file done
+[2023-12-09 15:27:41,229:postgresql_db.py#L204:INFO]: wait for connection
+[2023-12-09 15:27:46,281:postgresql_db.py#L214:INFO]: Connected to PostgreSQL db
+[2023-12-09 15:27:46,281:postgresql_db.py#L231:INFO]: finish 5 seconds waiting for connection
+[2023-12-09 15:27:46,281:postgresql_db.py#L232:INFO]: postgres --config_file=/var/lib/postgresql/experiment/conf/tune_cnf.conf
+[2023-12-09 15:27:46,281:postgresql_db.py#L233:INFO]: postgres is up
+[2023-12-09 15:27:46,281:postgresql_db.py#L269:INFO]: sleeping for 0 seconds after restarting postgres
+[2023-12-09 15:27:46,325:postgresql_db.py#L294:INFO]: Knob wal_sync_method is not successfully set to fsync (actual value: fsync)
+[2023-12-09 15:27:46,329:postgresql_db.py#L282:INFO]: [2023-12-09 15:27:46] Knobs applied offline!
+
+[2023-12-09 15:29:38,972:postgresql_db.py#L144:INFO]: Close db successfully
+[2023-12-09 15:29:38,973:postgresql_db.py#L152:INFO]: postgresql is shut down remotely
+[2023-12-09 15:29:40,317:postgresql_db.py#L127:INFO]: generated config file done
+[2023-12-09 15:29:40,993:postgresql_db.py#L204:INFO]: wait for connection
+[2023-12-09 15:29:47,037:postgresql_db.py#L214:INFO]: Connected to PostgreSQL db
+[2023-12-09 15:29:47,037:postgresql_db.py#L231:INFO]: finish 6 seconds waiting for connection
+[2023-12-09 15:29:47,037:postgresql_db.py#L232:INFO]: postgres --config_file=/var/lib/postgresql/experiment/conf/tune_cnf.conf
+[2023-12-09 15:29:47,037:postgresql_db.py#L233:INFO]: postgres is up
+[2023-12-09 15:29:47,037:postgresql_db.py#L269:INFO]: sleeping for 0 seconds after restarting postgres
+[2023-12-09 15:29:47,065:postgresql_db.py#L294:INFO]: Knob backend_flush_after is not successfully set to 107 (actual value: 856kB)
+[2023-12-09 15:29:47,065:postgresql_db.py#L294:INFO]: Knob bgwriter_delay is not successfully set to 7206 (actual value: 7206ms)
+[2023-12-09 15:29:47,068:postgresql_db.py#L294:INFO]: Knob bgwriter_flush_after is not successfully set to 0 (actual value: 0)
+[2023-12-09 15:29:47,069:postgresql_db.py#L294:INFO]: Knob bgwriter_lru_maxpages is not successfully set to 324627127 (actual value: 324627127)
+[2023-12-09 15:29:47,069:postgresql_db.py#L294:INFO]: Knob bgwriter_lru_multiplier is not successfully set to 1.4675589081711304 (actual value: 1.46756)
+[2023-12-09 15:29:47,073:postgresql_db.py#L294:INFO]: Knob checkpoint_completion_target is not successfully set to 0.0923385947687978 (actual value: 0.0923386)
+[2023-12-09 15:29:47,073:postgresql_db.py#L294:INFO]: Knob checkpoint_flush_after is not successfully set to 47 (actual value: 376kB)
+[2023-12-09 15:29:47,073:postgresql_db.py#L294:INFO]: Knob checkpoint_timeout is not successfully set to 29876 (actual value: 29876s)
+[2023-12-09 15:29:47,073:postgresql_db.py#L294:INFO]: Knob commit_delay is not successfully set to 39677 (actual value: 39677)
+[2023-12-09 15:29:47,077:postgresql_db.py#L294:INFO]: Knob commit_siblings is not successfully set to 539 (actual value: 539)
+[2023-12-09 15:29:47,077:postgresql_db.py#L294:INFO]: Knob deadlock_timeout is not successfully set to 900213365 (actual value: 900213365ms)
+[2023-12-09 15:29:47,081:postgresql_db.py#L294:INFO]: Knob default_statistics_target is not successfully set to 6853 (actual value: 6853)
+[2023-12-09 15:29:47,081:postgresql_db.py#L294:INFO]: Knob effective_cache_size is not successfully set to 204453 (actual value: 1635624kB)
+[2023-12-09 15:29:47,081:postgresql_db.py#L294:INFO]: Knob effective_io_concurrency is not successfully set to 878 (actual value: 878)
+[2023-12-09 15:29:47,081:postgresql_db.py#L294:INFO]: Knob from_collapse_limit is not successfully set to 58814409 (actual value: 58814409)
+[2023-12-09 15:29:47,085:postgresql_db.py#L294:INFO]: Knob join_collapse_limit is not successfully set to 1439818014 (actual value: 1439818014)
+[2023-12-09 15:29:47,085:postgresql_db.py#L294:INFO]: Knob maintenance_work_mem is not successfully set to 417901 (actual value: 417901kB)
+[2023-12-09 15:29:47,085:postgresql_db.py#L294:INFO]: Knob max_parallel_workers_per_gather is not successfully set to 572 (actual value: 572)
+[2023-12-09 15:29:47,085:postgresql_db.py#L294:INFO]: Knob max_wal_size is not successfully set to 1124 (actual value: 1124MB)
+[2023-12-09 15:29:47,088:postgresql_db.py#L294:INFO]: Knob max_worker_processes is not successfully set to 51931 (actual value: 51931)
+[2023-12-09 15:29:47,089:postgresql_db.py#L294:INFO]: Knob min_wal_size is not successfully set to 6407 (actual value: 6407MB)
+[2023-12-09 15:29:47,089:postgresql_db.py#L294:INFO]: Knob random_page_cost is not successfully set to 96.82615757193975 (actual value: 96.8262)
+[2023-12-09 15:29:47,089:postgresql_db.py#L294:INFO]: Knob seq_page_cost is not successfully set to 31.342417815924286 (actual value: 31.3424)
+[2023-12-09 15:29:47,093:postgresql_db.py#L294:INFO]: Knob shared_buffers is not successfully set to 692328 (actual value: 5538624kB)
+[2023-12-09 15:29:47,093:postgresql_db.py#L294:INFO]: Knob temp_buffers is not successfully set to 8777 (actual value: 70216kB)
+[2023-12-09 15:29:47,096:postgresql_db.py#L294:INFO]: Knob wal_buffers is not successfully set to 234515 (actual value: 1876120kB)
+[2023-12-09 15:29:47,097:postgresql_db.py#L294:INFO]: Knob wal_writer_delay is not successfully set to 391 (actual value: 391ms)
+[2023-12-09 15:29:47,097:postgresql_db.py#L294:INFO]: Knob wal_writer_flush_after is not successfully set to 364708048 (actual value: 2917664384kB)
+[2023-12-09 15:29:47,097:postgresql_db.py#L294:INFO]: Knob work_mem is not successfully set to 878151 (actual value: 878151kB)
+[2023-12-09 15:29:47,100:postgresql_db.py#L282:INFO]: [2023-12-09 15:29:47] Knobs applied offline!
+
+[2023-12-09 15:37:54,297:postgresql_db.py#L144:INFO]: Close db successfully
+[2023-12-09 15:37:54,304:postgresql_db.py#L152:INFO]: postgresql is shut down remotely
+[2023-12-09 15:37:56,189:postgresql_db.py#L127:INFO]: generated config file done
+[2023-12-09 15:37:57,021:postgresql_db.py#L204:INFO]: wait for connection
+[2023-12-09 15:38:06,105:postgresql_db.py#L214:INFO]: Connected to PostgreSQL db
+[2023-12-09 15:38:06,105:postgresql_db.py#L231:INFO]: finish 9 seconds waiting for connection
+[2023-12-09 15:38:06,105:postgresql_db.py#L232:INFO]: postgres --config_file=/var/lib/postgresql/experiment/conf/tune_cnf.conf
+[2023-12-09 15:38:06,105:postgresql_db.py#L233:INFO]: postgres is up
+[2023-12-09 15:38:06,105:postgresql_db.py#L269:INFO]: sleeping for 0 seconds after restarting postgres
+[2023-12-09 15:38:06,165:postgresql_db.py#L294:INFO]: Knob backend_flush_after is not successfully set to 107 (actual value: 856kB)
+[2023-12-09 15:38:06,177:postgresql_db.py#L294:INFO]: Knob bgwriter_lru_multiplier is not successfully set to 1.4675589081711304 (actual value: 1.46756)
+[2023-12-09 15:38:06,181:postgresql_db.py#L294:INFO]: Knob checkpoint_completion_target is not successfully set to 0.0923385947687978 (actual value: 0.0923386)
+[2023-12-09 15:38:06,189:postgresql_db.py#L294:INFO]: Knob checkpoint_flush_after is not successfully set to 47 (actual value: 376kB)
+[2023-12-09 15:38:06,205:postgresql_db.py#L294:INFO]: Knob effective_cache_size is not successfully set to 204453 (actual value: 1635624kB)
+[2023-12-09 15:38:06,221:postgresql_db.py#L294:INFO]: Knob random_page_cost is not successfully set to 96.82615757193975 (actual value: 96.8262)
+[2023-12-09 15:38:06,224:postgresql_db.py#L294:INFO]: Knob seq_page_cost is not successfully set to 31.342417815924286 (actual value: 31.3424)
+[2023-12-09 15:38:06,225:postgresql_db.py#L294:INFO]: Knob shared_buffers is not successfully set to 692328 (actual value: 5538624kB)
+[2023-12-09 15:38:06,229:postgresql_db.py#L294:INFO]: Knob temp_buffers is not successfully set to 8777 (actual value: 70216kB)
+[2023-12-09 15:38:06,229:postgresql_db.py#L294:INFO]: Knob wal_buffers is not successfully set to 234515 (actual value: 1876120kB)
+[2023-12-09 15:38:06,237:postgresql_db.py#L294:INFO]: Knob wal_sync_method is not successfully set to fsync (actual value: fsync)
+[2023-12-09 15:38:06,245:postgresql_db.py#L294:INFO]: Knob wal_writer_flush_after is not successfully set to 364708048 (actual value: 2917664384kB)
+[2023-12-09 15:38:06,245:postgresql_db.py#L282:INFO]: [2023-12-09 15:38:06] Knobs applied offline!
+[2023-12-09 15:39:53,221:postgresql_db.py#L144:INFO]: Close db successfully
+[2023-12-09 15:39:53,225:postgresql_db.py#L152:INFO]: postgresql is shut down remotely
+[2023-12-09 15:39:55,397:postgresql_db.py#L127:INFO]: generated config file done
+[2023-12-09 15:39:56,360:postgresql_db.py#L204:INFO]: wait for connection
+[2023-12-09 15:40:06,449:postgresql_db.py#L214:INFO]: Connected to PostgreSQL db
+[2023-12-09 15:40:06,449:postgresql_db.py#L231:INFO]: finish 10 seconds waiting for connection
+[2023-12-09 15:40:06,452:postgresql_db.py#L232:INFO]: postgres --config_file=/var/lib/postgresql/experiment/conf/tune_cnf.conf
+[2023-12-09 15:40:06,452:postgresql_db.py#L233:INFO]: postgres is up
+[2023-12-09 15:40:06,452:postgresql_db.py#L269:INFO]: sleeping for 0 seconds after restarting postgres
+[2023-12-09 15:40:06,497:postgresql_db.py#L294:INFO]: Knob backend_flush_after is not successfully set to 107 (actual value: 856kB)
+[2023-12-09 15:40:06,501:postgresql_db.py#L294:INFO]: Knob bgwriter_lru_multiplier is not successfully set to 1.4675589081711304 (actual value: 1.46756)
+[2023-12-09 15:40:06,505:postgresql_db.py#L294:INFO]: Knob checkpoint_completion_target is not successfully set to 0.0923385947687978 (actual value: 0.0923386)
+[2023-12-09 15:40:06,512:postgresql_db.py#L294:INFO]: Knob checkpoint_flush_after is not successfully set to 47 (actual value: 376kB)
+[2023-12-09 15:40:06,517:postgresql_db.py#L294:INFO]: Knob effective_cache_size is not successfully set to 204453 (actual value: 1635624kB)
+[2023-12-09 15:40:06,533:postgresql_db.py#L294:INFO]: Knob random_page_cost is not successfully set to 96.82615757193975 (actual value: 96.8262)
+[2023-12-09 15:40:06,533:postgresql_db.py#L294:INFO]: Knob seq_page_cost is not successfully set to 31.342417815924286 (actual value: 31.3424)
+[2023-12-09 15:40:06,533:postgresql_db.py#L294:INFO]: Knob shared_buffers is not successfully set to 692328 (actual value: 5538624kB)
+[2023-12-09 15:40:06,536:postgresql_db.py#L294:INFO]: Knob temp_buffers is not successfully set to 8777 (actual value: 70216kB)
+[2023-12-09 15:40:06,537:postgresql_db.py#L294:INFO]: Knob wal_buffers is not successfully set to 234515 (actual value: 1876120kB)
+
+[2023-12-09 15:41:46,276:postgresql_db.py#L144:INFO]: Close db successfully
+[2023-12-09 15:41:46,277:postgresql_db.py#L152:INFO]: postgresql is shut down remotely
+[2023-12-09 15:41:48,217:postgresql_db.py#L127:INFO]: generated config file done
+[2023-12-09 15:41:49,069:postgresql_db.py#L204:INFO]: wait for connection
+[2023-12-09 15:41:57,157:postgresql_db.py#L214:INFO]: Connected to PostgreSQL db
+[2023-12-09 15:41:57,157:postgresql_db.py#L231:INFO]: finish 8 seconds waiting for connection
+[2023-12-09 15:41:57,157:postgresql_db.py#L232:INFO]: postgres --config_file=/var/lib/postgresql/experiment/conf/tune_cnf.conf
+[2023-12-09 15:41:57,157:postgresql_db.py#L233:INFO]: postgres is up
+[2023-12-09 15:41:57,160:postgresql_db.py#L269:INFO]: sleeping for 0 seconds after restarting postgres
+[2023-12-09 15:41:57,217:postgresql_db.py#L294:INFO]: Knob backend_flush_after is not successfully set to 107 (actual value: 856kB)
+[2023-12-09 15:41:57,228:postgresql_db.py#L294:INFO]: Knob bgwriter_lru_multiplier is not successfully set to 1.4675589081711304 (actual value: 1.46756)
+[2023-12-09 15:41:57,233:postgresql_db.py#L294:INFO]: Knob checkpoint_completion_target is not successfully set to 0.0923385947687978 (actual value: 0.0923386)
+[2023-12-09 15:41:57,236:postgresql_db.py#L294:INFO]: Knob checkpoint_flush_after is not successfully set to 47 (actual value: 376kB)
+[2023-12-09 15:41:57,253:postgresql_db.py#L294:INFO]: Knob effective_cache_size is not successfully set to 204453 (actual value: 1635624kB)
+[2023-12-09 15:41:57,276:postgresql_db.py#L294:INFO]: Knob random_page_cost is not successfully set to 96.82615757193975 (actual value: 96.8262)
+[2023-12-09 15:41:57,277:postgresql_db.py#L294:INFO]: Knob seq_page_cost is not successfully set to 31.342417815924286 (actual value: 31.3424)
+[2023-12-09 15:41:57,281:postgresql_db.py#L294:INFO]: Knob shared_buffers is not successfully set to 692328 (actual value: 5538624kB)
+[2023-12-09 15:41:57,284:postgresql_db.py#L294:INFO]: Knob temp_buffers is not successfully set to 8777 (actual value: 70216kB)
+[2023-12-09 15:41:57,289:postgresql_db.py#L294:INFO]: Knob wal_buffers is not successfully set to 234515 (actual value: 1876120kB)
+[2023-12-09 15:44:53,404:postgresql_db.py#L144:INFO]: Close db successfully
+[2023-12-09 15:44:53,405:postgresql_db.py#L152:INFO]: postgresql is shut down remotely
+[2023-12-09 15:44:55,753:postgresql_db.py#L127:INFO]: generated config file done
+[2023-12-09 15:44:57,313:postgresql_db.py#L204:INFO]: wait for connection
+[2023-12-09 15:45:08,416:postgresql_db.py#L214:INFO]: Connected to PostgreSQL db
+[2023-12-09 15:45:08,417:postgresql_db.py#L231:INFO]: finish 11 seconds waiting for connection
+[2023-12-09 15:45:08,417:postgresql_db.py#L232:INFO]: postgres --config_file=/var/lib/postgresql/experiment/conf/tune_cnf.conf
+[2023-12-09 15:45:08,417:postgresql_db.py#L233:INFO]: postgres is up
+[2023-12-09 15:45:08,417:postgresql_db.py#L269:INFO]: sleeping for 0 seconds after restarting postgres
+[2023-12-09 15:45:08,473:postgresql_db.py#L294:INFO]: Knob backend_flush_after is not successfully set to 107 (actual value: 856kB)
+[2023-12-09 15:45:08,481:postgresql_db.py#L294:INFO]: Knob bgwriter_lru_multiplier is not successfully set to 1.4675589081711304 (actual value: 1.46756)
+[2023-12-09 15:45:08,488:postgresql_db.py#L294:INFO]: Knob checkpoint_completion_target is not successfully set to 0.0923385947687978 (actual value: 0.0923386)
+[2023-12-09 15:45:08,489:postgresql_db.py#L294:INFO]: Knob checkpoint_flush_after is not successfully set to 47 (actual value: 376kB)
+[2023-12-09 15:45:08,500:postgresql_db.py#L294:INFO]: Knob effective_cache_size is not successfully set to 204453 (actual value: 1635624kB)
+[2023-12-09 15:45:08,516:postgresql_db.py#L294:INFO]: Knob random_page_cost is not successfully set to 96.82615757193975 (actual value: 96.8262)
+[2023-12-09 15:45:08,520:postgresql_db.py#L294:INFO]: Knob seq_page_cost is not successfully set to 31.342417815924286 (actual value: 31.3424)
+[2023-12-09 15:45:08,524:postgresql_db.py#L294:INFO]: Knob shared_buffers is not successfully set to 692328 (actual value: 5538624kB)
+[2023-12-09 15:45:08,528:postgresql_db.py#L294:INFO]: Knob temp_buffers is not successfully set to 8777 (actual value: 70216kB)
+[2023-12-09 15:45:08,537:postgresql_db.py#L294:INFO]: Knob wal_buffers is not successfully set to 234515 (actual value: 1876120kB)
+[2023-12-09 15:45:08,541:postgresql_db.py#L294:INFO]: Knob wal_sync_method is not successfully set to fsync (actual value: fsync)
+[2023-12-09 15:45:08,541:postgresql_db.py#L294:INFO]: Knob wal_writer_flush_after is not successfully set to 364708048 (actual value: 2917664384kB)
+[2023-12-09 15:45:08,545:postgresql_db.py#L282:INFO]: [2023-12-09 15:45:08] Knobs applied offline!
+[2023-12-09 15:50:47,329:postgresql_db.py#L144:INFO]: Close db successfully
+[2023-12-09 15:50:47,337:postgresql_db.py#L152:INFO]: postgresql is shut down remotely
+[2023-12-09 15:50:50,445:postgresql_db.py#L127:INFO]: generated config file done
+[2023-12-09 15:50:51,549:postgresql_db.py#L204:INFO]: wait for connection
+[2023-12-09 15:51:03,693:postgresql_db.py#L214:INFO]: Connected to PostgreSQL db
+[2023-12-09 15:51:03,697:postgresql_db.py#L231:INFO]: finish 12 seconds waiting for connection
+[2023-12-09 15:51:03,697:postgresql_db.py#L232:INFO]: postgres --config_file=/var/lib/postgresql/experiment/conf/tune_cnf.conf
+[2023-12-09 15:51:03,697:postgresql_db.py#L233:INFO]: postgres is up
+[2023-12-09 15:51:03,700:postgresql_db.py#L269:INFO]: sleeping for 0 seconds after restarting postgres
+[2023-12-09 15:51:03,773:postgresql_db.py#L294:INFO]: Knob backend_flush_after is not successfully set to 107 (actual value: 856kB)
+[2023-12-09 15:51:03,813:postgresql_db.py#L294:INFO]: Knob checkpoint_flush_after is not successfully set to 47 (actual value: 376kB)
+[2023-12-09 15:51:03,817:postgresql_db.py#L294:INFO]: Knob effective_cache_size is not successfully set to 204453 (actual value: 1635624kB)
+[2023-12-09 15:51:03,892:postgresql_db.py#L294:INFO]: Knob shared_buffers is not successfully set to 692328 (actual value: 5538624kB)
+[2023-12-09 15:51:03,901:postgresql_db.py#L294:INFO]: Knob temp_buffers is not successfully set to 8777 (actual value: 70216kB)
+[2023-12-09 15:51:03,909:postgresql_db.py#L294:INFO]: Knob wal_buffers is not successfully set to 234515 (actual value: 1876120kB)
+[2023-12-09 15:51:03,933:postgresql_db.py#L294:INFO]: Knob wal_writer_flush_after is not successfully set to 364708048 (actual value: 2917664384kB)
+[2023-12-09 15:51:03,941:postgresql_db.py#L282:INFO]: [2023-12-09 15:51:03] Knobs applied offline!
+[2023-12-09 15:52:18,405:postgresql_db.py#L144:INFO]: Close db successfully
+[2023-12-09 15:52:18,405:postgresql_db.py#L152:INFO]: postgresql is shut down remotely
+[2023-12-09 15:52:22,192:postgresql_db.py#L127:INFO]: generated config file done
+[2023-12-09 15:52:24,021:postgresql_db.py#L204:INFO]: wait for connection
+[2023-12-09 15:52:42,353:postgresql_db.py#L214:INFO]: Connected to PostgreSQL db
+[2023-12-09 15:52:42,356:postgresql_db.py#L231:INFO]: finish 18 seconds waiting for connection
+[2023-12-09 15:52:42,357:postgresql_db.py#L232:INFO]: postgres --config_file=/var/lib/postgresql/experiment/conf/tune_cnf.conf
+[2023-12-09 15:52:42,360:postgresql_db.py#L233:INFO]: postgres is up
+[2023-12-09 15:52:42,360:postgresql_db.py#L269:INFO]: sleeping for 0 seconds after restarting postgres
+[2023-12-09 15:52:42,565:postgresql_db.py#L294:INFO]: Knob backend_flush_after is not successfully set to 107 (actual value: 856kB)
+[2023-12-09 15:52:42,629:postgresql_db.py#L294:INFO]: Knob checkpoint_flush_after is not successfully set to 47 (actual value: 376kB)
+[2023-12-09 15:52:42,693:postgresql_db.py#L294:INFO]: Knob effective_cache_size is not successfully set to 204453 (actual value: 1635624kB)
+[2023-12-09 15:52:42,788:postgresql_db.py#L294:INFO]: Knob shared_buffers is not successfully set to 692328 (actual value: 5538624kB)
+[2023-12-09 15:52:42,809:postgresql_db.py#L294:INFO]: Knob temp_buffers is not successfully set to 8777 (actual value: 70216kB)
+[2023-12-09 15:52:42,817:postgresql_db.py#L294:INFO]: Knob wal_buffers is not successfully set to 234515 (actual value: 1876120kB)
+[2023-12-09 15:52:42,848:postgresql_db.py#L294:INFO]: Knob wal_writer_flush_after is not successfully set to 364708048 (actual value: 2917664384kB)
+[2023-12-09 15:52:42,857:postgresql_db.py#L282:INFO]: [2023-12-09 15:52:42] Knobs applied offline!
