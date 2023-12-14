@@ -1,17 +1,17 @@
 import os
 import json
 import time
-import glob
-import threading
 import subprocess
 import paramiko
-import logging
-import numpy as np
-import multiprocessing as mp
-from getpass import getpass
-from dbconnector import PostgresqlConnector
-from utils.logger import get_logger
-from utils.parser import ConfigParser
+from typing import List
+import configparser
+
+from camtune.utils.logger import get_logger
+from camtune.utils.parser import ConfigParser
+
+from ConfigSpace.configuration_space import Configuration 
+from .dbconnector import PostgresqlConnector
+
 
 PG_CTL = "/usr/lib/postgresql/16/bin/pg_ctl"
 PG_DATA = "/var/lib/postgresql/16/main"
@@ -33,14 +33,14 @@ ISOLATION_MODE = False
 SSH_USER = 'postgres'
 SSH_PWD = '741286'
 
-BENCHMARK_DIR = '/home/viktor/Experiments/CamDB/benchmarks'
+BENCHMARK_DIR = '/home/viktor/Experiments/CamDB/camtune/benchmarks'
 BENCHMARK = 'TPCH'
 QUERY_PATH_MAP = {
     'TPCH': os.path.join(BENCHMARK_DIR, 'tpch'),
 }
 
 
-def initialize_knobs(knobs_config, num):
+def initialize_knobs(knobs_config, num) -> dict:
     if num == -1:
         with open(knobs_config, 'r') as f:
             knob_details = json.load(f)
@@ -59,44 +59,170 @@ def initialize_knobs(knobs_config, num):
     return knob_details
 
 class PostgresqlDB:
-    def __init__(self, 
-                 host, port, user_name, db_name, passwd, 
-                 knob_definition_path, knob_num=-1, remote_mode=REMOTE_MODE,
-                 benchmark=BENCHMARK):
-        self.host = host
-        self.port = port
-        self.user_name = user_name
-        self.db_name = db_name
-        self.passwd = passwd
+    def __init__(self, args: configparser.ConfigParser):
+        args_db, args_ssh, args_tune = args['database'], args['ssh'], args['tune']
 
-        self.pg_ctl =  PG_CTL
-        self.pgdata =  PG_DATA
-        self.postgres = PG_SERVER
-        self.pgcnf = PG_CONF
-        self.pgsock = PG_SOCK
+        self.host = args_db['db_host']
+        self.port = args_db['db_port']
+        self.user_name = args_db['db_user_name']
+        self.db_name = args_db['db_name']
+        self.passwd = args_db['db_passwd']
+
+        self.pg_ctl =  args_db['pg_ctl']
+        self.pgdata =  args_db['pg_data']
+        self.postgres = args_db['pg_server']
+        self.pgcnf = args_db['pg_conf']
+        self.pgsock = args_db['pg_sock']
 
         # Note that query can be saved locally
-        self.benchmark = BENCHMARK
+        self.benchmark = args_db['benchmark']
+        self.benchmark_fast: bool = eval(args_db['benchmark_fast'])
+        if self.benchmark not in QUERY_PATH_MAP:
+            raise ValueError(f"Undefined Benchmark")
         self.query_path = QUERY_PATH_MAP[self.benchmark]
 
-        self.remote_mode = remote_mode
+        self.remote_mode = args_db['remote_mode']
         if self.remote_mode:
-            self.ssh_user = SSH_USER
-            self.ssh_pwd = SSH_PWD
-            # self.ssh_pk_file = os.path.expanduser('~/.ssh/id_rsa')
-            # self.pk = paramiko.RSAKey.from_private_key_file(self.ssh_pk_file)
+            self.ssh_user = args_ssh['ssh_user']
+            self.ssh_pwd = args_ssh['ssh_pwd']
         
-        self.knob_details = initialize_knobs(knob_definition_path, knob_num)
+        self.knob_details = \
+            initialize_knobs(args_tune['knob_definitions'], int(args_tune['knob_num']))
 
-    def exec_queries(self):
-        for query_file in glob.glob(self.query_path + '/*.sql'):
+    def step(self, config: Configuration) -> dict:
+        knobs = dict(config).copy()
+        self.apply_knobs_offline(knobs)
+
+        return self.run_benchmark()
+
+    def run_benchmark(self) -> dict:
+        benchmark_dir = os.path.join(BENCHMARK_DIR, self.benchmark.lower())
+
+        res = {'benchmark': self.benchmark}
+        total_exec_time = 0
+        query_file_names = []
+
+        if self.benchmark.upper() == 'TPCH':
+            query_list_file = 'tpch_query_list.txt' if not self.benchmark_fast \
+                                    else 'tpch_query_fast_list.txt'
+            lines = open(os.path.join(BENCHMARK_DIR, query_list_file), 'r').readlines()
+            for line in lines:
+                query_file_names.append(line.rstrip())
+                
+            results = self.exec_queries(
+                [os.path.join(benchmark_dir, query_file_name) for query_file_name in query_file_names]
+            )
+
+            for _, exec_res in results.items():
+                exec_time = float(exec_res[0]['execution_time'])
+                total_exec_time += exec_time
+            res['total_exec_time'] = total_exec_time
+
+        return res
+
+    # Assume the query files are stored locally (to be executed remotely)
+    def exec_queries(self, query_file_names: List[str], json=True):
+        queries = []
+        for query_file in query_file_names:
             with open(query_file, 'r') as f:
                 query_lines = f.readlines()
             query = ' '.join(query_lines)
-            print(query)
+            queries.append((query_file, query))
+
+        results = {}
+        curr_query_file = None
+        try:
+            # Build connection to PostgreSQL server
+            db_conn = PostgresqlConnector(host=self.host,
+                                          port=self.port,
+                                          user=self.user_name,
+                                          passwd=self.passwd,
+                                          name=self.db_name)
+            if db_conn.conn.closed == 0:
+                logger.info('Connected to PostgreSQL db for query execution:')
+
+            # Executing queries and fetch execution results
+            for query_file, query in queries:
+                curr_query_file = query_file
+                logger.info(f'Executing {query_file}')
+
+                result = db_conn.fetch_results(query, json=json)
+                results[query_file] = result
+            
+            # Close connection
+            db_conn.close_db()
+        except:
+            if curr_query_file:
+                logger.info(f'Query execution failed when executing {curr_query_file}')
+            else:
+                logger.info(f'Query execution failed')
+        
+        return results
+    
+    def apply_knobs_offline(self, knobs: dict):
+        self.kill_postgres()
+
+        if 'min_wal_size' in knobs.keys():
+            if 'wal_segment_size' in knobs.keys():
+                wal_segment_size = knobs['wal_segment_size']
+            else:
+                wal_segment_size = 16
+            if knobs['min_wal_size'] < 2 * wal_segment_size:
+                knobs['min_wal_size'] = 2 * wal_segment_size
+                logger.info('"min_wal_size" must be at least twice "wal_segment_size"')
+
+        knobs_not_in_cnf = self.modify_config_file(knobs)
+        success = self.start_postgres()
+
+        try:
+            logger.info('sleeping for {} seconds after restarting postgres'.format(RESTART_WAIT_TIME))
+            time.sleep(RESTART_WAIT_TIME)
+
+            if len(knobs_not_in_cnf) > 0:
+                tmp_rds = {}
+                for knob_rds in knobs_not_in_cnf:
+                    tmp_rds[knob_rds] = knobs[knob_rds]
+                self.apply_knobs_online(tmp_rds)
+            else:
+                logger.info("No Knobs need to be applied online")
+        except:
+            success = False
+
+        self.check_knobs_applied(knobs)
+        logger.info("[{}] Knobs applied offline!".format(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())))
+        return success
+
+    def apply_knobs_online(self, knobs: dict):
+        # self.restart_rds()
+        # apply knobs remotely
+        logger.info(f"Knobs to be applied online: {list(knobs.keys())}")
+        db_conn = PostgresqlConnector(host=self.host,
+                                        port=self.port,
+                                        user=self.user_name,
+                                        passwd=self.passwd,
+                                        name=self.db_name)
+
+        for key in knobs.keys():
+            db_conn.set_knob_value(key, knobs[key])
+        db_conn.close_db()
+
+        self.check_knobs_applied(knobs)
+        logger.info("[{}] Knobs applied online!".format(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())))
+        return True
+
+    def check_knobs_applied(self, knobs: dict):
+        db_conn = PostgresqlConnector(host=self.host,
+                                        port=self.port,
+                                        user=self.user_name,
+                                        passwd=self.passwd,
+                                        name=self.db_name)
+        for k, v in knobs.items():
+            applied, actual_val = db_conn.check_knob_apply(k, v)
+            if not applied:
+                logger.info(f"Knob {k} is not successfully set to {v} (actual value: {actual_val})")
 
     
-    def modify_config_file(self, knobs):
+    def modify_config_file(self, knobs: dict):
         if self.remote_mode:
             cnf = '/tmp/pglocal.cnf'
             ssh = paramiko.SSHClient()
@@ -249,65 +375,3 @@ class PostgresqlDB:
         logger.info('postgres --config_file={}'.format(self.pgcnf))
         logger.info('postgres is up')
         return start_success
-
-    def apply_knobs_online(self, knobs: dict):
-        # self.restart_rds()
-        # apply knobs remotely
-        logger.info(f"Knobs to be applied online: {list(knobs.keys())}")
-        db_conn = PostgresqlConnector(host=self.host,
-                                        port=self.port,
-                                        user=self.user_name,
-                                        passwd=self.passwd,
-                                        name=self.db_name)
-
-        for key in knobs.keys():
-            db_conn.set_knob_value(key, knobs[key])
-        db_conn.close_db()
-
-        self.check_knobs_applied(knobs)
-        logger.info("[{}] Knobs applied online!".format(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())))
-        return True
-    
-    def apply_knobs_offline(self, knobs):
-        self.kill_postgres()
-
-        if 'min_wal_size' in knobs.keys():
-            if 'wal_segment_size' in knobs.keys():
-                wal_segment_size = knobs['wal_segment_size']
-            else:
-                wal_segment_size = 16
-            if knobs['min_wal_size'] < 2 * wal_segment_size:
-                knobs['min_wal_size'] = 2 * wal_segment_size
-                logger.info('"min_wal_size" must be at least twice "wal_segment_size"')
-
-        knobs_not_in_cnf = self.modify_config_file(knobs)
-        success = self.start_postgres()
-
-        try:
-            logger.info('sleeping for {} seconds after restarting postgres'.format(RESTART_WAIT_TIME))
-            time.sleep(RESTART_WAIT_TIME)
-
-            if len(knobs_not_in_cnf) > 0:
-                tmp_rds = {}
-                for knob_rds in knobs_not_in_cnf:
-                    tmp_rds[knob_rds] = knobs[knob_rds]
-                self.apply_knobs_online(tmp_rds)
-            else:
-                logger.info("No Knobs need to be applied online")
-        except:
-            success = False
-
-        self.check_knobs_applied(knobs)
-        logger.info("[{}] Knobs applied offline!".format(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())))
-        return success
-
-    def check_knobs_applied(self, knobs: dict):
-        db_conn = PostgresqlConnector(host=self.host,
-                                        port=self.port,
-                                        user=self.user_name,
-                                        passwd=self.passwd,
-                                        name=self.db_name)
-        for k, v in knobs.items():
-            applied, actual_val = db_conn.check_knob_apply(k, v)
-            if not applied:
-                logger.info(f"Knob {k} is not successfully set to {v} (actual value: {actual_val})")

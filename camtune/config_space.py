@@ -1,7 +1,4 @@
 import json
-from copy import deepcopy
-from importlib import import_module
-from pathlib import Path
 
 import ConfigSpace as CS
 import ConfigSpace.hyperparameters as CSH
@@ -80,6 +77,3 @@ class ConfigurationSpace:
         input_space.add_hyperparameters(input_dimensions)
 
         return input_space
-
-    def sample_config(self, size=None):
-        return self.input_space.sample_configuration(size)

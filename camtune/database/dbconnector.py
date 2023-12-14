@@ -69,8 +69,12 @@ class PostgresqlConnector(DBConnector):
     def fetch_results(self, sql, json=True):
         results = False
         if self.conn:
+            # print("Starting query execution...")
             self.cursor.execute(sql)
+            # print("Query execution finished.")
+            
             results = self.cursor.fetchall()
+            
             if json:
                 columns = [col[0] for col in self.cursor.description]
                 return [dict(zip(columns, row)) for row in results]

@@ -1,10 +1,5 @@
-import sys
-import os
-cwd = os.path.dirname(os.path.abspath(__file__))
-sys.path.append(os.path.dirname(cwd))
-
-from postgresql_db import PostgresqlDB
-from config_space import ConfigurationSpace, PGSQL_KNOB_JSON_13, PGSQL_JOB_SHAP
+from camtune.database import PostgresqlDB
+from camtune.config_space import ConfigurationSpace, PGSQL_KNOB_JSON_13, PGSQL_JOB_SHAP
 
 IS_KV_CONFIG = {
     PGSQL_JOB_SHAP: True,

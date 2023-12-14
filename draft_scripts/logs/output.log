@@ -15,3 +15,34 @@
 [2023-12-13 10:06:55,313:postgresql_db.py#L294:INFO]: Knob wal_buffers is not successfully set to 234515 (actual value: 1876120kB)
 [2023-12-13 10:06:55,314:postgresql_db.py#L294:INFO]: Knob wal_writer_flush_after is not successfully set to 364708048 (actual value: 2917664384kB)
 [2023-12-13 10:06:55,314:postgresql_db.py#L282:INFO]: [2023-12-13 10:06:55] Knobs applied offline!
+[2023-12-13 11:47:49,500:postgresql_db.py#L116:INFO]: Connected to PostgreSQL db for query execution:
+[2023-12-13 11:47:49,504:postgresql_db.py#L120:INFO]: Executing /home/viktor/Experiments/pg-tpch/queries/q19.analyze.sql
+[2023-12-13 11:51:41,084:postgresql_db.py#L116:INFO]: Connected to PostgreSQL db for query execution:
+[2023-12-13 11:51:41,085:postgresql_db.py#L120:INFO]: Executing /home/viktor/Experiments/pg-tpch/queries/q19.analyze.sql
+[2023-12-13 12:01:06,681:postgresql_db.py#L116:INFO]: Connected to PostgreSQL db for query execution:
+[2023-12-13 12:01:06,684:postgresql_db.py#L120:INFO]: Executing /home/viktor/Experiments/pg-tpch/queries/q10.analyze.2.sql
+[2023-12-13 12:02:36,348:postgresql_db.py#L116:INFO]: Connected to PostgreSQL db for query execution:
+[2023-12-13 12:02:36,352:postgresql_db.py#L120:INFO]: Executing /home/viktor/Experiments/pg-tpch/queries/q10.analyze.2.sql
+[2023-12-13 12:22:14,847:postgresql_db.py#L116:INFO]: Connected to PostgreSQL db for query execution:
+[2023-12-13 12:22:14,847:postgresql_db.py#L120:INFO]: Executing /home/viktor/Experiments/CamDB/benchmarks/tpch/query_1.sql
+[2023-12-13 12:22:14,849:postgresql_db.py#L124:INFO]: Query execution failed
+[2023-12-13 12:24:11,366:postgresql_db.py#L116:INFO]: Connected to PostgreSQL db for query execution:
+[2023-12-13 12:24:11,367:postgresql_db.py#L120:INFO]: Executing /home/viktor/Experiments/CamDB/benchmarks/tpch/query_1.sql
+[2023-12-13 12:24:11,368:postgresql_db.py#L124:INFO]: Query execution failed
+[2023-12-13 12:27:37,654:postgresql_db.py#L116:INFO]: Connected to PostgreSQL db for query execution:
+[2023-12-13 12:27:37,654:postgresql_db.py#L120:INFO]: Executing /home/viktor/Experiments/CamDB/benchmarks/tpch/1.sql
+[2023-12-13 12:27:37,655:postgresql_db.py#L124:INFO]: Query execution failed
+[2023-12-13 12:47:58,666:postgresql_db.py#L110:INFO]: Connected to PostgreSQL db for query execution:
+[2023-12-13 12:47:58,666:postgresql_db.py#L114:INFO]: Executing /home/viktor/Experiments/CamDB/benchmarks/tpch/1.sql
+[2023-12-13 12:48:00,228:postgresql_db.py#L114:INFO]: Executing /home/viktor/Experiments/CamDB/benchmarks/tpch/1_explain.sql
+[2023-12-13 12:48:06,585:postgresql_db.py#L110:INFO]: Connected to PostgreSQL db for query execution:
+[2023-12-13 12:48:06,585:postgresql_db.py#L114:INFO]: Executing /home/viktor/Experiments/CamDB/benchmarks/tpch/1.sql
+[2023-12-13 12:48:08,117:postgresql_db.py#L114:INFO]: Executing /home/viktor/Experiments/CamDB/benchmarks/tpch/1_explain.sql
+[2023-12-13 12:56:05,649:postgresql_db.py#L110:INFO]: Connected to PostgreSQL db for query execution:
+[2023-12-13 12:56:05,649:postgresql_db.py#L114:INFO]: Executing /home/viktor/Experiments/CamDB/benchmarks/tpch/1.sql
+[2023-12-13 12:56:07,275:postgresql_db.py#L114:INFO]: Executing /home/viktor/Experiments/CamDB/benchmarks/tpch/1_explain.sql
+[2023-12-13 17:43:37,196:postgresql_db.py#L110:INFO]: Connected to PostgreSQL db for query execution:
+[2023-12-13 17:43:37,197:postgresql_db.py#L114:INFO]: Executing /home/viktor/Experiments/CamDB/benchmarks/tpch/1_explain.sql
+[2023-12-13 21:03:44,010:postgresql_db.py#L127:INFO]: Connected to PostgreSQL db for query execution:
+[2023-12-13 21:03:44,010:postgresql_db.py#L131:INFO]: Executing /home/viktor/Experiments/CamDB/benchmarks/tpch/1.sql
+[2023-12-13 21:03:48,900:postgresql_db.py#L131:INFO]: Executing /home/viktor/Experiments/CamDB/benchmarks/tpch/2.sql

@@ -1,5 +1,8 @@
-SET shipdate '1998-12-01'
-BEGIN;
+from camtune.database import PostgresqlConnector
+
+
+# Define the query
+query = """
 SELECT
     l_returnflag,
     l_linestatus,
@@ -14,11 +17,25 @@ SELECT
 FROM
     lineitem
 WHERE
-    l_shipdate <= DATE :shipdate - INTERVAL '1 day'
+    l_shipdate <= DATE '1998-12-01' - INTERVAL '1 day'
 GROUP BY
     l_returnflag,
     l_linestatus
 ORDER BY
     l_returnflag,
     l_linestatus;
-END;
+"""
+
+conn_params = {
+    'host':'localhost', 
+    'port':'5432',
+    'user':'viktor',
+    'passwd':'741286', 
+    'name':'tpch',
+}
+
+db_connector = PostgresqlConnector(**conn_params)
+results = db_connector.fetch_results(sql=query)
+db_connector.close_db()
+
+print(results)

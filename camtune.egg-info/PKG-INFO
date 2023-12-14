@@ -1,0 +1,6 @@
+Metadata-Version: 2.1
+Name: camtune
+Version: 0.1
+Summary: LA-MCTS-based DBMS configuration tuning framework
+Author: Wenxuan Li
+Author-email: wl446@cam.ac.uk
