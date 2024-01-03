@@ -1,0 +1,23 @@
+[2023-12-26 17:56:55,277:postgresql_db.py#L397:INFO]: [PostgresqlDB] Remote PostgreSQL server shut down successfully
+[2023-12-26 17:56:55,779:postgresql_db.py#L380:INFO]: [PostgresqlDB] config file modification done.
+[2023-12-26 17:56:55,878:postgresql_db.py#L427:INFO]: [PostgresqlDB] Remotely starting PostgreSQL server...
+[2023-12-26 17:56:56,022:postgresql_db.py#L459:INFO]: [PostgresqlDB] Wait for connection to the started server...
+[2023-12-26 17:56:58,045:postgresql_db.py#L469:INFO]: [PostgresqlDB] Successfully connected to the started PostgreSQL Server
+[2023-12-26 17:56:58,045:postgresql_db.py#L486:INFO]: [PostgresqlDB] 2 seconds waiting for connection
+[2023-12-26 17:56:58,045:postgresql_db.py#L487:INFO]: [PostgresqlDB] start command: postgres --config_file=/var/lib/postgresql/experiment/conf/tune_cnf.conf
+[2023-12-26 17:56:58,045:postgresql_db.py#L488:INFO]: [PostgresqlDB] PostgresSQL is  up
+[2023-12-26 17:56:58,045:postgresql_db.py#L269:INFO]: [PostgresqlDB] Sleeping for 0 seconds after restarting postgres
+[2023-12-26 17:56:58,045:postgresql_db.py#L278:INFO]: [PostgresqlDB] No knobs need to be applied online
+[2023-12-26 17:56:58,057:postgresql_db.py#L323:INFO]: [PostgresqlDB] Knob backend_flush_after is not successfully set to 107 (actual value: 856kB)
+[2023-12-26 17:56:58,058:postgresql_db.py#L323:INFO]: [PostgresqlDB] Knob checkpoint_flush_after is not successfully set to 47 (actual value: 376kB)
+[2023-12-26 17:56:58,060:postgresql_db.py#L323:INFO]: [PostgresqlDB] Knob effective_cache_size is not successfully set to 204453 (actual value: 1635624kB)
+[2023-12-26 17:56:58,062:postgresql_db.py#L323:INFO]: [PostgresqlDB] Knob shared_buffers is not successfully set to 692328 (actual value: 5538624kB)
+[2023-12-26 17:56:58,062:postgresql_db.py#L323:INFO]: [PostgresqlDB] Knob temp_buffers is not successfully set to 8777 (actual value: 70216kB)
+[2023-12-26 17:56:58,062:postgresql_db.py#L323:INFO]: [PostgresqlDB] Knob wal_buffers is not successfully set to 234515 (actual value: 1876120kB)
+[2023-12-26 17:56:58,063:postgresql_db.py#L323:INFO]: [PostgresqlDB] Knob wal_writer_flush_after is not successfully set to 364708048 (actual value: 2917664384kB)
+[2023-12-26 17:56:58,063:postgresql_db.py#L284:INFO]: [PostgresqlDB] 7 knobs not successfully applied offline.
+[2023-12-26 17:56:58,071:postgresql_db.py#L225:INFO]: [PostgresqlDB] Connected to PostgreSQL server for query execution:
+[2023-12-26 17:56:58,071:postgresql_db.py#L229:INFO]: [PostgresqlDB] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch_pgbench/18.sql
+[2023-12-26 17:57:04,719:postgresql_db.py#L235:INFO]: [PostgresqlDB] Query execution failed when executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch_pgbench/18.sql
+[2023-12-26 17:57:04,725:postgresql_db.py#L236:INFO]: [PostgresqlDB] Error information: SSL SYSCALL error: EOF detected
+

@@ -1,5 +1,5 @@
 from camtune.database import PostgresqlDB
-from camtune.config_space import ConfigurationSpace, PGSQL_KNOB_JSON_13, PGSQL_JOB_SHAP
+from camtune.search_space import SearchSpace, PGSQL_KNOB_JSON_13, PGSQL_JOB_SHAP
 
 IS_KV_CONFIG = {
     PGSQL_JOB_SHAP: True,
@@ -23,7 +23,7 @@ if __name__ == '__main__':
         **DB_CONN_PARAMS
     )
 
-    config_space = ConfigurationSpace(
+    config_space = SearchSpace(
         knob_definition_path=PGSQL_JOB_SHAP, 
         is_kv_config=IS_KV_CONFIG[PGSQL_JOB_SHAP]
     )

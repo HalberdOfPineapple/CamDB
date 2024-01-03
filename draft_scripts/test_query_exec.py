@@ -1,5 +1,5 @@
 from camtune.database import PostgresqlDB, BENCHMARK
-from camtune.config_space import  PGSQL_KNOB_JSON_13, PGSQL_JOB_SHAP
+from camtune.search_space import  PGSQL_KNOB_JSON_13, PGSQL_JOB_SHAP
 
 IS_KV_CONFIG = {
     PGSQL_JOB_SHAP: True,

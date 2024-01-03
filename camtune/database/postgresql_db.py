@@ -3,11 +3,11 @@ import json
 import time
 import subprocess
 import paramiko
-from typing import List
+from typing import List, Tuple
 import configparser
 
 from camtune.utils.logger import get_logger
-from camtune.utils.parser import ConfigParser
+from camtune.utils.parser import ConfigParser, parse_pgbench_output
 
 from ConfigSpace.configuration_space import Configuration 
 from .dbconnector import PostgresqlConnector
@@ -59,9 +59,10 @@ def initialize_knobs(knobs_config, num) -> dict:
     return knob_details
 
 class PostgresqlDB:
-    def __init__(self, args: configparser.ConfigParser):
+    def __init__(self, args: dict, param_logger=None):
         args_db, args_ssh, args_tune = args['database'], args['ssh'], args['tune']
 
+        # ---------------- Connection & Server Settings --------------
         self.host = args_db['db_host']
         self.port = args_db['db_port']
         self.user_name = args_db['db_user_name']
@@ -74,51 +75,138 @@ class PostgresqlDB:
         self.pgcnf = args_db['pg_conf']
         self.pgsock = args_db['pg_sock']
 
+        # ------------------ Workload Settings -----------------------
         # Note that query can be saved locally
         self.benchmark = args_db['benchmark']
-        self.benchmark_fast: bool = eval(args_db['benchmark_fast'])
-        if self.benchmark not in QUERY_PATH_MAP:
-            raise ValueError(f"Undefined Benchmark")
-        self.query_path = QUERY_PATH_MAP[self.benchmark]
+        self.benchmark_fast: bool = args_db['benchmark_fast']
+        if self.benchmark.upper() not in QUERY_PATH_MAP:
+            raise ValueError(f"[PostgresqlDB] Undefined Benchmark {self.benchmark}")
+        self.query_dir = QUERY_PATH_MAP[self.benchmark]
 
-        self.remote_mode = args_db['remote_mode']
+        self.use_pgbench: bool = args_db['use_pgbench']
+        if self.use_pgbench:
+            self.query_dir = self.query_dir + '_pgbench'
+
+        # ------------------ Mode Settings -----------------------
+        self.remote_mode: bool = args_db['remote_mode']
         if self.remote_mode:
             self.ssh_user = args_ssh['ssh_user']
             self.ssh_pwd = args_ssh['ssh_pwd']
         
+        self.online_mode: bool = args_db['online_mode']
+        
+        # ------------------ Knob Settings -----------------------
         self.knob_details = \
-            initialize_knobs(args_tune['knob_definitions'], int(args_tune['knob_num']))
+            initialize_knobs(args_tune['knob_definitions'], args_tune['knob_num'])
+        
+        # ------------------ Logger Settings -----------------------
+        if param_logger:
+            global logger
+            logger = param_logger
 
-    def step(self, config: Configuration) -> dict:
+    def step(self, config: Configuration) :
         knobs = dict(config).copy()
-        self.apply_knobs_offline(knobs)
+        print('-' * 30 + ' Knobs ' + '-' * 30)
+        print(knobs)
 
-        return self.run_benchmark()
+        logger.info('-' * 35 + ' Applying Knobs ' + '-' * 35)
+        if self.online_mode:
+            self.apply_knobs_online(knobs)
+        else:
+            self.apply_knobs_offline(knobs)
+        logger.info('-' * 80)
 
-    def run_benchmark(self) -> dict:
-        benchmark_dir = os.path.join(BENCHMARK_DIR, self.benchmark.lower())
+        
+        res, failed = self.run_benchmark()
+        # res = {}
+        return res
 
-        res = {'benchmark': self.benchmark}
+    def run_benchmark(self) -> Tuple[dict, list]:
+        benchmark_name = self.benchmark + ('_fast' if self.benchmark_fast else '')
+        res = {'benchmark': benchmark_name}
+
         total_exec_time = 0
         query_file_names = []
 
         if self.benchmark.upper() == 'TPCH':
-            query_list_file = 'tpch_query_list.txt' if not self.benchmark_fast \
-                                    else 'tpch_query_fast_list.txt'
+            if not self.benchmark_fast:
+                query_list_file = 'tpch_query_list.txt'
+            else:
+                query_list_file = 'tpch_query_fast_list.txt'
+                # query_list_file = 'tpch_query_copy.txt'
+            logger.info(f"[PostgresqlDB] Exeucting queries listed in {query_list_file}")
+
             lines = open(os.path.join(BENCHMARK_DIR, query_list_file), 'r').readlines()
             for line in lines:
                 query_file_names.append(line.rstrip())
-                
-            results = self.exec_queries(
-                [os.path.join(benchmark_dir, query_file_name) for query_file_name in query_file_names]
-            )
+            query_file_names = [os.path.join(self.query_dir, query_file_name) for query_file_name in query_file_names]
+            
+            if self.use_pgbench:
+                results, failed = self.exec_queries_pgbench(query_file_names)
+                for query_file_name in query_file_names:
+                    if query_file_name in results:
+                        # latency measured in ms
+                        avg_latency = float(results[query_file_name]['latency_average'])
+                        total_exec_time += avg_latency
+            else:
+                results, failed = self.exec_queries(query_file_names)
 
-            for _, exec_res in results.items():
-                exec_time = float(exec_res[0]['execution_time'])
-                total_exec_time += exec_time
+                for _, exec_res in results.items():
+                    exec_time = float(exec_res[0]['execution_time'])
+                    total_exec_time += exec_time
             res['total_exec_time'] = total_exec_time
 
-        return res
+        return res, failed
+
+    def exec_queries_pgbench(self, query_file_names: List[str]):
+        res: dict = {}
+        failed = []
+        if self.remote_mode:
+            remote_tmp_sql = '/tmp/tmp.sql'
+
+            # Build SSH connection
+            ssh = paramiko.SSHClient()
+            ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+            ssh.connect(self.host, username=self.ssh_user, password=self.ssh_pwd,
+                        disabled_algorithms={'pubkeys': ['rsa-sha2-256', 'rsa-sha2-512']})
+            
+            for query_file_name in query_file_names:
+                sftp = ssh.open_sftp()
+                try:
+                    # Put local query file into a temporary file in remote server
+                    sftp.put(query_file_name, remote_tmp_sql)
+                except IOError:
+                    logger.info(f'[PostgresqlDB] Remote SFTP put SQL query {query_file_name} failed')
+                    if sftp: sftp.close()
+                    continue
+                if sftp: sftp.close()
+
+                # Execute pgbench command
+                command = f"pgbench -f {remote_tmp_sql} {self.db_name} -n"
+                _, stdout, stderr  = ssh.exec_command(command)
+                            
+                retcode = stdout.channel.recv_exit_status()
+                if retcode != 0:
+                    logger.info(f'[PostgresqlDB] Remote executing SQL query {query_file_name} using pgbench failed, with following information:')
+                    logger.info(f'[PostgresqlDB] STDOUT: {stdout.read().decode("utf-8").strip()}')
+                    logger.error(f'[PostgresqlDB] STDERR: {stderr.read().decode("utf-8").strip()}')
+                    failed.append(query_file_name)
+                    continue
+
+                output = stdout.read().decode('utf-8')
+                res[query_file_name] = parse_pgbench_output(output)
+                logger.info(f'[PostgresqlDB] Remote executing SQL query {query_file_name} using pgbench successfully')
+                            
+            if ssh: ssh.close()
+        else:
+            for query_file_name in query_file_names:
+                command = f"pgbench -f {query_file_name} {self.db_name} -n"
+                result = subprocess.run(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+                if result.returncode != 0:
+                    logger.info(f'[PostgresqlDB] Local execution of SQL query {query_file_name} using pgbench failed')
+                res[query_file_name] = parse_pgbench_output(result.stdout)
+
+        return res, failed
 
     # Assume the query files are stored locally (to be executed remotely)
     def exec_queries(self, query_file_names: List[str], json=True):
@@ -130,7 +218,8 @@ class PostgresqlDB:
             queries.append((query_file, query))
 
         results = {}
-        curr_query_file = None
+        failed = []
+        db_conn: PostgresqlConnector = None
         try:
             # Build connection to PostgreSQL server
             db_conn = PostgresqlConnector(host=self.host,
@@ -139,25 +228,28 @@ class PostgresqlDB:
                                           passwd=self.passwd,
                                           name=self.db_name)
             if db_conn.conn.closed == 0:
-                logger.info('Connected to PostgreSQL db for query execution:')
+                logger.info('[PostgresqlDB] Connected to PostgreSQL server for query execution:')
 
             # Executing queries and fetch execution results
             for query_file, query in queries:
-                curr_query_file = query_file
-                logger.info(f'Executing {query_file}')
+                logger.info(f'[PostgresqlDB] Executing {query_file}')
 
-                result = db_conn.fetch_results(query, json=json)
-                results[query_file] = result
-            
+                try:
+                    result = db_conn.fetch_results(query, json=json)
+                    results[query_file] = result
+                except Exception as e:
+                    logger.info(f'[PostgresqlDB] Query execution failed when executing {query_file}')
+                    logger.info(f"[PostgresqlDB] Error information: {e}")
+                    print(f"[PostgresqlDB] Error information: {e}")
+                    failed.append(query_file)
+
             # Close connection
             db_conn.close_db()
         except:
-            if curr_query_file:
-                logger.info(f'Query execution failed when executing {curr_query_file}')
-            else:
-                logger.info(f'Query execution failed')
+            logger.info(f'[PostgresqlDB] Query execution failed.')
+            if db_conn: db_conn.close_db()
         
-        return results
+        return results, failed
     
     def apply_knobs_offline(self, knobs: dict):
         self.kill_postgres()
@@ -169,57 +261,83 @@ class PostgresqlDB:
                 wal_segment_size = 16
             if knobs['min_wal_size'] < 2 * wal_segment_size:
                 knobs['min_wal_size'] = 2 * wal_segment_size
-                logger.info('"min_wal_size" must be at least twice "wal_segment_size"')
+                logger.info('[PostgresqlDB] Knob "min_wal_size" must be at least twice "wal_segment_size"')
 
+        # --------------------------------------------------------------------
+        # Adjust knobs values by modifying the configuration file offline
         knobs_not_in_cnf = self.modify_config_file(knobs)
+
+        # --------------------------------------------------------------------
+        # If PostgreSQL server cannot start normally, terminate the program
         success = self.start_postgres()
+        if not success:
+            raise RuntimeError("[PostgresqlDB] PostgreSQL failed to start after applying knobs offline.")
 
-        try:
-            logger.info('sleeping for {} seconds after restarting postgres'.format(RESTART_WAIT_TIME))
-            time.sleep(RESTART_WAIT_TIME)
+        logger.info('[PostgresqlDB] Sleeping for {} seconds after restarting postgres'.format(RESTART_WAIT_TIME))
+        time.sleep(RESTART_WAIT_TIME)
 
-            if len(knobs_not_in_cnf) > 0:
-                tmp_rds = {}
-                for knob_rds in knobs_not_in_cnf:
-                    tmp_rds[knob_rds] = knobs[knob_rds]
-                self.apply_knobs_online(tmp_rds)
-            else:
-                logger.info("No Knobs need to be applied online")
-        except:
-            success = False
+        # --------------------------------------------------------------------
+        # Apply knobs that have not been written in configuration file online
+        if len(knobs_not_in_cnf) > 0:
+            tmp_rds = {}
+            for knob_rds in knobs_not_in_cnf:
+                tmp_rds[knob_rds] = knobs[knob_rds]
+            self.apply_knobs_online(tmp_rds)
+        else:
+            logger.info("[PostgresqlDB] No knobs need to be applied online")
 
-        self.check_knobs_applied(knobs)
-        logger.info("[{}] Knobs applied offline!".format(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())))
-        return success
+        self.check_knobs_applied(knobs, online=False)
 
     def apply_knobs_online(self, knobs: dict):
-        # self.restart_rds()
         # apply knobs remotely
-        logger.info(f"Knobs to be applied online: {list(knobs.keys())}")
-        db_conn = PostgresqlConnector(host=self.host,
-                                        port=self.port,
-                                        user=self.user_name,
-                                        passwd=self.passwd,
-                                        name=self.db_name)
+        logger.info(f"[PostgresqlDB] Knobs to be applied online: {list(knobs.keys())}")
+        db_conn: PostgresqlConnector = None
+        try:
+            db_conn = PostgresqlConnector(host=self.host,
+                                            port=self.port,
+                                            user=self.user_name,
+                                            passwd=self.passwd,
+                                            name=self.db_name)
 
-        for key in knobs.keys():
-            db_conn.set_knob_value(key, knobs[key])
-        db_conn.close_db()
+            for key in knobs.keys():
+                db_conn.set_knob_value(key, knobs[key])
+            db_conn.close_db()
+        except Exception as e:
+            logger.info(f"[PostgresqlDB] Online knob setting failed with information: {e}")
 
-        self.check_knobs_applied(knobs)
-        logger.info("[{}] Knobs applied online!".format(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())))
-        return True
+        self.check_knobs_applied(knobs, online=True)
 
-    def check_knobs_applied(self, knobs: dict):
-        db_conn = PostgresqlConnector(host=self.host,
-                                        port=self.port,
-                                        user=self.user_name,
-                                        passwd=self.passwd,
-                                        name=self.db_name)
-        for k, v in knobs.items():
-            applied, actual_val = db_conn.check_knob_apply(k, v)
-            if not applied:
-                logger.info(f"Knob {k} is not successfully set to {v} (actual value: {actual_val})")
+    def check_knobs_applied(self, knobs: dict, online: bool) -> int:
+        num_not_applied = 0
+        db_conn: PostgresqlConnector = None
+        try:
+            db_conn = PostgresqlConnector(host=self.host,
+                                            port=self.port,
+                                            user=self.user_name,
+                                            passwd=self.passwd,
+                                            name=self.db_name)
+            for k, v in knobs.items():
+                if k in self.knob_details and 'unit' in self.knob_details[k]:
+                    unit = self.knob_details[k]['unit']
+                else:
+                    unit = None
+                applied, actual_val = db_conn.check_knob_apply(k, v, unit=unit)
+                if not applied:
+                    num_not_applied += 1
+                    logger.info(f"[PostgresqlDB] Knob {k} is not successfully set to {v} (actual value: {actual_val})")
+            db_conn.close_db()
+        except Exception as e:
+            logger.info(f"[PostgresqlDB] Knobs checking failed with exception information: {e}")
+            if db_conn: 
+                db_conn.close_db()
+            return -1
+
+        check_mode = "online" if online else "offline"
+        if num_not_applied > 0:
+            logger.info(f"[PostgresqlDB] {num_not_applied} / {len(knobs)} knobs not successfully applied {check_mode}.")
+        elif num_not_applied == 0:
+            logger.info(f"[PostgresqlDB] Knobs successfully applied {check_mode}.")
+        return num_not_applied
 
     
     def modify_config_file(self, knobs: dict):
@@ -235,7 +353,7 @@ class PostgresqlDB:
             try:
                 sftp.get(self.pgcnf, cnf) 
             except IOError:
-                logger.info('PGCNF not exists!')
+                logger.info('[PostgresqlDB] Remote SFTP get failed: PostgreSQL configuration file does not exist.')
 
             if sftp: sftp.close()
             if ssh: ssh.close()
@@ -257,17 +375,21 @@ class PostgresqlDB:
             ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
             ssh.connect(self.host, username=self.ssh_user, password=self.ssh_pwd,
                         disabled_algorithms={'pubkeys': ['rsa-sha2-256', 'rsa-sha2-512']})
-            
-            # Put newly generated configuration to SSH server
-            sftp = ssh.open_sftp()
+
+            sftp = None
             try:
+                # Put newly generated configuration to SSH server
+                sftp = ssh.open_sftp()
+
+                # Note cnf is the local temporary file while `self.pgcnf` is the remote file
                 sftp.put(cnf, self.pgcnf)
-            except IOError:
-                logger.info('PGCNF not exists!')
+            except IOError as e:
+                logger.info(f'[PostgresqlDB] Remote SFTP put failed: {e}.')
+
             if sftp: sftp.close()
             if ssh: ssh.close()
 
-        logger.info('generated config file done')
+        logger.info('[PostgresqlDB] config file modification done.')
         return knobs_not_in_cnf
 
     def kill_postgres(self):
@@ -284,15 +406,15 @@ class PostgresqlDB:
             ssh_stdin, ssh_stdout, ssh_stderr = ssh.exec_command(kill_cmd)
             ret_code = ssh_stdout.channel.recv_exit_status()
             if ret_code == 0:
-                logger.info("Close db successfully")
+                logger.info("[PostgresqlDB] Remote PostgreSQL server shut down successfully")
                 print()
             else:
-                logger.info("Force close DB!")
+                logger.info("[PostgresqlDB] Remote shut down attempt failed: force the server to shut down")
                 ssh.exec_command(force_kill_cmd1)
                 ssh.exec_command(force_kill_cmd2)
+                logger.info('[PostgresqlDB] Remote PostgreSql server shut down by forcing')
 
             ssh.close()
-            logger.info('postgresql is shut down remotely')
         else:
             p_close = subprocess.Popen(kill_cmd, shell=True, stderr=subprocess.STDOUT, stdout=subprocess.PIPE,
                                        close_fds=True)
@@ -300,12 +422,12 @@ class PostgresqlDB:
                 outs, errs = p_close.communicate(timeout=TIMEOUT_CLOSE)
                 ret_code = p_close.poll()
                 if ret_code == 0:
-                    logger.info("Close db successfully")
+                    logger.info("[PostgresqlDB] Local PostgreSQL server shut down successfully")
             except subprocess.TimeoutExpired:
-                logger.info("Force close!")
+                logger.info("[PostgresqlDB] Local shut down attempt failed: force the server to shut down")
                 os.system(force_kill_cmd1)
                 os.system(force_kill_cmd2)
-            logger.info('postgresql is shut down')
+                logger.info('[PostgresqlDB] Local PostgreSql server shut down by forcing')
     
     def start_postgres(self):
         if self.remote_mode:
@@ -314,6 +436,7 @@ class PostgresqlDB:
             ssh.connect(self.host, username=self.ssh_user, password=self.ssh_pwd,
                         disabled_algorithms={'pubkeys': ['rsa-sha2-256', 'rsa-sha2-512']})
 
+            logger.info('[PostgresqlDB] Remotely starting PostgreSQL server...')
             start_cmd = '{} --config_file={} -D {}'.format(self.postgres, self.pgcnf, self.pgdata)
             wrapped_cmd = 'echo $$; exec ' + start_cmd
             _, start_stdout, _ = ssh.exec_command(wrapped_cmd)
@@ -324,12 +447,13 @@ class PostgresqlDB:
                 ssh_stdin, ssh_stdout, _ = ssh.exec_command(cgroup_cmd)
                 ssh_stdin.write(self.ssh_pwd + '\n')
                 ssh_stdin.flush()
+
                 ret_code = ssh_stdout.channel.recv_exit_status()
                 ssh.close()
                 if not ret_code:
-                    logger.info('add {} to memory,cpuset:server'.format(self.pid))
+                    logger.info('[PostgresqlDB] Add {} to memory,cpuset:server'.format(self.pid))
                 else:
-                    logger.info('Failed: add {} to memory,cpuset:server'.format(self.pid))
+                    logger.info('[PostgresqlDB] Failed to add {} to memory,cpuset:server'.format(self.pid))
 
         else:
             proc = subprocess.Popen([self.postgres, '--config_file={}'.format(self.pgcnf), '-D',  self.pgdata])
@@ -338,13 +462,13 @@ class PostgresqlDB:
                 command = 'sudo cgclassify -g memory,cpuset:server ' + str(self.pid)
                 p = os.system(command)
                 if not p:
-                    logger.info('add {} to memory,cpuset:server'.format(self.pid))
+                    logger.info('[PostgresqlDB] add {} to memory,cpuset:server'.format(self.pid))
                 else:
-                    logger.info('Failed: add {} to memory,cpuset:server'.format(self.pid))
+                    logger.info('[PostgresqlDB] Failed: add {} to memory,cpuset:server'.format(self.pid))
 
         count = 0
         start_success = True
-        logger.info('wait for connection')
+        logger.info('[PostgresqlDB] Wait for connection to the started server...')
         while True:
             try:
                 db_conn = PostgresqlConnector(host=self.host,
@@ -354,7 +478,7 @@ class PostgresqlDB:
                                           name=self.db_name)
                 db_conn = db_conn.conn
                 if db_conn.closed == 0:
-                    logger.info('Connected to PostgreSQL db')
+                    logger.info('[PostgresqlDB] Successfully connected to the started PostgreSQL Server')
                     db_conn.close()
                     break
             except:
@@ -364,14 +488,15 @@ class PostgresqlDB:
             count = count + 1
             if count > 30: # 600
                 start_success = False
-                logger.info("can not connect to DB")
+                logger.info("[PostgresqlDB] PG server start failed: can not connect to DB")
                 clear_cmd = """ps -ef|grep postgres|grep -v grep|cut -c 9-15|xargs kill -9"""
                 subprocess.Popen(clear_cmd, shell=True, stderr=subprocess.STDOUT, stdout=subprocess.PIPE,
                                  close_fds=True)
                 logger.info("kill all postgres process")
                 break
 
-        logger.info('finish {} seconds waiting for connection'.format(count))
-        logger.info('postgres --config_file={}'.format(self.pgcnf))
-        logger.info('postgres is up')
+        logger.info('[PostgresqlDB] {} seconds waiting for connection'.format(count))
+        logger.info('[PostgresqlDB] start command: postgres --config_file={}'.format(self.pgcnf))
+        logger.info(f'[PostgresqlDB] PostgresSQL is {"" if start_success else "not"} up')
+    
         return start_success

@@ -1,0 +1,10 @@
+[2024-01-03 00:09:47,945:postgresql_db.py#L112:INFO]: ----------------------------------- Applying Knobs -----------------------------------
+[2024-01-03 00:09:48,439:postgresql_db.py#L409:INFO]: [PostgresqlDB] Remote PostgreSQL server shut down successfully
+[2024-01-03 00:09:49,025:postgresql_db.py#L392:INFO]: [PostgresqlDB] config file modification done.
+[2024-01-03 00:09:49,156:postgresql_db.py#L439:INFO]: [PostgresqlDB] Remotely starting PostgreSQL server...
+[2024-01-03 00:09:49,306:postgresql_db.py#L471:INFO]: [PostgresqlDB] Wait for connection to the started server...
+[2024-01-03 00:10:20,371:postgresql_db.py#L491:INFO]: [PostgresqlDB] PG server start failed: can not connect to DB
+[2024-01-03 00:10:20,374:postgresql_db.py#L495:INFO]: kill all postgres process
+[2024-01-03 00:10:20,374:postgresql_db.py#L498:INFO]: [PostgresqlDB] 31 seconds waiting for connection
+[2024-01-03 00:10:20,374:postgresql_db.py#L499:INFO]: [PostgresqlDB] start command: postgres --config_file=/var/lib/postgresql/experiment/conf/tune_cnf.conf
+[2024-01-03 00:10:20,374:postgresql_db.py#L500:INFO]: [PostgresqlDB] PostgresSQL is not up

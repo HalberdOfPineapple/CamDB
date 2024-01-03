@@ -11,7 +11,7 @@ PGSQL_KNOB_JSON_13 = "/home/viktor/Experiments/TPC-H/knob_definitions/postgres-1
 PGSQL_JOB_SHAP = "/home/viktor/Experiments/TPC-H/knob_definitions/JOB_SHAP_PostgreSQL.json"
 
 
-class ConfigurationSpace:
+class SearchSpace:
     def __init__(
           self, 
           knob_definition_path,

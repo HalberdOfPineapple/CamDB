@@ -85,7 +85,7 @@ class PostgresqlConnector(DBConnector):
         if self.conn:
             self.cursor.execute(sql)
     
-    def check_knob_apply(self, k, v0):
+    def check_knob_apply(self, k, v0, unit:int = None):
         sql = 'SHOW {};'.format(k)
         r = self.fetch_results(sql)
         print(r)
@@ -104,7 +104,10 @@ class PostgresqlConnector(DBConnector):
 
         actual_val = re.findall(r"[-+]?\d*\.\d+|\d+", vv)
         if isinstance(v0, int):
-            applied = int(actual_val[0]) == v0
+            if unit:
+                applied = int(actual_val[0]) == (v0 * unit)
+            else:
+                applied = int(actual_val[0]) == v0
         elif isinstance(v0, float):
             applied = math.isclose(float(actual_val[0]), v0, rel_tol=1e-5)
         else:

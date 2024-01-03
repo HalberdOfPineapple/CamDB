@@ -1,0 +1,42 @@
+expr_name: test_random_opt
+ssh:
+  # SSH user is set to postgres for allowing access for pg_ctl and postgres server
+  # while the PostgresqlDB.user refers to the user of the database accessing data
+  ssh_host: localhost
+  ssh_user: postgres
+  ssh_pwd: '741286'
+
+database:
+  db_host: localhost
+  db_port: '5432'
+  db_user_name: viktor
+  db_passwd: '741286'
+  db_name: tpch
+
+  pg_ctl: /usr/lib/postgresql/16/bin/pg_ctl
+  pg_data: /var/lib/postgresql/16/main
+  pg_server: /usr/lib/postgresql/16/bin/postgres
+  pg_conf: /var/lib/postgresql/experiment/conf/tune_cnf.conf
+  pg_sock: /var/run/postgresql/.s.PGSQL.543
+
+  remote_mode: true
+  isolation_mode: false
+  online_mode: false
+
+  benchmark: TPCH
+  benchmark_fast: true # only execute short queries
+  use_pgbench: true
+
+tune:
+  strategy: random
+  seed: 1024
+
+  # saved locally
+  knob_definitions: /home/viktor/Experiments/CamDB/camtune/knobs/JOB_SHAP_Modified.json
+  knob_num: -1
+
+  is_minimizing: True
+
+  init_design: sobol
+  num_init: 5
+  computation_budget: 5

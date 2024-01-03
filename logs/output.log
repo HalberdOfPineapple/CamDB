@@ -1,123 +1,36 @@
-[2023-12-14 12:12:30,784:postgresql_db.py#L141:INFO]: Connected to PostgreSQL db for query execution:
-[2023-12-14 12:12:30,784:postgresql_db.py#L143:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/1.sql
-[2023-12-14 12:16:57,243:postgresql_db.py#L219:INFO]: Close db successfully
-[2023-12-14 12:16:57,244:postgresql_db.py#L227:INFO]: postgresql is shut down remotely
-[2023-12-14 12:20:04,913:postgresql_db.py#L284:INFO]: Force close DB!
-[2023-12-14 12:20:04,992:postgresql_db.py#L289:INFO]: postgresql is shut down remotely
-[2023-12-14 12:20:20,684:postgresql_db.py#L285:INFO]: Force close DB!
-[2023-12-14 12:20:20,745:postgresql_db.py#L290:INFO]: postgresql is shut down remotely
-[2023-12-14 12:29:53,551:postgresql_db.py#L285:INFO]: Force close DB!
-[2023-12-14 12:29:53,660:postgresql_db.py#L290:INFO]: postgresql is shut down remotely
-[2023-12-14 12:29:54,189:postgresql_db.py#L265:INFO]: generated config file done
-[2023-12-14 12:29:54,422:postgresql_db.py#L342:INFO]: wait for connection
-[2023-12-14 12:30:05,477:postgresql_db.py#L281:INFO]: Close db successfully
-[2023-12-14 12:30:05,477:postgresql_db.py#L289:INFO]: postgresql is shut down remotely
-[2023-12-14 12:30:05,965:postgresql_db.py#L264:INFO]: generated config file done
-[2023-12-14 12:30:06,190:postgresql_db.py#L341:INFO]: wait for connection
-[2023-12-14 12:30:08,218:postgresql_db.py#L351:INFO]: Connected to PostgreSQL db
-[2023-12-14 12:30:08,219:postgresql_db.py#L368:INFO]: finish 2 seconds waiting for connection
-[2023-12-14 12:30:08,219:postgresql_db.py#L369:INFO]: postgres --config_file=/var/lib/postgresql/experiment/conf/tune_cnf.conf
-[2023-12-14 12:30:08,219:postgresql_db.py#L370:INFO]: postgres is up
-[2023-12-14 12:30:08,219:postgresql_db.py#L172:INFO]: sleeping for 0 seconds after restarting postgres
-[2023-12-14 12:30:08,219:postgresql_db.py#L181:INFO]: No Knobs need to be applied online
-[2023-12-14 12:30:08,238:postgresql_db.py#L216:INFO]: Knob backend_flush_after is not successfully set to 107 (actual value: 856kB)
-[2023-12-14 12:30:08,240:postgresql_db.py#L216:INFO]: Knob checkpoint_flush_after is not successfully set to 47 (actual value: 376kB)
-[2023-12-14 12:30:08,241:postgresql_db.py#L216:INFO]: Knob effective_cache_size is not successfully set to 204453 (actual value: 1635624kB)
-[2023-12-14 12:30:08,247:postgresql_db.py#L216:INFO]: Knob shared_buffers is not successfully set to 692328 (actual value: 5538624kB)
-[2023-12-14 12:30:08,248:postgresql_db.py#L216:INFO]: Knob temp_buffers is not successfully set to 8777 (actual value: 70216kB)
-[2023-12-14 12:30:08,248:postgresql_db.py#L216:INFO]: Knob wal_buffers is not successfully set to 234515 (actual value: 1876120kB)
-[2023-12-14 12:30:08,249:postgresql_db.py#L216:INFO]: Knob wal_writer_flush_after is not successfully set to 364708048 (actual value: 2917664384kB)
-[2023-12-14 12:30:08,249:postgresql_db.py#L186:INFO]: [2023-12-14 12:30:08] Knobs applied offline!
-[2023-12-14 12:30:08,257:postgresql_db.py#L141:INFO]: Connected to PostgreSQL db for query execution:
-[2023-12-14 12:30:08,257:postgresql_db.py#L145:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/1.sql
-[2023-12-14 12:30:10,115:postgresql_db.py#L145:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/2.sql
-[2023-12-14 12:30:22,609:postgresql_db.py#L145:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/3.sql
-[2023-12-14 12:30:24,141:postgresql_db.py#L145:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/4.sql
-[2023-12-14 12:30:24,416:postgresql_db.py#L145:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/5.sql
-[2023-12-14 12:30:24,825:postgresql_db.py#L145:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/6.sql
-[2023-12-14 12:30:25,056:postgresql_db.py#L145:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/7.sql
-[2023-12-14 12:30:25,847:postgresql_db.py#L145:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/8.sql
-[2023-12-14 12:30:26,464:postgresql_db.py#L145:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/9.sql
-[2023-12-14 12:30:28,062:postgresql_db.py#L145:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/10.sql
-[2023-12-14 12:30:28,510:postgresql_db.py#L145:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/11.sql
-[2023-12-14 12:30:33,259:postgresql_db.py#L145:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/12.sql
-[2023-12-14 12:30:33,636:postgresql_db.py#L145:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/13.sql
-[2023-12-14 12:30:34,727:postgresql_db.py#L145:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/14.sql
-[2023-12-14 12:30:35,034:postgresql_db.py#L145:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/15.sql
-[2023-12-14 12:30:35,618:postgresql_db.py#L145:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/16.sql
-[2023-12-14 12:30:35,786:postgresql_db.py#L145:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/18.sql
-[2023-12-14 12:30:38,908:postgresql_db.py#L152:INFO]: Query execution failed
-[2023-12-14 12:35:24,394:postgresql_db.py#L284:INFO]: Force close DB!
-[2023-12-14 12:35:24,454:postgresql_db.py#L289:INFO]: postgresql is shut down remotely
-[2023-12-14 12:35:24,944:postgresql_db.py#L264:INFO]: generated config file done
-[2023-12-14 12:35:25,217:postgresql_db.py#L341:INFO]: wait for connection
-[2023-12-14 12:35:27,257:postgresql_db.py#L351:INFO]: Connected to PostgreSQL db
-[2023-12-14 12:35:27,257:postgresql_db.py#L368:INFO]: finish 2 seconds waiting for connection
-[2023-12-14 12:35:27,257:postgresql_db.py#L369:INFO]: postgres --config_file=/var/lib/postgresql/experiment/conf/tune_cnf.conf
-[2023-12-14 12:35:27,257:postgresql_db.py#L370:INFO]: postgres is up
-[2023-12-14 12:35:27,257:postgresql_db.py#L172:INFO]: sleeping for 0 seconds after restarting postgres
-[2023-12-14 12:35:27,257:postgresql_db.py#L181:INFO]: No Knobs need to be applied online
-[2023-12-14 12:35:27,268:postgresql_db.py#L216:INFO]: Knob backend_flush_after is not successfully set to 107 (actual value: 856kB)
-[2023-12-14 12:35:27,269:postgresql_db.py#L216:INFO]: Knob checkpoint_flush_after is not successfully set to 47 (actual value: 376kB)
-[2023-12-14 12:35:27,271:postgresql_db.py#L216:INFO]: Knob effective_cache_size is not successfully set to 204453 (actual value: 1635624kB)
-[2023-12-14 12:35:27,273:postgresql_db.py#L216:INFO]: Knob shared_buffers is not successfully set to 692328 (actual value: 5538624kB)
-[2023-12-14 12:35:27,273:postgresql_db.py#L216:INFO]: Knob temp_buffers is not successfully set to 8777 (actual value: 70216kB)
-[2023-12-14 12:35:27,273:postgresql_db.py#L216:INFO]: Knob wal_buffers is not successfully set to 234515 (actual value: 1876120kB)
-[2023-12-14 12:35:27,275:postgresql_db.py#L216:INFO]: Knob wal_writer_flush_after is not successfully set to 364708048 (actual value: 2917664384kB)
-[2023-12-14 12:35:27,275:postgresql_db.py#L186:INFO]: [2023-12-14 12:35:27] Knobs applied offline!
-[2023-12-14 12:35:27,289:postgresql_db.py#L141:INFO]: Connected to PostgreSQL db for query execution:
-[2023-12-14 12:35:27,289:postgresql_db.py#L145:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/1.sql
-[2023-12-14 12:35:29,092:postgresql_db.py#L145:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/2.sql
-[2023-12-14 12:35:41,422:postgresql_db.py#L145:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/3.sql
-[2023-12-14 12:35:42,752:postgresql_db.py#L145:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/4.sql
-[2023-12-14 12:35:42,993:postgresql_db.py#L145:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/5.sql
-[2023-12-14 12:35:43,361:postgresql_db.py#L145:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/6.sql
-[2023-12-14 12:35:43,575:postgresql_db.py#L145:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/7.sql
-[2023-12-14 12:35:44,227:postgresql_db.py#L145:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/8.sql
-[2023-12-14 12:35:44,830:postgresql_db.py#L145:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/9.sql
-[2023-12-14 12:35:46,431:postgresql_db.py#L145:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/10.sql
-[2023-12-14 12:35:47,126:postgresql_db.py#L145:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/11.sql
-[2023-12-14 12:35:51,646:postgresql_db.py#L145:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/12.sql
-[2023-12-14 12:35:52,036:postgresql_db.py#L145:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/13.sql
-[2023-12-14 12:35:52,927:postgresql_db.py#L145:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/14.sql
-[2023-12-14 12:35:53,195:postgresql_db.py#L145:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/15.sql
-[2023-12-14 12:35:53,710:postgresql_db.py#L145:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/16.sql
-[2023-12-14 12:35:53,883:postgresql_db.py#L145:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/18.sql
-[2023-12-14 12:35:59,678:postgresql_db.py#L152:INFO]: Query execution failed
-[2023-12-14 12:37:21,009:postgresql_db.py#L290:INFO]: Force close DB!
-[2023-12-14 12:37:21,076:postgresql_db.py#L295:INFO]: postgresql is shut down remotely
-[2023-12-14 12:37:21,576:postgresql_db.py#L270:INFO]: generated config file done
-[2023-12-14 12:37:21,843:postgresql_db.py#L347:INFO]: wait for connection
-[2023-12-14 12:37:23,874:postgresql_db.py#L357:INFO]: Connected to PostgreSQL db
-[2023-12-14 12:37:23,874:postgresql_db.py#L374:INFO]: finish 2 seconds waiting for connection
-[2023-12-14 12:37:23,874:postgresql_db.py#L375:INFO]: postgres --config_file=/var/lib/postgresql/experiment/conf/tune_cnf.conf
-[2023-12-14 12:37:23,874:postgresql_db.py#L376:INFO]: postgres is up
-[2023-12-14 12:37:23,874:postgresql_db.py#L178:INFO]: sleeping for 0 seconds after restarting postgres
-[2023-12-14 12:37:23,874:postgresql_db.py#L187:INFO]: No Knobs need to be applied online
-[2023-12-14 12:37:23,886:postgresql_db.py#L222:INFO]: Knob backend_flush_after is not successfully set to 107 (actual value: 856kB)
-[2023-12-14 12:37:23,888:postgresql_db.py#L222:INFO]: Knob checkpoint_flush_after is not successfully set to 47 (actual value: 376kB)
-[2023-12-14 12:37:23,889:postgresql_db.py#L222:INFO]: Knob effective_cache_size is not successfully set to 204453 (actual value: 1635624kB)
-[2023-12-14 12:37:23,892:postgresql_db.py#L222:INFO]: Knob shared_buffers is not successfully set to 692328 (actual value: 5538624kB)
-[2023-12-14 12:37:23,892:postgresql_db.py#L222:INFO]: Knob temp_buffers is not successfully set to 8777 (actual value: 70216kB)
-[2023-12-14 12:37:23,893:postgresql_db.py#L222:INFO]: Knob wal_buffers is not successfully set to 234515 (actual value: 1876120kB)
-[2023-12-14 12:37:23,894:postgresql_db.py#L222:INFO]: Knob wal_writer_flush_after is not successfully set to 364708048 (actual value: 2917664384kB)
-[2023-12-14 12:37:23,895:postgresql_db.py#L192:INFO]: [2023-12-14 12:37:23] Knobs applied offline!
-[2023-12-14 12:37:23,909:postgresql_db.py#L142:INFO]: Connected to PostgreSQL db for query execution:
-[2023-12-14 12:37:23,909:postgresql_db.py#L147:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/1.sql
-[2023-12-14 12:37:25,678:postgresql_db.py#L147:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/2.sql
-[2023-12-14 12:37:38,230:postgresql_db.py#L147:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/3.sql
-[2023-12-14 12:37:39,504:postgresql_db.py#L147:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/4.sql
-[2023-12-14 12:37:39,727:postgresql_db.py#L147:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/5.sql
-[2023-12-14 12:37:40,160:postgresql_db.py#L147:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/6.sql
-[2023-12-14 12:37:40,389:postgresql_db.py#L147:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/7.sql
-[2023-12-14 12:37:41,054:postgresql_db.py#L147:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/8.sql
-[2023-12-14 12:37:41,749:postgresql_db.py#L147:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/9.sql
-[2023-12-14 12:37:43,378:postgresql_db.py#L147:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/10.sql
-[2023-12-14 12:37:44,282:postgresql_db.py#L147:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/11.sql
-[2023-12-14 12:37:48,980:postgresql_db.py#L147:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/12.sql
-[2023-12-14 12:37:49,341:postgresql_db.py#L147:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/13.sql
-[2023-12-14 12:37:50,190:postgresql_db.py#L147:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/14.sql
-[2023-12-14 12:37:50,463:postgresql_db.py#L147:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/15.sql
-[2023-12-14 12:37:50,975:postgresql_db.py#L147:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/16.sql
-[2023-12-14 12:37:51,166:postgresql_db.py#L147:INFO]: Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/18.sql
-[2023-12-14 12:38:11,873:postgresql_db.py#L156:INFO]: Query execution failed when executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/18.sql
+[2024-01-02 23:00:28,838:tuner.py#L47:INFO]: [Tuner] Start initial profiling by lhs
+[2024-01-02 23:00:28,838:tuner.py#L47:INFO]: [Tuner] Start initial profiling by lhs
+[2024-01-02 23:03:07,997:tuner.py#L47:INFO]: [Tuner] Start initial profiling by lhs
+[2024-01-02 23:03:07,997:tuner.py#L47:INFO]: [Tuner] Start initial profiling by lhs
+[2024-01-02 23:03:39,549:tuner.py#L47:INFO]: [Tuner] Start initial profiling by lhs
+[2024-01-02 23:03:39,549:tuner.py#L47:INFO]: [Tuner] Start initial profiling by lhs
+[2024-01-02 23:05:57,657:tuner.py#L47:INFO]: [Tuner] Start initial profiling by lhs
+[2024-01-02 23:05:57,657:tuner.py#L47:INFO]: [Tuner] Start initial profiling by lhs
+[2024-01-02 23:06:37,658:tuner.py#L47:INFO]: [Tuner] Start initial profiling by lhs
+[2024-01-02 23:06:37,658:tuner.py#L47:INFO]: [Tuner] Start initial profiling by lhs
+[2024-01-02 23:07:34,480:tuner.py#L47:INFO]: [Tuner] Start initial profiling by lhs
+[2024-01-02 23:07:34,480:tuner.py#L47:INFO]: [Tuner] Start initial profiling by lhs
+[2024-01-02 23:24:31,296:tuner.py#L47:INFO]: [Tuner] Start initial profiling by lhs
+[2024-01-02 23:24:31,296:tuner.py#L47:INFO]: [Tuner] Start initial profiling by lhs
+[2024-01-02 23:24:48,184:tuner.py#L47:INFO]: [Tuner] Start initial profiling by lhs
+[2024-01-02 23:24:48,184:tuner.py#L47:INFO]: [Tuner] Start initial profiling by lhs
+[2024-01-02 23:29:14,296:tuner.py#L47:INFO]: [Tuner] Start initial profiling by lhs
+[2024-01-02 23:29:14,296:tuner.py#L47:INFO]: [Tuner] Start initial profiling by lhs
+[2024-01-02 23:30:48,378:tuner.py#L47:INFO]: [Tuner] Start initial profiling by lhs
+[2024-01-02 23:30:48,378:tuner.py#L47:INFO]: [Tuner] Start initial profiling by lhs
+[2024-01-02 23:50:58,771:tuner.py#L49:INFO]: [Tuner] Start initial profiling by lhs
+[2024-01-02 23:50:58,771:tuner.py#L49:INFO]: [Tuner] Start initial profiling by lhs
+[2024-01-02 23:51:56,730:tuner.py#L49:INFO]: [Tuner] Start initial profiling by lhs
+[2024-01-02 23:51:56,730:tuner.py#L49:INFO]: [Tuner] Start initial profiling by lhs
+[2024-01-02 23:55:52,844:tuner.py#L49:INFO]: [Tuner] Start initial profiling by lhs
+[2024-01-02 23:55:52,844:tuner.py#L49:INFO]: [Tuner] Start initial profiling by lhs
+[2024-01-02 23:57:54,092:tuner.py#L49:INFO]: [Tuner] Start initial profiling by sobol
+[2024-01-02 23:57:54,092:tuner.py#L49:INFO]: [Tuner] Start initial profiling by sobol
+[2024-01-02 23:58:38,571:tuner.py#L49:INFO]: [Tuner] Start initial profiling by sobol
+[2024-01-02 23:58:38,571:tuner.py#L49:INFO]: [Tuner] Start initial profiling by sobol
+[2024-01-02 23:58:48,948:tuner.py#L49:INFO]: [Tuner] Start initial profiling by sobol
+[2024-01-02 23:58:48,948:tuner.py#L49:INFO]: [Tuner] Start initial profiling by sobol
+[2024-01-02 23:59:10,824:tuner.py#L49:INFO]: [Tuner] Start initial profiling by sobol
+[2024-01-02 23:59:10,824:tuner.py#L49:INFO]: [Tuner] Start initial profiling by sobol
+[2024-01-03 00:09:47,906:tuner.py#L49:INFO]: [Tuner] Start initial profiling by sobol
+[2024-01-03 00:09:47,906:tuner.py#L49:INFO]: [Tuner] Start initial profiling by sobol

@@ -1,0 +1,33 @@
+[2023-12-29 13:32:17,848:postgresql_db.py#L112:INFO]: ----------------------------------- Applying Knobs -----------------------------------
+[2023-12-29 13:32:18,517:postgresql_db.py#L409:INFO]: [PostgresqlDB] Remote PostgreSQL server shut down successfully
+[2023-12-29 13:32:19,353:postgresql_db.py#L392:INFO]: [PostgresqlDB] config file modification done.
+[2023-12-29 13:32:19,617:postgresql_db.py#L439:INFO]: [PostgresqlDB] Remotely starting PostgreSQL server...
+[2023-12-29 13:32:19,881:postgresql_db.py#L471:INFO]: [PostgresqlDB] Wait for connection to the started server...
+[2023-12-29 13:32:21,913:postgresql_db.py#L481:INFO]: [PostgresqlDB] Successfully connected to the started PostgreSQL Server
+[2023-12-29 13:32:21,914:postgresql_db.py#L498:INFO]: [PostgresqlDB] 2 seconds waiting for connection
+[2023-12-29 13:32:21,914:postgresql_db.py#L499:INFO]: [PostgresqlDB] start command: postgres --config_file=/var/lib/postgresql/experiment/conf/tune_cnf.conf
+[2023-12-29 13:32:21,914:postgresql_db.py#L500:INFO]: [PostgresqlDB] PostgresSQL is  up
+[2023-12-29 13:32:21,914:postgresql_db.py#L276:INFO]: [PostgresqlDB] Sleeping for 0 seconds after restarting postgres
+[2023-12-29 13:32:21,914:postgresql_db.py#L287:INFO]: [PostgresqlDB] No knobs need to be applied online
+[2023-12-29 13:32:21,958:postgresql_db.py#L339:INFO]: [PostgresqlDB] Knobs successfully applied offline.
+[2023-12-29 13:32:21,958:postgresql_db.py#L117:INFO]: --------------------------------------------------------------------------------
+[2023-12-29 13:32:21,958:postgresql_db.py#L137:INFO]: [PostgresqlDB] Exeucting queries listed in tpch_query_fast_list.txt
+[2023-12-29 13:32:51,453:postgresql_db.py#L198:INFO]: [PostgresqlDB] Remote executing SQL query /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch_pgbench/1.sql using pgbench successfully
+[2023-12-29 13:32:59,405:postgresql_db.py#L198:INFO]: [PostgresqlDB] Remote executing SQL query /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch_pgbench/2.sql using pgbench successfully
+[2023-12-29 13:33:16,445:postgresql_db.py#L198:INFO]: [PostgresqlDB] Remote executing SQL query /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch_pgbench/3.sql using pgbench successfully
+[2023-12-29 13:33:21,349:postgresql_db.py#L198:INFO]: [PostgresqlDB] Remote executing SQL query /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch_pgbench/4.sql using pgbench successfully
+[2023-12-29 13:33:31,681:postgresql_db.py#L198:INFO]: [PostgresqlDB] Remote executing SQL query /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch_pgbench/5.sql using pgbench successfully
+[2023-12-29 13:33:36,830:postgresql_db.py#L198:INFO]: [PostgresqlDB] Remote executing SQL query /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch_pgbench/6.sql using pgbench successfully
+[2023-12-29 13:33:52,453:postgresql_db.py#L198:INFO]: [PostgresqlDB] Remote executing SQL query /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch_pgbench/7.sql using pgbench successfully
+[2023-12-29 13:34:08,849:postgresql_db.py#L198:INFO]: [PostgresqlDB] Remote executing SQL query /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch_pgbench/8.sql using pgbench successfully
+[2023-12-29 13:35:04,201:postgresql_db.py#L198:INFO]: [PostgresqlDB] Remote executing SQL query /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch_pgbench/9.sql using pgbench successfully
+[2023-12-29 13:35:16,080:postgresql_db.py#L198:INFO]: [PostgresqlDB] Remote executing SQL query /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch_pgbench/10.sql using pgbench successfully
+[2023-12-29 13:37:22,253:postgresql_db.py#L198:INFO]: [PostgresqlDB] Remote executing SQL query /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch_pgbench/11.sql using pgbench successfully
+[2023-12-29 13:37:43,161:postgresql_db.py#L198:INFO]: [PostgresqlDB] Remote executing SQL query /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch_pgbench/12.sql using pgbench successfully
+[2023-12-29 13:37:55,593:postgresql_db.py#L198:INFO]: [PostgresqlDB] Remote executing SQL query /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch_pgbench/13.sql using pgbench successfully
+[2023-12-29 13:38:03,220:postgresql_db.py#L198:INFO]: [PostgresqlDB] Remote executing SQL query /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch_pgbench/14.sql using pgbench successfully
+[2023-12-29 13:38:18,365:postgresql_db.py#L198:INFO]: [PostgresqlDB] Remote executing SQL query /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch_pgbench/15.sql using pgbench successfully
+[2023-12-29 13:38:29,004:postgresql_db.py#L198:INFO]: [PostgresqlDB] Remote executing SQL query /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch_pgbench/16.sql using pgbench successfully
+[2023-12-29 13:38:57,769:postgresql_db.py#L198:INFO]: [PostgresqlDB] Remote executing SQL query /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch_pgbench/18.sql using pgbench successfully
+[2023-12-29 13:39:08,401:postgresql_db.py#L198:INFO]: [PostgresqlDB] Remote executing SQL query /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch_pgbench/19.sql using pgbench successfully
+[2023-12-29 13:39:08,401:tune.py#L44:INFO]: [Test Tune] Iteration 0:	{'benchmark': 'TPCH_fast', 'total_exec_time': 40320.736999999994}

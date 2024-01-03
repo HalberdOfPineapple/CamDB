@@ -1,0 +1,11 @@
+[2024-01-02 23:51:59,708:postgresql_db.py#L112:INFO]: ----------------------------------- Applying Knobs -----------------------------------
+[2024-01-02 23:52:00,329:postgresql_db.py#L409:INFO]: [PostgresqlDB] Remote PostgreSQL server shut down successfully
+[2024-01-02 23:52:00,329:postgresql_db.py#L264:INFO]: [PostgresqlDB] Knob "min_wal_size" must be at least twice "wal_segment_size"
+[2024-01-02 23:52:00,929:postgresql_db.py#L392:INFO]: [PostgresqlDB] config file modification done.
+[2024-01-02 23:52:01,065:postgresql_db.py#L439:INFO]: [PostgresqlDB] Remotely starting PostgreSQL server...
+[2024-01-02 23:52:01,247:postgresql_db.py#L471:INFO]: [PostgresqlDB] Wait for connection to the started server...
+[2024-01-02 23:52:32,280:postgresql_db.py#L491:INFO]: [PostgresqlDB] PG server start failed: can not connect to DB
+[2024-01-02 23:52:32,284:postgresql_db.py#L495:INFO]: kill all postgres process
+[2024-01-02 23:52:32,285:postgresql_db.py#L498:INFO]: [PostgresqlDB] 31 seconds waiting for connection
+[2024-01-02 23:52:32,285:postgresql_db.py#L499:INFO]: [PostgresqlDB] start command: postgres --config_file=/var/lib/postgresql/experiment/conf/tune_cnf.conf
+[2024-01-02 23:52:32,285:postgresql_db.py#L500:INFO]: [PostgresqlDB] PostgresSQL is not up

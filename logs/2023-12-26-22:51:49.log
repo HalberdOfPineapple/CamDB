@@ -1,0 +1,22 @@
+[2023-12-26 22:51:49,997:postgresql_db.py#L110:INFO]: ----------------------------------- Applying Knobs -----------------------------------
+[2023-12-26 22:51:50,343:postgresql_db.py#L403:INFO]: [PostgresqlDB] Remote PostgreSQL server shut down successfully
+[2023-12-26 22:51:50,853:postgresql_db.py#L386:INFO]: [PostgresqlDB] config file modification done.
+[2023-12-26 22:51:50,951:postgresql_db.py#L433:INFO]: [PostgresqlDB] Remotely starting PostgreSQL server...
+[2023-12-26 22:51:51,081:postgresql_db.py#L465:INFO]: [PostgresqlDB] Wait for connection to the started server...
+[2023-12-26 22:51:52,104:postgresql_db.py#L475:INFO]: [PostgresqlDB] Successfully connected to the started PostgreSQL Server
+[2023-12-26 22:51:52,105:postgresql_db.py#L492:INFO]: [PostgresqlDB] 1 seconds waiting for connection
+[2023-12-26 22:51:52,105:postgresql_db.py#L493:INFO]: [PostgresqlDB] start command: postgres --config_file=/var/lib/postgresql/experiment/conf/tune_cnf.conf
+[2023-12-26 22:51:52,105:postgresql_db.py#L494:INFO]: [PostgresqlDB] PostgresSQL is  up
+[2023-12-26 22:51:52,105:postgresql_db.py#L274:INFO]: [PostgresqlDB] Sleeping for 0 seconds after restarting postgres
+[2023-12-26 22:51:52,105:postgresql_db.py#L285:INFO]: [PostgresqlDB] No knobs need to be applied online
+[2023-12-26 22:51:52,117:postgresql_db.py#L321:INFO]: [PostgresqlDB] Knob backend_flush_after is not successfully set to 166 (actual value: 1328kB)
+[2023-12-26 22:51:52,118:postgresql_db.py#L321:INFO]: [PostgresqlDB] Knob bgwriter_flush_after is not successfully set to 133 (actual value: 1064kB)
+[2023-12-26 22:51:52,120:postgresql_db.py#L321:INFO]: [PostgresqlDB] Knob checkpoint_flush_after is not successfully set to 35 (actual value: 280kB)
+[2023-12-26 22:51:52,124:postgresql_db.py#L321:INFO]: [PostgresqlDB] Knob effective_cache_size is not successfully set to 444458 (actual value: 3555664kB)
+[2023-12-26 22:51:52,129:postgresql_db.py#L321:INFO]: [PostgresqlDB] Knob shared_buffers is not successfully set to 736601 (actual value: 5892808kB)
+[2023-12-26 22:51:52,130:postgresql_db.py#L321:INFO]: [PostgresqlDB] Knob temp_buffers is not successfully set to 7728 (actual value: 61824kB)
+[2023-12-26 22:51:52,130:postgresql_db.py#L321:INFO]: [PostgresqlDB] Knob wal_buffers is not successfully set to 48935 (actual value: 391480kB)
+[2023-12-26 22:51:52,132:postgresql_db.py#L321:INFO]: [PostgresqlDB] Knob wal_writer_flush_after is not successfully set to 372959725 (actual value: 2983677800kB)
+[2023-12-26 22:51:52,133:postgresql_db.py#L331:INFO]: [PostgresqlDB] 8 / 30 knobs not successfully applied offline.
+[2023-12-26 22:51:52,134:postgresql_db.py#L115:INFO]: --------------------------------------------------------------------------------
+[2023-12-26 22:51:52,134:tune.py#L44:INFO]: [Test Tune] Iteration 0:	{}
