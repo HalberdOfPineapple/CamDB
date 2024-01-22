@@ -1,0 +1,18 @@
+expr_name: GPBO_ackley_5
+
+strategy: gp-bo
+seed: 1024
+is_minimizing: True
+computation_budget: 200
+batch_size: 1
+acquisition: 'ei'
+
+init_design: sobol
+num_init: 20
+
+benchmark: ackley
+benchmark_params:
+  dim: 5
+  noise_std: null
+  negate: False
+  bounds: null

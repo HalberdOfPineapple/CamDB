@@ -13,6 +13,7 @@ database:
   db_passwd: '741286'
   db_name: tpch
 
+  # Paths on remote machine if remote_mode is on
   pg_ctl: /usr/lib/postgresql/16/bin/pg_ctl
   pg_data: /var/lib/postgresql/16/main
   pg_server: /usr/lib/postgresql/16/bin/postgres

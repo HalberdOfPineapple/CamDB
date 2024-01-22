@@ -2,6 +2,7 @@ import psycopg2
 import re
 import math
 from abc import ABC, abstractmethod
+from camtune.utils.logger import print_log
 
 
 class DBConnector(ABC):
@@ -69,9 +70,9 @@ class PostgresqlConnector(DBConnector):
     def fetch_results(self, sql, json=True):
         results = False
         if self.conn:
-            # print("Starting query execution...")
+            # print_log("Starting query execution...")
             self.cursor.execute(sql)
-            # print("Query execution finished.")
+            # print_log("Query execution finished.")
             
             results = self.cursor.fetchall()
             
@@ -88,7 +89,7 @@ class PostgresqlConnector(DBConnector):
     def check_knob_apply(self, k, v0, unit:int = None):
         sql = 'SHOW {};'.format(k)
         r = self.fetch_results(sql)
-        print(r)
+        print_log(r)
 
         if len(r) == 0 or k not in r[0]:
             raise ValueError(
@@ -117,7 +118,7 @@ class PostgresqlConnector(DBConnector):
 
     def set_knob_value(self, k, v):
         sql = 'SHOW {};'.format(k)
-        r = self.fetch_results(sql)
+        show_res = self.fetch_results(sql)
 
         # type convert
         if v == 'ON':
@@ -125,14 +126,29 @@ class PostgresqlConnector(DBConnector):
         elif v == 'OFF':
             v = 0
 
-        if r[0][k] == 'ON':
+        if show_res[0][k] == 'ON':
             v0 = 1
-        elif r[0][k] == 'OFF':
+        elif show_res[0][k] == 'OFF':
             v0 = 0
         else:
             try:
-                v0 = eval(r[0][k])
+                v0 = eval(show_res[0][k])
             except:
-                v0 = r[0][k].strip()
+                v0 = show_res[0][k].strip()
+    
+        # If the knob is already set to the value, return True
         if v0 == v:
             return True
+        
+        # If the knob is not set to the value, set it to the value by executing SQL command 'SET'
+        if str(v).isdigit():
+            sql = "SET {}={}".format(k, v)
+        else:
+            sql = "SET {}='{}'".format(k, v)
+
+        try:
+            self.execute(sql)
+        except:
+            print_log(f"[PostgresqlConnector] Failed when setting up knob {k} to {v}")
+
+        return True

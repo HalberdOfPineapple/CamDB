@@ -1,0 +1,16 @@
+expr_name: random_ackley_20
+
+strategy: random
+seed: 1024
+is_minimizing: True
+
+init_design: sobol
+num_init: 5
+computation_budget: 10
+
+benchmark: ackley
+benchmark_params:
+  dim: 20
+  noise_std: null
+  negate: False
+  bounds: null

@@ -3,6 +3,7 @@ from .base_optimizer import BaseOptimizer
 from .random_optimizer import RandomOptimizer
 from .gp_bo_optimizer import GPBOOptimizer
 from .sampler import BaseSampler, LatinHypercubeSampler, SobolSampler
+from .benchmarks import Benchmark, build_benchmark
 
 def build_init_design(init_design: str, configspace: ConfigurationSpace, seed:int=0) -> BaseSampler:
     if init_design.upper() == "LHS":
@@ -17,6 +18,6 @@ def build_optimizer(args: dict, **kwargs) -> BaseSampler:
     if strategy == "random":
         return RandomOptimizer(**kwargs)
     elif strategy == "gp-bo":
-        return GPBOOptimizer(acq_func=args['acquisition'],**kwargs)
+        return GPBOOptimizer(acq_func=args['acquisition'], batch_size=args['batch_size'], **kwargs)
     else:
         raise ValueError(f"Undefined optimization strategy: {strategy}")

@@ -14,8 +14,8 @@ PGSQL_JOB_SHAP = "/home/viktor/Experiments/TPC-H/knob_definitions/JOB_SHAP_Postg
 class SearchSpace:
     def __init__(
           self, 
-          knob_definition_path,
-          is_kv_config,
+          knob_definition_path: str,
+          is_kv_config: bool,
           include=None, 
           ignore=[],
           seed=1,
@@ -41,7 +41,7 @@ class SearchSpace:
             self.knobs = [info for info in definitions if info['name'] in self.include_knobs]
             self.knobs_dict = { d['name']: d for d in self.knobs}
 
-        self.input_space = self.init_input_space()
+        self.init_input_space()
     
     def init_input_space(self):
         input_dimensions = [ ]
@@ -73,7 +73,5 @@ class SearchSpace:
             
             input_dimensions.append(dim)
 
-        input_space = CS.ConfigurationSpace(name='input', seed=self.seed)
-        input_space.add_hyperparameters(input_dimensions)
-
-        return input_space
+        self.input_space = CS.ConfigurationSpace(name='input', seed=self.seed)
+        self.input_space.add_hyperparameters(input_dimensions)

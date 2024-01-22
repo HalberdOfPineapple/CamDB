@@ -2,7 +2,7 @@ import numpy as np
 
 from abc import ABC, abstractmethod
 from ConfigSpace import ConfigurationSpace, Configuration
-from camtune.optimizer.optim_utils import get_bounds_from_config_space, convert_to_valid_config
+from camtune.optimizer.optim_utils import convert_to_valid_config, get_bounds_from_configspace
 
 class BaseSampler(ABC):
     """
@@ -28,7 +28,7 @@ class BaseSampler(ABC):
         self.configspace: ConfigurationSpace = configspace
         self.dims: int = len(list(configspace.values()))
 
-        bounds = get_bounds_from_config_space(configspace)
+        bounds = get_bounds_from_configspace(configspace)
 
         self.lower_bounds = np.array([bound[0] for bound in bounds])
         self.upper_bounds = np.array([bound[1] for bound in bounds])
@@ -64,10 +64,11 @@ class BaseSampler(ABC):
         """
         X = self._generate(size)
         X = self.lower_bounds + (self.upper_bounds - self.lower_bounds) * X
-
+        # return X
+    
         configs = []
         for config_vec in X:
-            valid_config = convert_to_valid_config(self.configspace, config_vec)
-            configs.append(Configuration(self.configspace, values=valid_config))
+            valid_config: Configuration = convert_to_valid_config(self.configspace, config_vec)
+            configs.append(valid_config)
 
         return configs

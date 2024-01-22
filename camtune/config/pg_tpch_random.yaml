@@ -31,6 +31,9 @@ tune:
   strategy: random
   seed: 1024
 
+  perf_name: latency
+  perf_unit: ms
+
   # saved locally
   knob_definitions: /home/viktor/Experiments/CamDB/camtune/knobs/JOB_SHAP_Modified.json
   knob_num: -1

@@ -2,7 +2,6 @@ from typing import Callable
 from ConfigSpace import ConfigurationSpace
 
 from camtune.run_history import RunHistory
-from camtune.search_space import SearchSpace
 from .base_optimizer import BaseOptimizer
 
 class RandomOptimizer(BaseOptimizer):
