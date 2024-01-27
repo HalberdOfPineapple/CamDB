@@ -1,5 +1,3 @@
-expr_name: GPBO_ackley_5
-
 strategy: gp-bo
 seed: 1024
 is_minimizing: True

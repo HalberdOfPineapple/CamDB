@@ -11,7 +11,8 @@ from camtune.utils.parser import ConfigParser, parse_pgbench_output
 
 from ConfigSpace.configuration_space import Configuration 
 from .dbconnector import PostgresqlConnector
-
+from camtune.utils import get_logger, print_log
+LOGGER = None
 
 PG_CTL = "/usr/lib/postgresql/16/bin/pg_ctl"
 PG_DATA = "/var/lib/postgresql/16/main"
@@ -59,6 +60,9 @@ def initialize_knobs(knobs_config, num) -> dict:
 
 class PostgresqlDB:
     def __init__(self, args: dict):
+        global LOGGER
+        LOGGER = get_logger()
+
         args_db, args_ssh, args_tune = args['database'], args['ssh'], args['tune']
 
         # ---------------- Connection & Server Settings --------------
@@ -180,7 +184,7 @@ class PostgresqlDB:
                 if retcode != 0:
                     print_log(f'[PostgresqlDB] Remote executing SQL query {query_file_name} using pgbench failed, with following information:')
                     print_log(f'[PostgresqlDB] STDOUT: {stdout.read().decode("utf-8").strip()}')
-                    logger.error(f'[PostgresqlDB] STDERR: {stderr.read().decode("utf-8").strip()}')
+                    LOGGER.error(f'[PostgresqlDB] STDERR: {stderr.read().decode("utf-8").strip()}')
                     failed.append(query_file_name)
                     continue
 

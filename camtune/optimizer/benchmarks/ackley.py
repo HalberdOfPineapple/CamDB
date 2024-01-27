@@ -1,40 +1,22 @@
+
 import torch
-from .base_benchmark import Benchmark
+from botorch.test_functions import Ackley
 
-from botorch.test_functions.synthetic import Ackley as BoTAckley
-from ConfigSpace import Configuration, ConfigurationSpace
-from ConfigSpace.hyperparameters import UniformFloatHyperparameter
-from typing import Optional, List, Tuple
+from .base_benchmark import BaseBenchmark, dtype, device
+from camtune.utils.logger import print_log
 
-DEFAULT_LB = -32.768
-DEFAULT_UB = 32.768
+class AckleyBenchmark(BaseBenchmark):
+    def __init__(self, **kwargs):
+        # Function settings
+        self.dim: int = kwargs.get('dim', 20)
+        print_log(f"[ackley] Using Ackley {self.dim}D")
 
-class Ackley(Benchmark):
-    def __init__(self, 
-      dim:int=2, 
-      noise_std:bool=None, 
-      negate:bool=False, 
-      bounds:Optional[List[Tuple[float, float]]]=None,
-    ):
-        self.dim = dim
-        self._func = BoTAckley(
-            dim=dim, noise_std=noise_std, negate=negate, bounds=bounds)
-
-        config_space = ConfigurationSpace()
-        for i in range(dim):  # 2-dimensional Ackley function
-            if bounds:
-                lb, ub = bounds[i][0], bounds[i][1]
-            else:
-                lb, ub = DEFAULT_LB, DEFAULT_UB
-
-            config_space.add_hyperparameter(UniformFloatHyperparameter(f"x{i}", lb, ub))
-        self._configspace = config_space
-    
-    def eval(self, config: Configuration):
-        self._configspace.check_configuration(config)
-        x = torch.tensor([config[f"x{i}"] for i in range(self.dim)], dtype=torch.float)
-
-        return self.func(x).item()
-    
-    def eval_tensor(self, cands: torch.Tensor) -> torch.Tensor:
-        return self.func(cands)
+        self.negate: bool = kwargs.get('negate', True)
+        self.lb: float = kwargs.get('lb', -5.)
+        self.ub: float = kwargs.get('ub', 10.)
+        self.bounds: torch.tensor = torch.tensor([[self.lb] * self.dim, [self.ub] * self.dim]).to(dtype=dtype, device=device)
+        self._obj_func = Ackley(
+            dim=self.dim, negate=self.negate,
+            bounds=[(self.lb, self.ub) for _ in range(self.dim)]).to(dtype=dtype, device=device)
+        
+        self.discrete_dims: list = None

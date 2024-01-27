@@ -1,102 +1,114 @@
 import torch 
 import numpy as np
-from typing import Callable
+from typing import Callable, List, Dict, Any, Optional, Union, Tuple
+
+from botorch.utils.transforms import unnormalize, standardize, normalize
 
 from gpytorch.mlls import ExactMarginalLogLikelihood
-from botorch.models import SingleTaskGP
-from botorch.fit import fit_gpytorch_model
-from botorch.acquisition import AcquisitionFunction
-from botorch.acquisition.analytic import ExpectedImprovement, LogExpectedImprovement, UpperConfidenceBound
-from botorch.optim import optimize_acqf
-from botorch.models.transforms.input import InputStandardize, Normalize, ChainedInputTransform
-from botorch.models.transforms.outcome import Standardize
-from ConfigSpace import ConfigurationSpace
+from botorch.models import SingleTaskGP, MixedSingleTaskGP
+from botorch.fit import fit_gpytorch_model, fit_gpytorch_mll
 
-from camtune.run_history import RunHistory
+from botorch.acquisition import qExpectedImprovement
+from botorch.optim import optimize_acqf, optimize_acqf_mixed
+
 from .base_optimizer import BaseOptimizer
-from .optim_utils import ACQ_FUNC_MAP, convert_configurations_to_array, convert_to_valid_configs
-from .benchmarks import Benchmark
+from .optim_utils import ACQ_FUNC_MAP
+from camtune.utils import print_log
+
+GP_ATTRS = {
+    'batch_size': 1,
+    'num_restarts': 10,
+    'raw_samples': 512,
+    'n_candidates': 5000,
+    'max_cholesky_size': float("inf"),
+}
 
 class GPBOOptimizer(BaseOptimizer):
     def __init__(
-      self, 
-      configspace: ConfigurationSpace, 
-      benchmark: Benchmark,
-      acq_func: str, 
-      is_minimizing: bool=True,
-      batch_size: int = 1,
-      param_logger=None,
-      **kwargs,
+        self,
+        bounds: torch.Tensor,
+        obj_func: Callable,
+        seed: int = 0,
+        discrete_dims: List[int] = [],
+        optimizer_params: Dict[str, Any] = None,
     ):
-        super().__init__(configspace, benchmark, param_logger=param_logger, **kwargs)
-        # self.acq_func = ACQ_FUNC_MAP[acq_func]
-        self.acq_func = UpperConfidenceBound
-        self.is_minimizing = is_minimizing
-        self.batch_size = batch_size
+        super().__init__(bounds, obj_func, seed, discrete_dims, optimizer_params)
+
+        self.acq_func_cls = qExpectedImprovement if 'acquisition' not in self.optimizer_params \
+                            else ACQ_FUNC_MAP[self.optimizer_params['acquisition']]
+        self.num_calls = 0
+
+        for k, v in GP_ATTRS.items():
+            if k not in self.optimizer_params:
+                setattr(self, k, v)
+            else:
+                setattr(self, k, self.optimizer_params[k])
 
 
-        self.input_transform = ChainedInputTransform(
-            standardize=InputStandardize(d=self.bounds.shape[1]),
-            normalize=Normalize(d=self.bounds.shape[1]),
-        )
-        self.output_transform = Standardize(m=1)
     
-    def get_init_samples(self, num_init: int):
-        train_x = torch.rand(num_init, len(self.configspace.get_hyperparameters()), dtype=torch.double)
-        train_y = self.benchmark.eval_tensor(train_x).unsqueeze(-1)
+    def optimize(self, num_evals: int, X_init: torch.Tensor, Y_init: torch.Tensor) -> Tuple[torch.Tensor, torch.Tensor]:
+        torch.manual_seed(self.seed)
 
-        best_observed_value = train_y.max().item()
-        return train_x, train_y, best_observed_value
-    
-    def optimize(self, num_evals: int, num_init: int, run_history: RunHistory):
-        # hist_configs = [config for (config, _) in run_history.records]
-        # hist_perfs = np.array([perf for (_, perf) in run_history.records])
-        # num_init = len(hist_configs)
+        X_sampled: torch.Tensor = torch.empty((0, self.dimension), dtype=self.dtype, device=self.device)
+        Y_sampled: torch.Tensor = torch.empty((0, 1), dtype=self.dtype, device=self.device)
+        while X_sampled.shape[0] < num_evals:
+            batch_size = min(self.batch_size, num_evals - X_sampled.shape[0])
 
-        # # X_hist: N x D, Y_hist: N x 1
-        # X_hist = torch.from_numpy(convert_configurations_to_array(hist_configs)).double()
-        # Y_hist = torch.from_numpy(hist_perfs).double().unsqueeze(-1)
-        # TODO
-        num_iters = 0
-        while num_iters < num_evals:
-            batch_size = min(self.batch_size, num_evals - num_iters)
+            train_X = torch.cat([X_sampled, X_init], dim=0)
+            train_X[:, self.continuous_dims] = normalize(train_X[:, self.continuous_dims], self.bounds[:, self.continuous_dims])
+            train_Y = standardize(torch.cat([Y_sampled, Y_init], dim=0))
 
-            # Fit the GP model
-            GP = SingleTaskGP(X_hist, Y_hist, 
-                              input_transform=self.input_transform,
-                              outcome_transform=self.output_transform)
-            mll = ExactMarginalLogLikelihood(GP.likelihood, GP)
-            fit_gpytorch_model(mll)
+            if len(self.discrete_dims) == 0:
+                model = SingleTaskGP(train_X, train_Y)
+            else:
+                model = MixedSingleTaskGP(train_X, train_Y, cat_dims=self.discrete_dims) 
+            mll = ExactMarginalLogLikelihood(model.likelihood, model)
+            fit_gpytorch_mll(mll)
 
-            # Optimize the acquisition function
-            # cands: (batch_size, D)
-            # acq_func = self.acq_func(
-            #     model=GP, 
-            #     best_f=run_history.best_perf, 
-            #     maximize=not self.is_minimizing)
-            acq_func = self.acq_func(
-                model=GP, 
-                beta=0.2,
-                maximize=not self.is_minimizing)
-            cands, _ = optimize_acqf(
-                acq_function=acq_func,
-                bounds=self.bounds,
-                q=batch_size,
-                num_restarts=5,
-                raw_samples=20,  # Number of samples for initialization (TODO)
+
+            # currently assume qEI is used
+            acqf = self.acq_func_cls(model, best_f=train_Y.max())
+            if len(self.discrete_dims) == 0:    
+                X_next, acq_values = optimize_acqf(
+                    acq_function=acqf,
+                    bounds=torch.stack([
+                        torch.zeros(self.dimension, dtype=self.dtype, device=self.device),
+                        torch.ones(self.dimension, dtype=self.dtype, device=self.device),
+                    ]),
+                    q=batch_size,
+                    num_restarts=self.num_restarts,
+                    raw_samples=self.raw_samples,
+                )
+            else:
+                bounds = torch.stack([
+                    torch.zeros(self.dimension, dtype=self.dtype, device=self.device),
+                    torch.ones(self.dimension, dtype=self.dtype, device=self.device),
+                ])
+                bounds[:, self.discrete_dims] = self.bounds[:, self.discrete_dims]
+                X_next, acq_values = optimize_acqf_mixed(
+                    acq_function=acqf,
+                    bounds=bounds,
+                    q=batch_size,
+                    num_restarts=self.num_restarts,
+                    raw_samples=self.raw_samples,
+                )
+            
+            
+            X_next[:, self.continuous_dims] = unnormalize(X_next[:, self.continuous_dims], self.bounds[:, self.continuous_dims])
+            Y_next = torch.tensor(
+                [self.obj_func(x) for x in X_next], dtype=self.dtype, device=self.device,
+            ).unsqueeze(-1)
+
+            X_sampled = torch.cat([X_sampled, X_next], dim=0)
+            Y_sampled = torch.cat([Y_sampled, Y_next], dim=0)
+            self.num_calls += batch_size
+
+            log_msg = (
+                f"Sample {len(X_sampled) + len(X_init)} | "
+                f"Best value: {Y_sampled.max().item():.2f} |"
             )
-            perfs = self.benchmark.eval_tensor(cands).unsqueeze(-1) # (batch_size, 1)
-
-            torch.cat([X_hist, cands], dim=0)
-            torch.cat([Y_hist, perfs], dim=0)
-
-            num_iters += batch_size
-
-            configs = convert_to_valid_configs(self.configspace, cands.numpy())
-            perfs = np.array(perfs)
-            run_history.add_records(configs, perfs)
-
-            if self.logger:
-                self.logger.info(f"Sample {num_init + num_iters}: best perf = {np.max(perfs)}")
-
+            print_log(log_msg)
         
+        result_X = torch.cat([X_init, X_sampled], dim=0)
+        result_Y = torch.cat([Y_init, Y_sampled], dim=0)
+        return result_X, result_Y

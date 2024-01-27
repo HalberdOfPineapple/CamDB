@@ -1,0 +1,185 @@
+2024-01-27 11:54:24,448 - INFO - --------------------------------------------------
+2024-01-27 11:54:24,448 - INFO - benchmark: ackley
+2024-01-27 11:54:24,448 - INFO - benchmark_params:
+2024-01-27 11:54:24,448 - INFO -     dim: 20
+2024-01-27 11:54:24,448 - INFO -     lb: -5
+2024-01-27 11:54:24,448 - INFO -     ub: 10
+2024-01-27 11:54:24,448 - INFO - tuner_params:
+2024-01-27 11:54:24,448 - INFO -     seed: 1024
+2024-01-27 11:54:24,448 - INFO -     num_evals: 200
+2024-01-27 11:54:24,448 - INFO -     batch_size: 1
+2024-01-27 11:54:24,448 - INFO -     init_design: lhs
+2024-01-27 11:54:24,448 - INFO -     init_by_dim: True
+2024-01-27 11:54:24,448 - INFO -     num_init: 40
+2024-01-27 11:54:24,448 - INFO -     optimizer: gp-bo
+2024-01-27 11:54:24,448 - INFO -     optimizer_params: {'acquisition': 'qei'}
+2024-01-27 11:54:24,448 - INFO - expr_name: GPEI_ackley_20
+2024-01-27 11:54:24,448 - INFO - --------------------------------------------------
+2024-01-27 11:54:24,449 - INFO - [ackley] Using Ackley 20D
+2024-01-27 11:54:24,450 - INFO - [Tuner] Start initial profiling by lhs
+2024-01-27 11:54:24,452 - INFO - [Tuner] Start optimization using gp-bo for 200 iterations
+2024-01-27 11:54:25,603 - INFO - Sample 41 | Best value: -11.29 |
+2024-01-27 11:54:26,108 - INFO - Sample 42 | Best value: -11.29 |
+2024-01-27 11:54:26,457 - INFO - Sample 43 | Best value: -11.29 |
+2024-01-27 11:54:27,266 - INFO - Sample 44 | Best value: -10.86 |
+2024-01-27 11:54:27,475 - INFO - Sample 45 | Best value: -10.86 |
+2024-01-27 11:54:28,164 - INFO - Sample 46 | Best value: -10.60 |
+2024-01-27 11:54:28,728 - INFO - Sample 47 | Best value: -10.60 |
+2024-01-27 11:54:29,029 - INFO - Sample 48 | Best value: -10.60 |
+2024-01-27 11:54:29,510 - INFO - Sample 49 | Best value: -10.60 |
+2024-01-27 11:54:29,842 - INFO - Sample 50 | Best value: -10.60 |
+2024-01-27 11:54:30,114 - INFO - Sample 51 | Best value: -10.60 |
+2024-01-27 11:54:30,466 - INFO - Sample 52 | Best value: -10.60 |
+2024-01-27 11:54:30,773 - INFO - Sample 53 | Best value: -10.60 |
+2024-01-27 11:54:31,127 - INFO - Sample 54 | Best value: -10.60 |
+2024-01-27 11:54:31,542 - INFO - Sample 55 | Best value: -10.60 |
+2024-01-27 11:54:31,962 - INFO - Sample 56 | Best value: -10.60 |
+2024-01-27 11:54:32,336 - INFO - Sample 57 | Best value: -10.60 |
+2024-01-27 11:54:32,908 - INFO - Sample 58 | Best value: -10.48 |
+2024-01-27 11:54:33,256 - INFO - Sample 59 | Best value: -10.48 |
+2024-01-27 11:54:33,614 - INFO - Sample 60 | Best value: -10.48 |
+2024-01-27 11:54:33,941 - INFO - Sample 61 | Best value: -10.48 |
+2024-01-27 11:54:34,254 - INFO - Sample 62 | Best value: -10.48 |
+2024-01-27 11:54:34,624 - INFO - Sample 63 | Best value: -10.48 |
+2024-01-27 11:54:34,922 - INFO - Sample 64 | Best value: -10.48 |
+2024-01-27 11:54:35,400 - INFO - Sample 65 | Best value: -10.48 |
+2024-01-27 11:54:35,750 - INFO - Sample 66 | Best value: -10.48 |
+2024-01-27 11:54:36,059 - INFO - Sample 67 | Best value: -10.48 |
+2024-01-27 11:54:36,633 - INFO - Sample 68 | Best value: -10.48 |
+2024-01-27 11:54:36,968 - INFO - Sample 69 | Best value: -10.48 |
+2024-01-27 11:54:37,243 - INFO - Sample 70 | Best value: -10.48 |
+2024-01-27 11:54:37,747 - INFO - Sample 71 | Best value: -9.97 |
+2024-01-27 11:54:38,216 - INFO - Sample 72 | Best value: -9.97 |
+2024-01-27 11:54:38,654 - INFO - Sample 73 | Best value: -9.97 |
+2024-01-27 11:54:39,061 - INFO - Sample 74 | Best value: -9.97 |
+2024-01-27 11:54:39,388 - INFO - Sample 75 | Best value: -9.97 |
+2024-01-27 11:54:39,866 - INFO - Sample 76 | Best value: -9.97 |
+2024-01-27 11:54:40,258 - INFO - Sample 77 | Best value: -9.97 |
+2024-01-27 11:54:40,996 - INFO - Sample 78 | Best value: -9.97 |
+2024-01-27 11:54:41,384 - INFO - Sample 79 | Best value: -9.97 |
+2024-01-27 11:54:41,755 - INFO - Sample 80 | Best value: -9.97 |
+2024-01-27 11:54:42,352 - INFO - Sample 81 | Best value: -9.97 |
+2024-01-27 11:54:42,922 - INFO - Sample 82 | Best value: -9.97 |
+2024-01-27 11:54:43,303 - INFO - Sample 83 | Best value: -9.97 |
+2024-01-27 11:54:43,738 - INFO - Sample 84 | Best value: -9.97 |
+2024-01-27 11:54:44,209 - INFO - Sample 85 | Best value: -9.97 |
+2024-01-27 11:54:44,843 - INFO - Sample 86 | Best value: -9.97 |
+2024-01-27 11:54:45,347 - INFO - Sample 87 | Best value: -9.97 |
+2024-01-27 11:54:45,743 - INFO - Sample 88 | Best value: -9.97 |
+2024-01-27 11:54:46,211 - INFO - Sample 89 | Best value: -9.97 |
+2024-01-27 11:54:46,690 - INFO - Sample 90 | Best value: -9.97 |
+2024-01-27 11:54:47,246 - INFO - Sample 91 | Best value: -9.50 |
+2024-01-27 11:54:47,705 - INFO - Sample 92 | Best value: -9.50 |
+2024-01-27 11:54:48,058 - INFO - Sample 93 | Best value: -9.50 |
+2024-01-27 11:54:48,402 - INFO - Sample 94 | Best value: -9.50 |
+2024-01-27 11:54:49,066 - INFO - Sample 95 | Best value: -9.50 |
+2024-01-27 11:54:49,448 - INFO - Sample 96 | Best value: -9.50 |
+2024-01-27 11:54:49,871 - INFO - Sample 97 | Best value: -9.50 |
+2024-01-27 11:54:50,311 - INFO - Sample 98 | Best value: -9.50 |
+2024-01-27 11:54:50,719 - INFO - Sample 99 | Best value: -9.50 |
+2024-01-27 11:54:51,152 - INFO - Sample 100 | Best value: -9.50 |
+2024-01-27 11:54:51,584 - INFO - Sample 101 | Best value: -9.50 |
+2024-01-27 11:54:52,034 - INFO - Sample 102 | Best value: -9.50 |
+2024-01-27 11:54:52,461 - INFO - Sample 103 | Best value: -9.50 |
+2024-01-27 11:54:52,931 - INFO - Sample 104 | Best value: -9.50 |
+2024-01-27 11:54:53,354 - INFO - Sample 105 | Best value: -9.50 |
+2024-01-27 11:54:53,914 - INFO - Sample 106 | Best value: -9.50 |
+2024-01-27 11:54:54,391 - INFO - Sample 107 | Best value: -9.50 |
+2024-01-27 11:54:54,813 - INFO - Sample 108 | Best value: -9.50 |
+2024-01-27 11:54:55,351 - INFO - Sample 109 | Best value: -9.50 |
+2024-01-27 11:54:55,906 - INFO - Sample 110 | Best value: -9.50 |
+2024-01-27 11:54:56,339 - INFO - Sample 111 | Best value: -9.50 |
+2024-01-27 11:54:56,766 - INFO - Sample 112 | Best value: -9.50 |
+2024-01-27 11:54:57,452 - INFO - Sample 113 | Best value: -9.50 |
+2024-01-27 11:54:57,996 - INFO - Sample 114 | Best value: -9.50 |
+2024-01-27 11:54:58,483 - INFO - Sample 115 | Best value: -9.50 |
+2024-01-27 11:54:58,992 - INFO - Sample 116 | Best value: -9.50 |
+2024-01-27 11:54:59,563 - INFO - Sample 117 | Best value: -9.50 |
+2024-01-27 11:55:00,247 - INFO - Sample 118 | Best value: -9.50 |
+2024-01-27 11:55:00,734 - INFO - Sample 119 | Best value: -9.50 |
+2024-01-27 11:55:01,552 - INFO - Sample 120 | Best value: -9.50 |
+2024-01-27 11:55:02,216 - INFO - Sample 121 | Best value: -9.50 |
+2024-01-27 11:55:02,800 - INFO - Sample 122 | Best value: -9.50 |
+2024-01-27 11:55:03,399 - INFO - Sample 123 | Best value: -9.50 |
+2024-01-27 11:55:03,925 - INFO - Sample 124 | Best value: -9.50 |
+2024-01-27 11:55:04,528 - INFO - Sample 125 | Best value: -9.50 |
+2024-01-27 11:55:05,341 - INFO - Sample 126 | Best value: -9.50 |
+2024-01-27 11:55:05,799 - INFO - Sample 127 | Best value: -9.50 |
+2024-01-27 11:55:06,391 - INFO - Sample 128 | Best value: -9.50 |
+2024-01-27 11:55:08,287 - INFO - Sample 129 | Best value: -9.50 |
+2024-01-27 11:55:09,528 - INFO - Sample 130 | Best value: -9.50 |
+2024-01-27 11:55:11,050 - INFO - Sample 131 | Best value: -9.50 |
+2024-01-27 11:55:11,871 - INFO - Sample 132 | Best value: -9.50 |
+2024-01-27 11:55:16,048 - INFO - Sample 133 | Best value: -9.50 |
+2024-01-27 11:55:20,406 - INFO - Sample 134 | Best value: -9.50 |
+2024-01-27 11:55:24,923 - INFO - Sample 135 | Best value: -9.50 |
+2024-01-27 11:55:29,014 - INFO - Sample 136 | Best value: -9.50 |
+2024-01-27 11:55:31,147 - INFO - Sample 137 | Best value: -9.50 |
+2024-01-27 11:55:32,626 - INFO - Sample 138 | Best value: -9.50 |
+2024-01-27 11:55:35,044 - INFO - Sample 139 | Best value: -9.50 |
+2024-01-27 11:55:37,283 - INFO - Sample 140 | Best value: -9.50 |
+2024-01-27 11:55:39,225 - INFO - Sample 141 | Best value: -9.50 |
+2024-01-27 11:55:41,250 - INFO - Sample 142 | Best value: -9.50 |
+2024-01-27 11:55:43,198 - INFO - Sample 143 | Best value: -9.50 |
+2024-01-27 11:55:45,462 - INFO - Sample 144 | Best value: -9.50 |
+2024-01-27 11:55:47,194 - INFO - Sample 145 | Best value: -9.50 |
+2024-01-27 11:55:49,006 - INFO - Sample 146 | Best value: -9.50 |
+2024-01-27 11:55:50,879 - INFO - Sample 147 | Best value: -9.50 |
+2024-01-27 11:55:52,604 - INFO - Sample 148 | Best value: -9.50 |
+2024-01-27 11:55:55,128 - INFO - Sample 149 | Best value: -9.50 |
+2024-01-27 11:55:57,668 - INFO - Sample 150 | Best value: -9.50 |
+2024-01-27 11:55:59,879 - INFO - Sample 151 | Best value: -9.50 |
+2024-01-27 11:56:01,941 - INFO - Sample 152 | Best value: -9.50 |
+2024-01-27 11:56:04,346 - INFO - Sample 153 | Best value: -9.50 |
+2024-01-27 11:56:06,251 - INFO - Sample 154 | Best value: -9.50 |
+2024-01-27 11:56:08,764 - INFO - Sample 155 | Best value: -9.50 |
+2024-01-27 11:56:10,492 - INFO - Sample 156 | Best value: -9.50 |
+2024-01-27 11:56:12,021 - INFO - Sample 157 | Best value: -9.50 |
+2024-01-27 11:56:14,404 - INFO - Sample 158 | Best value: -9.50 |
+2024-01-27 11:56:16,000 - INFO - Sample 159 | Best value: -9.50 |
+2024-01-27 11:56:19,339 - INFO - Sample 160 | Best value: -9.50 |
+2024-01-27 11:56:21,128 - INFO - Sample 161 | Best value: -9.50 |
+2024-01-27 11:56:22,446 - INFO - Sample 162 | Best value: -9.50 |
+2024-01-27 11:56:24,299 - INFO - Sample 163 | Best value: -9.50 |
+2024-01-27 11:56:25,835 - INFO - Sample 164 | Best value: -9.50 |
+2024-01-27 11:56:27,734 - INFO - Sample 165 | Best value: -9.50 |
+2024-01-27 11:56:29,230 - INFO - Sample 166 | Best value: -9.50 |
+2024-01-27 11:56:30,899 - INFO - Sample 167 | Best value: -9.50 |
+2024-01-27 11:56:32,642 - INFO - Sample 168 | Best value: -9.50 |
+2024-01-27 11:56:33,959 - INFO - Sample 169 | Best value: -9.50 |
+2024-01-27 11:56:36,026 - INFO - Sample 170 | Best value: -9.50 |
+2024-01-27 11:56:37,694 - INFO - Sample 171 | Best value: -9.50 |
+2024-01-27 11:56:39,034 - INFO - Sample 172 | Best value: -9.50 |
+2024-01-27 11:56:40,836 - INFO - Sample 173 | Best value: -9.50 |
+2024-01-27 11:56:42,108 - INFO - Sample 174 | Best value: -9.50 |
+2024-01-27 11:56:43,209 - INFO - Sample 175 | Best value: -9.50 |
+2024-01-27 11:56:45,430 - INFO - Sample 176 | Best value: -9.50 |
+2024-01-27 11:56:46,865 - INFO - Sample 177 | Best value: -9.50 |
+2024-01-27 11:56:48,889 - INFO - Sample 178 | Best value: -9.50 |
+2024-01-27 11:56:49,992 - INFO - Sample 179 | Best value: -9.50 |
+2024-01-27 11:56:51,106 - INFO - Sample 180 | Best value: -7.01 |
+2024-01-27 11:56:52,480 - INFO - Sample 181 | Best value: -7.01 |
+2024-01-27 11:56:53,846 - INFO - Sample 182 | Best value: -7.01 |
+2024-01-27 11:56:54,568 - INFO - Sample 183 | Best value: -7.01 |
+2024-01-27 11:56:55,547 - INFO - Sample 184 | Best value: -7.01 |
+2024-01-27 11:56:56,584 - INFO - Sample 185 | Best value: -7.01 |
+2024-01-27 11:56:57,522 - INFO - Sample 186 | Best value: -7.01 |
+2024-01-27 11:56:58,515 - INFO - Sample 187 | Best value: -7.01 |
+2024-01-27 11:56:59,062 - INFO - Sample 188 | Best value: -7.01 |
+2024-01-27 11:56:59,832 - INFO - Sample 189 | Best value: -7.01 |
+2024-01-27 11:57:00,954 - INFO - Sample 190 | Best value: -7.01 |
+2024-01-27 11:57:01,846 - INFO - Sample 191 | Best value: -7.01 |
+2024-01-27 11:57:02,631 - INFO - Sample 192 | Best value: -7.01 |
+2024-01-27 11:57:03,467 - INFO - Sample 193 | Best value: -7.01 |
+2024-01-27 11:57:04,428 - INFO - Sample 194 | Best value: -7.01 |
+2024-01-27 11:57:05,019 - INFO - Sample 195 | Best value: -7.01 |
+2024-01-27 11:57:05,819 - INFO - Sample 196 | Best value: -7.01 |
+2024-01-27 11:57:06,616 - INFO - Sample 197 | Best value: -7.01 |
+2024-01-27 11:57:07,467 - INFO - Sample 198 | Best value: -7.01 |
+2024-01-27 11:57:08,370 - INFO - Sample 199 | Best value: -7.01 |
+2024-01-27 11:57:09,132 - INFO - Sample 200 | Best value: -7.01 |
+2024-01-27 11:57:09,134 - INFO - [Tuner] Main optimization loop terminated
+2024-01-27 11:57:09,134 - INFO - --------------------------------------------------
+2024-01-27 11:57:09,134 - INFO - Best X: [1.9608509209684746, 1.7623973993897657, 0.011163998698809685, -0.3656709262035758, -0.2055058407643644, -0.18102776639735474, 0.577867036520681, 1.8463614154468972, 1.1780754228346542, 3.5594414416659887, 0.33992953338527254, 1.3881841006146223, 2.858910078965234, 1.5384657394890908, 0.7273873034972329, -1.7618980273547367, -1.2001390505321625, 1.5766263631534239, 1.252116799764556, 0.17705561319441188]
+2024-01-27 11:57:09,134 - INFO - Best Y: -7.013757472931465
+2024-01-27 11:57:09,135 - INFO - Elapsed time: 164.68 seconds

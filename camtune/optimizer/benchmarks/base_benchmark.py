@@ -1,21 +1,17 @@
 import torch
 from abc import ABC, abstractmethod
-from botorch.test_functions.base import BaseTestProblem
-from ConfigSpace import Configuration, ConfigurationSpace
+from typing import Callable
+from botorch.test_functions import Ackley, Rosenbrock, Levy, Rastrigin
 
-class Benchmark(ABC):
+dtype = torch.double
+device = torch.device('cuda' if torch.cuda.is_available() else "cpu")
+
+PROPERTY_SET = {
+    'seed', 'Cp', 'leaf_size', 'node_selection_type', 'initial_sampling_method',
+    'bounds', 'num_init', 'obj_func', 'optimizer_type', 'optimizer_params',
+    'classifier_type', 'classifier_params',
+}
+class BaseBenchmark(ABC):
     @property
-    def func(self):
-        return self._func
-
-    @property
-    def configspace(self) -> ConfigurationSpace:
-        return self._configspace
-
-    @abstractmethod
-    def eval(self, config: Configuration):
-        raise NotImplementedError
-    
-    
-    def eval_tensor(self, cands: torch.Tensor) -> torch.Tensor:
-        return self.func(cands)
+    def obj_func(self) -> Callable:
+        return self._obj_func

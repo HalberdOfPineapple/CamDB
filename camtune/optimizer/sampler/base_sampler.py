@@ -1,74 +1,18 @@
-import numpy as np
-
+import torch
 from abc import ABC, abstractmethod
-from ConfigSpace import ConfigurationSpace, Configuration
-from camtune.optimizer.optim_utils import convert_to_valid_config, get_bounds_from_configspace
 
 class BaseSampler(ABC):
-    """
-    Generate samples within the specified domain (which defaults to the whole config space).
-
-    Users should call generate() which auto-scales the samples to the domain.
-
-    To implement new design methodologies, subclasses should implement _generate().
-    """
-
-    def __init__(self, configspace: ConfigurationSpace, seed: int = 0):
-        """
-        Parameters
-        ----------
-        config_space : ConfigurationSpace
-            ConfigurationSpace to do sampling.
-
-        dims (int): Number of dimensions
-
-        lower_bounds : lower bounds in [0, 1] for continuous dimensions (optional)
-        upper_bounds : upper bounds in [0, 1] for continuous dimensions (optional)
-        """
-        self.configspace: ConfigurationSpace = configspace
-        self.dims: int = len(list(configspace.values()))
-
-        bounds = get_bounds_from_configspace(configspace)
-
-        self.lower_bounds = np.array([bound[0] for bound in bounds])
-        self.upper_bounds = np.array([bound[1] for bound in bounds])
+    def __init__(self, bounds: torch.Tensor, seed:int = 0, discrete_dims: list = None):
+        self.bounds = bounds
+        self.dimension = self.bounds.shape[1]
+        
+        self.dtype = bounds.dtype
+        self.device = bounds.device
 
         self.seed = seed
+        self.discrete_dims = discrete_dims
+        self.continuous_dims = [i for i in range(self.bounds.shape[1]) if i not in self.discrete_dims]
 
     @abstractmethod
-    def _generate(self, size:int):
-        """
-        Create samples in the domain specified during construction.
-
-        Returns
-        -------
-        configs : list
-            List of N sampled configurations within domain. (return_config is True)
-
-        X : array, shape (N, D)
-            Design matrix X in the specified domain. (return_config is False)
-        """
+    def generate(self, n_init: int) -> torch.Tensor:
         raise NotImplementedError
-
-    def generate(self, size:int):
-        """
-        Create samples in the domain specified during construction.
-
-        Returns
-        -------
-        configs : list
-            List of N sampled configurations within domain. (return_config is True)
-
-        X : array, shape (N, D)
-            Design matrix X in the specified domain. (return_config is False)
-        """
-        X = self._generate(size)
-        X = self.lower_bounds + (self.upper_bounds - self.lower_bounds) * X
-        # return X
-    
-        configs = []
-        for config_vec in X:
-            valid_config: Configuration = convert_to_valid_config(self.configspace, config_vec)
-            configs.append(valid_config)
-
-        return configs

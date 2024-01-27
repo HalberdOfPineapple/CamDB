@@ -1,8 +1,6 @@
-from .base_benchmark import Benchmark
-from .ackley import Ackley
+from .base_benchmark import BaseBenchmark
+from .ackley import AckleyBenchmark
 
-def build_benchmark(benchmark_name: str, benchmark_params: dict) -> Benchmark:
-    if benchmark_name.upper() == 'ACKLEY':
-        return Ackley(**benchmark_params)
-    else:
-        raise ValueError(f"Undefined benchmark: {benchmark_name}")
+BENCHMARK_MAP = {
+    'ackley': AckleyBenchmark,
+}

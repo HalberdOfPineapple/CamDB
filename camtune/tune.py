@@ -2,24 +2,19 @@ import os
 import argparse
 import yaml
 
-from camtune.utils.logger import init_logger, get_logger, print_log
 from camtune.search_space import SearchSpace
 from camtune.tuner import Tuner
 from camtune.database import PostgresqlDB
-
-current_dir = os.path.dirname(os.path.abspath(__file__))
-CONFIG_DIR = os.path.join(current_dir, 'config')
-LOG_DIR = os.path.join(current_dir, 'logs')
-RES_DIR = os.path.join(current_dir, 'results')
-if not os.path.exists(LOG_DIR): os.mkdir(LOG_DIR)
-if not os.path.exists(RES_DIR): os.mkdir(RES_DIR)
+from camtune.utils import (init_logger, get_logger, print_log, \
+                           LOG_DIR, CONFIG_DIR, RES_DIR)
 
 DEFAULT_CONFIG_NAME = 'postgre_tpch_remote'
 
 def main(expr_config: dict):
     # -----------------------------------
     # Setup logger
-    init_logger(log_dir=LOG_DIR, logger_name=expr_config['expr_name'])
+    init_logger(expr_name=expr_config['expr_name'])
+
     # -----------------------------------
     # Build Database Controller
     db = PostgresqlDB(expr_config)

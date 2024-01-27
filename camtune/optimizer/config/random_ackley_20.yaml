@@ -1,0 +1,17 @@
+benchmark: ackley
+benchmark_params:
+  dim: 20
+  noise_std: null
+  negate: False
+  bounds: null
+
+tuner_params:
+  seed: 1024
+  num_evals: 50
+  batch_size: 1
+  
+  init_design: sobol
+  init_by_dim: True
+  num_init: 20
+
+  optimizer: random
