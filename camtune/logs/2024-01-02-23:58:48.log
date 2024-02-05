@@ -1,6 +1,0 @@
-[2024-01-02 23:58:48,959:postgresql_db.py#L112:INFO]: ----------------------------------- Applying Knobs -----------------------------------
-[2024-01-02 23:58:49,453:postgresql_db.py#L412:INFO]: [PostgresqlDB] Remote shut down attempt failed: force the server to shut down
-[2024-01-02 23:58:49,572:postgresql_db.py#L415:INFO]: [PostgresqlDB] Remote PostgreSql server shut down by forcing
-[2024-01-02 23:58:50,228:postgresql_db.py#L392:INFO]: [PostgresqlDB] config file modification done.
-[2024-01-02 23:58:50,373:postgresql_db.py#L439:INFO]: [PostgresqlDB] Remotely starting PostgreSQL server...
-[2024-01-02 23:58:50,589:postgresql_db.py#L471:INFO]: [PostgresqlDB] Wait for connection to the started server...

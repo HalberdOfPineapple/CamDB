@@ -2,9 +2,8 @@ expr_name: test_random_opt
 ssh:
   # SSH user is set to postgres for allowing access for pg_ctl and postgres server
   # while the PostgresqlDB.user refers to the user of the database accessing data
-  ssh_host: localhost
-  ssh_user: postgres
-  ssh_pwd: '741286'
+  pg_user_name: postgres
+  pg_user_pwd: '741286'
 
 database:
   db_host: localhost
@@ -19,27 +18,32 @@ database:
   pg_conf: /var/lib/postgresql/experiment/conf/tune_cnf.conf
   pg_sock: /var/run/postgresql/.s.PGSQL.543
 
-  remote_mode: true
-  isolation_mode: false
+  remote_mode: false
   online_mode: false
 
   benchmark: TPCH
-  benchmark_fast: true # only execute short queries
-  use_pgbench: true
-
-tune:
-  strategy: random
-  seed: 1024
-
-  perf_name: latency
-  perf_unit: ms
+  benchmark_fast: true # true # only execute short queries
+  use_pgbench: false
 
   # saved locally
-  knob_definitions: /home/viktor/Experiments/CamDB/camtune/knobs/JOB_SHAP_Modified.json
+  # knob_definitions: /home/viktor/Experiments/CamDB/camtune/knobs/JOB_SHAP_Modified.json
+  knob_definitions: /home/viktor/Experiments/CamDB/camtune/knobs/selected.json
   knob_num: -1
 
-  is_minimizing: True
+  perf_name: total_exec_time
+  perf_unit: s
+  negate: true
 
-  init_design: sobol
-  num_init: 5
-  computation_budget: 5
+tune:
+  seed: 1
+  num_evals: 5
+  batch_size: 1
+  
+  init_design: lhs
+  init_by_dim: False
+  num_init: 0
+
+  optimizer: random
+  optimizer_params:
+    # method: lhs
+    method: any

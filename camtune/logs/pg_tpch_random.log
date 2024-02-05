@@ -1,0 +1,209 @@
+2024-02-05 21:46:34,209 - INFO - [Tuner] Start optimization using random for 5 iterations
+2024-02-05 21:46:34,210 - INFO - ================================================================================
+2024-02-05 21:46:34,210 - INFO - [Tune] [Iteration 0]: using configuration: 
+2024-02-05 21:46:34,210 - INFO - 	effective_cache_size: 279312
+2024-02-05 21:46:34,210 - INFO - 	maintenance_work_mem: 734956
+2024-02-05 21:46:34,211 - INFO - 	shared_buffers: 757663
+2024-02-05 21:46:34,211 - INFO - 	work_mem: 3340
+2024-02-05 21:46:34,222 - INFO - ----------------------------------- Applying Knobs -----------------------------------
+2024-02-05 21:46:34,340 - INFO - [PGUtils] Local PostgreSQL server shut down successfully
+2024-02-05 21:46:34,352 - INFO - [PGKnobApplier] config file modification done (locally).
+2024-02-05 21:46:34,352 - INFO - [PGUtils] Locally starting PostgreSQL server...
+2024-02-05 21:46:34,353 - INFO - [PGUtils] Wait for connection to the started server...
+2024-02-05 21:46:35,372 - INFO - [PGUtils] Successfully connected to the started PostgreSQL Server
+2024-02-05 21:46:35,373 - INFO - [PGUtils] 1 seconds waiting for connection
+2024-02-05 21:46:35,373 - INFO - [PGUtils] start command: postgres --config_file=/var/lib/postgresql/experiment/conf/tune_cnf.conf
+2024-02-05 21:46:35,373 - INFO - [PGUtils] PostgresSQL is successfully launched.
+2024-02-05 21:46:35,373 - INFO - [PGKnobApplier] Sleeping for 0 seconds after restarting postgres
+2024-02-05 21:46:35,373 - INFO - [PGKnobApplier] No knobs need to be applied online
+2024-02-05 21:46:35,389 - INFO - [PGKnobApplier] Knobs successfully applied offline.
+2024-02-05 21:46:35,389 - INFO - --------------------------------------------------------------------------------
+2024-02-05 21:46:35,389 - INFO - [PGExecutor] Exeucting queries listed in tpch_query_fast_list.txt
+2024-02-05 21:46:35,396 - INFO - [PGExecutor] Connected to PostgreSQL server for query execution:
+2024-02-05 21:46:35,396 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/1.sql
+2024-02-05 21:46:36,817 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/2.sql
+2024-02-05 21:46:37,013 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/3.sql
+2024-02-05 21:46:37,340 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/4.sql
+2024-02-05 21:46:37,455 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/5.sql
+2024-02-05 21:46:37,583 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/6.sql
+2024-02-05 21:46:37,761 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/7.sql
+2024-02-05 21:46:37,940 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/8.sql
+2024-02-05 21:46:38,269 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/9.sql
+2024-02-05 21:46:39,065 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/10.sql
+2024-02-05 21:46:39,398 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/11.sql
+2024-02-05 21:46:39,481 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/12.sql
+2024-02-05 21:46:39,784 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/13.sql
+2024-02-05 21:46:40,151 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/14.sql
+2024-02-05 21:46:40,341 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/15.sql
+2024-02-05 21:46:40,725 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/16.sql
+2024-02-05 21:46:40,899 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/18.sql
+2024-02-05 21:46:42,310 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/19.sql
+2024-02-05 21:46:42,696 - INFO - [Tune] [Iteration 0]: total_exec_time: 7.179 (s)
+2024-02-05 21:46:42,696 - INFO - ================================================================================
+2024-02-05 21:46:42,696 - INFO - [Tune] [Iteration 1]: using configuration: 
+2024-02-05 21:46:42,696 - INFO - 	effective_cache_size: 799859
+2024-02-05 21:46:42,696 - INFO - 	maintenance_work_mem: 754623
+2024-02-05 21:46:42,696 - INFO - 	shared_buffers: 29406
+2024-02-05 21:46:42,696 - INFO - 	work_mem: 3292
+2024-02-05 21:46:42,709 - INFO - ----------------------------------- Applying Knobs -----------------------------------
+2024-02-05 21:46:42,824 - INFO - [PGUtils] Local PostgreSQL server shut down successfully
+2024-02-05 21:46:42,835 - INFO - [PGKnobApplier] config file modification done (locally).
+2024-02-05 21:46:42,835 - INFO - [PGUtils] Locally starting PostgreSQL server...
+2024-02-05 21:46:42,836 - INFO - [PGUtils] Wait for connection to the started server...
+2024-02-05 21:46:43,859 - INFO - [PGUtils] Successfully connected to the started PostgreSQL Server
+2024-02-05 21:46:43,859 - INFO - [PGUtils] 1 seconds waiting for connection
+2024-02-05 21:46:43,859 - INFO - [PGUtils] start command: postgres --config_file=/var/lib/postgresql/experiment/conf/tune_cnf.conf
+2024-02-05 21:46:43,859 - INFO - [PGUtils] PostgresSQL is successfully launched.
+2024-02-05 21:46:43,859 - INFO - [PGKnobApplier] Sleeping for 0 seconds after restarting postgres
+2024-02-05 21:46:43,860 - INFO - [PGKnobApplier] No knobs need to be applied online
+2024-02-05 21:46:43,871 - INFO - [PGKnobApplier] Knobs successfully applied offline.
+2024-02-05 21:46:43,871 - INFO - --------------------------------------------------------------------------------
+2024-02-05 21:46:43,871 - INFO - [PGExecutor] Exeucting queries listed in tpch_query_fast_list.txt
+2024-02-05 21:46:43,881 - INFO - [PGExecutor] Connected to PostgreSQL server for query execution:
+2024-02-05 21:46:43,881 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/1.sql
+2024-02-05 21:46:45,204 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/2.sql
+2024-02-05 21:46:45,403 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/3.sql
+2024-02-05 21:46:45,758 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/4.sql
+2024-02-05 21:46:45,934 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/5.sql
+2024-02-05 21:46:46,131 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/6.sql
+2024-02-05 21:46:46,358 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/7.sql
+2024-02-05 21:46:46,653 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/8.sql
+2024-02-05 21:46:47,106 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/9.sql
+2024-02-05 21:46:48,088 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/10.sql
+2024-02-05 21:46:48,485 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/11.sql
+2024-02-05 21:46:48,584 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/12.sql
+2024-02-05 21:46:48,970 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/13.sql
+2024-02-05 21:46:49,406 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/14.sql
+2024-02-05 21:46:49,652 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/15.sql
+2024-02-05 21:46:50,169 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/16.sql
+2024-02-05 21:46:50,345 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/18.sql
+2024-02-05 21:46:52,562 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/19.sql
+2024-02-05 21:46:52,964 - INFO - [Tune] [Iteration 1]: total_exec_time: 8.987 (s)
+2024-02-05 21:46:52,964 - INFO - ================================================================================
+2024-02-05 21:46:52,964 - INFO - [Tune] [Iteration 2]: using configuration: 
+2024-02-05 21:46:52,964 - INFO - 	effective_cache_size: 438778
+2024-02-05 21:46:52,964 - INFO - 	maintenance_work_mem: 525153
+2024-02-05 21:46:52,964 - INFO - 	shared_buffers: 569564
+2024-02-05 21:46:52,964 - INFO - 	work_mem: 5255
+2024-02-05 21:46:52,974 - INFO - ----------------------------------- Applying Knobs -----------------------------------
+2024-02-05 21:46:53,090 - INFO - [PGUtils] Local PostgreSQL server shut down successfully
+2024-02-05 21:46:53,101 - INFO - [PGKnobApplier] config file modification done (locally).
+2024-02-05 21:46:53,101 - INFO - [PGUtils] Locally starting PostgreSQL server...
+2024-02-05 21:46:53,102 - INFO - [PGUtils] Wait for connection to the started server...
+2024-02-05 21:46:54,125 - INFO - [PGUtils] Successfully connected to the started PostgreSQL Server
+2024-02-05 21:46:54,125 - INFO - [PGUtils] 1 seconds waiting for connection
+2024-02-05 21:46:54,125 - INFO - [PGUtils] start command: postgres --config_file=/var/lib/postgresql/experiment/conf/tune_cnf.conf
+2024-02-05 21:46:54,125 - INFO - [PGUtils] PostgresSQL is successfully launched.
+2024-02-05 21:46:54,125 - INFO - [PGKnobApplier] Sleeping for 0 seconds after restarting postgres
+2024-02-05 21:46:54,126 - INFO - [PGKnobApplier] No knobs need to be applied online
+2024-02-05 21:46:54,138 - INFO - [PGKnobApplier] Knobs successfully applied offline.
+2024-02-05 21:46:54,139 - INFO - --------------------------------------------------------------------------------
+2024-02-05 21:46:54,139 - INFO - [PGExecutor] Exeucting queries listed in tpch_query_fast_list.txt
+2024-02-05 21:46:54,146 - INFO - [PGExecutor] Connected to PostgreSQL server for query execution:
+2024-02-05 21:46:54,146 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/1.sql
+2024-02-05 21:46:55,628 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/2.sql
+2024-02-05 21:46:55,825 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/3.sql
+2024-02-05 21:46:56,141 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/4.sql
+2024-02-05 21:46:56,254 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/5.sql
+2024-02-05 21:46:56,387 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/6.sql
+2024-02-05 21:46:56,575 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/7.sql
+2024-02-05 21:46:56,750 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/8.sql
+2024-02-05 21:46:57,081 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/9.sql
+2024-02-05 21:46:57,850 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/10.sql
+2024-02-05 21:46:58,253 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/11.sql
+2024-02-05 21:46:58,337 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/12.sql
+2024-02-05 21:46:58,651 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/13.sql
+2024-02-05 21:46:59,024 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/14.sql
+2024-02-05 21:46:59,219 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/15.sql
+2024-02-05 21:46:59,623 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/16.sql
+2024-02-05 21:46:59,805 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/18.sql
+2024-02-05 21:47:01,322 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/19.sql
+2024-02-05 21:47:01,696 - INFO - [Tune] [Iteration 2]: total_exec_time: 7.446 (s)
+2024-02-05 21:47:01,696 - INFO - ================================================================================
+2024-02-05 21:47:01,696 - INFO - [Tune] [Iteration 3]: using configuration: 
+2024-02-05 21:47:01,696 - INFO - 	effective_cache_size: 305150
+2024-02-05 21:47:01,696 - INFO - 	maintenance_work_mem: 455544
+2024-02-05 21:47:01,696 - INFO - 	shared_buffers: 682655
+2024-02-05 21:47:01,696 - INFO - 	work_mem: 3832
+2024-02-05 21:47:01,707 - INFO - ----------------------------------- Applying Knobs -----------------------------------
+2024-02-05 21:47:01,823 - INFO - [PGUtils] Local PostgreSQL server shut down successfully
+2024-02-05 21:47:01,837 - INFO - [PGKnobApplier] config file modification done (locally).
+2024-02-05 21:47:01,837 - INFO - [PGUtils] Locally starting PostgreSQL server...
+2024-02-05 21:47:01,838 - INFO - [PGUtils] Wait for connection to the started server...
+2024-02-05 21:47:02,860 - INFO - [PGUtils] Successfully connected to the started PostgreSQL Server
+2024-02-05 21:47:02,860 - INFO - [PGUtils] 1 seconds waiting for connection
+2024-02-05 21:47:02,860 - INFO - [PGUtils] start command: postgres --config_file=/var/lib/postgresql/experiment/conf/tune_cnf.conf
+2024-02-05 21:47:02,860 - INFO - [PGUtils] PostgresSQL is successfully launched.
+2024-02-05 21:47:02,861 - INFO - [PGKnobApplier] Sleeping for 0 seconds after restarting postgres
+2024-02-05 21:47:02,861 - INFO - [PGKnobApplier] No knobs need to be applied online
+2024-02-05 21:47:02,872 - INFO - [PGKnobApplier] Knobs successfully applied offline.
+2024-02-05 21:47:02,873 - INFO - --------------------------------------------------------------------------------
+2024-02-05 21:47:02,873 - INFO - [PGExecutor] Exeucting queries listed in tpch_query_fast_list.txt
+2024-02-05 21:47:02,883 - INFO - [PGExecutor] Connected to PostgreSQL server for query execution:
+2024-02-05 21:47:02,884 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/1.sql
+2024-02-05 21:47:04,372 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/2.sql
+2024-02-05 21:47:04,579 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/3.sql
+2024-02-05 21:47:04,890 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/4.sql
+2024-02-05 21:47:05,006 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/5.sql
+2024-02-05 21:47:05,141 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/6.sql
+2024-02-05 21:47:05,327 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/7.sql
+2024-02-05 21:47:05,507 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/8.sql
+2024-02-05 21:47:05,854 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/9.sql
+2024-02-05 21:47:06,646 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/10.sql
+2024-02-05 21:47:06,986 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/11.sql
+2024-02-05 21:47:07,068 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/12.sql
+2024-02-05 21:47:07,381 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/13.sql
+2024-02-05 21:47:07,775 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/14.sql
+2024-02-05 21:47:07,981 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/15.sql
+2024-02-05 21:47:08,377 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/16.sql
+2024-02-05 21:47:08,552 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/18.sql
+2024-02-05 21:47:09,962 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/19.sql
+2024-02-05 21:47:10,311 - INFO - [Tune] [Iteration 3]: total_exec_time: 7.337 (s)
+2024-02-05 21:47:10,311 - INFO - ================================================================================
+2024-02-05 21:47:10,311 - INFO - [Tune] [Iteration 4]: using configuration: 
+2024-02-05 21:47:10,311 - INFO - 	effective_cache_size: 498003
+2024-02-05 21:47:10,312 - INFO - 	maintenance_work_mem: 655948
+2024-02-05 21:47:10,312 - INFO - 	shared_buffers: 572527
+2024-02-05 21:47:10,312 - INFO - 	work_mem: 7681
+2024-02-05 21:47:10,323 - INFO - ----------------------------------- Applying Knobs -----------------------------------
+2024-02-05 21:47:10,540 - INFO - [PGUtils] Local PostgreSQL server shut down successfully
+2024-02-05 21:47:10,551 - INFO - [PGKnobApplier] config file modification done (locally).
+2024-02-05 21:47:10,551 - INFO - [PGUtils] Locally starting PostgreSQL server...
+2024-02-05 21:47:10,551 - INFO - [PGUtils] Wait for connection to the started server...
+2024-02-05 21:47:11,577 - INFO - [PGUtils] Successfully connected to the started PostgreSQL Server
+2024-02-05 21:47:11,577 - INFO - [PGUtils] 1 seconds waiting for connection
+2024-02-05 21:47:11,577 - INFO - [PGUtils] start command: postgres --config_file=/var/lib/postgresql/experiment/conf/tune_cnf.conf
+2024-02-05 21:47:11,577 - INFO - [PGUtils] PostgresSQL is successfully launched.
+2024-02-05 21:47:11,577 - INFO - [PGKnobApplier] Sleeping for 0 seconds after restarting postgres
+2024-02-05 21:47:11,578 - INFO - [PGKnobApplier] No knobs need to be applied online
+2024-02-05 21:47:11,589 - INFO - [PGKnobApplier] Knobs successfully applied offline.
+2024-02-05 21:47:11,589 - INFO - --------------------------------------------------------------------------------
+2024-02-05 21:47:11,589 - INFO - [PGExecutor] Exeucting queries listed in tpch_query_fast_list.txt
+2024-02-05 21:47:11,600 - INFO - [PGExecutor] Connected to PostgreSQL server for query execution:
+2024-02-05 21:47:11,600 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/1.sql
+2024-02-05 21:47:13,077 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/2.sql
+2024-02-05 21:47:13,271 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/3.sql
+2024-02-05 21:47:13,582 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/4.sql
+2024-02-05 21:47:13,696 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/5.sql
+2024-02-05 21:47:13,832 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/6.sql
+2024-02-05 21:47:14,023 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/7.sql
+2024-02-05 21:47:14,216 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/8.sql
+2024-02-05 21:47:14,553 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/9.sql
+2024-02-05 21:47:15,284 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/10.sql
+2024-02-05 21:47:15,649 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/11.sql
+2024-02-05 21:47:15,732 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/12.sql
+2024-02-05 21:47:16,046 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/13.sql
+2024-02-05 21:47:16,785 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/14.sql
+2024-02-05 21:47:16,986 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/15.sql
+2024-02-05 21:47:17,384 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/16.sql
+2024-02-05 21:47:17,568 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/18.sql
+2024-02-05 21:47:19,050 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/19.sql
+2024-02-05 21:47:19,412 - INFO - [Tune] [Iteration 4]: total_exec_time: 7.708 (s)
+2024-02-05 21:47:19,413 - INFO - ================================================================================
+2024-02-05 21:47:19,413 - INFO - Best total_exec_time: 7.179058074951172
+2024-02-05 21:47:19,413 - INFO - Best config:
+2024-02-05 21:47:19,413 - INFO - 	effective_cache_size: 279312
+2024-02-05 21:47:19,413 - INFO - 	maintenance_work_mem: 734956
+2024-02-05 21:47:19,413 - INFO - 	shared_buffers: 757663
+2024-02-05 21:47:19,413 - INFO - 	work_mem: 3340
+2024-02-05 21:47:19,413 - INFO - Elapsed time: 45.20 seconds

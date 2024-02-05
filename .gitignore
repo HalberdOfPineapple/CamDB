@@ -1,7 +1,6 @@
 __pycache__/*
 camtune/__pycache__/*
 botorch_exprs/*
-camtune/logs/*
 draft_scripts/*
 logs/*
 camtune/optimizer/opt_logs/*

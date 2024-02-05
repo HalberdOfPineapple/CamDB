@@ -61,6 +61,9 @@ def main(config):
     best_Y = result_Y.max().item()
     result_X, result_Y = result_X.detach().cpu().numpy(), result_Y.detach().cpu().numpy()
     
+    if benchmark.negate:
+        best_Y = -best_Y
+        result_Y = -result_Y
 
     print_log("-" * 50, print_msg=True)
     print_log(f"Best X: {best_X}", print_msg=False)

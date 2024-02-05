@@ -4,6 +4,7 @@ from botorch.utils.transforms import unnormalize
 
 from .base_optimizer import BaseOptimizer
 from camtune.optimizer.optim_utils import generate_random_discrete
+from camtune.utils import DTYPE, DEVICE
 
 class RandomOptimizer(BaseOptimizer):
     def __init__(
@@ -30,24 +31,21 @@ class RandomOptimizer(BaseOptimizer):
             X_init: (num_init, dim)
             Y_init: (num_init, 1)
         """ 
-        # X_sampled = torch.randn(num_evals, self.dimension, device=self.device, dtype=self.dtype)
+        # X_sampled = torch.randn(num_evals, self.dimension, device=DEVICE, dtype=DTYPE)
         torch.manual_seed(self.seed)
 
         if self.use_lhs:
             X_sampled = self.sampler.generate(num_evals)
-            Y_sampled = torch.tensor(
-                [self.obj_func(x) for x in X_sampled], dtype=self.dtype, device=self.device,
-            ).unsqueeze(-1)
         else:
-            X_sampled = torch.empty(num_evals, self.dimension, device=self.device, dtype=self.dtype)
+            X_sampled = torch.empty(num_evals, self.dimension, device=DEVICE, dtype=DTYPE)
 
-            X_sampled[:, self.continuous_dims] = torch.rand(num_evals, len(self.continuous_dims), device=self.device, dtype=self.dtype)
+            X_sampled[:, self.continuous_dims] = torch.rand(num_evals, len(self.continuous_dims), device=DEVICE, dtype=DTYPE)
             X_sampled[:, self.continuous_dims] = unnormalize(X_sampled[:, self.continuous_dims], self.bounds[:, self.continuous_dims])
             X_sampled[:, self.discrete_dims] = generate_random_discrete(num_evals, self.bounds, self.discrete_dims)
 
-            Y_sampled = torch.tensor(
-                [self.obj_func(x) for x in X_sampled], dtype=self.dtype, device=self.device,
-            ).unsqueeze(-1)
+        Y_sampled = torch.tensor(
+            [self.obj_func(x) for x in X_sampled], dtype=DTYPE, device=DEVICE,
+        ).unsqueeze(-1)
 
         X = torch.cat([X_init, X_sampled], dim=0)
         Y = torch.cat([Y_init, Y_sampled], dim=0)

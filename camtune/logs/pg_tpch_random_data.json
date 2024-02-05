@@ -1,0 +1,47 @@
+{
+    "0": {
+        "total_exec_time (s)": 7.179058074951172,
+        "config": {
+            "effective_cache_size": 279312,
+            "maintenance_work_mem": 734956,
+            "shared_buffers": 757663,
+            "work_mem": 3340
+        }
+    },
+    "1": {
+        "total_exec_time (s)": 8.987009048461914,
+        "config": {
+            "effective_cache_size": 799859,
+            "maintenance_work_mem": 754623,
+            "shared_buffers": 29406,
+            "work_mem": 3292
+        }
+    },
+    "2": {
+        "total_exec_time (s)": 7.445849895477295,
+        "config": {
+            "effective_cache_size": 438778,
+            "maintenance_work_mem": 525153,
+            "shared_buffers": 569564,
+            "work_mem": 5255
+        }
+    },
+    "3": {
+        "total_exec_time (s)": 7.337133884429932,
+        "config": {
+            "effective_cache_size": 305150,
+            "maintenance_work_mem": 455544,
+            "shared_buffers": 682655,
+            "work_mem": 3832
+        }
+    },
+    "4": {
+        "total_exec_time (s)": 7.708409786224365,
+        "config": {
+            "effective_cache_size": 498003,
+            "maintenance_work_mem": 655948,
+            "shared_buffers": 572527,
+            "work_mem": 7681
+        }
+    }
+}

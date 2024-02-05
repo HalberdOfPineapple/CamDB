@@ -107,7 +107,7 @@ class GPBOOptimizer(BaseOptimizer):
                 f"Sample {len(X_sampled) + len(X_init)} | "
                 f"Best value: {Y_sampled.max().item():.2f} |"
             )
-            print_log(log_msg)
+            print_log(log_msg, print_msg=True)
         
         result_X = torch.cat([X_init, X_sampled], dim=0)
         result_Y = torch.cat([Y_init, Y_sampled], dim=0)

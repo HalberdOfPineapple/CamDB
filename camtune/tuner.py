@@ -5,7 +5,7 @@ from botorch.utils.transforms import unnormalize
 from typing import List, Callable, Optional, Union, Tuple
 
 
-from camtune.utils.logger import print_log
+from camtune.utils import print_log, DTYPE, DEVICE
 from camtune.optimizer import build_optimizer, build_init_design, BaseOptimizer
 
 # tuner_params:
@@ -46,7 +46,7 @@ class Tuner:
 
         self.seed = self.args['seed']
         self.bounds = bounds
-        self.dtype, self.device = bounds.dtype, bounds.device
+        DTYPE, DEVICE = bounds.dtype, bounds.device
         self.dimension = self.bounds.shape[1]
 
         self.num_evals= self.args['num_evals']
@@ -90,11 +90,11 @@ class Tuner:
             print_log(f'[Tuner] Start initial profiling by {self.args["init_design"]}', print_msg=True)
             X_init: torch.Tensor = self.init_sampler.generate(self.num_init)
             Y_init: torch.Tensor = torch.tensor(
-                    [self.obj_func(x) for x in X_init], dtype=self.dtype, device=self.device,
+                    [self.obj_func(x) for x in X_init], dtype=DTYPE, device=DEVICE,
                 ).unsqueeze(-1)
         else:
-            X_init: torch.Tensor = torch.empty((0, self.dimension), dtype=self.dtype, device=self.device)
-            Y_init: torch.Tensor = torch.empty((0, 1), dtype=self.dtype, device=self.device)
+            X_init: torch.Tensor = torch.empty((0, self.dimension), dtype=DTYPE, device=DEVICE)
+            Y_init: torch.Tensor = torch.empty((0, 1), dtype=DTYPE, device=DEVICE)
 
         num_evals = self.num_evals - self.num_init
         print_log(f'[Tuner] Start optimization using {self.args["optimizer"]} for {self.num_evals} iterations', print_msg=True)

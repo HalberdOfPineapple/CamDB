@@ -1,8 +1,7 @@
 from shutil import copyfile
-import re
+
 
 class ConfigParser(object):
-
     def __init__(self, cnf):
         f = open(cnf)
         self._cnf = cnf
@@ -21,7 +20,7 @@ class ConfigParser(object):
                     continue
         f.close()
 
-    def replace(self, tmp='/tmp/tmp.cnf'):
+    def replace(self, tmp='/tmp/tmp.cnf') -> str:
         record_list = []
         f1 = open(self._cnf)
         f2 = open(tmp, 'w')
@@ -44,32 +43,11 @@ class ConfigParser(object):
 
         f1.close()
         f2.close()
-        copyfile(tmp, self._cnf)
+        # copyfile(tmp, self._cnf)
+        return tmp
 
     def set(self, k, v):
         if isinstance(v, str) and ' ' in v:
             self._knobs[k] = "'{}'".format(v)
         else:
             self._knobs[k] = v
-
-def parse_pgbench_output(output):
-    parsed_data = {}
-    patterns = {
-        'transaction_type': r'transaction type:\s*(.+)',
-        'scaling_factor': r'scaling factor:\s*(.+)',
-        'query_mode': r'query mode:\s*(.+)',
-        'number_of_clients': r'number of clients:\s*(\d+)',
-        'number_of_threads': r'number of threads:\s*(\d+)',
-        'number_of_transactions': r'number of transactions actually processed:\s*(\d+)/\d+',
-        'failed_transactions': r'number of failed transactions:\s*(\d+)',
-        'latency_average': r'latency average = ([\d.]+)\s*ms',
-        'initial_connection_time': r'initial connection time = ([\d.]+)\s*ms',
-        'tps': r'tps = ([\d.]+)\s*'
-    }
-
-    for key, pattern in patterns.items():
-        match = re.search(pattern, output)
-        if match:
-            parsed_data[key] = match.group(1)
-
-    return parsed_data

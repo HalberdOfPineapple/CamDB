@@ -1,2 +1,2 @@
-from .database import DBConnector, PostgresqlConnector, PostgresqlDB
+from .database import DBConnector, PostgresqlDB
 from .optimizer import BaseOptimizer, RandomOptimizer

@@ -1,7 +1,9 @@
 import json
-
+import torch
 import ConfigSpace as CS
 import ConfigSpace.hyperparameters as CSH
+
+from camtune.utils import print_log, DTYPE, DEVICE
 
 SEED = 1
 KNOB_TYPES = ['enum', 'integer', 'real', 'float']
@@ -41,37 +43,81 @@ class SearchSpace:
             self.knobs = [info for info in definitions if info['name'] in self.include_knobs]
             self.knobs_dict = { d['name']: d for d in self.knobs}
 
+        self._bounds = None
         self.init_input_space()
     
     def init_input_space(self):
-        input_dimensions = [ ]
+        self.input_variables = []
+        self.lbs, self.ubs = [], []
+        self.discrete_dims, self.continuous_dims = [], []
+        self.idx_maps = {}
+
         for info in self.knobs:
             name, knob_type = info['name'], info['type']
             
             if knob_type not in KNOB_TYPES:
                 raise NotImplementedError(f'Knob type of "{knob_type}" is not supported :(')
 
-            ## Categorical
+            # Categorical variables
             if knob_type == 'enum':
-                dim = CSH.CategoricalHyperparameter(
+                variable = CSH.CategoricalHyperparameter(
                                 name=name,
                                 choices=info["enum_values"] if self.is_kv_config else info['choices'],
                                 default_value=info['default'])
-            ## Numerical
-            elif knob_type == 'integer':
-                dim = CSH.UniformIntegerHyperparameter(
-                                name=name,
-                                lower=info['min'],
-                                upper=info['max'],
-                                default_value=info['default'])
-            elif knob_type == 'real' or knob_type == 'float':
-                dim = CSH.UniformFloatHyperparameter(
-                                name=name,
-                                lower=info['min'],
-                                upper=info['max'],
-                                default_value=info['default'])
-            
-            input_dimensions.append(dim)
+                
+                self.lbs.append(0)
+                self.ubs.append(len(info["enum_values"]) - 1)
 
+                var_idx = len(self.input_variables)
+                self.discrete_dims.append(var_idx)
+                self.idx_maps[var_idx] = {i: v for i, v in enumerate(info["enum_values"])}
+
+            # Discrete numerical variables
+            elif knob_type == 'integer':
+                variable = CSH.UniformIntegerHyperparameter(
+                                name=name,
+                                lower=info['min'],
+                                upper=info['max'],
+                                default_value=info['default'])
+                # When inputting the value of knobs, we do not need to care about the unit
+                # The knob value, shown in PostgreSQL, will automatically be divided by the unit and we only need to
+                # care about checking whether the value is correctly applied.
+                self.lbs.append(info['min'])
+                self.ubs.append(info['max'])
+
+                var_idx = len(self.input_variables)
+                self.discrete_dims.append(var_idx)
+    
+            # Continuous numerical variables
+            elif knob_type == 'real' or knob_type == 'float':
+                variable = CSH.UniformFloatHyperparameter(
+                                name=name,
+                                lower=info['min'],
+                                upper=info['max'],
+                                default_value=info['default'])
+                self.lbs.append(info['min'])
+                self.ubs.append(info['max'])
+
+                var_idx = len(self.input_variables)
+                self.continuous_dims.append(var_idx)
+            else:
+                raise NotImplementedError(f'Knob type of "{knob_type}" is not supported :(')
+    
+            self.input_variables.append(variable)
         self.input_space = CS.ConfigurationSpace(name='input', seed=self.seed)
-        self.input_space.add_hyperparameters(input_dimensions)
+        self.input_space.add_hyperparameters(self.input_variables)
+    
+    def discrete_idx_to_value(self, knob_idx: int, num_val: int) -> int:
+        knob_info: dict = self.knobs[knob_idx]
+        if knob_info['type'] == 'enum':
+            return self.idx_maps[knob_idx][num_val]
+        elif knob_info['type'] == 'integer':
+            return num_val
+        else:
+            raise NotImplementedError(f'Knob type of "{knob_info["type"]}" does not to be mapped.')
+    
+    @property
+    def bounds(self) -> torch.Tensor:
+        if self._bounds is None:
+            self._bounds = torch.tensor([self.lbs, self.ubs], device=DEVICE, dtype=DTYPE) # (2, D)
+        return self._bounds

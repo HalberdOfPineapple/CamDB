@@ -236,6 +236,7 @@
         "min": 0,
         "max": 2147483647,
         "unit": 8,
+        "byte_unit": "MB",
         "important_rank": 23,
         "shap_value": -3.0780067662282713
     },
@@ -298,6 +299,7 @@
         "min": 128,
         "max": 1000000,
         "unit": 8,
+        "byte_unit": "KB",
         "important_rank": 29,
         "shap_value": -40.203413303929636
     },

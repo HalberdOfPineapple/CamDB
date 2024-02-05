@@ -15,4 +15,4 @@ tuner_params:
 
   optimizer: gp-bo
   optimizer_params:
-    acquisition: 'ei'
+    acquisition: 'qei'
