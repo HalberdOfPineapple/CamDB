@@ -6,3 +6,5 @@ logs/*
 camtune/optimizer/opt_logs/*
 camtune/optimizer/results/*
 camtune/optimizer/__pycache__/
+.vscode/*
+rename.py
