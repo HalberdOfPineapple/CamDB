@@ -1,6 +1,6 @@
 {
     "0": {
-        "total_exec_time (s)": 7.179058074951172,
+        "total_exec_time (s)": 18.00189781188965,
         "config": {
             "effective_cache_size": 279312,
             "maintenance_work_mem": 734956,
@@ -9,7 +9,7 @@
         }
     },
     "1": {
-        "total_exec_time (s)": 8.987009048461914,
+        "total_exec_time (s)": 9.323088645935059,
         "config": {
             "effective_cache_size": 799859,
             "maintenance_work_mem": 754623,
@@ -18,7 +18,7 @@
         }
     },
     "2": {
-        "total_exec_time (s)": 7.445849895477295,
+        "total_exec_time (s)": 7.605154037475586,
         "config": {
             "effective_cache_size": 438778,
             "maintenance_work_mem": 525153,
@@ -27,7 +27,7 @@
         }
     },
     "3": {
-        "total_exec_time (s)": 7.337133884429932,
+        "total_exec_time (s)": 7.80322790145874,
         "config": {
             "effective_cache_size": 305150,
             "maintenance_work_mem": 455544,
@@ -36,7 +36,7 @@
         }
     },
     "4": {
-        "total_exec_time (s)": 7.708409786224365,
+        "total_exec_time (s)": 7.6180877685546875,
         "config": {
             "effective_cache_size": 498003,
             "maintenance_work_mem": 655948,

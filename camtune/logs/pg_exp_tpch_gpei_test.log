@@ -1,0 +1,524 @@
+2024-02-17 22:36:06,472 - INFO - 
+
+2024-02-17 22:36:06,476 - INFO - [Tuner] Start initial profiling by lhs
+2024-02-17 22:36:06,484 - INFO - ================================================================================
+2024-02-17 22:36:06,484 - INFO - [Tune] [Iteration 0]: using configuration: 
+2024-02-17 22:36:06,484 - INFO - 	effective_cache_size: 712167
+2024-02-17 22:36:06,484 - INFO - 	enable_mergejoin: on
+2024-02-17 22:36:06,484 - INFO - 	enable_nestloop: on
+2024-02-17 22:36:06,484 - INFO - 	maintenance_work_mem: 946050
+2024-02-17 22:36:06,484 - INFO - 	max_wal_size: 2851
+2024-02-17 22:36:06,484 - INFO - 	random_page_cost: 97.48455203207709
+2024-02-17 22:36:06,485 - INFO - 	seq_page_cost: 82.42221411327083
+2024-02-17 22:36:06,485 - INFO - 	shared_buffers: 600773
+2024-02-17 22:36:06,485 - INFO - 	wal_buffers: 142012
+2024-02-17 22:36:06,485 - INFO - 	work_mem: 211
+2024-02-17 22:36:06,600 - INFO - ----------------------------------- Applying Knobs -----------------------------------
+2024-02-17 22:36:06,748 - INFO - [PGUtils] Local PostgreSQL server shut down successfully
+2024-02-17 22:36:06,784 - INFO - [PGKnobApplier] config file modification done (locally).
+2024-02-17 22:36:06,784 - INFO - [PGUtils] Locally starting PostgreSQL server...
+2024-02-17 22:36:06,785 - INFO - [PGUtils] Wait for connection to the started server...
+2024-02-17 22:36:13,820 - INFO - [PGUtils] Successfully connected to the started PostgreSQL Server
+2024-02-17 22:36:13,821 - INFO - [PGUtils] 7 seconds waiting for connection
+2024-02-17 22:36:13,821 - INFO - [PGUtils] start command: postgres --config_file=/var/lib/postgresql/experiment/conf/tune_cnf.conf
+2024-02-17 22:36:13,821 - INFO - [PGUtils] PostgresSQL is successfully launched.
+2024-02-17 22:36:13,821 - INFO - [PGKnobApplier] Sleeping for 0 seconds after restarting postgres
+2024-02-17 22:36:13,823 - INFO - [PGKnobApplier] No knobs need to be applied online
+2024-02-17 22:36:13,848 - INFO - [PGKnobApplier] Knob max_wal_size is not successfully set to 2851 (actual value: 2851MB)
+2024-02-17 22:36:13,852 - INFO - [PGKnobApplier] 1 / 10 knobs not successfully applied offline.
+2024-02-17 22:36:13,852 - INFO - --------------------------------------------------------------------------------
+2024-02-17 22:36:13,852 - INFO - [PGExecutor] Exeucting queries listed in tpch_query_fast_list.txt
+2024-02-17 22:36:13,872 - INFO - [PGExecutor] Connected to PostgreSQL server for query execution:
+2024-02-17 22:36:13,872 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/1.sql
+2024-02-17 22:36:13,960 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/2.sql
+2024-02-17 22:36:13,980 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/3.sql
+2024-02-17 22:36:14,000 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/4.sql
+2024-02-17 22:36:14,004 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/5.sql
+2024-02-17 22:36:14,012 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/6.sql
+2024-02-17 22:36:14,016 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/7.sql
+2024-02-17 22:36:14,028 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/8.sql
+2024-02-17 22:36:14,036 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/9.sql
+2024-02-17 22:36:14,040 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/10.sql
+2024-02-17 22:36:14,048 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/11.sql
+2024-02-17 22:36:14,052 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/12.sql
+2024-02-17 22:36:14,056 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/13.sql
+2024-02-17 22:36:14,057 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/14.sql
+2024-02-17 22:36:14,061 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/15.sql
+2024-02-17 22:36:14,064 - INFO - [PGExecutor] Query execution failed when executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/15.sql
+2024-02-17 22:36:14,064 - INFO - [PGExecutor] Error information: syntax error at or near "view"
+LINE 3:  create view revenue0 (supplier_no, total_revenue) as
+                ^
+
+2024-02-17 22:36:14,064 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/16.sql
+2024-02-17 22:36:14,064 - INFO - [PGExecutor] Query execution failed when executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/16.sql
+2024-02-17 22:36:14,064 - INFO - [PGExecutor] Error information: current transaction is aborted, commands ignored until end of transaction block
+
+2024-02-17 22:36:14,064 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/18.sql
+2024-02-17 22:36:14,064 - INFO - [PGExecutor] Query execution failed when executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/18.sql
+2024-02-17 22:36:14,064 - INFO - [PGExecutor] Error information: current transaction is aborted, commands ignored until end of transaction block
+
+2024-02-17 22:36:14,064 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/19.sql
+2024-02-17 22:36:14,065 - INFO - [PGExecutor] Query execution failed when executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/19.sql
+2024-02-17 22:36:14,065 - INFO - [PGExecutor] Error information: current transaction is aborted, commands ignored until end of transaction block
+
+2024-02-17 22:37:21,857 - INFO - 
+
+2024-02-17 22:37:21,860 - INFO - [Tuner] Start initial profiling by lhs
+2024-02-17 22:37:21,865 - INFO - ================================================================================
+2024-02-17 22:37:21,865 - INFO - [Tune] [Iteration 0]: using configuration: 
+2024-02-17 22:37:21,865 - INFO - 	effective_cache_size: 405854
+2024-02-17 22:37:21,865 - INFO - 	enable_mergejoin: on
+2024-02-17 22:37:21,865 - INFO - 	enable_nestloop: off
+2024-02-17 22:37:21,865 - INFO - 	maintenance_work_mem: 918670
+2024-02-17 22:37:21,865 - INFO - 	max_wal_size: 2842
+2024-02-17 22:37:21,865 - INFO - 	random_page_cost: 16.69992791574679
+2024-02-17 22:37:21,868 - INFO - 	seq_page_cost: 53.507721692706255
+2024-02-17 22:37:21,868 - INFO - 	shared_buffers: 739792
+2024-02-17 22:37:21,868 - INFO - 	wal_buffers: 95146
+2024-02-17 22:37:21,868 - INFO - 	work_mem: 3025
+2024-02-17 22:37:21,912 - INFO - ----------------------------------- Applying Knobs -----------------------------------
+2024-02-17 22:37:22,276 - INFO - [PGUtils] Local PostgreSQL server shut down successfully
+2024-02-17 22:37:22,316 - INFO - [PGKnobApplier] config file modification done (locally).
+2024-02-17 22:37:22,316 - INFO - [PGUtils] Locally starting PostgreSQL server...
+2024-02-17 22:37:22,317 - INFO - [PGUtils] Wait for connection to the started server...
+2024-02-17 22:37:24,348 - INFO - [PGUtils] Successfully connected to the started PostgreSQL Server
+2024-02-17 22:37:24,348 - INFO - [PGUtils] 2 seconds waiting for connection
+2024-02-17 22:37:24,348 - INFO - [PGUtils] start command: postgres --config_file=/var/lib/postgresql/experiment/conf/tune_cnf.conf
+2024-02-17 22:37:24,348 - INFO - [PGUtils] PostgresSQL is successfully launched.
+2024-02-17 22:37:24,348 - INFO - [PGKnobApplier] Sleeping for 0 seconds after restarting postgres
+2024-02-17 22:37:24,348 - INFO - [PGKnobApplier] No knobs need to be applied online
+2024-02-17 22:37:24,372 - INFO - [PGKnobApplier] Knob max_wal_size is not successfully set to 2842 (actual value: 2842MB)
+2024-02-17 22:37:24,376 - INFO - [PGKnobApplier] 1 / 10 knobs not successfully applied offline.
+2024-02-17 22:37:24,376 - INFO - --------------------------------------------------------------------------------
+2024-02-17 22:37:24,376 - INFO - [PGExecutor] Exeucting queries listed in tpch_query_fast_list.txt
+2024-02-17 22:37:24,396 - INFO - [PGExecutor] Connected to PostgreSQL server for query execution:
+2024-02-17 22:37:24,396 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/1.sql
+2024-02-17 22:37:24,440 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/2.sql
+2024-02-17 22:37:24,452 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/3.sql
+2024-02-17 22:37:24,459 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/4.sql
+2024-02-17 22:37:24,463 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/5.sql
+2024-02-17 22:37:24,471 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/6.sql
+2024-02-17 22:37:24,472 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/7.sql
+2024-02-17 22:37:24,483 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/8.sql
+2024-02-17 22:37:24,492 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/9.sql
+2024-02-17 22:37:24,503 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/10.sql
+2024-02-17 22:37:24,508 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/11.sql
+2024-02-17 22:37:24,515 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/12.sql
+2024-02-17 22:37:24,520 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/13.sql
+2024-02-17 22:37:24,523 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/14.sql
+2024-02-17 22:37:24,525 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/15.sql
+2024-02-17 22:37:24,527 - INFO - [PGExecutor] Query execution failed when executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/15.sql
+2024-02-17 22:37:24,528 - INFO - [PGExecutor] Error information: syntax error at or near "view"
+LINE 3:  create view revenue0 (supplier_no, total_revenue) as
+                ^
+
+2024-02-17 22:37:24,528 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/16.sql
+2024-02-17 22:37:24,528 - INFO - [PGExecutor] Query execution failed when executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/16.sql
+2024-02-17 22:37:24,528 - INFO - [PGExecutor] Error information: current transaction is aborted, commands ignored until end of transaction block
+
+2024-02-17 22:37:24,528 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/18.sql
+2024-02-17 22:37:24,529 - INFO - [PGExecutor] Query execution failed when executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/18.sql
+2024-02-17 22:37:24,531 - INFO - [PGExecutor] Error information: current transaction is aborted, commands ignored until end of transaction block
+
+2024-02-17 22:37:24,532 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/19.sql
+2024-02-17 22:37:24,532 - INFO - [PGExecutor] Query execution failed when executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/19.sql
+2024-02-17 22:37:24,532 - INFO - [PGExecutor] Error information: current transaction is aborted, commands ignored until end of transaction block
+
+2024-02-17 22:38:54,455 - INFO - 
+
+2024-02-17 22:38:54,456 - INFO - [Tuner] Start initial profiling by lhs
+2024-02-17 22:38:54,460 - INFO - ================================================================================
+2024-02-17 22:38:54,460 - INFO - [Tune] [Iteration 0]: using configuration: 
+2024-02-17 22:38:54,460 - INFO - 	effective_cache_size: 570256
+2024-02-17 22:38:54,460 - INFO - 	enable_mergejoin: on
+2024-02-17 22:38:54,460 - INFO - 	enable_nestloop: off
+2024-02-17 22:38:54,460 - INFO - 	maintenance_work_mem: 992523
+2024-02-17 22:38:54,460 - INFO - 	max_wal_size: 6349
+2024-02-17 22:38:54,460 - INFO - 	random_page_cost: 67.60227636299933
+2024-02-17 22:38:54,460 - INFO - 	seq_page_cost: 35.263950630393246
+2024-02-17 22:38:54,460 - INFO - 	shared_buffers: 145505
+2024-02-17 22:38:54,460 - INFO - 	wal_buffers: 47270
+2024-02-17 22:38:54,461 - INFO - 	work_mem: 717
+2024-02-17 22:38:54,504 - INFO - ----------------------------------- Applying Knobs -----------------------------------
+2024-02-17 22:38:54,856 - INFO - [PGUtils] Local PostgreSQL server shut down successfully
+2024-02-17 22:38:54,912 - INFO - [PGKnobApplier] config file modification done (locally).
+2024-02-17 22:38:54,912 - INFO - [PGUtils] Locally starting PostgreSQL server...
+2024-02-17 22:38:54,916 - INFO - [PGUtils] Wait for connection to the started server...
+2024-02-17 22:38:55,955 - INFO - [PGUtils] Successfully connected to the started PostgreSQL Server
+2024-02-17 22:38:55,956 - INFO - [PGUtils] 1 seconds waiting for connection
+2024-02-17 22:38:55,956 - INFO - [PGUtils] start command: postgres --config_file=/var/lib/postgresql/experiment/conf/tune_cnf.conf
+2024-02-17 22:38:55,956 - INFO - [PGUtils] PostgresSQL is successfully launched.
+2024-02-17 22:38:55,956 - INFO - [PGKnobApplier] Sleeping for 0 seconds after restarting postgres
+2024-02-17 22:38:55,956 - INFO - [PGKnobApplier] No knobs need to be applied online
+2024-02-17 22:38:55,980 - INFO - [PGKnobApplier] Knob max_wal_size is not successfully set to 6349 (actual value: 6349MB)
+2024-02-17 22:38:55,984 - INFO - [PGKnobApplier] 1 / 10 knobs not successfully applied offline.
+2024-02-17 22:38:55,984 - INFO - --------------------------------------------------------------------------------
+2024-02-17 22:38:55,984 - INFO - [PGExecutor] Exeucting queries listed in tpch_query_fast_list.txt
+2024-02-17 22:38:56,007 - INFO - [PGExecutor] Connected to PostgreSQL server for query execution:
+2024-02-17 22:38:56,008 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/1.sql
+2024-02-17 22:38:56,048 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/2.sql
+2024-02-17 22:38:56,064 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/3.sql
+2024-02-17 22:38:56,071 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/4.sql
+2024-02-17 22:38:56,076 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/5.sql
+2024-02-17 22:38:56,083 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/6.sql
+2024-02-17 22:38:56,087 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/7.sql
+2024-02-17 22:38:56,095 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/8.sql
+2024-02-17 22:38:56,103 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/9.sql
+2024-02-17 22:38:56,112 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/10.sql
+2024-02-17 22:38:56,119 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/11.sql
+2024-02-17 22:38:56,124 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/12.sql
+2024-02-17 22:38:56,131 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/13.sql
+2024-02-17 22:38:56,139 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/14.sql
+2024-02-17 22:38:56,143 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/15.sql
+2024-02-17 22:38:56,144 - INFO - [PGExecutor] Query execution failed when executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/15.sql
+2024-02-17 22:38:56,144 - INFO - [PGExecutor] Error information: syntax error at or near "view"
+LINE 3:  create view revenue0 (supplier_no, total_revenue) as
+                ^
+
+2024-02-17 22:38:56,144 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/16.sql
+2024-02-17 22:38:56,144 - INFO - [PGExecutor] Query execution failed when executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/16.sql
+2024-02-17 22:38:56,144 - INFO - [PGExecutor] Error information: current transaction is aborted, commands ignored until end of transaction block
+
+2024-02-17 22:38:56,144 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/18.sql
+2024-02-17 22:38:56,147 - INFO - [PGExecutor] Query execution failed when executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/18.sql
+2024-02-17 22:38:56,147 - INFO - [PGExecutor] Error information: current transaction is aborted, commands ignored until end of transaction block
+
+2024-02-17 22:38:56,148 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/19.sql
+2024-02-17 22:38:56,148 - INFO - [PGExecutor] Query execution failed when executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/19.sql
+2024-02-17 22:38:56,148 - INFO - [PGExecutor] Error information: current transaction is aborted, commands ignored until end of transaction block
+
+2024-02-17 22:38:56,372 - INFO - [Tune] [Iteration 0]: total_cost: 61868844.000 (c_unit)
+2024-02-17 22:38:56,372 - INFO - [Tuner] Start optimization using gp-bo for 3 iterations
+2024-02-17 22:39:11,479 - INFO - ================================================================================
+2024-02-17 22:39:11,480 - INFO - [Tune] [Iteration 1]: using configuration: 
+2024-02-17 22:39:11,480 - INFO - 	effective_cache_size: 224555
+2024-02-17 22:39:11,480 - INFO - 	enable_mergejoin: on
+2024-02-17 22:39:11,483 - INFO - 	enable_nestloop: off
+2024-02-17 22:39:11,483 - INFO - 	maintenance_work_mem: 177942
+2024-02-17 22:39:11,484 - INFO - 	max_wal_size: 4556
+2024-02-17 22:39:11,484 - INFO - 	random_page_cost: 9.514945279806852
+2024-02-17 22:39:11,484 - INFO - 	seq_page_cost: 41.349558625370264
+2024-02-17 22:39:11,484 - INFO - 	shared_buffers: 61173
+2024-02-17 22:39:11,484 - INFO - 	wal_buffers: 28689
+2024-02-17 22:39:11,484 - INFO - 	work_mem: 1968
+2024-02-17 22:39:11,556 - INFO - ----------------------------------- Applying Knobs -----------------------------------
+2024-02-17 22:39:11,832 - INFO - [PGUtils] Local PostgreSQL server shut down successfully
+2024-02-17 22:39:11,876 - INFO - [PGKnobApplier] config file modification done (locally).
+2024-02-17 22:39:11,879 - INFO - [PGUtils] Locally starting PostgreSQL server...
+2024-02-17 22:39:11,880 - INFO - [PGUtils] Wait for connection to the started server...
+2024-02-17 22:39:12,904 - INFO - [PGUtils] Successfully connected to the started PostgreSQL Server
+2024-02-17 22:39:12,904 - INFO - [PGUtils] 1 seconds waiting for connection
+2024-02-17 22:39:12,904 - INFO - [PGUtils] start command: postgres --config_file=/var/lib/postgresql/experiment/conf/tune_cnf.conf
+2024-02-17 22:39:12,904 - INFO - [PGUtils] PostgresSQL is successfully launched.
+2024-02-17 22:39:12,904 - INFO - [PGKnobApplier] Sleeping for 0 seconds after restarting postgres
+2024-02-17 22:39:12,905 - INFO - [PGKnobApplier] No knobs need to be applied online
+2024-02-17 22:39:12,935 - INFO - [PGKnobApplier] Knob max_wal_size is not successfully set to 4556 (actual value: 4556MB)
+2024-02-17 22:39:12,936 - INFO - [PGKnobApplier] 1 / 10 knobs not successfully applied offline.
+2024-02-17 22:39:12,936 - INFO - --------------------------------------------------------------------------------
+2024-02-17 22:39:12,936 - INFO - [PGExecutor] Exeucting queries listed in tpch_query_fast_list.txt
+2024-02-17 22:39:12,964 - INFO - [PGExecutor] Connected to PostgreSQL server for query execution:
+2024-02-17 22:39:12,964 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/1.sql
+2024-02-17 22:39:13,016 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/2.sql
+2024-02-17 22:39:13,028 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/3.sql
+2024-02-17 22:39:13,035 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/4.sql
+2024-02-17 22:39:13,039 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/5.sql
+2024-02-17 22:39:13,047 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/6.sql
+2024-02-17 22:39:13,052 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/7.sql
+2024-02-17 22:39:13,060 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/8.sql
+2024-02-17 22:39:13,072 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/9.sql
+2024-02-17 22:39:13,083 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/10.sql
+2024-02-17 22:39:13,091 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/11.sql
+2024-02-17 22:39:13,099 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/12.sql
+2024-02-17 22:39:13,104 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/13.sql
+2024-02-17 22:39:13,108 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/14.sql
+2024-02-17 22:39:13,115 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/15.sql
+2024-02-17 22:39:13,116 - INFO - [PGExecutor] Query execution failed when executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/15.sql
+2024-02-17 22:39:13,116 - INFO - [PGExecutor] Error information: syntax error at or near "view"
+LINE 3:  create view revenue0 (supplier_no, total_revenue) as
+                ^
+
+2024-02-17 22:39:13,116 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/16.sql
+2024-02-17 22:39:13,116 - INFO - [PGExecutor] Query execution failed when executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/16.sql
+2024-02-17 22:39:13,116 - INFO - [PGExecutor] Error information: current transaction is aborted, commands ignored until end of transaction block
+
+2024-02-17 22:39:13,116 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/18.sql
+2024-02-17 22:39:13,119 - INFO - [PGExecutor] Query execution failed when executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/18.sql
+2024-02-17 22:39:13,120 - INFO - [PGExecutor] Error information: current transaction is aborted, commands ignored until end of transaction block
+
+2024-02-17 22:39:13,120 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/19.sql
+2024-02-17 22:39:13,120 - INFO - [PGExecutor] Query execution failed when executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/19.sql
+2024-02-17 22:39:13,120 - INFO - [PGExecutor] Error information: current transaction is aborted, commands ignored until end of transaction block
+
+2024-02-17 22:39:13,360 - INFO - [Tune] [Iteration 1]: total_cost: 57996294.510 (c_unit)
+2024-02-17 22:39:13,360 - INFO - Sample 2 | Best value: -57996294.51 |
+2024-02-17 22:40:19,488 - INFO - ================================================================================
+2024-02-17 22:40:19,488 - INFO - [Tune] [Iteration 2]: using configuration: 
+2024-02-17 22:40:19,488 - INFO - 	effective_cache_size: 935891
+2024-02-17 22:40:19,488 - INFO - 	enable_mergejoin: on
+2024-02-17 22:40:19,492 - INFO - 	enable_nestloop: off
+2024-02-17 22:40:19,492 - INFO - 	maintenance_work_mem: 978740
+2024-02-17 22:40:19,492 - INFO - 	max_wal_size: 8016
+2024-02-17 22:40:19,492 - INFO - 	random_page_cost: 9.514945286149032
+2024-02-17 22:40:19,492 - INFO - 	seq_page_cost: 41.34955141053949
+2024-02-17 22:40:19,492 - INFO - 	shared_buffers: 453857
+2024-02-17 22:40:19,492 - INFO - 	wal_buffers: 73526
+2024-02-17 22:40:19,492 - INFO - 	work_mem: 3566
+2024-02-17 22:40:19,540 - INFO - ----------------------------------- Applying Knobs -----------------------------------
+2024-02-17 22:40:19,796 - INFO - [PGUtils] Local PostgreSQL server shut down successfully
+2024-02-17 22:40:19,852 - INFO - [PGKnobApplier] config file modification done (locally).
+2024-02-17 22:40:19,852 - INFO - [PGUtils] Locally starting PostgreSQL server...
+2024-02-17 22:40:19,856 - INFO - [PGUtils] Wait for connection to the started server...
+2024-02-17 22:40:21,896 - INFO - [PGUtils] Successfully connected to the started PostgreSQL Server
+2024-02-17 22:40:21,899 - INFO - [PGUtils] 2 seconds waiting for connection
+2024-02-17 22:40:21,899 - INFO - [PGUtils] start command: postgres --config_file=/var/lib/postgresql/experiment/conf/tune_cnf.conf
+2024-02-17 22:40:21,900 - INFO - [PGUtils] PostgresSQL is successfully launched.
+2024-02-17 22:40:21,900 - INFO - [PGKnobApplier] Sleeping for 0 seconds after restarting postgres
+2024-02-17 22:40:21,900 - INFO - [PGKnobApplier] No knobs need to be applied online
+2024-02-17 22:40:21,924 - INFO - [PGKnobApplier] Knob max_wal_size is not successfully set to 8016 (actual value: 8016MB)
+2024-02-17 22:40:21,928 - INFO - [PGKnobApplier] 1 / 10 knobs not successfully applied offline.
+2024-02-17 22:40:21,928 - INFO - --------------------------------------------------------------------------------
+2024-02-17 22:40:21,928 - INFO - [PGExecutor] Exeucting queries listed in tpch_query_fast_list.txt
+2024-02-17 22:40:21,952 - INFO - [PGExecutor] Connected to PostgreSQL server for query execution:
+2024-02-17 22:40:21,952 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/1.sql
+2024-02-17 22:40:22,024 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/2.sql
+2024-02-17 22:40:22,040 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/3.sql
+2024-02-17 22:40:22,047 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/4.sql
+2024-02-17 22:40:22,051 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/5.sql
+2024-02-17 22:40:22,056 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/6.sql
+2024-02-17 22:40:22,060 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/7.sql
+2024-02-17 22:40:22,068 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/8.sql
+2024-02-17 22:40:22,076 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/9.sql
+2024-02-17 22:40:22,091 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/10.sql
+2024-02-17 22:40:22,099 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/11.sql
+2024-02-17 22:40:22,108 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/12.sql
+2024-02-17 22:40:22,115 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/13.sql
+2024-02-17 22:40:22,120 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/14.sql
+2024-02-17 22:40:22,121 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/15.sql
+2024-02-17 22:40:22,124 - INFO - [PGExecutor] Query execution failed when executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/15.sql
+2024-02-17 22:40:22,124 - INFO - [PGExecutor] Error information: syntax error at or near "view"
+LINE 3:  create view revenue0 (supplier_no, total_revenue) as
+                ^
+
+2024-02-17 22:40:22,124 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/16.sql
+2024-02-17 22:40:22,124 - INFO - [PGExecutor] Query execution failed when executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/16.sql
+2024-02-17 22:40:22,124 - INFO - [PGExecutor] Error information: current transaction is aborted, commands ignored until end of transaction block
+
+2024-02-17 22:40:22,124 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/18.sql
+2024-02-17 22:40:22,124 - INFO - [PGExecutor] Query execution failed when executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/18.sql
+2024-02-17 22:40:22,124 - INFO - [PGExecutor] Error information: current transaction is aborted, commands ignored until end of transaction block
+
+2024-02-17 22:40:22,124 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/19.sql
+2024-02-17 22:40:22,128 - INFO - [PGExecutor] Query execution failed when executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/19.sql
+2024-02-17 22:40:22,128 - INFO - [PGExecutor] Error information: current transaction is aborted, commands ignored until end of transaction block
+
+2024-02-17 22:40:22,352 - INFO - [Tune] [Iteration 2]: total_cost: 57779510.780 (c_unit)
+2024-02-17 22:40:22,352 - INFO - Sample 3 | Best value: -57779510.78 |
+2024-02-17 22:40:22,352 - INFO - ================================================================================
+2024-02-17 22:40:22,352 - INFO - Best total_cost: 57779510.779999994
+2024-02-17 22:40:22,352 - INFO - Best config:
+2024-02-17 22:40:22,355 - INFO - 	effective_cache_size: 935891
+2024-02-17 22:40:22,355 - INFO - 	enable_mergejoin: on
+2024-02-17 22:40:22,356 - INFO - 	enable_nestloop: off
+2024-02-17 22:40:22,356 - INFO - 	maintenance_work_mem: 978740
+2024-02-17 22:40:22,356 - INFO - 	max_wal_size: 8016
+2024-02-17 22:40:22,356 - INFO - 	random_page_cost: 9.514945286149032
+2024-02-17 22:40:22,356 - INFO - 	seq_page_cost: 41.34955141053949
+2024-02-17 22:40:22,356 - INFO - 	shared_buffers: 453857
+2024-02-17 22:40:22,356 - INFO - 	wal_buffers: 73526
+2024-02-17 22:40:22,356 - INFO - 	work_mem: 3566
+2024-02-17 22:40:22,356 - INFO - Elapsed time: 87.90 seconds
+2024-02-17 22:46:26,336 - INFO - 
+
+2024-02-17 22:46:26,343 - INFO - [Tuner] Start initial profiling by lhs
+2024-02-17 22:46:26,351 - INFO - ================================================================================
+2024-02-17 22:46:26,352 - INFO - [Tune] [Iteration 0]: using configuration: 
+2024-02-17 22:46:26,352 - INFO - 	effective_cache_size: 194136
+2024-02-17 22:46:26,352 - INFO - 	maintenance_work_mem: 629693
+2024-02-17 22:46:26,352 - INFO - 	max_wal_size: 3558
+2024-02-17 22:46:26,352 - INFO - 	random_page_cost: 37.04885186206095
+2024-02-17 22:46:26,352 - INFO - 	seq_page_cost: 23.256191694118932
+2024-02-17 22:46:26,352 - INFO - 	shared_buffers: 690851
+2024-02-17 22:46:26,352 - INFO - 	wal_buffers: 147792
+2024-02-17 22:46:26,352 - INFO - 	work_mem: 3500
+2024-02-17 22:46:26,436 - INFO - ----------------------------------- Applying Knobs -----------------------------------
+2024-02-17 22:46:26,928 - INFO - [PGUtils] Local PostgreSQL server shut down successfully
+2024-02-17 22:46:27,020 - INFO - [PGKnobApplier] config file modification done (locally).
+2024-02-17 22:46:27,020 - INFO - [PGUtils] Locally starting PostgreSQL server...
+2024-02-17 22:46:27,027 - INFO - [PGUtils] Wait for connection to the started server...
+2024-02-17 22:46:31,087 - INFO - [PGUtils] Successfully connected to the started PostgreSQL Server
+2024-02-17 22:46:31,088 - INFO - [PGUtils] 4 seconds waiting for connection
+2024-02-17 22:46:31,088 - INFO - [PGUtils] start command: postgres --config_file=/var/lib/postgresql/experiment/conf/tune_cnf.conf
+2024-02-17 22:46:31,088 - INFO - [PGUtils] PostgresSQL is successfully launched.
+2024-02-17 22:46:31,088 - INFO - [PGKnobApplier] Sleeping for 0 seconds after restarting postgres
+2024-02-17 22:46:31,088 - INFO - [PGKnobApplier] No knobs need to be applied online
+2024-02-17 22:46:31,135 - INFO - [PGKnobApplier] Knob max_wal_size is not successfully set to 3558 (actual value: 3558MB)
+2024-02-17 22:46:31,144 - INFO - [PGKnobApplier] 1 / 8 knobs not successfully applied offline.
+2024-02-17 22:46:31,144 - INFO - --------------------------------------------------------------------------------
+2024-02-17 22:46:31,144 - INFO - [PGExecutor] Exeucting queries listed in tpch_query_fast_list.txt
+2024-02-17 22:46:31,176 - INFO - [PGExecutor] Connected to PostgreSQL server for query execution:
+2024-02-17 22:46:31,176 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/1.sql
+2024-02-17 22:46:31,356 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/2.sql
+2024-02-17 22:46:31,391 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/3.sql
+2024-02-17 22:46:31,408 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/4.sql
+2024-02-17 22:46:31,423 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/5.sql
+2024-02-17 22:46:31,432 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/6.sql
+2024-02-17 22:46:31,439 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/7.sql
+2024-02-17 22:46:31,459 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/8.sql
+2024-02-17 22:46:31,516 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/9.sql
+2024-02-17 22:46:31,532 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/10.sql
+2024-02-17 22:46:31,548 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/11.sql
+2024-02-17 22:46:31,555 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/12.sql
+2024-02-17 22:46:31,567 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/13.sql
+2024-02-17 22:46:31,576 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/14.sql
+2024-02-17 22:46:31,584 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/15.sql
+2024-02-17 22:46:31,588 - INFO - [PGExecutor] Query execution failed when executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/15.sql
+2024-02-17 22:46:31,588 - INFO - [PGExecutor] Error information: syntax error at or near "view"
+LINE 3:  create view revenue0 (supplier_no, total_revenue) as
+                ^
+
+2024-02-17 22:46:31,588 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/16.sql
+2024-02-17 22:46:31,592 - INFO - [PGExecutor] Query execution failed when executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/16.sql
+2024-02-17 22:46:31,592 - INFO - [PGExecutor] Error information: current transaction is aborted, commands ignored until end of transaction block
+
+2024-02-17 22:46:31,592 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/18.sql
+2024-02-17 22:46:31,596 - INFO - [PGExecutor] Query execution failed when executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/18.sql
+2024-02-17 22:46:31,596 - INFO - [PGExecutor] Error information: current transaction is aborted, commands ignored until end of transaction block
+
+2024-02-17 22:46:31,596 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/19.sql
+2024-02-17 22:46:31,600 - INFO - [PGExecutor] Query execution failed when executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/19.sql
+2024-02-17 22:46:31,600 - INFO - [PGExecutor] Error information: current transaction is aborted, commands ignored until end of transaction block
+
+2024-02-17 22:46:31,936 - INFO - [Tune] [Iteration 0]: total_cost: 23884244.850 (c_unit)
+2024-02-17 22:46:31,936 - INFO - [Tuner] Start optimization using gp-bo for 3 iterations
+2024-02-17 22:47:02,283 - INFO - ================================================================================
+2024-02-17 22:47:02,284 - INFO - [Tune] [Iteration 1]: using configuration: 
+2024-02-17 22:47:02,284 - INFO - 	effective_cache_size: 224555
+2024-02-17 22:47:02,284 - INFO - 	maintenance_work_mem: 177942
+2024-02-17 22:47:02,284 - INFO - 	max_wal_size: 4556
+2024-02-17 22:47:02,284 - INFO - 	random_page_cost: 53.89298629015684
+2024-02-17 22:47:02,284 - INFO - 	seq_page_cost: 41.55943375080824
+2024-02-17 22:47:02,287 - INFO - 	shared_buffers: 61173
+2024-02-17 22:47:02,288 - INFO - 	wal_buffers: 28689
+2024-02-17 22:47:02,288 - INFO - 	work_mem: 1968
+2024-02-17 22:47:02,372 - INFO - ----------------------------------- Applying Knobs -----------------------------------
+2024-02-17 22:47:03,160 - INFO - [PGUtils] Local PostgreSQL server shut down successfully
+2024-02-17 22:47:03,252 - INFO - [PGKnobApplier] config file modification done (locally).
+2024-02-17 22:47:03,252 - INFO - [PGUtils] Locally starting PostgreSQL server...
+2024-02-17 22:47:03,256 - INFO - [PGUtils] Wait for connection to the started server...
+2024-02-17 22:47:04,320 - INFO - [PGUtils] Successfully connected to the started PostgreSQL Server
+2024-02-17 22:47:04,320 - INFO - [PGUtils] 1 seconds waiting for connection
+2024-02-17 22:47:04,320 - INFO - [PGUtils] start command: postgres --config_file=/var/lib/postgresql/experiment/conf/tune_cnf.conf
+2024-02-17 22:47:04,323 - INFO - [PGUtils] PostgresSQL is successfully launched.
+2024-02-17 22:47:04,323 - INFO - [PGKnobApplier] Sleeping for 0 seconds after restarting postgres
+2024-02-17 22:47:04,324 - INFO - [PGKnobApplier] No knobs need to be applied online
+2024-02-17 22:47:04,384 - INFO - [PGKnobApplier] Knob max_wal_size is not successfully set to 4556 (actual value: 4556MB)
+2024-02-17 22:47:04,400 - INFO - [PGKnobApplier] 1 / 8 knobs not successfully applied offline.
+2024-02-17 22:47:04,400 - INFO - --------------------------------------------------------------------------------
+2024-02-17 22:47:04,400 - INFO - [PGExecutor] Exeucting queries listed in tpch_query_fast_list.txt
+2024-02-17 22:47:04,440 - INFO - [PGExecutor] Connected to PostgreSQL server for query execution:
+2024-02-17 22:47:04,440 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/1.sql
+2024-02-17 22:47:04,516 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/2.sql
+2024-02-17 22:47:04,539 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/3.sql
+2024-02-17 22:47:04,552 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/4.sql
+2024-02-17 22:47:04,559 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/5.sql
+2024-02-17 22:47:04,575 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/6.sql
+2024-02-17 22:47:04,583 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/7.sql
+2024-02-17 22:47:04,599 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/8.sql
+2024-02-17 22:47:04,620 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/9.sql
+2024-02-17 22:47:04,635 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/10.sql
+2024-02-17 22:47:04,644 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/11.sql
+2024-02-17 22:47:04,660 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/12.sql
+2024-02-17 22:47:04,667 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/13.sql
+2024-02-17 22:47:04,679 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/14.sql
+2024-02-17 22:47:04,687 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/15.sql
+2024-02-17 22:47:04,691 - INFO - [PGExecutor] Query execution failed when executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/15.sql
+2024-02-17 22:47:04,692 - INFO - [PGExecutor] Error information: syntax error at or near "view"
+LINE 3:  create view revenue0 (supplier_no, total_revenue) as
+                ^
+
+2024-02-17 22:47:04,692 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/16.sql
+2024-02-17 22:47:04,695 - INFO - [PGExecutor] Query execution failed when executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/16.sql
+2024-02-17 22:47:04,696 - INFO - [PGExecutor] Error information: current transaction is aborted, commands ignored until end of transaction block
+
+2024-02-17 22:47:04,696 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/18.sql
+2024-02-17 22:47:04,700 - INFO - [PGExecutor] Query execution failed when executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/18.sql
+2024-02-17 22:47:04,700 - INFO - [PGExecutor] Error information: current transaction is aborted, commands ignored until end of transaction block
+
+2024-02-17 22:47:04,700 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/19.sql
+2024-02-17 22:47:04,707 - INFO - [PGExecutor] Query execution failed when executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/19.sql
+2024-02-17 22:47:04,707 - INFO - [PGExecutor] Error information: current transaction is aborted, commands ignored until end of transaction block
+
+2024-02-17 22:47:05,056 - INFO - [Tune] [Iteration 1]: total_cost: 39355107.350 (c_unit)
+2024-02-17 22:47:05,060 - INFO - Sample 2 | Best value: -39355107.35 |
+2024-02-17 22:47:39,748 - INFO - ================================================================================
+2024-02-17 22:47:39,748 - INFO - [Tune] [Iteration 2]: using configuration: 
+2024-02-17 22:47:39,748 - INFO - 	effective_cache_size: 659202
+2024-02-17 22:47:39,751 - INFO - 	maintenance_work_mem: 195292
+2024-02-17 22:47:39,752 - INFO - 	max_wal_size: 869
+2024-02-17 22:47:39,752 - INFO - 	random_page_cost: 34.348379634320736
+2024-02-17 22:47:39,756 - INFO - 	seq_page_cost: 20.264872442930937
+2024-02-17 22:47:39,756 - INFO - 	shared_buffers: 917784
+2024-02-17 22:47:39,756 - INFO - 	wal_buffers: 179188
+2024-02-17 22:47:39,756 - INFO - 	work_mem: 677
+2024-02-17 22:47:39,860 - INFO - ----------------------------------- Applying Knobs -----------------------------------
+2024-02-17 22:47:40,156 - INFO - [PGUtils] Local PostgreSQL server shut down successfully
+2024-02-17 22:47:40,247 - INFO - [PGKnobApplier] config file modification done (locally).
+2024-02-17 22:47:40,248 - INFO - [PGUtils] Locally starting PostgreSQL server...
+2024-02-17 22:47:40,251 - INFO - [PGUtils] Wait for connection to the started server...
+2024-02-17 22:47:47,360 - INFO - [PGUtils] Successfully connected to the started PostgreSQL Server
+2024-02-17 22:47:47,360 - INFO - [PGUtils] 7 seconds waiting for connection
+2024-02-17 22:47:47,360 - INFO - [PGUtils] start command: postgres --config_file=/var/lib/postgresql/experiment/conf/tune_cnf.conf
+2024-02-17 22:47:47,360 - INFO - [PGUtils] PostgresSQL is successfully launched.
+2024-02-17 22:47:47,360 - INFO - [PGKnobApplier] Sleeping for 0 seconds after restarting postgres
+2024-02-17 22:47:47,360 - INFO - [PGKnobApplier] No knobs need to be applied online
+2024-02-17 22:47:47,423 - INFO - [PGKnobApplier] Knob max_wal_size is not successfully set to 869 (actual value: 869MB)
+2024-02-17 22:47:47,440 - INFO - [PGKnobApplier] 1 / 8 knobs not successfully applied offline.
+2024-02-17 22:47:47,443 - INFO - --------------------------------------------------------------------------------
+2024-02-17 22:47:47,447 - INFO - [PGExecutor] Exeucting queries listed in tpch_query_fast_list.txt
+2024-02-17 22:47:47,488 - INFO - [PGExecutor] Connected to PostgreSQL server for query execution:
+2024-02-17 22:47:47,488 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/1.sql
+2024-02-17 22:47:47,680 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/2.sql
+2024-02-17 22:47:47,739 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/3.sql
+2024-02-17 22:47:47,752 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/4.sql
+2024-02-17 22:47:47,760 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/5.sql
+2024-02-17 22:47:47,775 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/6.sql
+2024-02-17 22:47:47,784 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/7.sql
+2024-02-17 22:47:47,808 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/8.sql
+2024-02-17 22:47:47,835 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/9.sql
+2024-02-17 22:47:47,859 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/10.sql
+2024-02-17 22:47:47,875 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/11.sql
+2024-02-17 22:47:47,887 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/12.sql
+2024-02-17 22:47:47,899 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/13.sql
+2024-02-17 22:47:47,911 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/14.sql
+2024-02-17 22:47:47,924 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/15.sql
+2024-02-17 22:47:47,931 - INFO - [PGExecutor] Query execution failed when executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/15.sql
+2024-02-17 22:47:47,932 - INFO - [PGExecutor] Error information: syntax error at or near "view"
+LINE 3:  create view revenue0 (supplier_no, total_revenue) as
+                ^
+
+2024-02-17 22:47:47,932 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/16.sql
+2024-02-17 22:47:47,936 - INFO - [PGExecutor] Query execution failed when executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/16.sql
+2024-02-17 22:47:47,936 - INFO - [PGExecutor] Error information: current transaction is aborted, commands ignored until end of transaction block
+
+2024-02-17 22:47:47,939 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/18.sql
+2024-02-17 22:47:47,943 - INFO - [PGExecutor] Query execution failed when executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/18.sql
+2024-02-17 22:47:47,944 - INFO - [PGExecutor] Error information: current transaction is aborted, commands ignored until end of transaction block
+
+2024-02-17 22:47:47,944 - INFO - [PGExecutor] Executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/19.sql
+2024-02-17 22:47:47,948 - INFO - [PGExecutor] Query execution failed when executing /home/viktor/Experiments/CamDB/camtune/benchmarks/tpch/19.sql
+2024-02-17 22:47:47,948 - INFO - [PGExecutor] Error information: current transaction is aborted, commands ignored until end of transaction block
+
+2024-02-17 22:47:48,320 - INFO - [Tune] [Iteration 2]: total_cost: 21534150.960 (c_unit)
+2024-02-17 22:47:48,320 - INFO - Sample 3 | Best value: -21534150.96 |
+2024-02-17 22:47:48,327 - INFO - ================================================================================
+2024-02-17 22:47:48,328 - INFO - Best total_cost: 21534150.96
+2024-02-17 22:47:48,328 - INFO - Best config:
+2024-02-17 22:47:48,328 - INFO - 	effective_cache_size: 659202
+2024-02-17 22:47:48,328 - INFO - 	maintenance_work_mem: 195292
+2024-02-17 22:47:48,328 - INFO - 	max_wal_size: 869
+2024-02-17 22:47:48,328 - INFO - 	random_page_cost: 34.348379634320736
+2024-02-17 22:47:48,328 - INFO - 	seq_page_cost: 20.264872442930937
+2024-02-17 22:47:48,328 - INFO - 	shared_buffers: 917784
+2024-02-17 22:47:48,328 - INFO - 	wal_buffers: 179188
+2024-02-17 22:47:48,331 - INFO - 	work_mem: 677
+2024-02-17 22:47:48,332 - INFO - Elapsed time: 81.98 seconds

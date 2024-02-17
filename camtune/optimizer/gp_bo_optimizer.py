@@ -12,7 +12,7 @@ from botorch.acquisition import qExpectedImprovement
 from botorch.optim import optimize_acqf, optimize_acqf_mixed
 
 from .base_optimizer import BaseOptimizer
-from .optim_utils import ACQ_FUNC_MAP
+from .optim_utils import ACQ_FUNC_MAP, generate_random_discrete
 from camtune.utils import print_log
 
 GP_ATTRS = {
@@ -80,19 +80,35 @@ class GPBOOptimizer(BaseOptimizer):
                     raw_samples=self.raw_samples,
                 )
             else:
-                bounds = torch.stack([
-                    torch.zeros(self.dimension, dtype=self.dtype, device=self.device),
-                    torch.ones(self.dimension, dtype=self.dtype, device=self.device),
-                ])
-                bounds[:, self.discrete_dims] = self.bounds[:, self.discrete_dims]
+                # bounds = torch.empty((2, self.dimension), dtype=self.dtype, device=self.device)
+                # bounds[:, self.continuous_dims] = \
+                    # torch.stack([torch.zeros(len(self.continuous_dims), dtype=self.dtype, device=self.device),
+                    #              torch.ones(len(self.continuous_dims), dtype=self.dtype, device=self.device)])
+                # bounds[:, self.discrete_dims] = self.bounds[:, self.discrete_dims].clone()
+                bounds = \
+                    torch.stack([torch.zeros(self.dimension, dtype=self.dtype, device=self.device),
+                                 torch.ones(self.dimension, dtype=self.dtype, device=self.device)])
+
+                
+                discrete_random_samples: torch.Tensor = generate_random_discrete(
+                    self.raw_samples, self.bounds, self.discrete_dims
+                ) # (raw_samples, discrete_dim)
+
+                fixed_feature_list = []
+                for discrete_val_tensor in discrete_random_samples:
+                    fixed_feature = {
+                        feat_idx: discrete_val_tensor[i].item() for i, feat_idx in enumerate(self.discrete_dims)
+                    }
+                    fixed_feature_list.append(fixed_feature)
+
                 X_next, acq_values = optimize_acqf_mixed(
                     acq_function=acqf,
                     bounds=bounds,
                     q=batch_size,
+                    fixed_features_list=fixed_feature_list,
                     num_restarts=self.num_restarts,
                     raw_samples=self.raw_samples,
                 )
-            
             
             X_next[:, self.continuous_dims] = unnormalize(X_next[:, self.continuous_dims], self.bounds[:, self.continuous_dims])
             Y_next = torch.tensor(

@@ -1,0 +1,362 @@
+{
+    "0": {
+        "total_exec_time (s)": 8.912571000000002,
+        "config": {
+            "effective_cache_size": 95657,
+            "maintenance_work_mem": 704938,
+            "shared_buffers": 87433,
+            "work_mem": 5058
+        }
+    },
+    "1": {
+        "total_exec_time (s)": 7.491860999999999,
+        "config": {
+            "effective_cache_size": 509993,
+            "maintenance_work_mem": 9028,
+            "shared_buffers": 826592,
+            "work_mem": 4535
+        }
+    },
+    "2": {
+        "total_exec_time (s)": 8.358801999999999,
+        "config": {
+            "effective_cache_size": 779736,
+            "maintenance_work_mem": 474930,
+            "shared_buffers": 388246,
+            "work_mem": 1691
+        }
+    },
+    "3": {
+        "total_exec_time (s)": 8.437378,
+        "config": {
+            "effective_cache_size": 430597,
+            "maintenance_work_mem": 926897,
+            "shared_buffers": 178543,
+            "work_mem": 1400
+        }
+    },
+    "4": {
+        "total_exec_time (s)": 7.563575,
+        "config": {
+            "effective_cache_size": 228923,
+            "maintenance_work_mem": 197654,
+            "shared_buffers": 268763,
+            "work_mem": 745
+        }
+    },
+    "5": {
+        "total_exec_time (s)": 7.610295999999999,
+        "config": {
+            "effective_cache_size": 638892,
+            "maintenance_work_mem": 876349,
+            "shared_buffers": 520172,
+            "work_mem": 3538
+        }
+    },
+    "6": {
+        "total_exec_time (s)": 8.304093,
+        "config": {
+            "effective_cache_size": 800819,
+            "maintenance_work_mem": 378924,
+            "shared_buffers": 489462,
+            "work_mem": 7506
+        }
+    },
+    "7": {
+        "total_exec_time (s)": 7.670981,
+        "config": {
+            "effective_cache_size": 975022,
+            "maintenance_work_mem": 640363,
+            "shared_buffers": 915181,
+            "work_mem": 2544
+        }
+    },
+    "8": {
+        "total_exec_time (s)": 7.9525250000000005,
+        "config": {
+            "effective_cache_size": 320486,
+            "maintenance_work_mem": 573095,
+            "shared_buffers": 762176,
+            "work_mem": 7017
+        }
+    },
+    "9": {
+        "total_exec_time (s)": 7.537576999999999,
+        "config": {
+            "effective_cache_size": 188706,
+            "maintenance_work_mem": 290695,
+            "shared_buffers": 669866,
+            "work_mem": 6240
+        }
+    },
+    "10": {
+        "total_exec_time (s)": 8.974856,
+        "config": {
+            "effective_cache_size": 224555,
+            "maintenance_work_mem": 177942,
+            "shared_buffers": 61173,
+            "work_mem": 1968
+        }
+    },
+    "11": {
+        "total_exec_time (s)": 7.365394,
+        "config": {
+            "effective_cache_size": 638721,
+            "maintenance_work_mem": 595061,
+            "shared_buffers": 810261,
+            "work_mem": 4535
+        }
+    },
+    "12": {
+        "total_exec_time (s)": 7.247230999999999,
+        "config": {
+            "effective_cache_size": 880745,
+            "maintenance_work_mem": 263576,
+            "shared_buffers": 962669,
+            "work_mem": 976
+        }
+    },
+    "13": {
+        "total_exec_time (s)": 9.287752,
+        "config": {
+            "effective_cache_size": 672885,
+            "maintenance_work_mem": 431900,
+            "shared_buffers": 12660,
+            "work_mem": 339
+        }
+    },
+    "14": {
+        "total_exec_time (s)": 7.739066,
+        "config": {
+            "effective_cache_size": 498394,
+            "maintenance_work_mem": 247840,
+            "shared_buffers": 865026,
+            "work_mem": 2452
+        }
+    },
+    "15": {
+        "total_exec_time (s)": 9.561003,
+        "config": {
+            "effective_cache_size": 11901,
+            "maintenance_work_mem": 750425,
+            "shared_buffers": 82329,
+            "work_mem": 4434
+        }
+    },
+    "16": {
+        "total_exec_time (s)": 7.436662000000001,
+        "config": {
+            "effective_cache_size": 662863,
+            "maintenance_work_mem": 400960,
+            "shared_buffers": 849445,
+            "work_mem": 7299
+        }
+    },
+    "17": {
+        "total_exec_time (s)": 8.83673,
+        "config": {
+            "effective_cache_size": 113364,
+            "maintenance_work_mem": 396776,
+            "shared_buffers": 411071,
+            "work_mem": 3876
+        }
+    },
+    "18": {
+        "total_exec_time (s)": 9.426327,
+        "config": {
+            "effective_cache_size": 958426,
+            "maintenance_work_mem": 237886,
+            "shared_buffers": 88555,
+            "work_mem": 2359
+        }
+    },
+    "19": {
+        "total_exec_time (s)": 7.7081420000000005,
+        "config": {
+            "effective_cache_size": 768836,
+            "maintenance_work_mem": 498749,
+            "shared_buffers": 277091,
+            "work_mem": 6783
+        }
+    },
+    "20": {
+        "total_exec_time (s)": 8.653827999999999,
+        "config": {
+            "effective_cache_size": 52565,
+            "maintenance_work_mem": 499051,
+            "shared_buffers": 439657,
+            "work_mem": 6224
+        }
+    },
+    "21": {
+        "total_exec_time (s)": 9.122828,
+        "config": {
+            "effective_cache_size": 49521,
+            "maintenance_work_mem": 374392,
+            "shared_buffers": 277704,
+            "work_mem": 3839
+        }
+    },
+    "22": {
+        "total_exec_time (s)": 7.331742,
+        "config": {
+            "effective_cache_size": 284325,
+            "maintenance_work_mem": 903811,
+            "shared_buffers": 941156,
+            "work_mem": 4415
+        }
+    },
+    "23": {
+        "total_exec_time (s)": 7.397361,
+        "config": {
+            "effective_cache_size": 566162,
+            "maintenance_work_mem": 517130,
+            "shared_buffers": 807493,
+            "work_mem": 4178
+        }
+    },
+    "24": {
+        "total_exec_time (s)": 7.233848000000001,
+        "config": {
+            "effective_cache_size": 435990,
+            "maintenance_work_mem": 982190,
+            "shared_buffers": 992606,
+            "work_mem": 5614
+        }
+    },
+    "25": {
+        "total_exec_time (s)": 8.446357,
+        "config": {
+            "effective_cache_size": 783437,
+            "maintenance_work_mem": 591893,
+            "shared_buffers": 68805,
+            "work_mem": 1245
+        }
+    },
+    "26": {
+        "total_exec_time (s)": 7.569636999999999,
+        "config": {
+            "effective_cache_size": 397001,
+            "maintenance_work_mem": 493478,
+            "shared_buffers": 606853,
+            "work_mem": 7238
+        }
+    },
+    "27": {
+        "total_exec_time (s)": 7.351025999999999,
+        "config": {
+            "effective_cache_size": 428508,
+            "maintenance_work_mem": 759368,
+            "shared_buffers": 216096,
+            "work_mem": 745
+        }
+    },
+    "28": {
+        "total_exec_time (s)": 7.4351400000000005,
+        "config": {
+            "effective_cache_size": 748366,
+            "maintenance_work_mem": 239865,
+            "shared_buffers": 421907,
+            "work_mem": 6748
+        }
+    },
+    "29": {
+        "total_exec_time (s)": 7.513779000000001,
+        "config": {
+            "effective_cache_size": 528851,
+            "maintenance_work_mem": 804859,
+            "shared_buffers": 429561,
+            "work_mem": 6129
+        }
+    },
+    "30": {
+        "total_exec_time (s)": 7.17654,
+        "config": {
+            "effective_cache_size": 851488,
+            "maintenance_work_mem": 949648,
+            "shared_buffers": 533202,
+            "work_mem": 1842
+        }
+    },
+    "31": {
+        "total_exec_time (s)": 7.4749099999999995,
+        "config": {
+            "effective_cache_size": 133420,
+            "maintenance_work_mem": 687127,
+            "shared_buffers": 677739,
+            "work_mem": 2878
+        }
+    },
+    "32": {
+        "total_exec_time (s)": 9.31951,
+        "config": {
+            "effective_cache_size": 934463,
+            "maintenance_work_mem": 230185,
+            "shared_buffers": 17114,
+            "work_mem": 745
+        }
+    },
+    "33": {
+        "total_exec_time (s)": 7.606578,
+        "config": {
+            "effective_cache_size": 453220,
+            "maintenance_work_mem": 756715,
+            "shared_buffers": 375611,
+            "work_mem": 5428
+        }
+    },
+    "34": {
+        "total_exec_time (s)": 8.685735,
+        "config": {
+            "effective_cache_size": 10448,
+            "maintenance_work_mem": 503439,
+            "shared_buffers": 524516,
+            "work_mem": 3787
+        }
+    },
+    "35": {
+        "total_exec_time (s)": 7.563612999999999,
+        "config": {
+            "effective_cache_size": 492560,
+            "maintenance_work_mem": 946934,
+            "shared_buffers": 862382,
+            "work_mem": 6340
+        }
+    },
+    "36": {
+        "total_exec_time (s)": 7.172717000000001,
+        "config": {
+            "effective_cache_size": 899749,
+            "maintenance_work_mem": 667583,
+            "shared_buffers": 613082,
+            "work_mem": 591
+        }
+    },
+    "37": {
+        "total_exec_time (s)": 7.223090999999999,
+        "config": {
+            "effective_cache_size": 504871,
+            "maintenance_work_mem": 568008,
+            "shared_buffers": 485234,
+            "work_mem": 2382
+        }
+    },
+    "38": {
+        "total_exec_time (s)": 7.936897999999999,
+        "config": {
+            "effective_cache_size": 412936,
+            "maintenance_work_mem": 429382,
+            "shared_buffers": 165325,
+            "work_mem": 3793
+        }
+    },
+    "39": {
+        "total_exec_time (s)": 7.179641,
+        "config": {
+            "effective_cache_size": 204283,
+            "maintenance_work_mem": 141634,
+            "shared_buffers": 789271,
+            "work_mem": 6344
+        }
+    }
+}

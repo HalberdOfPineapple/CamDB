@@ -4,6 +4,7 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+
         {
             "name": "Python Debugger: Current File",
             "type": "debugpy",
@@ -18,6 +19,14 @@
             "program": "/home/viktor/Experiments/CamDB/camtune/tune.py",
             "console": "integratedTerminal",
             "args": ["--expr_name", "pg_tpch_random"]
+        },
+        {
+            "name": "Debug: Tune DB GPEI",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "/home/viktor/Experiments/CamDB/camtune/tune.py",
+            "console": "integratedTerminal",
+            "args": ["--expr_name", "pg_tpch_gpei"]
         }
     ]
 }

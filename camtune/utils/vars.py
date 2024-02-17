@@ -1,4 +1,4 @@
 import torch
 
 DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
-DTYPE = torch.float32
+DTYPE = torch.float64

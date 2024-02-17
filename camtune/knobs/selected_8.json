@@ -71,25 +71,5 @@
         "type": "float",
         "min": 0.0,
         "max": 100
-    },
-    "enable_mergejoin": {
-        "default": "off",
-        "context": "user",
-        "scope": "global",
-        "type": "enum",
-        "enum_values": [
-            "on",
-            "off"
-        ]
-    },
-    "enable_nestloop": {
-        "default": "off",
-        "context": "user",
-        "scope": "global",
-        "type": "enum",
-        "enum_values": [
-            "on",
-            "off"
-        ]
     }
 }

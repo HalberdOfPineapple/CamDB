@@ -31,7 +31,7 @@ class PostgresqlDB:
         self.executor = PostgreExecutor(
             benchmark=args_db['benchmark'],
             benchmark_fast=args_db['benchmark_fast'],
-            use_pgbench=args_db['use_pgbench'],
+            exec_mode=args_db['exec_mode'],
             remote_mode=args_db['remote_mode'],
         )
         

@@ -72,6 +72,9 @@ def main(expr_name: str, expr_config: dict, test_tuning: bool=False):
     print_log("=" * 50, print_msg=True)
     print_log(f"Start Experiment: {expr_name}", print_msg=True)
     for k, v in expr_config.items():
+        if 'pwd' in k or 'passwd' in k:
+            continue
+
         if isinstance(v, dict):
             print_log(f"{k}:", print_msg=True)
             for kk, vv in v.items():
