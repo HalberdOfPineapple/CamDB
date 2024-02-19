@@ -9,12 +9,14 @@ class BaseOptimizer(ABC):
         self,
         bounds: torch.Tensor,
         obj_func: Callable,
+        batch_size: int,
         seed: int = 0,
         discrete_dims: List[int] = [],
         optimizer_params: Dict[str, Any] = None,
     ):
         self.seed = seed
         self.obj_func = obj_func
+        self.batch_size = batch_size
 
         self.bounds = bounds
         self.dtype, self.device = bounds.dtype, bounds.device

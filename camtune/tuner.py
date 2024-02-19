@@ -47,29 +47,34 @@ class Tuner:
         self.seed = self.args['seed']
         self.bounds = bounds
         DTYPE, DEVICE = bounds.dtype, bounds.device
+        
         self.dimension = self.bounds.shape[1]
-
-        self.num_evals= self.args['num_evals']
-        self.num_init = self.args['num_init'] if not self.args['init_by_dim'] else self.dimension * 2
-
         self.discrete_dims = discrete_dims
 
+        self.num_evals = self.args['num_evals']
+        self.num_init = self.args['num_init'] if not self.args['init_by_dim'] else self.dimension * 2
+        self.batch_size = self.args['batch_size']
+
+        
         if 'perf_name' in self.args:
             self.perf_name, self.perf_unit = self.args['perf_name'], self.args['perf_unit']
         else:
             self.perf_name, self.perf_unit = 'func_val', 'null'
 
-        self.init_sampler = build_init_design(
-            self.args['init_design'], 
-            self.bounds,
-            seed=self.seed,
-            discrete_dims=discrete_dims,
-        )
+        self.extern_init: bool = True if 'extern_int' not in self.args else self.args['extern_init']
+        if self.extern_init:
+            self.init_sampler = build_init_design(
+                self.args['init_design'], 
+                self.bounds,
+                seed=self.seed,
+                discrete_dims=discrete_dims,
+            )
 
         optimizer_params = None if 'optimizer_params' not in self.args else self.args['optimizer_params']
         self.optimizer: BaseOptimizer = build_optimizer(
             self.args['optimizer'],
             bounds=self.bounds,
+            batch_size=self.batch_size,
             obj_func=self.obj_func,
             seed=self.seed,
             discrete_dims=discrete_dims,
@@ -86,22 +91,21 @@ class Tuner:
             raise ValueError(
                 f'num_evals ({self.num_evals}) must be greater than num_init ({self.num_init})')
 
-        if self.num_init != 0 and self.args['optimizer'] != 'MCTS':
-            print_log(f'[Tuner] Start initial profiling by {self.args["init_design"]}', print_msg=True)
-            X_init: torch.Tensor = self.init_sampler.generate(self.num_init)
-            Y_init: torch.Tensor = torch.tensor(
-                    [self.obj_func(x) for x in X_init], dtype=DTYPE, device=DEVICE,
-                ).unsqueeze(-1)
+        if self.extern_init:
+            if self.num_init != 0 and self.args['optimizer'] != 'MCTS':
+                print_log(f'[Tuner] Start initial profiling by {self.args["init_design"]}', print_msg=True)
+                X_init: torch.Tensor = self.init_sampler.generate(self.num_init)
+                Y_init: torch.Tensor = torch.tensor(
+                        [self.obj_func(x) for x in X_init], dtype=DTYPE, device=DEVICE,
+                    ).unsqueeze(-1)
+            else:
+                X_init: torch.Tensor = torch.empty((0, self.dimension), dtype=DTYPE, device=DEVICE)
+                Y_init: torch.Tensor = torch.empty((0, 1), dtype=DTYPE, device=DEVICE)
+            num_evals = self.num_evals - self.num_init
+            print_log(f'[Tuner] Start optimization using {self.args["optimizer"]} for {self.num_evals} iterations', print_msg=True)
+            result_X, result_Y = self.optimizer.optimize(num_evals, X_init, Y_init)
         else:
-            X_init: torch.Tensor = torch.empty((0, self.dimension), dtype=DTYPE, device=DEVICE)
-            Y_init: torch.Tensor = torch.empty((0, 1), dtype=DTYPE, device=DEVICE)
-
-        num_evals = self.num_evals - self.num_init
-        print_log(f'[Tuner] Start optimization using {self.args["optimizer"]} for {self.num_evals} iterations', print_msg=True)
-        result_X, result_Y = self.optimizer.optimize(num_evals, X_init, Y_init)
-
-        return result_X, result_Y
-    
-
-
+            print_log(f'[Tuner] Start optimization using {self.args["optimizer"]} for {self.num_evals} iterations', print_msg=True)
+            result_X, result_Y = self.optimizer.optimize(self.num_evals)
         
+        return result_X, result_Y

@@ -5,6 +5,7 @@
     "version": "0.2.0",
     "configurations": [
 
+
         {
             "name": "Python Debugger: Current File",
             "type": "debugpy",
@@ -27,6 +28,14 @@
             "program": "/home/viktor/Experiments/CamDB/camtune/tune.py",
             "console": "integratedTerminal",
             "args": ["--expr_name", "pg_tpch_gpei"]
+        },
+        {
+            "name": "Debug: TuRBO Ackley",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "/home/viktor/Experiments/CamDB/camtune/run_benchmark.py",
+            "console": "integratedTerminal",
+            "args": ["--expr_name", "TuRBO_ackley_20"]
         }
     ]
 }

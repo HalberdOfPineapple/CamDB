@@ -28,7 +28,7 @@ class Node:
             self.parent.children.append(self)
 
         self.bounds = bounds
-        self.dimension = bounds.shape[1]
+        dimension = bounds.shape[1]
         self.dtype = dtype
         self.device = device
 
@@ -39,8 +39,8 @@ class Node:
             classifier_params=classifier_params)
 
         self.sample_bag: List[torch.Tensor, torch.Tensor] = [
-            torch.empty((0, self.dimension), dtype=dtype, device=device),
-            torch.empty((0, 1), dtype=dtype, device=device),
+            torch.empty((0, dimension), dtype=self.dtype, device=self.device),
+            torch.empty((0, 1), dtype=self.dtype, device=self.device),
         ]
 
         self.children: List[Node] = []

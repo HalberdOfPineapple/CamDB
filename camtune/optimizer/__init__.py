@@ -5,6 +5,7 @@ from ConfigSpace import ConfigurationSpace
 from .base_optimizer import BaseOptimizer
 from .random_optimizer import RandomOptimizer
 from .gp_bo_optimizer import GPBOOptimizer
+from .turbo_optimizer import TuRBO
 from .sampler import BaseSampler, SobolSampler, LHSSampler
 
 INIT_DESIGN_MAP = {
@@ -15,6 +16,7 @@ INIT_DESIGN_MAP = {
 OPTIMIZER_MAP = {
     "random": RandomOptimizer,
     "gp-bo": GPBOOptimizer,
+    "turbo": TuRBO,
 }
 
 def build_init_design(
@@ -28,7 +30,8 @@ def build_init_design(
 
 def build_optimizer(
     optimizer_type: str,
-    bounds: torch.Tensor, 
+    bounds: torch.Tensor,
+    batch_size: int, 
     obj_func: Callable,
     seed:int=0, 
     discrete_dims: List[int]=[],
@@ -39,6 +42,7 @@ def build_optimizer(
         return OPTIMIZER_MAP[optimizer_type](
             bounds=bounds, 
             obj_func=obj_func,
+            batch_size=batch_size,
             seed=seed, 
             discrete_dims=discrete_dims,
             optimizer_params=optimizer_params,

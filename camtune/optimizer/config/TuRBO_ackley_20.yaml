@@ -1,0 +1,19 @@
+benchmark: ackley_ext
+benchmark_params:
+  dim: 20
+  lb: -5
+  ub: 10
+
+tuner_params:
+  seed: 1024
+  num_evals: 200
+  batch_size: 1
+  extern_init: false
+  
+  init_design: lhs
+  init_by_dim: True
+  num_init: 40
+
+  optimizer: turbo
+  optimizer_params:
+    acquisition: 'ts'
