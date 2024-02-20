@@ -1,4 +1,4 @@
-
+import os
 from ConfigSpace.configuration_space import Configuration 
 
 from camtune.database.utils import initialize_knobs
@@ -8,7 +8,7 @@ from camtune.database.postgresql import (
 )
 from camtune.database.postgresql.variables import *
 
-from camtune.utils.logger import get_logger, print_log
+from camtune.utils import get_logger, print_log, KNOB_DIR
 LOGGER = None
 
 
@@ -36,8 +36,8 @@ class PostgresqlDB:
         )
         
         # ------------------ Knob Settings -----------------------
-        self.knob_details = \
-            initialize_knobs(args_db['knob_definitions'], args_db['knob_num'])
+        knob_definition_path = os.path.join(KNOB_DIR, args_db['knob_definitions'])
+        self.knob_details = initialize_knobs(knob_definition_path, args_db['knob_num'])
         self.knob_applier = PostgreKnobApplier(
             remote_mode=self.remote_mode,
             knob_details=self.knob_details

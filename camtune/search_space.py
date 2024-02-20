@@ -5,13 +5,7 @@ import ConfigSpace.hyperparameters as CSH
 
 from camtune.utils import print_log, DTYPE, DEVICE
 
-SEED = 1
 KNOB_TYPES = ['enum', 'integer', 'real', 'float']
-VALID_ADAPTER_ALIASES = ['none', 'tree', 'rembo', 'hesbo']
-
-PGSQL_KNOB_JSON_13 = "/home/viktor/Experiments/TPC-H/knob_definitions/postgres-13.json"
-PGSQL_JOB_SHAP = "/home/viktor/Experiments/TPC-H/knob_definitions/JOB_SHAP_PostgreSQL.json"
-
 
 class SearchSpace:
     def __init__(

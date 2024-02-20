@@ -44,7 +44,7 @@ def parse_pgbench_output(output):
     return parsed_data
 
 def start_pg_default(password):
-    sudo_command = f"echo {password} | sudo systemctl start postgresql"
+    sudo_command = f"echo {password} | sudo service postgresql start"
     result = subprocess.run(sudo_command, shell=True,
                             check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     return result
@@ -123,7 +123,6 @@ def start_postgres(remote_mode: bool):
 
 def start_postgres_local():
     print_log('[PGUtils] Locally starting PostgreSQL server...', print_msg=True)
-    launch_cmd = [PG_SERVER, '--config_file={}'.format(PG_CONF), '-D',  PG_DATA]
     launch_cmd = f"echo {POSTGRE_PWD} | sudo -S -u postgres {PG_SERVER} --config_file={PG_CONF} -D {PG_DATA}"
     proc = subprocess.Popen(launch_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 

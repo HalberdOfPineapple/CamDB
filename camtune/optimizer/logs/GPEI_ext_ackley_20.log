@@ -258,3 +258,28 @@
 2024-02-19 20:36:31,730 - INFO - [ackley] Using Ackley 20D
 2024-02-19 20:36:31,731 - INFO - [Tuner] Start initial profiling by lhs
 2024-02-19 20:36:31,734 - INFO - [Tuner] Start optimization using gp-bo for 200 iterations
+2024-02-20 11:45:34,790 - INFO - 
+
+2024-02-20 11:45:34,790 - INFO - --------------------------------------------------
+2024-02-20 11:45:34,790 - INFO - benchmark: ackley_ext
+2024-02-20 11:45:34,791 - INFO - benchmark_params:
+2024-02-20 11:45:34,791 - INFO -     dim: 20
+2024-02-20 11:45:34,791 - INFO -     lb: -5
+2024-02-20 11:45:34,791 - INFO -     ub: 10
+2024-02-20 11:45:34,791 - INFO - tuner_params:
+2024-02-20 11:45:34,792 - INFO -     seed: 1024
+2024-02-20 11:45:34,792 - INFO -     num_evals: 200
+2024-02-20 11:45:34,792 - INFO -     batch_size: 1
+2024-02-20 11:45:34,792 - INFO -     init_design: lhs
+2024-02-20 11:45:34,792 - INFO -     init_by_dim: True
+2024-02-20 11:45:34,793 - INFO -     num_init: 40
+2024-02-20 11:45:34,793 - INFO -     optimizer: gp-bo
+2024-02-20 11:45:34,793 - INFO -     optimizer_params: {'acquisition': 'ei'}
+2024-02-20 11:45:34,793 - INFO - expr_name: GPEI_ext_ackley_20
+2024-02-20 11:45:34,794 - INFO - --------------------------------------------------
+2024-02-20 11:45:34,794 - INFO - [ackley] Using Ackley 20D
+2024-02-20 11:45:36,212 - INFO - [Tuner] Start initial profiling by lhs
+2024-02-20 11:45:36,220 - INFO - [Tuner] Start optimization using gp-bo for 200 iterations
+2024-02-20 11:45:45,926 - INFO - Sample 49 | Best value: -15.49 |
+2024-02-20 11:47:19,828 - INFO - Sample 50 | Best value: -15.49 |
+2024-02-20 11:48:31,314 - INFO - Sample 51 | Best value: -15.49 |

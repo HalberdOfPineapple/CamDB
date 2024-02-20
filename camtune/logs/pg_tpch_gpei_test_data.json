@@ -1,1 +1,47 @@
-{"0": {"total_exec_time (s)": 19.950746000000002, "config": {"effective_cache_size": 778591, "enable_mergejoin": "on", "enable_nestloop": "off", "maintenance_work_mem": 752030, "max_wal_size": 2119, "random_page_cost": 24.36291372521554, "seq_page_cost": 64.00108754368762, "shared_buffers": 395342, "wal_buffers": 73634, "work_mem": 4514}}, "1": {"total_exec_time (s)": 23.397027, "config": {"effective_cache_size": 224555, "enable_mergejoin": "on", "enable_nestloop": "off", "maintenance_work_mem": 177942, "max_wal_size": 4556, "random_page_cost": 9.514945279806852, "seq_page_cost": 41.349558625370264, "shared_buffers": 61173, "wal_buffers": 28689, "work_mem": 1968}}, "2": {"total_exec_time (s)": 19.000942, "config": {"effective_cache_size": 229701, "enable_mergejoin": "on", "enable_nestloop": "off", "maintenance_work_mem": 567452, "max_wal_size": 2407, "random_page_cost": 24.420297980266437, "seq_page_cost": 64.0545376251972, "shared_buffers": 480080, "wal_buffers": 124014, "work_mem": 3414}}}
+{
+    "0": {
+        "total_exec_time (s)": 15.780579000000001,
+        "config": {
+            "effective_cache_size": 598377,
+            "enable_mergejoin": "off",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 675132,
+            "max_wal_size": 1369,
+            "random_page_cost": 3.0211105594124876,
+            "seq_page_cost": 69.84590293886708,
+            "shared_buffers": 346297,
+            "wal_buffers": 203786,
+            "work_mem": 3407
+        }
+    },
+    "1": {
+        "total_exec_time (s)": 12.947021999999997,
+        "config": {
+            "effective_cache_size": 259803,
+            "enable_mergejoin": "off",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 863033,
+            "max_wal_size": 3607,
+            "random_page_cost": 91.34365087375045,
+            "seq_page_cost": 8.292503375560045,
+            "shared_buffers": 894698,
+            "wal_buffers": 233486,
+            "work_mem": 4538
+        }
+    },
+    "2": {
+        "total_exec_time (s)": 8.733669,
+        "config": {
+            "effective_cache_size": 281621,
+            "enable_mergejoin": "off",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 619949,
+            "max_wal_size": 2161,
+            "random_page_cost": 91.34365087374987,
+            "seq_page_cost": 8.292503381658953,
+            "shared_buffers": 900278,
+            "wal_buffers": 74909,
+            "work_mem": 1322
+        }
+    }
+}

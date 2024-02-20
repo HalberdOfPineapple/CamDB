@@ -1,8 +1,8 @@
+import os
 import paramiko
 from typing import List, Tuple
 
-from camtune.utils import print_log, get_logger
-from camtune.database.common_vars import *
+from camtune.utils import print_log, get_logger, QUERY_PATH_MAP, BENCHMARK_DIR
 
 from .utils import parse_pgbench_output, run_as_postgre
 from .connector import PostgresqlConnector
@@ -37,7 +37,7 @@ class PostgreExecutor():
         self.benchmark = benchmark
         self.benchmark_fast = benchmark_fast
         
-        self.query_dir = QUERY_PATH_MAP[self.benchmark]
+        self.query_dir = QUERY_PATH_MAP[self.benchmark.upper()]
         self.exec_mode = exec_mode
         if self.exec_mode not in EXEC_MODES:
             raise ValueError(f"[PGExecutor] Unsupported execution mode {self.exec_mode}")

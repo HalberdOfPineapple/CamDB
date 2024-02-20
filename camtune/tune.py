@@ -12,7 +12,7 @@ from camtune.search_space import SearchSpace
 from camtune.tuner import Tuner
 from camtune.database import PostgresqlDB
 from camtune.utils import (init_logger, get_logger, print_log, \
-                           LOG_DIR, CONFIG_DIR, RES_DIR)
+                           LOG_DIR, CONFIG_DIR, KNOB_DIR)
 
 DEFAULT_EXPR_NAME = 'postgre_tpch_remote'
 eval_counter = 0
@@ -96,8 +96,10 @@ def main(expr_name: str, expr_config: dict, test_tuning: bool=False):
 
     # -----------------------------------
     # Setup search space from knob definition file
+    knob_definition_path: str = os.path.join(
+        KNOB_DIR, expr_config['database']['knob_definitions'])
     search_space = SearchSpace(
-        expr_config['database']['knob_definitions'], 
+        knob_definition_path, 
         is_kv_config=True,
         seed=expr_config['tune']['seed'],
     )

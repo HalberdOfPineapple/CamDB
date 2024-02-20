@@ -11,11 +11,16 @@ class RandomOptimizer(BaseOptimizer):
         self,
         bounds: torch.Tensor,
         obj_func: Callable,
+        batch_size: int = 1,
         seed: int = 0,
         discrete_dims: List[int] = None,
         optimizer_params: Dict[str, Any] = None,
     ):
-        super().__init__(bounds, obj_func, seed, discrete_dims, optimizer_params)
+        super().__init__(bounds, obj_func, 
+                         batch_size=batch_size,
+                         seed=seed, 
+                         discrete_dims=discrete_dims, 
+                         optimizer_params=optimizer_params)
 
         if self.optimizer_params is not None and self.optimizer_params['method'] == 'LHS':
             self.use_lhs = True

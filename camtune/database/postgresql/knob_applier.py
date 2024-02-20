@@ -8,7 +8,6 @@ from typing import List, Tuple
 
 from camtune.utils import print_log, get_logger
 from camtune.database.config_parser import ConfigParser
-from camtune.database.common_vars import *
 
 from .connector import PostgresqlConnector
 from .variables import *

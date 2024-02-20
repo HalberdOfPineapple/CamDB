@@ -17,7 +17,7 @@
             "name": "Debug: Tune DB Random",
             "type": "debugpy",
             "request": "launch",
-            "program": "/home/viktor/Experiments/CamDB/camtune/tune.py",
+            "program": "/mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/tune.py",
             "console": "integratedTerminal",
             "args": ["--expr_name", "pg_tpch_random"]
         },
@@ -25,7 +25,7 @@
             "name": "Debug: Tune DB GPEI",
             "type": "debugpy",
             "request": "launch",
-            "program": "/home/viktor/Experiments/CamDB/camtune/tune.py",
+            "program": "/mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/tune.py",
             "console": "integratedTerminal",
             "args": ["--expr_name", "pg_tpch_gpei"]
         },
@@ -33,7 +33,7 @@
             "name": "Debug: TuRBO Ackley",
             "type": "debugpy",
             "request": "launch",
-            "program": "/home/viktor/Experiments/CamDB/camtune/run_benchmark.py",
+            "program": "/mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/run_benchmark.py",
             "console": "integratedTerminal",
             "args": ["--expr_name", "TuRBO_ackley_20"]
         }
