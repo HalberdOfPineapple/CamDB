@@ -1,362 +1,602 @@
 {
     "0": {
-        "total_exec_time (s)": 8.912571000000002,
+        "total_exec_time (s)": 26.57266299999999,
         "config": {
-            "effective_cache_size": 95657,
-            "maintenance_work_mem": 704938,
-            "shared_buffers": 87433,
-            "work_mem": 5058
+            "effective_cache_size": 344690,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 569129,
+            "max_wal_size": 719,
+            "random_page_cost": 27.591499191112987,
+            "seq_page_cost": 94.33974435894605,
+            "shared_buffers": 282842,
+            "wal_buffers": 60625,
+            "work_mem": 2582
         }
     },
     "1": {
-        "total_exec_time (s)": 7.491860999999999,
+        "total_exec_time (s)": 25.629274999999996,
         "config": {
-            "effective_cache_size": 509993,
-            "maintenance_work_mem": 9028,
-            "shared_buffers": 826592,
-            "work_mem": 4535
+            "effective_cache_size": 424996,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 220170,
+            "max_wal_size": 7297,
+            "random_page_cost": 84.49638522526342,
+            "seq_page_cost": 78.04811386680561,
+            "shared_buffers": 10294,
+            "wal_buffers": 197175,
+            "work_mem": 7998
         }
     },
     "2": {
-        "total_exec_time (s)": 8.358801999999999,
+        "total_exec_time (s)": 25.051203999999995,
         "config": {
-            "effective_cache_size": 779736,
-            "maintenance_work_mem": 474930,
-            "shared_buffers": 388246,
-            "work_mem": 1691
+            "effective_cache_size": 938378,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 140387,
+            "max_wal_size": 8019,
+            "random_page_cost": 64.67548671021495,
+            "seq_page_cost": 65.78423741110669,
+            "shared_buffers": 826934,
+            "wal_buffers": 248949,
+            "work_mem": 2076
         }
     },
     "3": {
-        "total_exec_time (s)": 8.437378,
+        "total_exec_time (s)": 24.909277,
         "config": {
-            "effective_cache_size": 430597,
-            "maintenance_work_mem": 926897,
-            "shared_buffers": 178543,
-            "work_mem": 1400
+            "effective_cache_size": 766829,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 444647,
+            "max_wal_size": 3536,
+            "random_page_cost": 11.18978844415312,
+            "seq_page_cost": 26.926730587656923,
+            "shared_buffers": 596737,
+            "wal_buffers": 2219,
+            "work_mem": 5672
         }
     },
     "4": {
-        "total_exec_time (s)": 7.563575,
+        "total_exec_time (s)": 8.517882000000002,
         "config": {
-            "effective_cache_size": 228923,
-            "maintenance_work_mem": 197654,
-            "shared_buffers": 268763,
-            "work_mem": 745
+            "effective_cache_size": 166917,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 778354,
+            "max_wal_size": 946,
+            "random_page_cost": 43.873641508767044,
+            "seq_page_cost": 10.75824570386949,
+            "shared_buffers": 714318,
+            "wal_buffers": 89264,
+            "work_mem": 280
         }
     },
     "5": {
-        "total_exec_time (s)": 7.610295999999999,
+        "total_exec_time (s)": 15.23775,
         "config": {
-            "effective_cache_size": 638892,
-            "maintenance_work_mem": 876349,
-            "shared_buffers": 520172,
-            "work_mem": 3538
+            "effective_cache_size": 228698,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 18838,
+            "max_wal_size": 5360,
+            "random_page_cost": 1.1007962959879083,
+            "seq_page_cost": 56.646674155246025,
+            "shared_buffers": 122178,
+            "wal_buffers": 178653,
+            "work_mem": 902
         }
     },
     "6": {
-        "total_exec_time (s)": 8.304093,
+        "total_exec_time (s)": 23.356559000000004,
         "config": {
-            "effective_cache_size": 800819,
-            "maintenance_work_mem": 378924,
-            "shared_buffers": 489462,
-            "work_mem": 7506
+            "effective_cache_size": 549969,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 808649,
+            "max_wal_size": 2663,
+            "random_page_cost": 92.94850384599808,
+            "seq_page_cost": 36.70056546189714,
+            "shared_buffers": 365704,
+            "wal_buffers": 110332,
+            "work_mem": 5791
         }
     },
     "7": {
-        "total_exec_time (s)": 7.670981,
+        "total_exec_time (s)": 24.210389000000003,
         "config": {
-            "effective_cache_size": 975022,
-            "maintenance_work_mem": 640363,
-            "shared_buffers": 915181,
-            "work_mem": 2544
+            "effective_cache_size": 74595,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 968968,
+            "max_wal_size": 6252,
+            "random_page_cost": 79.79169906126707,
+            "seq_page_cost": 87.49924720681884,
+            "shared_buffers": 916570,
+            "wal_buffers": 139191,
+            "work_mem": 4898
         }
     },
     "8": {
-        "total_exec_time (s)": 7.9525250000000005,
+        "total_exec_time (s)": 25.262030999999993,
         "config": {
-            "effective_cache_size": 320486,
-            "maintenance_work_mem": 573095,
-            "shared_buffers": 762176,
-            "work_mem": 7017
+            "effective_cache_size": 850684,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 398477,
+            "max_wal_size": 2070,
+            "random_page_cost": 50.58773881549064,
+            "seq_page_cost": 45.08913104231762,
+            "shared_buffers": 416735,
+            "wal_buffers": 45880,
+            "work_mem": 6901
         }
     },
     "9": {
-        "total_exec_time (s)": 7.537576999999999,
+        "total_exec_time (s)": 7.198026,
         "config": {
-            "effective_cache_size": 188706,
-            "maintenance_work_mem": 290695,
-            "shared_buffers": 669866,
-            "work_mem": 6240
+            "effective_cache_size": 671878,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 694281,
+            "max_wal_size": 4335,
+            "random_page_cost": 36.12404078901213,
+            "seq_page_cost": 2.357488897188862,
+            "shared_buffers": 616599,
+            "wal_buffers": 225809,
+            "work_mem": 3367
         }
     },
     "10": {
-        "total_exec_time (s)": 8.974856,
+        "total_exec_time (s)": 7.898360000000001,
         "config": {
-            "effective_cache_size": 224555,
-            "maintenance_work_mem": 177942,
-            "shared_buffers": 61173,
-            "work_mem": 1968
+            "effective_cache_size": 604605,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 708696,
+            "max_wal_size": 4000,
+            "random_page_cost": 33.721838485165996,
+            "seq_page_cost": 0.0,
+            "shared_buffers": 637016,
+            "wal_buffers": 223702,
+            "work_mem": 2644
         }
     },
     "11": {
-        "total_exec_time (s)": 7.365394,
+        "total_exec_time (s)": 8.030054999999999,
         "config": {
-            "effective_cache_size": 638721,
-            "maintenance_work_mem": 595061,
-            "shared_buffers": 810261,
-            "work_mem": 4535
+            "effective_cache_size": 637124,
+            "enable_mergejoin": "off",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 681574,
+            "max_wal_size": 4480,
+            "random_page_cost": 27.295511721461484,
+            "seq_page_cost": 0.0,
+            "shared_buffers": 583259,
+            "wal_buffers": 248921,
+            "work_mem": 2829
         }
     },
     "12": {
-        "total_exec_time (s)": 7.247230999999999,
+        "total_exec_time (s)": 7.907616,
         "config": {
-            "effective_cache_size": 880745,
-            "maintenance_work_mem": 263576,
-            "shared_buffers": 962669,
-            "work_mem": 976
+            "effective_cache_size": 692430,
+            "enable_mergejoin": "off",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 777236,
+            "max_wal_size": 3979,
+            "random_page_cost": 36.154636826529384,
+            "seq_page_cost": 0.0,
+            "shared_buffers": 701976,
+            "wal_buffers": 237557,
+            "work_mem": 2953
         }
     },
     "13": {
-        "total_exec_time (s)": 9.287752,
+        "total_exec_time (s)": 7.813501000000002,
         "config": {
-            "effective_cache_size": 672885,
-            "maintenance_work_mem": 431900,
-            "shared_buffers": 12660,
-            "work_mem": 339
+            "effective_cache_size": 631422,
+            "enable_mergejoin": "off",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 797420,
+            "max_wal_size": 4924,
+            "random_page_cost": 37.239776621843276,
+            "seq_page_cost": 0.0,
+            "shared_buffers": 576513,
+            "wal_buffers": 213898,
+            "work_mem": 2914
         }
     },
     "14": {
-        "total_exec_time (s)": 7.739066,
+        "total_exec_time (s)": 7.877986999999999,
         "config": {
-            "effective_cache_size": 498394,
-            "maintenance_work_mem": 247840,
-            "shared_buffers": 865026,
-            "work_mem": 2452
+            "effective_cache_size": 538226,
+            "enable_mergejoin": "off",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 690189,
+            "max_wal_size": 4340,
+            "random_page_cost": 39.576167609423386,
+            "seq_page_cost": 0.0,
+            "shared_buffers": 661893,
+            "wal_buffers": 228660,
+            "work_mem": 3533
         }
     },
     "15": {
-        "total_exec_time (s)": 9.561003,
+        "total_exec_time (s)": 7.876984999999999,
         "config": {
-            "effective_cache_size": 11901,
-            "maintenance_work_mem": 750425,
-            "shared_buffers": 82329,
-            "work_mem": 4434
+            "effective_cache_size": 571509,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 778181,
+            "max_wal_size": 3841,
+            "random_page_cost": 34.179769982439375,
+            "seq_page_cost": 0.0,
+            "shared_buffers": 584945,
+            "wal_buffers": 227994,
+            "work_mem": 2912
         }
     },
     "16": {
-        "total_exec_time (s)": 7.436662000000001,
+        "total_exec_time (s)": 7.986978000000001,
         "config": {
-            "effective_cache_size": 662863,
-            "maintenance_work_mem": 400960,
-            "shared_buffers": 849445,
-            "work_mem": 7299
+            "effective_cache_size": 667713,
+            "enable_mergejoin": "off",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 674300,
+            "max_wal_size": 3754,
+            "random_page_cost": 44.189258316897245,
+            "seq_page_cost": 0.0,
+            "shared_buffers": 537024,
+            "wal_buffers": 226362,
+            "work_mem": 2780
         }
     },
     "17": {
-        "total_exec_time (s)": 8.83673,
+        "total_exec_time (s)": 7.758951999999999,
         "config": {
-            "effective_cache_size": 113364,
-            "maintenance_work_mem": 396776,
-            "shared_buffers": 411071,
-            "work_mem": 3876
+            "effective_cache_size": 652690,
+            "enable_mergejoin": "off",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 711240,
+            "max_wal_size": 3701,
+            "random_page_cost": 26.965295771081777,
+            "seq_page_cost": 0.0,
+            "shared_buffers": 598831,
+            "wal_buffers": 202809,
+            "work_mem": 3425
         }
     },
     "18": {
-        "total_exec_time (s)": 9.426327,
+        "total_exec_time (s)": 7.656821,
         "config": {
-            "effective_cache_size": 958426,
-            "maintenance_work_mem": 237886,
-            "shared_buffers": 88555,
-            "work_mem": 2359
+            "effective_cache_size": 642059,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 791179,
+            "max_wal_size": 3802,
+            "random_page_cost": 35.842035549909355,
+            "seq_page_cost": 0.0,
+            "shared_buffers": 543746,
+            "wal_buffers": 238449,
+            "work_mem": 3886
         }
     },
     "19": {
-        "total_exec_time (s)": 7.7081420000000005,
+        "total_exec_time (s)": 8.006087,
         "config": {
-            "effective_cache_size": 768836,
-            "maintenance_work_mem": 498749,
-            "shared_buffers": 277091,
-            "work_mem": 6783
+            "effective_cache_size": 612334,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 758826,
+            "max_wal_size": 3901,
+            "random_page_cost": 34.43339540953575,
+            "seq_page_cost": 10.952429360384736,
+            "shared_buffers": 587546,
+            "wal_buffers": 226326,
+            "work_mem": 3235
         }
     },
     "20": {
-        "total_exec_time (s)": 8.653827999999999,
+        "total_exec_time (s)": 8.245556,
         "config": {
-            "effective_cache_size": 52565,
-            "maintenance_work_mem": 499051,
-            "shared_buffers": 439657,
-            "work_mem": 6224
+            "effective_cache_size": 259722,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 762608,
+            "max_wal_size": 1800,
+            "random_page_cost": 38.737673310939584,
+            "seq_page_cost": 2.7496344580666987,
+            "shared_buffers": 670305,
+            "wal_buffers": 134269,
+            "work_mem": 717
         }
     },
     "21": {
-        "total_exec_time (s)": 9.122828,
+        "total_exec_time (s)": 9.309733,
         "config": {
-            "effective_cache_size": 49521,
-            "maintenance_work_mem": 374392,
-            "shared_buffers": 277704,
-            "work_mem": 3839
+            "effective_cache_size": 162039,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 619871,
+            "max_wal_size": 2137,
+            "random_page_cost": 31.872745685269386,
+            "seq_page_cost": 11.15479765306118,
+            "shared_buffers": 590930,
+            "wal_buffers": 131179,
+            "work_mem": 64
         }
     },
     "22": {
-        "total_exec_time (s)": 7.331742,
+        "total_exec_time (s)": 8.823055,
         "config": {
-            "effective_cache_size": 284325,
-            "maintenance_work_mem": 903811,
-            "shared_buffers": 941156,
-            "work_mem": 4415
+            "effective_cache_size": 370002,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 893230,
+            "max_wal_size": 1512,
+            "random_page_cost": 36.28888416130612,
+            "seq_page_cost": 8.569713479775002,
+            "shared_buffers": 697104,
+            "wal_buffers": 142989,
+            "work_mem": 64
         }
     },
     "23": {
-        "total_exec_time (s)": 7.397361,
+        "total_exec_time (s)": 9.838327,
         "config": {
-            "effective_cache_size": 566162,
-            "maintenance_work_mem": 517130,
-            "shared_buffers": 807493,
-            "work_mem": 4178
+            "effective_cache_size": 344464,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 810683,
+            "max_wal_size": 3012,
+            "random_page_cost": 46.05242367812055,
+            "seq_page_cost": 7.138702087222475,
+            "shared_buffers": 680220,
+            "wal_buffers": 82740,
+            "work_mem": 64
         }
     },
     "24": {
-        "total_exec_time (s)": 7.233848000000001,
+        "total_exec_time (s)": 9.505731,
         "config": {
-            "effective_cache_size": 435990,
-            "maintenance_work_mem": 982190,
-            "shared_buffers": 992606,
-            "work_mem": 5614
+            "effective_cache_size": 318659,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 650834,
+            "max_wal_size": 734,
+            "random_page_cost": 46.266033466887876,
+            "seq_page_cost": 8.71012713329539,
+            "shared_buffers": 806162,
+            "wal_buffers": 146724,
+            "work_mem": 64
         }
     },
     "25": {
-        "total_exec_time (s)": 8.446357,
+        "total_exec_time (s)": 7.760798,
         "config": {
-            "effective_cache_size": 783437,
-            "maintenance_work_mem": 591893,
-            "shared_buffers": 68805,
-            "work_mem": 1245
+            "effective_cache_size": 168095,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 835097,
+            "max_wal_size": 2142,
+            "random_page_cost": 29.988959662498395,
+            "seq_page_cost": 7.215119914967525,
+            "shared_buffers": 820425,
+            "wal_buffers": 136105,
+            "work_mem": 1582
         }
     },
     "26": {
-        "total_exec_time (s)": 7.569636999999999,
+        "total_exec_time (s)": 8.124839,
         "config": {
-            "effective_cache_size": 397001,
-            "maintenance_work_mem": 493478,
-            "shared_buffers": 606853,
-            "work_mem": 7238
+            "effective_cache_size": 165140,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 859258,
+            "max_wal_size": 1935,
+            "random_page_cost": 48.781497557048546,
+            "seq_page_cost": 7.827632188671364,
+            "shared_buffers": 656635,
+            "wal_buffers": 158672,
+            "work_mem": 1796
         }
     },
     "27": {
-        "total_exec_time (s)": 7.351025999999999,
+        "total_exec_time (s)": 7.574618999999999,
         "config": {
-            "effective_cache_size": 428508,
-            "maintenance_work_mem": 759368,
-            "shared_buffers": 216096,
-            "work_mem": 745
+            "effective_cache_size": 199821,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 898363,
+            "max_wal_size": 1215,
+            "random_page_cost": 27.482277071780963,
+            "seq_page_cost": 12.681704099026383,
+            "shared_buffers": 647582,
+            "wal_buffers": 134279,
+            "work_mem": 1442
         }
     },
     "28": {
-        "total_exec_time (s)": 7.4351400000000005,
+        "total_exec_time (s)": 7.685393000000001,
         "config": {
-            "effective_cache_size": 748366,
-            "maintenance_work_mem": 239865,
-            "shared_buffers": 421907,
-            "work_mem": 6748
+            "effective_cache_size": 322163,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 794055,
+            "max_wal_size": 1181,
+            "random_page_cost": 28.347334993485845,
+            "seq_page_cost": 6.359047017435506,
+            "shared_buffers": 654499,
+            "wal_buffers": 129738,
+            "work_mem": 2355
         }
     },
     "29": {
-        "total_exec_time (s)": 7.513779000000001,
+        "total_exec_time (s)": 7.676709999999998,
         "config": {
-            "effective_cache_size": 528851,
-            "maintenance_work_mem": 804859,
-            "shared_buffers": 429561,
-            "work_mem": 6129
+            "effective_cache_size": 189652,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 855349,
+            "max_wal_size": 1443,
+            "random_page_cost": 28.58075567554926,
+            "seq_page_cost": 0.6543413110905936,
+            "shared_buffers": 614775,
+            "wal_buffers": 127598,
+            "work_mem": 1369
         }
     },
     "30": {
-        "total_exec_time (s)": 7.17654,
+        "total_exec_time (s)": 7.803364,
         "config": {
-            "effective_cache_size": 851488,
-            "maintenance_work_mem": 949648,
-            "shared_buffers": 533202,
-            "work_mem": 1842
+            "effective_cache_size": 354756,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 870167,
+            "max_wal_size": 2761,
+            "random_page_cost": 28.0677869776002,
+            "seq_page_cost": 3.264371486934191,
+            "shared_buffers": 656068,
+            "wal_buffers": 169247,
+            "work_mem": 2647
         }
     },
     "31": {
-        "total_exec_time (s)": 7.4749099999999995,
+        "total_exec_time (s)": 8.194333999999998,
         "config": {
-            "effective_cache_size": 133420,
-            "maintenance_work_mem": 687127,
-            "shared_buffers": 677739,
-            "work_mem": 2878
+            "effective_cache_size": 135502,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 945709,
+            "max_wal_size": 355,
+            "random_page_cost": 28.932659541040106,
+            "seq_page_cost": 1.847093606545406,
+            "shared_buffers": 721815,
+            "wal_buffers": 138451,
+            "work_mem": 1936
         }
     },
     "32": {
-        "total_exec_time (s)": 9.31951,
+        "total_exec_time (s)": 7.712001999999999,
         "config": {
-            "effective_cache_size": 934463,
-            "maintenance_work_mem": 230185,
-            "shared_buffers": 17114,
-            "work_mem": 745
+            "effective_cache_size": 691440,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 754355,
+            "max_wal_size": 4395,
+            "random_page_cost": 37.349343205019544,
+            "seq_page_cost": 0.0,
+            "shared_buffers": 623643,
+            "wal_buffers": 202710,
+            "work_mem": 3921
         }
     },
     "33": {
-        "total_exec_time (s)": 7.606578,
+        "total_exec_time (s)": 8.320059,
         "config": {
-            "effective_cache_size": 453220,
-            "maintenance_work_mem": 756715,
-            "shared_buffers": 375611,
-            "work_mem": 5428
+            "effective_cache_size": 201511,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 756452,
+            "max_wal_size": 1527,
+            "random_page_cost": 23.142030491668606,
+            "seq_page_cost": 6.812801811262253,
+            "shared_buffers": 627690,
+            "wal_buffers": 176889,
+            "work_mem": 1933
         }
     },
     "34": {
-        "total_exec_time (s)": 8.685735,
+        "total_exec_time (s)": 8.196795000000002,
         "config": {
-            "effective_cache_size": 10448,
-            "maintenance_work_mem": 503439,
-            "shared_buffers": 524516,
-            "work_mem": 3787
+            "effective_cache_size": 247147,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 873295,
+            "max_wal_size": 1559,
+            "random_page_cost": 37.015949388215645,
+            "seq_page_cost": 5.9118745028024415,
+            "shared_buffers": 709545,
+            "wal_buffers": 116631,
+            "work_mem": 1854
         }
     },
     "35": {
-        "total_exec_time (s)": 7.563612999999999,
+        "total_exec_time (s)": 8.372082999999998,
         "config": {
-            "effective_cache_size": 492560,
-            "maintenance_work_mem": 946934,
-            "shared_buffers": 862382,
-            "work_mem": 6340
+            "effective_cache_size": 204752,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 942847,
+            "max_wal_size": 2418,
+            "random_page_cost": 21.384426242758426,
+            "seq_page_cost": 6.783979930983502,
+            "shared_buffers": 562980,
+            "wal_buffers": 129167,
+            "work_mem": 1877
         }
     },
     "36": {
-        "total_exec_time (s)": 7.172717000000001,
+        "total_exec_time (s)": 7.957910999999999,
         "config": {
-            "effective_cache_size": 899749,
-            "maintenance_work_mem": 667583,
-            "shared_buffers": 613082,
-            "work_mem": 591
+            "effective_cache_size": 750855,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 691323,
+            "max_wal_size": 4971,
+            "random_page_cost": 34.21869402245347,
+            "seq_page_cost": 0.0,
+            "shared_buffers": 572829,
+            "wal_buffers": 236263,
+            "work_mem": 4074
         }
     },
     "37": {
-        "total_exec_time (s)": 7.223090999999999,
+        "total_exec_time (s)": 8.211843,
         "config": {
-            "effective_cache_size": 504871,
-            "maintenance_work_mem": 568008,
-            "shared_buffers": 485234,
-            "work_mem": 2382
+            "effective_cache_size": 592524,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 886965,
+            "max_wal_size": 1752,
+            "random_page_cost": 28.268831778265486,
+            "seq_page_cost": 3.827502476282492,
+            "shared_buffers": 521055,
+            "wal_buffers": 185199,
+            "work_mem": 2483
         }
     },
     "38": {
-        "total_exec_time (s)": 7.936897999999999,
+        "total_exec_time (s)": 7.731450999999999,
         "config": {
-            "effective_cache_size": 412936,
-            "maintenance_work_mem": 429382,
-            "shared_buffers": 165325,
-            "work_mem": 3793
+            "effective_cache_size": 194898,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 843579,
+            "max_wal_size": 440,
+            "random_page_cost": 27.921717004267936,
+            "seq_page_cost": 9.340906462772507,
+            "shared_buffers": 668138,
+            "wal_buffers": 129591,
+            "work_mem": 1258
         }
     },
     "39": {
-        "total_exec_time (s)": 7.179641,
+        "total_exec_time (s)": 7.9163120000000005,
         "config": {
-            "effective_cache_size": 204283,
-            "maintenance_work_mem": 141634,
-            "shared_buffers": 789271,
-            "work_mem": 6344
+            "effective_cache_size": 553542,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 691625,
+            "max_wal_size": 3996,
+            "random_page_cost": 31.01189657690674,
+            "seq_page_cost": 3.310106829934735,
+            "shared_buffers": 474673,
+            "wal_buffers": 204901,
+            "work_mem": 3415
         }
     }
 }

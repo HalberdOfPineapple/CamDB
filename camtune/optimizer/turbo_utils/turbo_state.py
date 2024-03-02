@@ -25,16 +25,16 @@ class TurboState:
     length_min: float = 0.5**7
     length_max: float = 1.6
     failure_counter: int = 0
-    failure_tolerance: int = float("nan")  # to be post-initialized
+    failure_tolerance: int = 5 # float("nan")  # to be post-initialized
     success_counter: int = 0
-    success_tolerance: int = 10  # paper's version: 3
+    success_tolerance: int = 3 # 10  # paper's version: 3
     best_value: float = -float("inf")
     restart_triggered: bool = False
 
-    def __post_init__(self):
-        self.failure_tolerance = math.ceil(
-            max([4.0 / self.batch_size, float(self.dim) / self.batch_size])
-        )
+    # def __post_init__(self):
+    #     self.failure_tolerance = math.ceil(
+    #         max([4.0 / self.batch_size, float(self.dim) / self.batch_size])
+    #     )
 
 def update_state(state: TurboState, Y_next: torch.Tensor):
     

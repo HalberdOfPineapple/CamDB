@@ -1,0 +1,48 @@
+expr_name: test_random_opt
+ssh:
+  # SSH user is set to postgres for allowing access for pg_ctl and postgres server
+  # while the PostgresqlDB.user refers to the user of the database accessing data
+  pg_user_name: postgres
+  pg_user_pwd: '741286'
+
+database:
+  db_host: localhost
+  db_port: '5432'
+  db_user_name: viktor
+  db_passwd: '741286'
+  db_name: tpch
+
+  pg_ctl: /usr/lib/postgresql/14/bin/pg_ctl
+  pg_data: /var/lib/postgresql/14/main
+  pg_server: /usr/lib/postgresql/14/bin/postgres
+  pg_conf: /var/lib/postgresql/experiment/conf/tune_cnf.conf
+  pg_sock: /var/run/postgresql/.s.PGSQL.543
+
+  remote_mode: false
+  online_mode: false
+  exec_mode: explain
+
+  benchmark: TPCH
+  benchmark_fast: true # true # only execute short queries
+  use_pgbench: false
+
+  # saved locally
+  knob_definitions: selected.json
+  knob_num: -1
+
+  perf_name: total_cost
+  perf_unit: c_unit
+  negate: true
+
+tune:
+  seed: 1
+  num_evals: 40
+  batch_size: 1
+  
+  init_design: lhs
+  init_by_dim: False
+  num_init: 10
+
+  optimizer: gp-bo
+  optimizer_params:
+    acquisition: 'ei'

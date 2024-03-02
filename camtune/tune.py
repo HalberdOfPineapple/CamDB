@@ -14,6 +14,7 @@ from camtune.database import PostgresqlDB
 from camtune.utils import (init_logger, get_logger, print_log, \
                            LOG_DIR, CONFIG_DIR, KNOB_DIR)
 
+
 DEFAULT_EXPR_NAME = 'postgre_tpch_remote'
 eval_counter = 0
 
@@ -90,14 +91,19 @@ def main(expr_name: str, expr_config: dict, test_tuning: bool=False):
     # -----------------------------------
     # Build Database Controller
     db = PostgresqlDB(expr_config)
-    perf_name: str = expr_config['database']['perf_name']
-    perf_unit: str = expr_config['database']['perf_unit']
-    negate: bool = expr_config['database']['negate']
+    db_config: dict = expr_config['database']
+
+    perf_name: str = db_config['perf_name']
+    perf_unit: str = db_config['perf_unit']
+    negate: bool = db_config['negate']
+
+    if db_config['benchmark'].lower() == 'sysbench' and db_config['sysbench_prepare']:
+        db.prepare_sysbench_data()
 
     # -----------------------------------
     # Setup search space from knob definition file
     knob_definition_path: str = os.path.join(
-        KNOB_DIR, expr_config['database']['knob_definitions'])
+        KNOB_DIR, db_config['knob_definitions'])
     search_space = SearchSpace(
         knob_definition_path, 
         is_kv_config=True,
@@ -105,6 +111,7 @@ def main(expr_name: str, expr_config: dict, test_tuning: bool=False):
     )
     bounds: torch.Tensor = search_space.bounds
     discrete_dims: List[int] = search_space.discrete_dims
+    # discrete_dims: List[int] = []
     # print(f"Bounds: {bounds}")
     # print(f"Discrete dims: {discrete_dims}")
 
@@ -181,7 +188,7 @@ def main(expr_name: str, expr_config: dict, test_tuning: bool=False):
     print_log(f"Elapsed time: {elapsed_time:.2f} seconds", print_msg=True)
 
     data_file_name = f"{expr_name}_data.json"
-    metric = f"{perf_name} ({expr_config['database']['perf_unit']})"
+    metric = f"{perf_name} ({db_config['perf_unit']})"
     with open(os.path.join(LOG_DIR, data_file_name), 'w') as f:
         result_dicts = {}
         for i, fx in enumerate(result_Y):
@@ -190,6 +197,13 @@ def main(expr_name: str, expr_config: dict, test_tuning: bool=False):
             result_dict['config'] = dict(tensor_to_config(x, search_space))
             result_dicts[i] = result_dict
         json.dump(result_dicts, f)
+
+    
+    # --------------------------------------------------------
+    # Clean up
+    # --------------------------------------------------------
+    if db_config['benchmark'].lower() == 'sysbench' and db_config['sysbench_cleanup']:
+            db.prepare_sysbench_data()
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()

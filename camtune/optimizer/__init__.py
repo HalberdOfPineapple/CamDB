@@ -6,6 +6,7 @@ from .base_optimizer import BaseOptimizer
 from .random_optimizer import RandomOptimizer
 from .gp_bo_optimizer import GPBOOptimizer
 from .turbo_optimizer import TuRBO
+from .mcts_optimizer import MCTS
 from .sampler import BaseSampler, SobolSampler, LHSSampler
 
 INIT_DESIGN_MAP = {
@@ -17,6 +18,7 @@ OPTIMIZER_MAP = {
     "random": RandomOptimizer,
     "gp-bo": GPBOOptimizer,
     "turbo": TuRBO,
+    'mcts': MCTS,
 }
 
 def build_init_design(

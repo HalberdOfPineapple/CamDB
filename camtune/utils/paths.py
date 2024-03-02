@@ -10,6 +10,10 @@ LOG_DIR = os.path.join(BASE_DIR, 'logs')
 OPTIM_CONFIG_DIR = os.path.join(BASE_DIR, 'optimizer', 'config')
 OPTIM_LOG_DIR = os.path.join(BASE_DIR, 'optimizer', 'logs')
 
+BENCHMARK_SET = {
+    'TPCH',
+    'SYSBENCH',
+}
 BENCHMARK_DIR = os.path.join(BASE_DIR, 'benchmarks')
 QUERY_PATH_MAP = {
     'TPCH': os.path.join(BENCHMARK_DIR, 'tpch'),

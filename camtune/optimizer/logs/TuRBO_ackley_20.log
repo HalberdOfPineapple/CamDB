@@ -458,3 +458,293 @@
 2024-02-19 19:23:30,883 - INFO - --------------------------------------------------------------------------------
 2024-02-19 19:23:30,883 - INFO - Restart 0:
 2024-02-19 19:23:30,972 - INFO - [TuRBO] Start local modeling with 48 data points
+2024-02-21 17:08:13,962 - INFO - 
+
+2024-02-21 17:08:13,962 - INFO - --------------------------------------------------
+2024-02-21 17:08:13,963 - INFO - benchmark: ackle
+2024-02-21 17:08:13,963 - INFO - benchmark_params:
+2024-02-21 17:08:13,963 - INFO -     dim: 20
+2024-02-21 17:08:13,963 - INFO -     lb: -5
+2024-02-21 17:08:13,964 - INFO -     ub: 10
+2024-02-21 17:08:13,964 - INFO - tuner_params:
+2024-02-21 17:08:13,964 - INFO -     seed: 1024
+2024-02-21 17:08:13,964 - INFO -     num_evals: 200
+2024-02-21 17:08:13,965 - INFO -     batch_size: 4
+2024-02-21 17:08:13,965 - INFO -     extern_init: False
+2024-02-21 17:08:13,965 - INFO -     init_design: lhs
+2024-02-21 17:08:13,965 - INFO -     init_by_dim: True
+2024-02-21 17:08:13,965 - INFO -     num_init: 40
+2024-02-21 17:08:13,965 - INFO -     optimizer: turbo
+2024-02-21 17:08:13,966 - INFO -     optimizer_params: {'acquisition': 'ts'}
+2024-02-21 17:08:13,966 - INFO - expr_name: TuRBO_ackley_20
+2024-02-21 17:08:13,966 - INFO - --------------------------------------------------
+2024-02-21 17:08:24,106 - INFO - 
+
+2024-02-21 17:08:24,106 - INFO - --------------------------------------------------
+2024-02-21 17:08:24,106 - INFO - benchmark: ackley
+2024-02-21 17:08:24,106 - INFO - benchmark_params:
+2024-02-21 17:08:24,107 - INFO -     dim: 20
+2024-02-21 17:08:24,107 - INFO -     lb: -5
+2024-02-21 17:08:24,107 - INFO -     ub: 10
+2024-02-21 17:08:24,107 - INFO - tuner_params:
+2024-02-21 17:08:24,107 - INFO -     seed: 1024
+2024-02-21 17:08:24,108 - INFO -     num_evals: 200
+2024-02-21 17:08:24,108 - INFO -     batch_size: 4
+2024-02-21 17:08:24,108 - INFO -     extern_init: False
+2024-02-21 17:08:24,108 - INFO -     init_design: lhs
+2024-02-21 17:08:24,108 - INFO -     init_by_dim: True
+2024-02-21 17:08:24,108 - INFO -     num_init: 40
+2024-02-21 17:08:24,109 - INFO -     optimizer: turbo
+2024-02-21 17:08:24,109 - INFO -     optimizer_params: {'acquisition': 'ts'}
+2024-02-21 17:08:24,109 - INFO - expr_name: TuRBO_ackley_20
+2024-02-21 17:08:24,109 - INFO - --------------------------------------------------
+2024-02-21 17:08:24,109 - INFO - [ackley] Using Ackley 20D
+2024-02-21 17:09:13,322 - INFO - 
+
+2024-02-21 17:09:13,322 - INFO - --------------------------------------------------
+2024-02-21 17:09:13,322 - INFO - benchmark: ackley
+2024-02-21 17:09:13,322 - INFO - benchmark_params:
+2024-02-21 17:09:13,323 - INFO -     dim: 20
+2024-02-21 17:09:13,323 - INFO -     lb: -5
+2024-02-21 17:09:13,323 - INFO -     ub: 10
+2024-02-21 17:09:13,323 - INFO - tuner_params:
+2024-02-21 17:09:13,323 - INFO -     seed: 1024
+2024-02-21 17:09:13,324 - INFO -     num_evals: 200
+2024-02-21 17:09:13,324 - INFO -     batch_size: 4
+2024-02-21 17:09:13,324 - INFO -     extern_init: False
+2024-02-21 17:09:13,324 - INFO -     init_design: lhs
+2024-02-21 17:09:13,324 - INFO -     init_by_dim: True
+2024-02-21 17:09:13,324 - INFO -     num_init: 40
+2024-02-21 17:09:13,325 - INFO -     optimizer: turbo
+2024-02-21 17:09:13,325 - INFO -     optimizer_params: {'acquisition': 'ts'}
+2024-02-21 17:09:13,325 - INFO - expr_name: TuRBO_ackley_20
+2024-02-21 17:09:13,325 - INFO - --------------------------------------------------
+2024-02-21 17:09:13,325 - INFO - [ackley] Using Ackley 20D
+2024-02-21 17:11:34,400 - INFO - 
+
+2024-02-21 17:11:34,400 - INFO - --------------------------------------------------
+2024-02-21 17:11:34,400 - INFO - benchmark: ackley
+2024-02-21 17:11:34,401 - INFO - benchmark_params:
+2024-02-21 17:11:34,401 - INFO -     dim: 20
+2024-02-21 17:11:34,401 - INFO -     lb: -5
+2024-02-21 17:11:34,401 - INFO -     ub: 10
+2024-02-21 17:11:34,401 - INFO - tuner_params:
+2024-02-21 17:11:34,401 - INFO -     seed: 1024
+2024-02-21 17:11:34,402 - INFO -     num_evals: 200
+2024-02-21 17:11:34,402 - INFO -     batch_size: 4
+2024-02-21 17:11:34,402 - INFO -     extern_init: False
+2024-02-21 17:11:34,402 - INFO -     init_design: lhs
+2024-02-21 17:11:34,402 - INFO -     init_by_dim: True
+2024-02-21 17:11:34,403 - INFO -     num_init: 40
+2024-02-21 17:11:34,403 - INFO -     optimizer: turbo
+2024-02-21 17:11:34,403 - INFO -     optimizer_params: {'acquisition': 'ts'}
+2024-02-21 17:11:34,403 - INFO - expr_name: TuRBO_ackley_20
+2024-02-21 17:11:34,403 - INFO - --------------------------------------------------
+2024-02-21 17:11:34,403 - INFO - [ackley] Using Ackley 20D
+2024-02-21 17:13:55,162 - INFO - 
+
+2024-02-21 17:13:55,163 - INFO - --------------------------------------------------
+2024-02-21 17:13:55,163 - INFO - benchmark: ackley
+2024-02-21 17:13:55,163 - INFO - benchmark_params:
+2024-02-21 17:13:55,164 - INFO -     dim: 20
+2024-02-21 17:13:55,164 - INFO -     lb: -5
+2024-02-21 17:13:55,164 - INFO -     ub: 10
+2024-02-21 17:13:55,164 - INFO - tuner_params:
+2024-02-21 17:13:55,164 - INFO -     seed: 1024
+2024-02-21 17:13:55,164 - INFO -     num_evals: 200
+2024-02-21 17:13:55,165 - INFO -     batch_size: 4
+2024-02-21 17:13:55,165 - INFO -     extern_init: False
+2024-02-21 17:13:55,165 - INFO -     init_design: lhs
+2024-02-21 17:13:55,165 - INFO -     init_by_dim: True
+2024-02-21 17:13:55,165 - INFO -     num_init: 40
+2024-02-21 17:13:55,166 - INFO -     optimizer: turbo
+2024-02-21 17:13:55,166 - INFO -     optimizer_params: {'acquisition': 'ts'}
+2024-02-21 17:13:55,166 - INFO - expr_name: TuRBO_ackley_20
+2024-02-21 17:13:55,166 - INFO - --------------------------------------------------
+2024-02-21 17:13:55,166 - INFO - [ackley] Using Ackley 20D
+2024-02-21 17:13:56,601 - INFO - [Tuner] Start initial profiling by lhs
+2024-02-21 17:13:56,636 - INFO - [Tuner] Start optimization using turbo for 160 iterations (external initialization)
+2024-02-21 17:14:48,988 - INFO - 
+
+2024-02-21 17:14:48,989 - INFO - --------------------------------------------------
+2024-02-21 17:14:48,989 - INFO - benchmark: ackley
+2024-02-21 17:14:48,989 - INFO - benchmark_params:
+2024-02-21 17:14:48,989 - INFO -     dim: 20
+2024-02-21 17:14:48,990 - INFO -     lb: -5
+2024-02-21 17:14:48,990 - INFO -     ub: 10
+2024-02-21 17:14:48,990 - INFO - tuner_params:
+2024-02-21 17:14:48,990 - INFO -     seed: 1024
+2024-02-21 17:14:48,990 - INFO -     num_evals: 200
+2024-02-21 17:14:48,990 - INFO -     batch_size: 4
+2024-02-21 17:14:48,990 - INFO -     extern_init: False
+2024-02-21 17:14:48,991 - INFO -     init_design: lhs
+2024-02-21 17:14:48,991 - INFO -     init_by_dim: True
+2024-02-21 17:14:48,991 - INFO -     num_init: 40
+2024-02-21 17:14:48,991 - INFO -     optimizer: turbo
+2024-02-21 17:14:48,992 - INFO -     optimizer_params: {'acquisition': 'ts'}
+2024-02-21 17:14:48,992 - INFO - expr_name: TuRBO_ackley_20
+2024-02-21 17:14:48,992 - INFO - --------------------------------------------------
+2024-02-21 17:14:48,992 - INFO - [ackley] Using Ackley 20D
+2024-02-21 17:15:13,051 - INFO - 
+
+2024-02-21 17:15:13,051 - INFO - --------------------------------------------------
+2024-02-21 17:15:13,051 - INFO - benchmark: ackley
+2024-02-21 17:15:13,051 - INFO - benchmark_params:
+2024-02-21 17:15:13,052 - INFO -     dim: 20
+2024-02-21 17:15:13,052 - INFO -     lb: -5
+2024-02-21 17:15:13,052 - INFO -     ub: 10
+2024-02-21 17:15:13,052 - INFO - tuner_params:
+2024-02-21 17:15:13,052 - INFO -     seed: 1024
+2024-02-21 17:15:13,052 - INFO -     num_evals: 200
+2024-02-21 17:15:13,053 - INFO -     batch_size: 4
+2024-02-21 17:15:13,053 - INFO -     extern_init: False
+2024-02-21 17:15:13,053 - INFO -     init_design: lhs
+2024-02-21 17:15:13,053 - INFO -     init_by_dim: True
+2024-02-21 17:15:13,053 - INFO -     num_init: 40
+2024-02-21 17:15:13,054 - INFO -     optimizer: turbo
+2024-02-21 17:15:13,054 - INFO -     optimizer_params: {'acquisition': 'ts'}
+2024-02-21 17:15:13,054 - INFO - expr_name: TuRBO_ackley_20
+2024-02-21 17:15:13,054 - INFO - --------------------------------------------------
+2024-02-21 17:15:13,054 - INFO - [ackley] Using Ackley 20D
+2024-02-21 17:15:14,507 - INFO - [Tuner] Start optimization using turbo for 200 iterations (internal initialization)
+2024-02-21 17:15:14,507 - INFO - --------------------------------------------------------------------------------
+2024-02-21 17:15:14,508 - INFO - Restart 0:
+2024-02-21 17:15:14,536 - INFO - [TuRBO] Start local modeling with 40 data points
+2024-02-21 17:16:05,439 - INFO - 
+
+2024-02-21 17:16:05,439 - INFO - --------------------------------------------------
+2024-02-21 17:16:05,440 - INFO - benchmark: ackley
+2024-02-21 17:16:05,440 - INFO - benchmark_params:
+2024-02-21 17:16:05,440 - INFO -     dim: 20
+2024-02-21 17:16:05,440 - INFO -     lb: -5
+2024-02-21 17:16:05,441 - INFO -     ub: 10
+2024-02-21 17:16:05,441 - INFO - tuner_params:
+2024-02-21 17:16:05,441 - INFO -     seed: 1024
+2024-02-21 17:16:05,441 - INFO -     num_evals: 200
+2024-02-21 17:16:05,442 - INFO -     batch_size: 4
+2024-02-21 17:16:05,442 - INFO -     extern_init: False
+2024-02-21 17:16:05,442 - INFO -     init_design: lhs
+2024-02-21 17:16:05,442 - INFO -     init_by_dim: True
+2024-02-21 17:16:05,442 - INFO -     num_init: 40
+2024-02-21 17:16:05,442 - INFO -     optimizer: turbo
+2024-02-21 17:16:05,442 - INFO -     optimizer_params: {'acqf': 'ts'}
+2024-02-21 17:16:05,443 - INFO - expr_name: TuRBO_ackley_20
+2024-02-21 17:16:05,443 - INFO - --------------------------------------------------
+2024-02-21 17:16:05,443 - INFO - [ackley] Using Ackley 20D
+2024-02-21 17:16:06,809 - INFO - [Tuner] Start optimization using turbo for 200 iterations (internal initialization)
+2024-02-21 17:16:06,809 - INFO - --------------------------------------------------------------------------------
+2024-02-21 17:16:06,809 - INFO - Restart 0:
+2024-02-21 17:16:06,826 - INFO - [TuRBO] Start local modeling with 40 data points
+2024-02-21 17:16:08,795 - INFO - [TuRBO] [Restart 0] 44) Best value: -1.19e+01 | TR length: 8.00e-01 | num. restarts: 0/5 | num. successes: 1/10
+2024-02-21 17:16:09,410 - INFO - [TuRBO] [Restart 0] 48) Best value: -9.40e+00 | TR length: 8.00e-01 | num. restarts: 0/5 | num. successes: 2/10
+2024-02-21 17:16:10,158 - INFO - [TuRBO] [Restart 0] 52) Best value: -9.40e+00 | TR length: 8.00e-01 | num. restarts: 1/5 | num. successes: 0/10
+2024-02-21 17:16:10,884 - INFO - [TuRBO] [Restart 0] 56) Best value: -9.40e+00 | TR length: 8.00e-01 | num. restarts: 2/5 | num. successes: 0/10
+2024-02-21 17:16:11,483 - INFO - [TuRBO] [Restart 0] 60) Best value: -9.40e+00 | TR length: 8.00e-01 | num. restarts: 3/5 | num. successes: 0/10
+2024-02-21 17:16:12,020 - INFO - [TuRBO] [Restart 0] 64) Best value: -9.40e+00 | TR length: 8.00e-01 | num. restarts: 4/5 | num. successes: 0/10
+2024-02-21 17:16:12,741 - INFO - [TuRBO] [Restart 0] 68) Best value: -9.40e+00 | TR length: 4.00e-01 | num. restarts: 0/5 | num. successes: 0/10
+2024-02-21 17:16:13,502 - INFO - [TuRBO] [Restart 0] 72) Best value: -8.04e+00 | TR length: 4.00e-01 | num. restarts: 0/5 | num. successes: 1/10
+2024-02-21 17:16:14,225 - INFO - [TuRBO] [Restart 0] 76) Best value: -8.04e+00 | TR length: 4.00e-01 | num. restarts: 1/5 | num. successes: 0/10
+2024-02-21 17:16:14,900 - INFO - [TuRBO] [Restart 0] 80) Best value: -8.04e+00 | TR length: 4.00e-01 | num. restarts: 2/5 | num. successes: 0/10
+2024-02-21 17:16:15,518 - INFO - [TuRBO] [Restart 0] 84) Best value: -8.04e+00 | TR length: 4.00e-01 | num. restarts: 3/5 | num. successes: 0/10
+2024-02-21 17:16:16,199 - INFO - [TuRBO] [Restart 0] 88) Best value: -8.04e+00 | TR length: 4.00e-01 | num. restarts: 4/5 | num. successes: 0/10
+2024-02-21 17:16:16,935 - INFO - [TuRBO] [Restart 0] 92) Best value: -8.04e+00 | TR length: 2.00e-01 | num. restarts: 0/5 | num. successes: 0/10
+2024-02-21 17:16:17,698 - INFO - [TuRBO] [Restart 0] 96) Best value: -7.46e+00 | TR length: 2.00e-01 | num. restarts: 0/5 | num. successes: 1/10
+2024-02-21 17:16:18,386 - INFO - [TuRBO] [Restart 0] 100) Best value: -6.54e+00 | TR length: 2.00e-01 | num. restarts: 0/5 | num. successes: 2/10
+2024-02-21 17:16:19,060 - INFO - [TuRBO] [Restart 0] 104) Best value: -6.54e+00 | TR length: 2.00e-01 | num. restarts: 1/5 | num. successes: 0/10
+2024-02-21 17:16:19,824 - INFO - [TuRBO] [Restart 0] 108) Best value: -5.91e+00 | TR length: 2.00e-01 | num. restarts: 0/5 | num. successes: 1/10
+2024-02-21 17:16:20,514 - INFO - [TuRBO] [Restart 0] 112) Best value: -5.60e+00 | TR length: 2.00e-01 | num. restarts: 0/5 | num. successes: 2/10
+2024-02-21 17:16:21,177 - INFO - [TuRBO] [Restart 0] 116) Best value: -5.52e+00 | TR length: 2.00e-01 | num. restarts: 0/5 | num. successes: 3/10
+2024-02-21 17:16:21,839 - INFO - [TuRBO] [Restart 0] 120) Best value: -5.40e+00 | TR length: 2.00e-01 | num. restarts: 0/5 | num. successes: 4/10
+2024-02-21 17:16:22,423 - INFO - [TuRBO] [Restart 0] 124) Best value: -5.40e+00 | TR length: 2.00e-01 | num. restarts: 1/5 | num. successes: 0/10
+2024-02-21 17:16:23,156 - INFO - [TuRBO] [Restart 0] 128) Best value: -4.79e+00 | TR length: 2.00e-01 | num. restarts: 0/5 | num. successes: 1/10
+2024-02-21 17:16:23,765 - INFO - [TuRBO] [Restart 0] 132) Best value: -4.32e+00 | TR length: 2.00e-01 | num. restarts: 0/5 | num. successes: 2/10
+2024-02-21 17:16:24,395 - INFO - [TuRBO] [Restart 0] 136) Best value: -4.32e+00 | TR length: 2.00e-01 | num. restarts: 1/5 | num. successes: 0/10
+2024-02-21 17:16:25,089 - INFO - [TuRBO] [Restart 0] 140) Best value: -4.21e+00 | TR length: 2.00e-01 | num. restarts: 0/5 | num. successes: 1/10
+2024-02-21 17:16:25,708 - INFO - [TuRBO] [Restart 0] 144) Best value: -4.21e+00 | TR length: 2.00e-01 | num. restarts: 1/5 | num. successes: 0/10
+2024-02-21 17:16:26,285 - INFO - [TuRBO] [Restart 0] 148) Best value: -3.82e+00 | TR length: 2.00e-01 | num. restarts: 0/5 | num. successes: 1/10
+2024-02-21 17:16:26,898 - INFO - [TuRBO] [Restart 0] 152) Best value: -3.82e+00 | TR length: 2.00e-01 | num. restarts: 1/5 | num. successes: 0/10
+2024-02-21 17:16:27,486 - INFO - [TuRBO] [Restart 0] 156) Best value: -3.82e+00 | TR length: 2.00e-01 | num. restarts: 2/5 | num. successes: 0/10
+2024-02-21 17:16:28,080 - INFO - [TuRBO] [Restart 0] 160) Best value: -3.82e+00 | TR length: 2.00e-01 | num. restarts: 3/5 | num. successes: 0/10
+2024-02-21 17:16:28,673 - INFO - [TuRBO] [Restart 0] 164) Best value: -3.82e+00 | TR length: 2.00e-01 | num. restarts: 4/5 | num. successes: 0/10
+2024-02-21 17:16:29,188 - INFO - [TuRBO] [Restart 0] 168) Best value: -3.82e+00 | TR length: 1.00e-01 | num. restarts: 0/5 | num. successes: 0/10
+2024-02-21 17:16:29,786 - INFO - [TuRBO] [Restart 0] 172) Best value: -3.33e+00 | TR length: 1.00e-01 | num. restarts: 0/5 | num. successes: 1/10
+2024-02-21 17:16:30,380 - INFO - [TuRBO] [Restart 0] 176) Best value: -3.12e+00 | TR length: 1.00e-01 | num. restarts: 0/5 | num. successes: 2/10
+2024-02-21 17:16:31,048 - INFO - [TuRBO] [Restart 0] 180) Best value: -3.12e+00 | TR length: 1.00e-01 | num. restarts: 1/5 | num. successes: 0/10
+2024-02-21 17:16:31,574 - INFO - [TuRBO] [Restart 0] 184) Best value: -2.73e+00 | TR length: 1.00e-01 | num. restarts: 0/5 | num. successes: 1/10
+2024-02-21 17:16:32,258 - INFO - [TuRBO] [Restart 0] 188) Best value: -2.73e+00 | TR length: 1.00e-01 | num. restarts: 1/5 | num. successes: 0/10
+2024-02-21 17:16:32,906 - INFO - [TuRBO] [Restart 0] 192) Best value: -2.59e+00 | TR length: 1.00e-01 | num. restarts: 0/5 | num. successes: 1/10
+2024-02-21 17:16:33,542 - INFO - [TuRBO] [Restart 0] 196) Best value: -2.59e+00 | TR length: 1.00e-01 | num. restarts: 1/5 | num. successes: 0/10
+2024-02-21 17:16:34,293 - INFO - [TuRBO] [Restart 0] 200) Best value: -2.59e+00 | TR length: 1.00e-01 | num. restarts: 2/5 | num. successes: 0/10
+2024-02-21 17:16:34,294 - INFO - --------------------------------------------------
+2024-02-21 17:16:34,295 - INFO - Best X: [-0.14147974634125582, 0.11530224043033055, 0.6709622117401803, -0.13669880274609358, 0.007522652023092213, 0.596976230679398, 0.6640097826704912, -0.11873473136304113, 0.1057142592460476, -0.19646127377744982, -0.4983317547627486, 0.15598632754090236, 0.1673392821034696, 0.0762250542365468, -0.1308097926560663, 0.030599862307281178, -0.17361019091953178, -0.23429918051843313, 0.10091052272670531, 0.4674612807363836]
+2024-02-21 17:16:34,296 - INFO - Best Y: 2.5904571911151355
+2024-02-21 17:16:34,296 - INFO - Elapsed time: 27.49 seconds
+2024-02-21 17:17:15,029 - INFO - 
+
+2024-02-21 17:17:15,030 - INFO - --------------------------------------------------
+2024-02-21 17:17:15,030 - INFO - benchmark: ackley
+2024-02-21 17:17:15,030 - INFO - benchmark_params:
+2024-02-21 17:17:15,030 - INFO -     dim: 20
+2024-02-21 17:17:15,030 - INFO -     lb: -5
+2024-02-21 17:17:15,031 - INFO -     ub: 10
+2024-02-21 17:17:15,031 - INFO - tuner_params:
+2024-02-21 17:17:15,031 - INFO -     seed: 1024
+2024-02-21 17:17:15,031 - INFO -     num_evals: 200
+2024-02-21 17:17:15,031 - INFO -     batch_size: 4
+2024-02-21 17:17:15,031 - INFO -     extern_init: False
+2024-02-21 17:17:15,032 - INFO -     init_design: lhs
+2024-02-21 17:17:15,032 - INFO -     init_by_dim: True
+2024-02-21 17:17:15,032 - INFO -     num_init: 40
+2024-02-21 17:17:15,032 - INFO -     optimizer: turbo
+2024-02-21 17:17:15,033 - INFO -     optimizer_params: {'acqf': 'ts'}
+2024-02-21 17:17:15,033 - INFO - expr_name: TuRBO_ackley_20
+2024-02-21 17:17:15,033 - INFO - --------------------------------------------------
+2024-02-21 17:17:15,033 - INFO - [ackley] Using Ackley 20D
+2024-02-21 17:17:16,429 - INFO - [Tuner] Start optimization using turbo for 200 iterations (internal initialization)
+2024-02-21 17:17:16,429 - INFO - --------------------------------------------------------------------------------
+2024-02-21 17:17:16,429 - INFO - Restart 0:
+2024-02-21 17:17:16,443 - INFO - [TuRBO] Start local modeling with 40 data points
+2024-02-21 17:17:18,468 - INFO - [TuRBO] [Restart 0] 44) Best value: -1.19e+01 | TR length: 8.00e-01 | num. restarts: 0/5 | num. successes: 1/10
+2024-02-21 17:17:19,073 - INFO - [TuRBO] [Restart 0] 48) Best value: -9.40e+00 | TR length: 8.00e-01 | num. restarts: 0/5 | num. successes: 2/10
+2024-02-21 17:17:19,797 - INFO - [TuRBO] [Restart 0] 52) Best value: -9.40e+00 | TR length: 8.00e-01 | num. restarts: 1/5 | num. successes: 0/10
+2024-02-21 17:17:20,505 - INFO - [TuRBO] [Restart 0] 56) Best value: -9.40e+00 | TR length: 8.00e-01 | num. restarts: 2/5 | num. successes: 0/10
+2024-02-21 17:17:21,107 - INFO - [TuRBO] [Restart 0] 60) Best value: -9.40e+00 | TR length: 8.00e-01 | num. restarts: 3/5 | num. successes: 0/10
+2024-02-21 17:17:21,640 - INFO - [TuRBO] [Restart 0] 64) Best value: -9.40e+00 | TR length: 8.00e-01 | num. restarts: 4/5 | num. successes: 0/10
+2024-02-21 17:17:22,366 - INFO - [TuRBO] [Restart 0] 68) Best value: -9.40e+00 | TR length: 4.00e-01 | num. restarts: 0/5 | num. successes: 0/10
+2024-02-21 17:17:23,133 - INFO - [TuRBO] [Restart 0] 72) Best value: -8.04e+00 | TR length: 4.00e-01 | num. restarts: 0/5 | num. successes: 1/10
+2024-02-21 17:17:23,866 - INFO - [TuRBO] [Restart 0] 76) Best value: -8.04e+00 | TR length: 4.00e-01 | num. restarts: 1/5 | num. successes: 0/10
+2024-02-21 17:17:24,580 - INFO - [TuRBO] [Restart 0] 80) Best value: -8.04e+00 | TR length: 4.00e-01 | num. restarts: 2/5 | num. successes: 0/10
+2024-02-21 17:17:25,200 - INFO - [TuRBO] [Restart 0] 84) Best value: -8.04e+00 | TR length: 4.00e-01 | num. restarts: 3/5 | num. successes: 0/10
+2024-02-21 17:17:25,867 - INFO - [TuRBO] [Restart 0] 88) Best value: -8.04e+00 | TR length: 4.00e-01 | num. restarts: 4/5 | num. successes: 0/10
+2024-02-21 17:17:26,637 - INFO - [TuRBO] [Restart 0] 92) Best value: -8.04e+00 | TR length: 2.00e-01 | num. restarts: 0/5 | num. successes: 0/10
+2024-02-21 17:17:27,369 - INFO - [TuRBO] [Restart 0] 96) Best value: -7.46e+00 | TR length: 2.00e-01 | num. restarts: 0/5 | num. successes: 1/10
+2024-02-21 17:17:28,052 - INFO - [TuRBO] [Restart 0] 100) Best value: -6.54e+00 | TR length: 2.00e-01 | num. restarts: 0/5 | num. successes: 2/10
+2024-02-21 17:17:28,706 - INFO - [TuRBO] [Restart 0] 104) Best value: -6.54e+00 | TR length: 2.00e-01 | num. restarts: 1/5 | num. successes: 0/10
+2024-02-21 17:17:29,451 - INFO - [TuRBO] [Restart 0] 108) Best value: -5.91e+00 | TR length: 2.00e-01 | num. restarts: 0/5 | num. successes: 1/10
+2024-02-21 17:17:30,140 - INFO - [TuRBO] [Restart 0] 112) Best value: -5.60e+00 | TR length: 2.00e-01 | num. restarts: 0/5 | num. successes: 2/10
+2024-02-21 17:17:30,797 - INFO - [TuRBO] [Restart 0] 116) Best value: -5.52e+00 | TR length: 2.00e-01 | num. restarts: 0/5 | num. successes: 3/10
+2024-02-21 17:17:31,435 - INFO - [TuRBO] [Restart 0] 120) Best value: -5.40e+00 | TR length: 2.00e-01 | num. restarts: 0/5 | num. successes: 4/10
+2024-02-21 17:17:32,025 - INFO - [TuRBO] [Restart 0] 124) Best value: -5.40e+00 | TR length: 2.00e-01 | num. restarts: 1/5 | num. successes: 0/10
+2024-02-21 17:17:32,772 - INFO - [TuRBO] [Restart 0] 128) Best value: -4.79e+00 | TR length: 2.00e-01 | num. restarts: 0/5 | num. successes: 1/10
+2024-02-21 17:17:33,374 - INFO - [TuRBO] [Restart 0] 132) Best value: -4.32e+00 | TR length: 2.00e-01 | num. restarts: 0/5 | num. successes: 2/10
+2024-02-21 17:17:33,996 - INFO - [TuRBO] [Restart 0] 136) Best value: -4.32e+00 | TR length: 2.00e-01 | num. restarts: 1/5 | num. successes: 0/10
+2024-02-21 17:17:34,706 - INFO - [TuRBO] [Restart 0] 140) Best value: -4.21e+00 | TR length: 2.00e-01 | num. restarts: 0/5 | num. successes: 1/10
+2024-02-21 17:17:35,333 - INFO - [TuRBO] [Restart 0] 144) Best value: -4.21e+00 | TR length: 2.00e-01 | num. restarts: 1/5 | num. successes: 0/10
+2024-02-21 17:17:35,934 - INFO - [TuRBO] [Restart 0] 148) Best value: -3.82e+00 | TR length: 2.00e-01 | num. restarts: 0/5 | num. successes: 1/10
+2024-02-21 17:17:36,570 - INFO - [TuRBO] [Restart 0] 152) Best value: -3.82e+00 | TR length: 2.00e-01 | num. restarts: 1/5 | num. successes: 0/10
+2024-02-21 17:17:37,169 - INFO - [TuRBO] [Restart 0] 156) Best value: -3.82e+00 | TR length: 2.00e-01 | num. restarts: 2/5 | num. successes: 0/10
+2024-02-21 17:17:37,768 - INFO - [TuRBO] [Restart 0] 160) Best value: -3.82e+00 | TR length: 2.00e-01 | num. restarts: 3/5 | num. successes: 0/10
+2024-02-21 17:17:38,362 - INFO - [TuRBO] [Restart 0] 164) Best value: -3.82e+00 | TR length: 2.00e-01 | num. restarts: 4/5 | num. successes: 0/10
+2024-02-21 17:17:38,875 - INFO - [TuRBO] [Restart 0] 168) Best value: -3.82e+00 | TR length: 1.00e-01 | num. restarts: 0/5 | num. successes: 0/10
+2024-02-21 17:17:39,474 - INFO - [TuRBO] [Restart 0] 172) Best value: -3.33e+00 | TR length: 1.00e-01 | num. restarts: 0/5 | num. successes: 1/10
+2024-02-21 17:17:40,088 - INFO - [TuRBO] [Restart 0] 176) Best value: -3.12e+00 | TR length: 1.00e-01 | num. restarts: 0/5 | num. successes: 2/10
+2024-02-21 17:17:40,753 - INFO - [TuRBO] [Restart 0] 180) Best value: -3.12e+00 | TR length: 1.00e-01 | num. restarts: 1/5 | num. successes: 0/10
+2024-02-21 17:17:41,281 - INFO - [TuRBO] [Restart 0] 184) Best value: -2.73e+00 | TR length: 1.00e-01 | num. restarts: 0/5 | num. successes: 1/10
+2024-02-21 17:17:41,951 - INFO - [TuRBO] [Restart 0] 188) Best value: -2.73e+00 | TR length: 1.00e-01 | num. restarts: 1/5 | num. successes: 0/10
+2024-02-21 17:17:42,599 - INFO - [TuRBO] [Restart 0] 192) Best value: -2.59e+00 | TR length: 1.00e-01 | num. restarts: 0/5 | num. successes: 1/10
+2024-02-21 17:17:43,232 - INFO - [TuRBO] [Restart 0] 196) Best value: -2.59e+00 | TR length: 1.00e-01 | num. restarts: 1/5 | num. successes: 0/10
+2024-02-21 17:17:43,926 - INFO - [TuRBO] [Restart 0] 200) Best value: -2.59e+00 | TR length: 1.00e-01 | num. restarts: 2/5 | num. successes: 0/10
+2024-02-21 17:17:43,928 - INFO - --------------------------------------------------
+2024-02-21 17:17:43,928 - INFO - Best X: [-0.14147974634125582, 0.11530224043033055, 0.6709622117401803, -0.13669880274609358, 0.007522652023092213, 0.596976230679398, 0.6640097826704912, -0.11873473136304113, 0.1057142592460476, -0.19646127377744982, -0.4983317547627486, 0.15598632754090236, 0.1673392821034696, 0.0762250542365468, -0.1308097926560663, 0.030599862307281178, -0.17361019091953178, -0.23429918051843313, 0.10091052272670531, 0.4674612807363836]
+2024-02-21 17:17:43,928 - INFO - Best Y: 2.5904571911151355
+2024-02-21 17:17:43,929 - INFO - Elapsed time: 27.50 seconds

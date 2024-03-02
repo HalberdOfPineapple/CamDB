@@ -9,10 +9,7 @@ DECLARE
     end_time timestamp;
 BEGIN
     -- Define your long query here
-    query := '-- using 1433771997 as a seed to the RNG
-
-
-select
+    query := 'select
 	p_brand,
 	p_type,
 	p_size,

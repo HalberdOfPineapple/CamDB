@@ -9,7 +9,7 @@ class BaseOptimizer(ABC):
         self,
         bounds: torch.Tensor,
         obj_func: Callable,
-        batch_size: int,
+        batch_size: int = 1,
         seed: int = 0,
         discrete_dims: List[int] = [],
         optimizer_params: Dict[str, Any] = None,
@@ -29,4 +29,8 @@ class BaseOptimizer(ABC):
 
     @abstractmethod
     def optimize(self, num_evals: int, X_init: torch.Tensor, Y_init: torch.Tensor) -> Tuple[torch.Tensor, torch.Tensor]:
+        raise NotImplementedError
+    
+    @abstractmethod
+    def initial_sampling(self, num_init: int):
         raise NotImplementedError

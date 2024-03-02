@@ -1,4 +1,3 @@
-expr_name: test_random_opt
 ssh:
   # SSH user is set to postgres for allowing access for pg_ctl and postgres server
   # while the PostgresqlDB.user refers to the user of the database accessing data
@@ -36,14 +35,13 @@ database:
 
 tune:
   seed: 1
-  num_evals: 5
+  num_evals: 40
   batch_size: 1
   
   init_design: lhs
   init_by_dim: False
-  num_init: 0
+  num_init: 10
 
   optimizer: random
   optimizer_params:
-    # method: lhs
-    method: any
+    method: lhs

@@ -123,8 +123,10 @@ def start_postgres(remote_mode: bool):
 
 def start_postgres_local():
     print_log('[PGUtils] Locally starting PostgreSQL server...', print_msg=True)
-    launch_cmd = f"echo {POSTGRE_PWD} | sudo -S -u postgres {PG_SERVER} --config_file={PG_CONF} -D {PG_DATA}"
-    proc = subprocess.Popen(launch_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    launch_cmd = f"sudo -S -u postgres {PG_SERVER} --config_file={PG_CONF} -D {PG_DATA}"
+    print_log(f'[PGUtils] Launch command: {launch_cmd}')
+    proc = subprocess.Popen(f"echo {POSTGRE_PWD} | {launch_cmd}", 
+                            shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 
 def try_connect_pg():
     count = 0
@@ -149,7 +151,6 @@ def try_connect_pg():
             break
 
     print_log('[PGUtils] {} seconds waiting for connection'.format(count))
-    print_log('[PGUtils] start command: postgres --config_file={}'.format(PG_CONF))
     print_log(f'[PGUtils] PostgresSQL is {"successfully" if start_success else "not"} launched.', print_msg=True)
     
     return start_success

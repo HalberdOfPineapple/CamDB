@@ -1,4 +1,4 @@
-benchmark: ackley_ext
+benchmark: ackley
 benchmark_params:
   dim: 20
   lb: -5
@@ -7,7 +7,7 @@ benchmark_params:
 tuner_params:
   seed: 1024
   num_evals: 200
-  batch_size: 1
+  batch_size: 4
   extern_init: false
   
   init_design: lhs
@@ -16,4 +16,4 @@ tuner_params:
 
   optimizer: turbo
   optimizer_params:
-    acquisition: 'ts'
+    acqf: 'ts'

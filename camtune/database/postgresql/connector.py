@@ -47,6 +47,7 @@ class PostgresqlConnector(DBConnector):
         if self.conn:
             # print_log("Starting query execution...")
             self.cursor.execute(sql)
+            self.conn.commit()
             # print_log("Query execution finished.")
             
             results = self.cursor.fetchall()

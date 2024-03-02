@@ -20,7 +20,7 @@ database:
 
   remote_mode: false
   online_mode: false
-  exec_mode: raw
+  exec_mode: explain
 
   benchmark: TPCH
   benchmark_fast: true # true # only execute short queries
@@ -30,8 +30,8 @@ database:
   knob_definitions: selected.json
   knob_num: -1
 
-  perf_name: total_exec_time
-  perf_unit: s
+  perf_name: total_cost
+  perf_unit: c_unit
   negate: true
 
 tune:

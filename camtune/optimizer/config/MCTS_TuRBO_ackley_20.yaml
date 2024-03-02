@@ -1,0 +1,19 @@
+benchmark: ackley
+benchmark_params:
+  dim: 20
+  lb: -5
+  ub: 10
+
+tuner_params:
+  seed: 1024
+  num_evals: 500
+  batch_size: 4
+  extern_init: false
+  
+  init_design: lhs
+  init_by_dim: True
+  
+
+  optimizer: mcts
+  optimizer_params:
+    local_optimizer_type: turbo

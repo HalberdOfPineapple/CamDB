@@ -6,12 +6,21 @@
     "configurations": [
 
 
+
         {
             "name": "Python Debugger: Current File",
             "type": "debugpy",
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal"
+        },
+        {
+            "name": "Debug: SysBench test",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "/mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/tune.py",
+            "console": "integratedTerminal",
+            "args": ["--expr_name", "mcts_sysbench_rw_test"]
         },
         {
             "name": "Debug: Tune DB Random",
@@ -28,6 +37,14 @@
             "program": "/mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/tune.py",
             "console": "integratedTerminal",
             "args": ["--expr_name", "pg_tpch_gpei"]
+        },
+        {
+            "name": "Debug: Tune DB MCTS",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "/mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/tune.py",
+            "console": "integratedTerminal",
+            "args": ["--expr_name", "exp_mcts_test"]
         },
         {
             "name": "Debug: TuRBO Ackley",

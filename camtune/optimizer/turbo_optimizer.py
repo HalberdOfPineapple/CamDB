@@ -22,33 +22,34 @@ from gpytorch.mlls import ExactMarginalLogLikelihood
 
 from camtune.utils import print_log, DTYPE, DEVICE
 from .base_optimizer import BaseOptimizer
-from .optim_utils import generate_random_discrete
+from .optim_utils import generate_random_discrete, round_by_bounds
 from .turbo_utils import *
 from .mcts_utils import Node
 
 
 TURBO_ATTRS = {
-    'batch_size': 1,
     'num_restarts': 10,
     'raw_samples': 512,
     'n_candidates': 5000,
     'max_cholesky_size': float("inf"),
-    'acqf_func': "ts",
+    'acqf': "ts",
     "init_bounding_box_length": 0.0005,
 }
-
+MIXED_BETA = True
 
 class TuRBO(BaseOptimizer):
     def __init__(
         self, 
-        obj_func: Callable, 
         bounds: torch.Tensor,
+        obj_func: Callable, 
+        batch_size: int = 1,
         seed: int=0, 
         discrete_dims: List[int] = [],
         in_mcts: bool = False,
         optimizer_params: Dict[str, Any] = None,
     ):
         super().__init__(bounds, obj_func, 
+                         batch_size=batch_size,
                          seed=seed, 
                          discrete_dims=discrete_dims, 
                          optimizer_params=optimizer_params)
@@ -58,11 +59,12 @@ class TuRBO(BaseOptimizer):
 
         self.bounds = bounds
         self.dimension = bounds.shape[1]
-        self.X = torch.empty((0, self.dimension), dtype=DTYPE, device=DEVICE)
-        self.Y = torch.empty((0, 1), dtype=DTYPE, device=DEVICE)
+        self.batch_size = batch_size
 
         self.num_calls = 0
         self.n_init: int = 2 * self.dimension if 'n_init' not in optimizer_params else optimizer_params['n_init']
+        self.X = torch.empty((0, self.dimension), dtype=DTYPE, device=DEVICE)
+        self.Y = torch.empty((0, 1), dtype=DTYPE, device=DEVICE)
         
         for k, v in TURBO_ATTRS.items():
             if k not in optimizer_params:
@@ -70,14 +72,15 @@ class TuRBO(BaseOptimizer):
             else:
                 setattr(self, k, optimizer_params[k])
 
-        if self.acqf_func not in ACQFS:
-            raise ValueError(f"Acquisition function {self.acqf_func} not supported")
+        if self.acqf not in ACQFS:
+            raise ValueError(f"Acquisition function {self.acqf} not supported")
     
-    def init_samples(self, num_init: int):
+    def initial_sampling(self, num_init: int):
         sobol = SobolEngine(dimension=self.dimension, scramble=True, seed=self.seed)
         X_init = sobol.draw(n=num_init).to(dtype=dtype, device=device)
+
         X_init = unnormalize(X_init, self.bounds)
-        X_init[:, self.discrete_dims] = torch.round(X_init[:, self.discrete_dims])
+        X_init[:, self.discrete_dims] = round_by_bounds(X_init[:, self.discrete_dims], self.bounds[:, self.discrete_dims])
 
         Y_init = torch.tensor(
             [self.obj_func(x) for x in X_init], dtype=DTYPE, device=DEVICE,
@@ -110,7 +113,7 @@ class TuRBO(BaseOptimizer):
             sobol_cands = sobol_samples * (bouning_box_ubs - bouning_box_lbs) + bouning_box_lbs
 
             sobol_cands = unnormalize(sobol_cands, self.bounds)
-            sobol_cands[:, self.discrete_dims] = torch.round(sobol_cands[:, self.discrete_dims])
+            sobol_cands[:, self.discrete_dims] = round_by_bounds(sobol_cands[:, self.discrete_dims], self.bounds[:, self.discrete_dims])
             in_region = Node.path_filter(path, sobol_cands) # (num_in_region_samples, )
 
             X_init = torch.cat((X_init, sobol_cands[in_region]), dim=0)
@@ -125,7 +128,7 @@ class TuRBO(BaseOptimizer):
 
             rand_samples = sobol.draw(num_rand_samples).to(dtype=DTYPE, device=DEVICE)
             rand_samples = unnormalize(rand_samples, self.bounds)
-            rand_samples[:, self.discrete_dims] = torch.round(rand_samples[:, self.discrete_dims])
+            rand_samples[:, self.discrete_dims] = round_by_bounds(rand_samples[:, self.discrete_dims], self.bounds[:, self.discrete_dims])
 
             X_init = torch.cat((X_init, rand_samples), dim=0)
         
@@ -177,8 +180,9 @@ class TuRBO(BaseOptimizer):
             X_cands = x_center.expand(self.n_candidates, dim).clone()
             X_cands[mask] = pert[mask]
 
-            X_cands[:, self.discrete_dims] = unnormalize(X_cands[:, self.discrete_dims], self.bounds[:, self.discrete_dims])
-            X_cands = torch.round(X_cands[:, self.discrete_dims])
+            if not MIXED_BETA:
+                X_cands[:, self.discrete_dims] = unnormalize(X_cands[:, self.discrete_dims], self.bounds[:, self.discrete_dims])
+                X_cands = torch.round(X_cands[:, self.discrete_dims])
 
             # Sample on the candidate set 
             thompson_sampling = MaxPosteriorSampling(model=model, replacement=False)
@@ -187,7 +191,7 @@ class TuRBO(BaseOptimizer):
         elif self.acqf == "ei":
             ei = qExpectedImprovement(model=model, best_f=Y.max())
 
-            if len(self.discrete_dims) == 0:
+            if len(self.discrete_dims) == 0 or MIXED_BETA:
                 X_next, acq_value = optimize_acqf(
                     ei,
                     bounds=torch.stack([tr_lbs, tr_ubs]),
@@ -219,18 +223,20 @@ class TuRBO(BaseOptimizer):
 
         return X_next
 
+    def optimize(self, num_evals: int, X_init: torch.Tensor, Y_init: torch.Tensor) -> Tuple[torch.Tensor, torch.Tensor]:
+        raise NotImplementedError("TuRBO is does not support external initiaization")
 
     def optimize(self, num_evals: int, mcts_params: Dict[str, Any] = None) -> Tuple[torch.Tensor, torch.Tensor]:
         torch.manual_seed(self.seed)
 
         restart_counter = 0
         while self.num_calls < num_evals:
-            print_log('-' * 80)
-            print_log(f"Restart {restart_counter}:")
+            print_log('-' * 80, print_msg=True)
+            print_log(f"[TuRBO] Restart {restart_counter}:", print_msg=True)
 
             num_init = min(self.n_init, num_evals - self.num_calls)
             if not self.in_mcts:
-                X_sampled, Y_sampled = self.init_samples(num_init)
+                X_sampled, Y_sampled = self.initial_sampling(num_init)
             else:
                 # Note X_in_region and Y_in_region are in original scale (unnormalized)
                 X_in_region: torch.Tensor = mcts_params['X_in_region']
@@ -249,17 +255,22 @@ class TuRBO(BaseOptimizer):
                 self.Y = torch.cat((self.Y, Y_sampled), dim=0)
                 break
 
-            print_log(f"[TuRBO] Start local modeling with {num_init} data points")
+            print_log(f"[TuRBO] {'(MCTS) ' if self.in_mcts else ''}Start local modeling with {num_init} data points", print_msg=True)
             state = TurboState(dim=self.dimension, batch_size=self.batch_size)
 
             while not state.restart_triggered and self.num_calls < num_evals: # Run until TuRBO converges
                 train_X = torch.cat([X_sampled, self.X], dim=0)
-                train_X[:, self.continuous_dims] = normalize(
-                    train_X[:, self.continuous_dims], self.bounds[:, self.continuous_dims])
+
+                if MIXED_BETA:
+                    # Normalize all dimensions in BETA phase
+                    train_X = normalize(train_X, self.bounds)
+                else:
+                    train_X[:, self.continuous_dims] = normalize(
+                        train_X[:, self.continuous_dims], self.bounds[:, self.continuous_dims])
                 train_Y = standardize(torch.cat([Y_sampled, self.Y], dim=0))
     
                 # Define the model (Posterior)
-                if len(self.discrete_dims) == 0:
+                if len(self.discrete_dims) == 0 or MIXED_BETA:
                     likelihood = GaussianLikelihood(noise_constraint=Interval(1e-8, 1e-3))
                     covar_module = ScaleKernel(
                         MaternKernel(
@@ -280,7 +291,11 @@ class TuRBO(BaseOptimizer):
                         batch_size=batch_size,
                     )
                 
-                X_next[:, self.continuous_dims] = unnormalize(X_next[:, self.continuous_dims], self.bounds[:, self.continuous_dims])
+                if MIXED_BETA:
+                    X_next = unnormalize(X_next, self.bounds)
+                    X_next[:, self.discrete_dims] = round_by_bounds(X_next[:, self.discrete_dims], self.bounds[:, self.discrete_dims])
+                else:
+                    X_next[:, self.continuous_dims] = unnormalize(X_next[:, self.continuous_dims], self.bounds[:, self.continuous_dims])
                 Y_next = torch.tensor(
                     [self.obj_func(x) for x in X_next], dtype=DTYPE, device=DEVICE,
                 ).unsqueeze(-1)
@@ -294,8 +309,8 @@ class TuRBO(BaseOptimizer):
                     f"[TuRBO] [Restart {restart_counter}] {len(self.X) + len(X_sampled)}) "
                     f"Best value: {state.best_value:.2e} | TR length: {state.length:.2e} | "
                     f"num. restarts: {state.failure_counter}/{state.failure_tolerance} | "
-                    f"num. successes: {state.success_counter}/{state.success_tolerance}"
-                )
+                    f"num. successes: {state.success_counter}/{state.success_tolerance}", 
+                    print_msg=True)
 
             self.X = torch.cat((self.X, X_sampled), dim=0)
             self.Y = torch.cat((self.Y, Y_sampled), dim=0)

@@ -695,3 +695,489 @@
 2024-02-20 12:02:23,952 - INFO - [Tune] [Iteration 0]: total_exec_time: 9.674 (s)
 2024-02-20 12:02:23,954 - INFO - [Tuner] Start optimization using gp-bo for 3 iterations
 2024-02-20 12:02:30,128 - INFO - [GPBO] Sign
+2024-02-20 20:31:04,290 - INFO - 
+
+2024-02-20 20:31:05,678 - INFO - [Tuner] Start initial profiling by lhs
+2024-02-20 20:31:05,680 - INFO - ================================================================================
+2024-02-20 20:31:05,680 - INFO - [Tune] [Iteration 0]: using configuration: 
+2024-02-20 20:31:05,681 - INFO - 	effective_cache_size: 8798
+2024-02-20 20:31:05,681 - INFO - 	enable_mergejoin: on
+2024-02-20 20:31:05,681 - INFO - 	enable_nestloop: on
+2024-02-20 20:31:05,681 - INFO - 	maintenance_work_mem: 661587
+2024-02-20 20:31:05,681 - INFO - 	max_wal_size: 5250
+2024-02-20 20:31:05,682 - INFO - 	random_page_cost: 59.208523993299266
+2024-02-20 20:31:05,682 - INFO - 	seq_page_cost: 51.67273266662289
+2024-02-20 20:31:05,682 - INFO - 	shared_buffers: 976310
+2024-02-20 20:31:05,682 - INFO - 	wal_buffers: 43852
+2024-02-20 20:31:05,682 - INFO - 	work_mem: 6237
+2024-02-20 20:31:05,704 - INFO - ----------------------------------- Applying Knobs -----------------------------------
+2024-02-20 20:31:05,707 - INFO - [PGKnobApplier] PostgreSQL server is not running, directly applying knobs offline
+2024-02-20 20:31:05,714 - INFO - [PGKnobApplier] config file modification done (locally).
+2024-02-20 20:31:05,714 - INFO - [PGUtils] Locally starting PostgreSQL server...
+2024-02-20 20:31:05,715 - INFO - [PGUtils] Wait for connection to the started server...
+2024-02-20 20:31:06,732 - INFO - [PGUtils] Successfully connected to the started PostgreSQL Server
+2024-02-20 20:31:06,733 - INFO - [PGUtils] 1 seconds waiting for connection
+2024-02-20 20:31:06,733 - INFO - [PGUtils] start command: postgres --config_file=/var/lib/postgresql/14/experiment/conf/tune_conf.conf
+2024-02-20 20:31:06,733 - INFO - [PGUtils] PostgresSQL is successfully launched.
+2024-02-20 20:31:06,734 - INFO - [PGKnobApplier] Sleeping for 0 seconds after restarting postgres
+2024-02-20 20:31:06,734 - INFO - [PGKnobApplier] No knobs need to be applied online
+2024-02-20 20:31:06,743 - INFO - [PGKnobApplier] Knob max_wal_size is not successfully set to 5250 (actual value: 5250MB)
+2024-02-20 20:31:06,745 - INFO - [PGKnobApplier] 1 / 10 knobs not successfully applied offline.
+2024-02-20 20:31:06,745 - INFO - --------------------------------------------------------------------------------
+2024-02-20 20:31:06,745 - INFO - [PGExecutor] Exeucting queries listed in tpch_query_fast_list.txt
+2024-02-20 20:31:06,821 - INFO - [PGExecutor] Connected to PostgreSQL server for query execution:
+2024-02-20 20:31:06,822 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/1.sql
+2024-02-20 20:31:08,252 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/2.sql
+2024-02-20 20:31:08,739 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/3.sql
+2024-02-20 20:31:09,326 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/4.sql
+2024-02-20 20:31:09,517 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/5.sql
+2024-02-20 20:31:09,808 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/6.sql
+2024-02-20 20:31:09,983 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/7.sql
+2024-02-20 20:31:10,361 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/8.sql
+2024-02-20 20:31:10,702 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/9.sql
+2024-02-20 20:31:11,353 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/10.sql
+2024-02-20 20:31:11,869 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/11.sql
+2024-02-20 20:31:12,141 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/12.sql
+2024-02-20 20:31:12,474 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/13.sql
+2024-02-20 20:31:12,826 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/14.sql
+2024-02-20 20:31:13,147 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/15.sql
+2024-02-20 20:31:13,590 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/16.sql
+2024-02-20 20:31:13,717 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/18.sql
+2024-02-20 20:31:15,324 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/19.sql
+2024-02-20 20:31:15,719 - INFO - [Tune] [Iteration 0]: total_exec_time: 8.830 (s)
+2024-02-20 20:31:15,721 - INFO - [Tuner] Start optimization using gp-bo for 3 iterations
+2024-02-20 20:31:19,143 - INFO - ================================================================================
+2024-02-20 20:31:19,144 - INFO - [Tune] [Iteration 1]: using configuration: 
+2024-02-20 20:31:19,144 - INFO - 	effective_cache_size: 948095
+2024-02-20 20:31:19,144 - INFO - 	enable_mergejoin: on
+2024-02-20 20:31:19,144 - INFO - 	enable_nestloop: on
+2024-02-20 20:31:19,145 - INFO - 	maintenance_work_mem: 595517
+2024-02-20 20:31:19,145 - INFO - 	max_wal_size: 1058
+2024-02-20 20:31:19,145 - INFO - 	random_page_cost: 37.2558433656386
+2024-02-20 20:31:19,145 - INFO - 	seq_page_cost: 3.7389334751426535
+2024-02-20 20:31:19,145 - INFO - 	shared_buffers: 20310
+2024-02-20 20:31:19,145 - INFO - 	wal_buffers: 236157
+2024-02-20 20:31:19,146 - INFO - 	work_mem: 1578
+2024-02-20 20:31:19,151 - INFO - ----------------------------------- Applying Knobs -----------------------------------
+2024-02-20 20:31:19,364 - INFO - [PGUtils] Local PostgreSQL server shut down successfully
+2024-02-20 20:31:19,374 - INFO - [PGKnobApplier] config file modification done (locally).
+2024-02-20 20:31:19,374 - INFO - [PGUtils] Locally starting PostgreSQL server...
+2024-02-20 20:31:19,375 - INFO - [PGUtils] Wait for connection to the started server...
+2024-02-20 20:31:20,387 - INFO - [PGUtils] Successfully connected to the started PostgreSQL Server
+2024-02-20 20:31:20,388 - INFO - [PGUtils] 1 seconds waiting for connection
+2024-02-20 20:31:20,388 - INFO - [PGUtils] start command: postgres --config_file=/var/lib/postgresql/14/experiment/conf/tune_conf.conf
+2024-02-20 20:31:20,389 - INFO - [PGUtils] PostgresSQL is successfully launched.
+2024-02-20 20:31:20,389 - INFO - [PGKnobApplier] Sleeping for 0 seconds after restarting postgres
+2024-02-20 20:31:20,389 - INFO - [PGKnobApplier] No knobs need to be applied online
+2024-02-20 20:31:20,398 - INFO - [PGKnobApplier] Knob max_wal_size is not successfully set to 1058 (actual value: 1058MB)
+2024-02-20 20:31:20,399 - INFO - [PGKnobApplier] 1 / 10 knobs not successfully applied offline.
+2024-02-20 20:31:20,400 - INFO - --------------------------------------------------------------------------------
+2024-02-20 20:31:20,400 - INFO - [PGExecutor] Exeucting queries listed in tpch_query_fast_list.txt
+2024-02-20 20:31:20,446 - INFO - [PGExecutor] Connected to PostgreSQL server for query execution:
+2024-02-20 20:31:20,446 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/1.sql
+2024-02-20 20:31:21,714 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/2.sql
+2024-02-20 20:31:21,900 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/3.sql
+2024-02-20 20:31:22,405 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/4.sql
+2024-02-20 20:31:22,519 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/5.sql
+2024-02-20 20:31:22,716 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/6.sql
+2024-02-20 20:31:22,906 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/7.sql
+2024-02-20 20:31:23,116 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/8.sql
+2024-02-20 20:31:23,473 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/9.sql
+2024-02-20 20:31:24,423 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/10.sql
+2024-02-20 20:31:24,930 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/11.sql
+2024-02-20 20:31:25,028 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/12.sql
+2024-02-20 20:31:25,388 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/13.sql
+2024-02-20 20:31:25,709 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/14.sql
+2024-02-20 20:31:25,942 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/15.sql
+2024-02-20 20:31:26,521 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/16.sql
+2024-02-20 20:31:26,656 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/18.sql
+2024-02-20 20:31:28,338 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/19.sql
+2024-02-20 20:31:28,745 - INFO - [Tune] [Iteration 1]: total_exec_time: 8.234 (s)
+2024-02-20 20:31:28,749 - INFO - Sample 2 | Best value: -8.23 |
+2024-02-20 20:31:30,810 - INFO - ================================================================================
+2024-02-20 20:31:30,810 - INFO - [Tune] [Iteration 2]: using configuration: 
+2024-02-20 20:31:30,811 - INFO - 	effective_cache_size: 1000000
+2024-02-20 20:31:30,811 - INFO - 	enable_mergejoin: on
+2024-02-20 20:31:30,811 - INFO - 	enable_nestloop: on
+2024-02-20 20:31:30,811 - INFO - 	maintenance_work_mem: 460095
+2024-02-20 20:31:30,812 - INFO - 	max_wal_size: 58
+2024-02-20 20:31:30,812 - INFO - 	random_page_cost: 20.88641530745599
+2024-02-20 20:31:30,812 - INFO - 	seq_page_cost: 0.0014911027578389383
+2024-02-20 20:31:30,812 - INFO - 	shared_buffers: 128
+2024-02-20 20:31:30,812 - INFO - 	wal_buffers: 260916
+2024-02-20 20:31:30,812 - INFO - 	work_mem: 65
+2024-02-20 20:31:30,818 - INFO - ----------------------------------- Applying Knobs -----------------------------------
+2024-02-20 20:31:31,025 - INFO - [PGUtils] Local PostgreSQL server shut down successfully
+2024-02-20 20:31:31,032 - INFO - [PGKnobApplier] config file modification done (locally).
+2024-02-20 20:31:31,033 - INFO - [PGUtils] Locally starting PostgreSQL server...
+2024-02-20 20:31:31,034 - INFO - [PGUtils] Wait for connection to the started server...
+2024-02-20 20:31:32,047 - INFO - [PGUtils] Successfully connected to the started PostgreSQL Server
+2024-02-20 20:31:32,048 - INFO - [PGUtils] 1 seconds waiting for connection
+2024-02-20 20:31:32,048 - INFO - [PGUtils] start command: postgres --config_file=/var/lib/postgresql/14/experiment/conf/tune_conf.conf
+2024-02-20 20:31:32,049 - INFO - [PGUtils] PostgresSQL is successfully launched.
+2024-02-20 20:31:32,049 - INFO - [PGKnobApplier] Sleeping for 0 seconds after restarting postgres
+2024-02-20 20:31:32,049 - INFO - [PGKnobApplier] No knobs need to be applied online
+2024-02-20 20:31:32,058 - INFO - [PGKnobApplier] Knob max_wal_size is not successfully set to 58 (actual value: 58MB)
+2024-02-20 20:31:32,058 - INFO - [PGKnobApplier] Knob shared_buffers is not successfully set to 128 (actual value: 1MB)
+2024-02-20 20:31:32,059 - INFO - [PGKnobApplier] 2 / 10 knobs not successfully applied offline.
+2024-02-20 20:31:32,059 - INFO - --------------------------------------------------------------------------------
+2024-02-20 20:31:32,060 - INFO - [PGExecutor] Exeucting queries listed in tpch_query_fast_list.txt
+2024-02-20 20:31:32,090 - INFO - [PGExecutor] Connected to PostgreSQL server for query execution:
+2024-02-20 20:31:32,090 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/1.sql
+2024-02-20 20:31:33,319 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/2.sql
+2024-02-20 20:31:33,836 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/3.sql
+2024-02-20 20:31:34,305 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/4.sql
+2024-02-20 20:31:35,675 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/5.sql
+2024-02-20 20:31:35,843 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/6.sql
+2024-02-20 20:31:36,025 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/7.sql
+2024-02-20 20:31:36,296 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/8.sql
+2024-02-20 20:31:36,530 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/9.sql
+2024-02-20 20:31:37,609 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/10.sql
+2024-02-20 20:31:38,019 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/11.sql
+2024-02-20 20:31:38,101 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/12.sql
+2024-02-20 20:31:38,431 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/13.sql
+2024-02-20 20:31:39,175 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/14.sql
+2024-02-20 20:31:39,466 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/15.sql
+2024-02-20 20:31:39,880 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/16.sql
+2024-02-20 20:31:40,054 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/18.sql
+2024-02-20 20:31:42,490 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/19.sql
+2024-02-20 20:31:42,795 - INFO - [Tune] [Iteration 2]: total_exec_time: 10.638 (s)
+2024-02-20 20:31:42,799 - INFO - Sample 3 | Best value: -8.23 |
+2024-02-20 20:31:42,809 - INFO - ================================================================================
+2024-02-20 20:31:42,809 - INFO - Best total_exec_time: 8.233920000000001
+2024-02-20 20:31:42,809 - INFO - Best config:
+2024-02-20 20:31:42,810 - INFO - 	effective_cache_size: 948095
+2024-02-20 20:31:42,810 - INFO - 	enable_mergejoin: on
+2024-02-20 20:31:42,810 - INFO - 	enable_nestloop: on
+2024-02-20 20:31:42,810 - INFO - 	maintenance_work_mem: 595517
+2024-02-20 20:31:42,811 - INFO - 	max_wal_size: 1058
+2024-02-20 20:31:42,811 - INFO - 	random_page_cost: 37.2558433656386
+2024-02-20 20:31:42,811 - INFO - 	seq_page_cost: 3.7389334751426535
+2024-02-20 20:31:42,811 - INFO - 	shared_buffers: 20310
+2024-02-20 20:31:42,812 - INFO - 	wal_buffers: 236157
+2024-02-20 20:31:42,812 - INFO - 	work_mem: 1578
+2024-02-20 20:31:42,812 - INFO - Elapsed time: 37.12 seconds
+2024-02-20 21:52:15,073 - INFO - 
+
+2024-02-20 21:52:16,548 - INFO - [Tuner] Start initial profiling by lhs
+2024-02-20 21:52:16,550 - INFO - ================================================================================
+2024-02-20 21:52:16,550 - INFO - [Tune] [Iteration 0]: using configuration: 
+2024-02-20 21:52:16,550 - INFO - 	effective_cache_size: 727843
+2024-02-20 21:52:16,551 - INFO - 	enable_mergejoin: off
+2024-02-20 21:52:16,551 - INFO - 	enable_nestloop: on
+2024-02-20 21:52:16,551 - INFO - 	maintenance_work_mem: 593572
+2024-02-20 21:52:16,551 - INFO - 	max_wal_size: 4671
+2024-02-20 21:52:16,551 - INFO - 	random_page_cost: 75.79766344532342
+2024-02-20 21:52:16,551 - INFO - 	seq_page_cost: 85.91982917314557
+2024-02-20 21:52:16,551 - INFO - 	shared_buffers: 691551
+2024-02-20 21:52:16,552 - INFO - 	wal_buffers: 23987
+2024-02-20 21:52:16,552 - INFO - 	work_mem: 8117
+2024-02-20 21:52:16,557 - INFO - ----------------------------------- Applying Knobs -----------------------------------
+2024-02-20 21:52:16,666 - INFO - [PGUtils] Local PostgreSQL server shut down successfully
+2024-02-20 21:52:16,674 - INFO - [PGKnobApplier] config file modification done (locally).
+2024-02-20 21:52:16,674 - INFO - [PGUtils] Locally starting PostgreSQL server...
+2024-02-20 21:52:16,675 - INFO - [PGUtils] Wait for connection to the started server...
+2024-02-20 21:52:17,686 - INFO - [PGUtils] Successfully connected to the started PostgreSQL Server
+2024-02-20 21:52:17,687 - INFO - [PGUtils] 1 seconds waiting for connection
+2024-02-20 21:52:17,687 - INFO - [PGUtils] start command: postgres --config_file=/var/lib/postgresql/14/experiment/conf/tune_conf.conf
+2024-02-20 21:52:17,687 - INFO - [PGUtils] PostgresSQL is successfully launched.
+2024-02-20 21:52:17,688 - INFO - [PGKnobApplier] Sleeping for 0 seconds after restarting postgres
+2024-02-20 21:52:17,688 - INFO - [PGKnobApplier] No knobs need to be applied online
+2024-02-20 21:52:17,696 - INFO - [PGKnobApplier] Knob max_wal_size is not successfully set to 4671 (actual value: 4671MB)
+2024-02-20 21:52:17,697 - INFO - [PGKnobApplier] 1 / 10 knobs not successfully applied offline.
+2024-02-20 21:52:17,697 - INFO - --------------------------------------------------------------------------------
+2024-02-20 21:52:17,698 - INFO - [PGExecutor] Exeucting queries listed in tpch_query_fast_list.txt
+2024-02-20 21:52:17,727 - INFO - [PGExecutor] Connected to PostgreSQL server for query execution:
+2024-02-20 21:52:17,727 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/1.sql
+2024-02-20 21:52:19,206 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/2.sql
+2024-02-20 21:52:30,806 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/3.sql
+2024-02-20 21:52:31,546 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/4.sql
+2024-02-20 21:52:31,742 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/5.sql
+2024-02-20 21:52:32,183 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/6.sql
+2024-02-20 21:52:32,536 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/7.sql
+2024-02-20 21:52:33,333 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/8.sql
+2024-02-20 21:52:34,103 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/9.sql
+2024-02-20 21:52:35,479 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/10.sql
+2024-02-20 21:52:36,032 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/11.sql
+2024-02-20 21:52:41,215 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/12.sql
+2024-02-20 21:52:42,092 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/13.sql
+2024-02-20 21:52:42,487 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/14.sql
+2024-02-20 21:52:42,745 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/15.sql
+2024-02-20 21:52:43,238 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/16.sql
+2024-02-20 21:52:43,634 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/18.sql
+2024-02-20 21:52:45,010 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/19.sql
+2024-02-20 21:52:45,458 - INFO - [Tune] [Iteration 0]: total_exec_time: 27.657 (s)
+2024-02-20 21:52:45,460 - INFO - [Tuner] Start optimization using gp-bo for 3 iterations
+2024-02-20 21:52:48,956 - INFO - ================================================================================
+2024-02-20 21:52:48,957 - INFO - [Tune] [Iteration 1]: using configuration: 
+2024-02-20 21:52:48,957 - INFO - 	effective_cache_size: 1
+2024-02-20 21:52:48,957 - INFO - 	enable_mergejoin: on
+2024-02-20 21:52:48,958 - INFO - 	enable_nestloop: off
+2024-02-20 21:52:48,958 - INFO - 	maintenance_work_mem: 1024
+2024-02-20 21:52:48,958 - INFO - 	max_wal_size: 8192
+2024-02-20 21:52:48,958 - INFO - 	random_page_cost: 28.917784046405963
+2024-02-20 21:52:48,958 - INFO - 	seq_page_cost: 25.38776660105882
+2024-02-20 21:52:48,959 - INFO - 	shared_buffers: 1000000
+2024-02-20 21:52:48,959 - INFO - 	wal_buffers: 262143
+2024-02-20 21:52:48,959 - INFO - 	work_mem: 64
+2024-02-20 21:52:48,965 - INFO - ----------------------------------- Applying Knobs -----------------------------------
+2024-02-20 21:52:49,174 - INFO - [PGUtils] Local PostgreSQL server shut down successfully
+2024-02-20 21:52:49,181 - INFO - [PGKnobApplier] config file modification done (locally).
+2024-02-20 21:52:49,181 - INFO - [PGUtils] Locally starting PostgreSQL server...
+2024-02-20 21:52:49,182 - INFO - [PGUtils] Wait for connection to the started server...
+2024-02-20 21:52:50,191 - INFO - [PGUtils] Successfully connected to the started PostgreSQL Server
+2024-02-20 21:52:50,191 - INFO - [PGUtils] 1 seconds waiting for connection
+2024-02-20 21:52:50,191 - INFO - [PGUtils] start command: postgres --config_file=/var/lib/postgresql/14/experiment/conf/tune_conf.conf
+2024-02-20 21:52:50,192 - INFO - [PGUtils] PostgresSQL is successfully launched.
+2024-02-20 21:52:50,192 - INFO - [PGKnobApplier] Sleeping for 0 seconds after restarting postgres
+2024-02-20 21:52:50,192 - INFO - [PGKnobApplier] No knobs need to be applied online
+2024-02-20 21:52:50,199 - INFO - [PGKnobApplier] Knob maintenance_work_mem is not successfully set to 1024 (actual value: 1MB)
+2024-02-20 21:52:50,199 - INFO - [PGKnobApplier] Knob max_wal_size is not successfully set to 8192 (actual value: 8GB)
+2024-02-20 21:52:50,200 - INFO - [PGKnobApplier] 2 / 10 knobs not successfully applied offline.
+2024-02-20 21:52:50,200 - INFO - --------------------------------------------------------------------------------
+2024-02-20 21:52:50,201 - INFO - [PGExecutor] Exeucting queries listed in tpch_query_fast_list.txt
+2024-02-20 21:52:50,240 - INFO - [PGExecutor] Connected to PostgreSQL server for query execution:
+2024-02-20 21:52:50,240 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/1.sql
+2024-02-20 21:52:51,764 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/2.sql
+2024-02-20 21:52:52,709 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/3.sql
+2024-02-20 21:52:53,440 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/4.sql
+2024-02-20 21:52:54,943 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/5.sql
+2024-02-20 21:52:56,573 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/6.sql
+2024-02-20 21:52:56,762 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/7.sql
+2024-02-20 21:52:57,302 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/8.sql
+2024-02-20 21:52:57,792 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/9.sql
+2024-02-20 21:52:58,921 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/10.sql
+2024-02-20 21:52:59,581 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/11.sql
+2024-02-20 21:52:59,927 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/12.sql
+2024-02-20 21:53:00,389 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/13.sql
+2024-02-20 21:53:01,219 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/14.sql
+2024-02-20 21:53:01,479 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/15.sql
+2024-02-20 21:53:02,079 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/16.sql
+2024-02-20 21:53:02,300 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/18.sql
+2024-02-20 21:53:04,610 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/19.sql
+2024-02-20 21:53:05,010 - INFO - [Tune] [Iteration 1]: total_exec_time: 14.703 (s)
+2024-02-20 21:53:05,014 - INFO - Sample 2 | Best value: -14.70 |
+2024-02-20 21:53:06,417 - INFO - ================================================================================
+2024-02-20 21:53:06,418 - INFO - [Tune] [Iteration 2]: using configuration: 
+2024-02-20 21:53:06,418 - INFO - 	effective_cache_size: 1
+2024-02-20 21:53:06,418 - INFO - 	enable_mergejoin: on
+2024-02-20 21:53:06,418 - INFO - 	enable_nestloop: off
+2024-02-20 21:53:06,419 - INFO - 	maintenance_work_mem: 1024
+2024-02-20 21:53:06,419 - INFO - 	max_wal_size: 8192
+2024-02-20 21:53:06,419 - INFO - 	random_page_cost: 1.563142076573751
+2024-02-20 21:53:06,419 - INFO - 	seq_page_cost: 1.3355906411421805
+2024-02-20 21:53:06,419 - INFO - 	shared_buffers: 1000000
+2024-02-20 21:53:06,420 - INFO - 	wal_buffers: 262143
+2024-02-20 21:53:06,420 - INFO - 	work_mem: 64
+2024-02-20 21:53:06,425 - INFO - ----------------------------------- Applying Knobs -----------------------------------
+2024-02-20 21:53:06,733 - INFO - [PGUtils] Local PostgreSQL server shut down successfully
+2024-02-20 21:53:06,743 - INFO - [PGKnobApplier] config file modification done (locally).
+2024-02-20 21:53:06,743 - INFO - [PGUtils] Locally starting PostgreSQL server...
+2024-02-20 21:53:06,744 - INFO - [PGUtils] Wait for connection to the started server...
+2024-02-20 21:53:07,751 - INFO - [PGUtils] Successfully connected to the started PostgreSQL Server
+2024-02-20 21:53:07,752 - INFO - [PGUtils] 1 seconds waiting for connection
+2024-02-20 21:53:07,752 - INFO - [PGUtils] start command: postgres --config_file=/var/lib/postgresql/14/experiment/conf/tune_conf.conf
+2024-02-20 21:53:07,752 - INFO - [PGUtils] PostgresSQL is successfully launched.
+2024-02-20 21:53:07,752 - INFO - [PGKnobApplier] Sleeping for 0 seconds after restarting postgres
+2024-02-20 21:53:07,753 - INFO - [PGKnobApplier] No knobs need to be applied online
+2024-02-20 21:53:07,758 - INFO - [PGKnobApplier] Knob maintenance_work_mem is not successfully set to 1024 (actual value: 1MB)
+2024-02-20 21:53:07,758 - INFO - [PGKnobApplier] Knob max_wal_size is not successfully set to 8192 (actual value: 8GB)
+2024-02-20 21:53:07,758 - INFO - [PGKnobApplier] 2 / 10 knobs not successfully applied offline.
+2024-02-20 21:53:07,758 - INFO - --------------------------------------------------------------------------------
+2024-02-20 21:53:07,759 - INFO - [PGExecutor] Exeucting queries listed in tpch_query_fast_list.txt
+2024-02-20 21:53:07,787 - INFO - [PGExecutor] Connected to PostgreSQL server for query execution:
+2024-02-20 21:53:07,787 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/1.sql
+2024-02-20 21:53:09,256 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/2.sql
+2024-02-20 21:53:09,803 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/3.sql
+2024-02-20 21:53:10,365 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/4.sql
+2024-02-20 21:53:11,779 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/5.sql
+2024-02-20 21:53:14,279 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/6.sql
+2024-02-20 21:53:14,437 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/7.sql
+2024-02-20 21:53:14,741 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/8.sql
+2024-02-20 21:53:15,005 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/9.sql
+2024-02-20 21:53:16,096 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/10.sql
+2024-02-20 21:53:16,703 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/11.sql
+2024-02-20 21:53:16,782 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/12.sql
+2024-02-20 21:53:17,102 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/13.sql
+2024-02-20 21:53:17,896 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/14.sql
+2024-02-20 21:53:18,175 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/15.sql
+2024-02-20 21:53:18,566 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/16.sql
+2024-02-20 21:53:18,737 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/18.sql
+2024-02-20 21:53:21,051 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/19.sql
+2024-02-20 21:53:21,350 - INFO - [Tune] [Iteration 2]: total_exec_time: 13.485 (s)
+2024-02-20 21:53:21,354 - INFO - Sample 3 | Best value: -13.49 |
+2024-02-20 21:53:21,360 - INFO - ================================================================================
+2024-02-20 21:53:21,360 - INFO - Best total_exec_time: 13.485204000000003
+2024-02-20 21:53:21,361 - INFO - Best config:
+2024-02-20 21:53:21,361 - INFO - 	effective_cache_size: 1
+2024-02-20 21:53:21,361 - INFO - 	enable_mergejoin: on
+2024-02-20 21:53:21,362 - INFO - 	enable_nestloop: off
+2024-02-20 21:53:21,362 - INFO - 	maintenance_work_mem: 1024
+2024-02-20 21:53:21,362 - INFO - 	max_wal_size: 8192
+2024-02-20 21:53:21,362 - INFO - 	random_page_cost: 1.563142076573751
+2024-02-20 21:53:21,362 - INFO - 	seq_page_cost: 1.3355906411421805
+2024-02-20 21:53:21,362 - INFO - 	shared_buffers: 1000000
+2024-02-20 21:53:21,362 - INFO - 	wal_buffers: 262143
+2024-02-20 21:53:21,363 - INFO - 	work_mem: 64
+2024-02-20 21:53:21,363 - INFO - Elapsed time: 64.81 seconds
+2024-02-20 21:55:17,922 - INFO - 
+
+2024-02-20 21:55:19,311 - INFO - [Tuner] Start initial profiling by lhs
+2024-02-20 21:55:19,313 - INFO - ================================================================================
+2024-02-20 21:55:19,314 - INFO - [Tune] [Iteration 0]: using configuration: 
+2024-02-20 21:55:19,314 - INFO - 	effective_cache_size: 88038
+2024-02-20 21:55:19,314 - INFO - 	enable_mergejoin: off
+2024-02-20 21:55:19,314 - INFO - 	enable_nestloop: off
+2024-02-20 21:55:19,314 - INFO - 	maintenance_work_mem: 188876
+2024-02-20 21:55:19,315 - INFO - 	max_wal_size: 6731
+2024-02-20 21:55:19,315 - INFO - 	random_page_cost: 88.5207121957703
+2024-02-20 21:55:19,315 - INFO - 	seq_page_cost: 28.462998289832353
+2024-02-20 21:55:19,315 - INFO - 	shared_buffers: 171642
+2024-02-20 21:55:19,315 - INFO - 	wal_buffers: 233113
+2024-02-20 21:55:19,315 - INFO - 	work_mem: 7913
+2024-02-20 21:55:19,322 - INFO - ----------------------------------- Applying Knobs -----------------------------------
+2024-02-20 21:55:19,630 - INFO - [PGUtils] Local PostgreSQL server shut down successfully
+2024-02-20 21:55:19,641 - INFO - [PGKnobApplier] config file modification done (locally).
+2024-02-20 21:55:19,642 - INFO - [PGUtils] Locally starting PostgreSQL server...
+2024-02-20 21:55:19,642 - INFO - [PGUtils] Wait for connection to the started server...
+2024-02-20 21:55:20,652 - INFO - [PGUtils] Successfully connected to the started PostgreSQL Server
+2024-02-20 21:55:20,652 - INFO - [PGUtils] 1 seconds waiting for connection
+2024-02-20 21:55:20,652 - INFO - [PGUtils] start command: postgres --config_file=/var/lib/postgresql/14/experiment/conf/tune_conf.conf
+2024-02-20 21:55:20,653 - INFO - [PGUtils] PostgresSQL is successfully launched.
+2024-02-20 21:55:20,653 - INFO - [PGKnobApplier] Sleeping for 0 seconds after restarting postgres
+2024-02-20 21:55:20,653 - INFO - [PGKnobApplier] No knobs need to be applied online
+2024-02-20 21:55:20,659 - INFO - [PGKnobApplier] Knob max_wal_size is not successfully set to 6731 (actual value: 6731MB)
+2024-02-20 21:55:20,659 - INFO - [PGKnobApplier] 1 / 10 knobs not successfully applied offline.
+2024-02-20 21:55:20,660 - INFO - --------------------------------------------------------------------------------
+2024-02-20 21:55:20,660 - INFO - [PGExecutor] Exeucting queries listed in tpch_query_fast_list.txt
+2024-02-20 21:55:20,691 - INFO - [PGExecutor] Connected to PostgreSQL server for query execution:
+2024-02-20 21:55:20,691 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/1.sql
+2024-02-20 21:55:21,995 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/2.sql
+2024-02-20 21:55:22,788 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/3.sql
+2024-02-20 21:55:23,365 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/4.sql
+2024-02-20 21:55:23,796 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/5.sql
+2024-02-20 21:55:24,233 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/6.sql
+2024-02-20 21:55:24,429 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/7.sql
+2024-02-20 21:55:24,896 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/8.sql
+2024-02-20 21:55:25,347 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/9.sql
+2024-02-20 21:55:26,045 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/10.sql
+2024-02-20 21:55:26,599 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/11.sql
+2024-02-20 21:55:26,927 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/12.sql
+2024-02-20 21:55:27,294 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/13.sql
+2024-02-20 21:55:27,649 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/14.sql
+2024-02-20 21:55:27,883 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/15.sql
+2024-02-20 21:55:28,353 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/16.sql
+2024-02-20 21:55:28,488 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/18.sql
+2024-02-20 21:55:30,270 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/19.sql
+2024-02-20 21:55:30,685 - INFO - [Tune] [Iteration 0]: total_exec_time: 9.929 (s)
+2024-02-20 21:55:30,687 - INFO - [Tuner] Start optimization using gp-bo for 3 iterations
+2024-02-20 21:55:34,406 - INFO - ================================================================================
+2024-02-20 21:55:34,406 - INFO - [Tune] [Iteration 1]: using configuration: 
+2024-02-20 21:55:34,406 - INFO - 	effective_cache_size: 957157
+2024-02-20 21:55:34,407 - INFO - 	enable_mergejoin: on
+2024-02-20 21:55:34,408 - INFO - 	enable_nestloop: on
+2024-02-20 21:55:34,408 - INFO - 	maintenance_work_mem: 193374
+2024-02-20 21:55:34,408 - INFO - 	max_wal_size: 2763
+2024-02-20 21:55:34,409 - INFO - 	random_page_cost: 19.854327099187827
+2024-02-20 21:55:34,409 - INFO - 	seq_page_cost: 62.236189704617864
+2024-02-20 21:55:34,409 - INFO - 	shared_buffers: 984854
+2024-02-20 21:55:34,409 - INFO - 	wal_buffers: 18513
+2024-02-20 21:55:34,410 - INFO - 	work_mem: 249
+2024-02-20 21:55:34,417 - INFO - ----------------------------------- Applying Knobs -----------------------------------
+2024-02-20 21:55:34,626 - INFO - [PGUtils] Local PostgreSQL server shut down successfully
+2024-02-20 21:55:34,633 - INFO - [PGKnobApplier] config file modification done (locally).
+2024-02-20 21:55:34,633 - INFO - [PGUtils] Locally starting PostgreSQL server...
+2024-02-20 21:55:34,634 - INFO - [PGUtils] Wait for connection to the started server...
+2024-02-20 21:55:35,650 - INFO - [PGUtils] Successfully connected to the started PostgreSQL Server
+2024-02-20 21:55:35,650 - INFO - [PGUtils] 1 seconds waiting for connection
+2024-02-20 21:55:35,651 - INFO - [PGUtils] start command: postgres --config_file=/var/lib/postgresql/14/experiment/conf/tune_conf.conf
+2024-02-20 21:55:35,651 - INFO - [PGUtils] PostgresSQL is successfully launched.
+2024-02-20 21:55:35,651 - INFO - [PGKnobApplier] Sleeping for 0 seconds after restarting postgres
+2024-02-20 21:55:35,651 - INFO - [PGKnobApplier] No knobs need to be applied online
+2024-02-20 21:55:35,661 - INFO - [PGKnobApplier] Knob max_wal_size is not successfully set to 2763 (actual value: 2763MB)
+2024-02-20 21:55:35,662 - INFO - [PGKnobApplier] 1 / 10 knobs not successfully applied offline.
+2024-02-20 21:55:35,662 - INFO - --------------------------------------------------------------------------------
+2024-02-20 21:55:35,662 - INFO - [PGExecutor] Exeucting queries listed in tpch_query_fast_list.txt
+2024-02-20 21:55:35,708 - INFO - [PGExecutor] Connected to PostgreSQL server for query execution:
+2024-02-20 21:55:35,708 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/1.sql
+2024-02-20 21:55:37,107 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/2.sql
+2024-02-20 21:55:48,332 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/3.sql
+2024-02-20 21:55:49,144 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/4.sql
+2024-02-20 21:55:49,309 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/5.sql
+2024-02-20 21:55:49,708 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/6.sql
+2024-02-20 21:55:49,902 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/7.sql
+2024-02-20 21:55:50,426 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/8.sql
+2024-02-20 21:55:51,082 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/9.sql
+2024-02-20 21:55:52,838 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/10.sql
+2024-02-20 21:55:53,286 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/11.sql
+2024-02-20 21:55:57,729 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/12.sql
+2024-02-20 21:55:58,556 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/13.sql
+2024-02-20 21:55:59,019 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/14.sql
+2024-02-20 21:55:59,262 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/15.sql
+2024-02-20 21:55:59,736 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/16.sql
+2024-02-20 21:56:00,100 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/18.sql
+2024-02-20 21:56:01,353 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/19.sql
+2024-02-20 21:56:01,768 - INFO - [Tune] [Iteration 1]: total_exec_time: 25.993 (s)
+2024-02-20 21:56:01,771 - INFO - Sample 2 | Best value: -25.99 |
+2024-02-20 21:56:02,809 - INFO - ================================================================================
+2024-02-20 21:56:02,809 - INFO - [Tune] [Iteration 2]: using configuration: 
+2024-02-20 21:56:02,809 - INFO - 	effective_cache_size: 21792
+2024-02-20 21:56:02,810 - INFO - 	enable_mergejoin: off
+2024-02-20 21:56:02,810 - INFO - 	enable_nestloop: off
+2024-02-20 21:56:02,810 - INFO - 	maintenance_work_mem: 412193
+2024-02-20 21:56:02,810 - INFO - 	max_wal_size: 7931
+2024-02-20 21:56:02,811 - INFO - 	random_page_cost: 94.27900313042524
+2024-02-20 21:56:02,811 - INFO - 	seq_page_cost: 8.627045792979372
+2024-02-20 21:56:02,811 - INFO - 	shared_buffers: 20266
+2024-02-20 21:56:02,811 - INFO - 	wal_buffers: 240096
+2024-02-20 21:56:02,811 - INFO - 	work_mem: 8031
+2024-02-20 21:56:02,817 - INFO - ----------------------------------- Applying Knobs -----------------------------------
+2024-02-20 21:56:03,025 - INFO - [PGUtils] Local PostgreSQL server shut down successfully
+2024-02-20 21:56:03,037 - INFO - [PGKnobApplier] config file modification done (locally).
+2024-02-20 21:56:03,037 - INFO - [PGUtils] Locally starting PostgreSQL server...
+2024-02-20 21:56:03,038 - INFO - [PGUtils] Wait for connection to the started server...
+2024-02-20 21:56:04,053 - INFO - [PGUtils] Successfully connected to the started PostgreSQL Server
+2024-02-20 21:56:04,054 - INFO - [PGUtils] 1 seconds waiting for connection
+2024-02-20 21:56:04,054 - INFO - [PGUtils] start command: postgres --config_file=/var/lib/postgresql/14/experiment/conf/tune_conf.conf
+2024-02-20 21:56:04,055 - INFO - [PGUtils] PostgresSQL is successfully launched.
+2024-02-20 21:56:04,055 - INFO - [PGKnobApplier] Sleeping for 0 seconds after restarting postgres
+2024-02-20 21:56:04,055 - INFO - [PGKnobApplier] No knobs need to be applied online
+2024-02-20 21:56:04,064 - INFO - [PGKnobApplier] Knob max_wal_size is not successfully set to 7931 (actual value: 7931MB)
+2024-02-20 21:56:04,066 - INFO - [PGKnobApplier] 1 / 10 knobs not successfully applied offline.
+2024-02-20 21:56:04,066 - INFO - --------------------------------------------------------------------------------
+2024-02-20 21:56:04,066 - INFO - [PGExecutor] Exeucting queries listed in tpch_query_fast_list.txt
+2024-02-20 21:56:04,115 - INFO - [PGExecutor] Connected to PostgreSQL server for query execution:
+2024-02-20 21:56:04,116 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/1.sql
+2024-02-20 21:56:05,371 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/2.sql
+2024-02-20 21:56:06,130 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/3.sql
+2024-02-20 21:56:06,634 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/4.sql
+2024-02-20 21:56:07,022 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/5.sql
+2024-02-20 21:56:07,456 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/6.sql
+2024-02-20 21:56:07,648 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/7.sql
+2024-02-20 21:56:08,105 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/8.sql
+2024-02-20 21:56:08,553 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/9.sql
+2024-02-20 21:56:09,225 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/10.sql
+2024-02-20 21:56:09,767 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/11.sql
+2024-02-20 21:56:09,853 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/12.sql
+2024-02-20 21:56:10,210 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/13.sql
+2024-02-20 21:56:10,558 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/14.sql
+2024-02-20 21:56:10,790 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/15.sql
+2024-02-20 21:56:11,249 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/16.sql
+2024-02-20 21:56:11,380 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/18.sql
+2024-02-20 21:56:13,035 - INFO - [PGExecutor] Executing /mnt/c/Users/Viktor/Desktop/Cam_2023_2024/Research_Project/Experiments/CamDB/camtune/benchmarks/tpch/19.sql
+2024-02-20 21:56:13,443 - INFO - [Tune] [Iteration 2]: total_exec_time: 9.259 (s)
+2024-02-20 21:56:13,447 - INFO - Sample 3 | Best value: -9.26 |
+2024-02-20 21:56:13,455 - INFO - ================================================================================
+2024-02-20 21:56:13,455 - INFO - Best total_exec_time: 9.258756
+2024-02-20 21:56:13,455 - INFO - Best config:
+2024-02-20 21:56:13,455 - INFO - 	effective_cache_size: 21792
+2024-02-20 21:56:13,455 - INFO - 	enable_mergejoin: off
+2024-02-20 21:56:13,455 - INFO - 	enable_nestloop: off
+2024-02-20 21:56:13,456 - INFO - 	maintenance_work_mem: 412193
+2024-02-20 21:56:13,456 - INFO - 	max_wal_size: 7931
+2024-02-20 21:56:13,456 - INFO - 	random_page_cost: 94.27900313042524
+2024-02-20 21:56:13,456 - INFO - 	seq_page_cost: 8.627045792979372
+2024-02-20 21:56:13,456 - INFO - 	shared_buffers: 20266
+2024-02-20 21:56:13,456 - INFO - 	wal_buffers: 240096
+2024-02-20 21:56:13,456 - INFO - 	work_mem: 8031
+2024-02-20 21:56:13,456 - INFO - Elapsed time: 54.14 seconds

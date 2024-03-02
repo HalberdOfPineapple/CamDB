@@ -30,7 +30,6 @@ PG_CONF = "/var/lib/postgresql/14/experiment/conf/tune_conf.conf"
 PG_DEFAULT_CONF = "/var/lib/postgresql/14/experiment/conf/default_conf.conf"
 PG_SOCK = "/var/run/postgresql/.s.PGSQL.543"
 
-
 POSTGRE_USER = "postgres"
 POSTGRE_PWD = "741286"
 

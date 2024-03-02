@@ -30,9 +30,10 @@ class PostgresqlDB:
         # Note that query can be saved locally
         self.executor = PostgreExecutor(
             benchmark=args_db['benchmark'],
-            benchmark_fast=args_db['benchmark_fast'],
-            exec_mode=args_db['exec_mode'],
-            remote_mode=args_db['remote_mode'],
+            benchmark_fast=True if 'benchmark_fast' not in args_db else args_db['benchmark_fast'],
+            exec_mode='raw' if 'exec_mode' not in args_db else args_db['exec_mode'],
+            remote_mode=False if 'remote_mode' not in args_db else args_db['remote_mode'],
+            sysbench_mode=None if 'sysbench_mode' not in args_db else args_db['sysbench_mode'],
         )
         
         # ------------------ Knob Settings -----------------------
@@ -43,6 +44,11 @@ class PostgresqlDB:
             knob_details=self.knob_details
         )
         
+    def prepare_sysbench_data(self):
+        self.executor.prepare_sysbench_data()
+    
+    def cleanup_sysbench_data(self):
+        self.executor.cleanup_sysbench_data()
 
     def step(self, config: Configuration) :
         recover_default_config(self.remote_mode)

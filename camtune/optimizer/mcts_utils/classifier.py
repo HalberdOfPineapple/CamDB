@@ -77,8 +77,10 @@ class SVMClassifier(BaseClassifier):
         # we need to denormalize the data before feeding into the KMeans and SVM
         
         # X_scaled - (num_samples, dimension)        
-        X_scaled = X * (self.bounds[1] - self.bounds[0]) + self.bounds[0]
+        # X_scaled = X * (self.bounds[1] - self.bounds[0]) + self.bounds[0]
 
+        X_scaled = X # current implementation assumes that the data is in original scale
+ 
         # labels: ndarray with shape (num_samples, )
         labels = self.cluster(X_scaled, Y)
         self.svm = self.svm.fit(X_scaled.detach().cpu().numpy(), labels)
@@ -92,7 +94,9 @@ class SVMClassifier(BaseClassifier):
         Returns:
             labels: ndarray with shape (num_samples, )
         """
-        X_scaled = X * (self.bounds[1] - self.bounds[0]) + self.bounds[0]
+        # X_scaled = X * (self.bounds[1] - self.bounds[0]) + self.bounds[0]
+        
+        X_scaled = X # current implementation assumes that the data is in original scale
         return self.svm.predict(X_scaled.detach().cpu().numpy())
 
     def save(self, save_path: str):

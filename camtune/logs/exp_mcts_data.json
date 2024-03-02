@@ -1,0 +1,752 @@
+{
+    "0": {
+        "total_cost (c_unit)": 51398381663.74,
+        "config": {
+            "effective_cache_size": 361755,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 32005,
+            "max_wal_size": 4461,
+            "random_page_cost": 85.67346930503845,
+            "seq_page_cost": 85.98138093948364,
+            "shared_buffers": 267819,
+            "wal_buffers": 102918,
+            "work_mem": 5853
+        }
+    },
+    "1": {
+        "total_cost (c_unit)": 11356218686.569998,
+        "config": {
+            "effective_cache_size": 626202,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 546193,
+            "max_wal_size": 2386,
+            "random_page_cost": 0.5830381996929646,
+            "seq_page_cost": 18.217261135578156,
+            "shared_buffers": 650436,
+            "wal_buffers": 151096,
+            "work_mem": 867
+        }
+    },
+    "2": {
+        "total_cost (c_unit)": 34720521531.69,
+        "config": {
+            "effective_cache_size": 143496,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 420674,
+            "max_wal_size": 1146,
+            "random_page_cost": 25.037464499473572,
+            "seq_page_cost": 57.746851444244385,
+            "shared_buffers": 924009,
+            "wal_buffers": 257838,
+            "work_mem": 6598
+        }
+    },
+    "3": {
+        "total_cost (c_unit)": 23088348552.22,
+        "config": {
+            "effective_cache_size": 845353,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 905595,
+            "max_wal_size": 7231,
+            "random_page_cost": 60.236185789108276,
+            "seq_page_cost": 38.053736090660095,
+            "shared_buffers": 56800,
+            "wal_buffers": 13072,
+            "work_mem": 3199
+        }
+    },
+    "4": {
+        "total_cost (c_unit)": 41475494296.63999,
+        "config": {
+            "effective_cache_size": 54001,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 815079,
+            "max_wal_size": 6258,
+            "random_page_cost": 49.20201897621155,
+            "seq_page_cost": 69.11365389823914,
+            "shared_buffers": 240339,
+            "wal_buffers": 72406,
+            "work_mem": 1414
+        }
+    },
+    "5": {
+        "total_cost (c_unit)": 15911246984.68,
+        "config": {
+            "effective_cache_size": 941525,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 363323,
+            "max_wal_size": 46,
+            "random_page_cost": 65.56687355041504,
+            "seq_page_cost": 25.903773307800293,
+            "shared_buffers": 873202,
+            "wal_buffers": 181992,
+            "work_mem": 4305
+        }
+    },
+    "6": {
+        "total_cost (c_unit)": 59478391424.88,
+        "config": {
+            "effective_cache_size": 460772,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 738163,
+            "max_wal_size": 3452,
+            "random_page_cost": 90.13588428497314,
+            "seq_page_cost": 99.66800212860107,
+            "shared_buffers": 584069,
+            "wal_buffers": 223230,
+            "work_mem": 2636
+        }
+    },
+    "7": {
+        "total_cost (c_unit)": 3736573684.63,
+        "config": {
+            "effective_cache_size": 535646,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 190802,
+            "max_wal_size": 5401,
+            "random_page_cost": 23.662739992141724,
+            "seq_page_cost": 5.310754105448723,
+            "shared_buffers": 467043,
+            "wal_buffers": 48064,
+            "work_mem": 8131
+        }
+    },
+    "8": {
+        "total_cost (c_unit)": 40505596617.31,
+        "config": {
+            "effective_cache_size": 194726,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 263704,
+            "max_wal_size": 2589,
+            "random_page_cost": 42.07206964492798,
+            "seq_page_cost": 67.55474209785461,
+            "shared_buffers": 398346,
+            "wal_buffers": 27835,
+            "work_mem": 2133
+        }
+    },
+    "9": {
+        "total_cost (c_unit)": 22370714501.47,
+        "config": {
+            "effective_cache_size": 800974,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 809095,
+            "max_wal_size": 4720,
+            "random_page_cost": 69.37364935874939,
+            "seq_page_cost": 36.8388295173645,
+            "shared_buffers": 531269,
+            "wal_buffers": 241793,
+            "work_mem": 7628
+        }
+    },
+    "10": {
+        "total_cost (c_unit)": 53042954854.049995,
+        "config": {
+            "effective_cache_size": 289037,
+            "enable_mergejoin": "off",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 185080,
+            "max_wal_size": 7945,
+            "random_page_cost": 94.13778185844421,
+            "seq_page_cost": 88.75821828842163,
+            "shared_buffers": 804566,
+            "wal_buffers": 135571,
+            "work_mem": 1925
+        }
+    },
+    "11": {
+        "total_cost (c_unit)": 14653014554.36,
+        "config": {
+            "effective_cache_size": 707695,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "off",
+            "maintenance_work_mem": 638767,
+            "max_wal_size": 1916,
+            "random_page_cost": 16.727912425994873,
+            "seq_page_cost": 6.845918297767639,
+            "shared_buffers": 187601,
+            "wal_buffers": 118186,
+            "work_mem": 4817
+        }
+    },
+    "12": {
+        "total_cost (c_unit)": 44913505543.42,
+        "config": {
+            "effective_cache_size": 377207,
+            "enable_mergejoin": "off",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 579478,
+            "max_wal_size": 848,
+            "random_page_cost": 80.10811805725098,
+            "seq_page_cost": 75.00340938568115,
+            "shared_buffers": 113362,
+            "wal_buffers": 58476,
+            "work_mem": 7112
+        }
+    },
+    "13": {
+        "total_cost (c_unit)": 22326664974.06,
+        "config": {
+            "effective_cache_size": 610438,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "off",
+            "maintenance_work_mem": 96519,
+            "max_wal_size": 7003,
+            "random_page_cost": 9.08094346523285,
+            "seq_page_cost": 19.818323850631714,
+            "shared_buffers": 995918,
+            "wal_buffers": 211025,
+            "work_mem": 3713
+        }
+    },
+    "14": {
+        "total_cost (c_unit)": 43859401875.6,
+        "config": {
+            "effective_cache_size": 96548,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "off",
+            "maintenance_work_mem": 969857,
+            "max_wal_size": 5692,
+            "random_page_cost": 33.730873465538025,
+            "seq_page_cost": 56.16763234138489,
+            "shared_buffers": 707058,
+            "wal_buffers": 170307,
+            "work_mem": 5349
+        }
+    },
+    "15": {
+        "total_cost (c_unit)": 8986368405.019999,
+        "config": {
+            "effective_cache_size": 818280,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 380642,
+            "max_wal_size": 767,
+            "random_page_cost": 66.55267836691897,
+            "seq_page_cost": 14.185583318732222,
+            "shared_buffers": 155066,
+            "wal_buffers": 101816,
+            "work_mem": 4090
+        }
+    },
+    "16": {
+        "total_cost (c_unit)": 20808399007.350002,
+        "config": {
+            "effective_cache_size": 856523,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 782305,
+            "max_wal_size": 4791,
+            "random_page_cost": 33.11247319332481,
+            "seq_page_cost": 34.20644555147021,
+            "shared_buffers": 543375,
+            "wal_buffers": 4990,
+            "work_mem": 5416
+        }
+    },
+    "17": {
+        "total_cost (c_unit)": 5692931586.03,
+        "config": {
+            "effective_cache_size": 823280,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 15062,
+            "max_wal_size": 856,
+            "random_page_cost": 58.024347050046366,
+            "seq_page_cost": 8.61383559238565,
+            "shared_buffers": 214202,
+            "wal_buffers": 171518,
+            "work_mem": 2094
+        }
+    },
+    "18": {
+        "total_cost (c_unit)": 1862449504.4999998,
+        "config": {
+            "effective_cache_size": 781304,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 33025,
+            "max_wal_size": 932,
+            "random_page_cost": 80.90128865781539,
+            "seq_page_cost": 2.1338849269341607,
+            "shared_buffers": 762173,
+            "wal_buffers": 229549,
+            "work_mem": 1222
+        }
+    },
+    "19": {
+        "total_cost (c_unit)": 4482629085.56,
+        "config": {
+            "effective_cache_size": 714872,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 223116,
+            "max_wal_size": 190,
+            "random_page_cost": 91.90568512191732,
+            "seq_page_cost": 6.564009159770645,
+            "shared_buffers": 988721,
+            "wal_buffers": 136482,
+            "work_mem": 3106
+        }
+    },
+    "20": {
+        "total_cost (c_unit)": 2190466913.19,
+        "config": {
+            "effective_cache_size": 917053,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 97443,
+            "max_wal_size": 3241,
+            "random_page_cost": 57.03955037198622,
+            "seq_page_cost": 2.691089183233,
+            "shared_buffers": 326277,
+            "wal_buffers": 90153,
+            "work_mem": 4042
+        }
+    },
+    "21": {
+        "total_cost (c_unit)": 3817186490.2400002,
+        "config": {
+            "effective_cache_size": 712193,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 177912,
+            "max_wal_size": 5258,
+            "random_page_cost": 97.8153656683296,
+            "seq_page_cost": 5.44232823980133,
+            "shared_buffers": 369325,
+            "wal_buffers": 214811,
+            "work_mem": 5525
+        }
+    },
+    "22": {
+        "total_cost (c_unit)": 905205615.38,
+        "config": {
+            "effective_cache_size": 855849,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 175163,
+            "max_wal_size": 4215,
+            "random_page_cost": 83.52987413571486,
+            "seq_page_cost": 0.5174463561479808,
+            "shared_buffers": 929628,
+            "wal_buffers": 255986,
+            "work_mem": 5283
+        }
+    },
+    "23": {
+        "total_cost (c_unit)": 2393654691.28,
+        "config": {
+            "effective_cache_size": 985923,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 118185,
+            "max_wal_size": 698,
+            "random_page_cost": 98.70893608492449,
+            "seq_page_cost": 3.032914940474974,
+            "shared_buffers": 946241,
+            "wal_buffers": 251488,
+            "work_mem": 2639
+        }
+    },
+    "24": {
+        "total_cost (c_unit)": 1026022100.74,
+        "config": {
+            "effective_cache_size": 917129,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 301082,
+            "max_wal_size": 1511,
+            "random_page_cost": 94.83215269043743,
+            "seq_page_cost": 0.7217206100406023,
+            "shared_buffers": 986326,
+            "wal_buffers": 225309,
+            "work_mem": 8052
+        }
+    },
+    "25": {
+        "total_cost (c_unit)": 681140685.6800001,
+        "config": {
+            "effective_cache_size": 960296,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 693825,
+            "max_wal_size": 1434,
+            "random_page_cost": 77.01412594266566,
+            "seq_page_cost": 0.13872452148869305,
+            "shared_buffers": 920067,
+            "wal_buffers": 105601,
+            "work_mem": 7699
+        }
+    },
+    "26": {
+        "total_cost (c_unit)": 877370711.5300001,
+        "config": {
+            "effective_cache_size": 998538,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 531381,
+            "max_wal_size": 3455,
+            "random_page_cost": 71.9871290355952,
+            "seq_page_cost": 0.47071349176942384,
+            "shared_buffers": 498019,
+            "wal_buffers": 259611,
+            "work_mem": 7574
+        }
+    },
+    "27": {
+        "total_cost (c_unit)": 1231348295.99,
+        "config": {
+            "effective_cache_size": 949567,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 728490,
+            "max_wal_size": 809,
+            "random_page_cost": 57.48880241151932,
+            "seq_page_cost": 1.069729120732193,
+            "shared_buffers": 591594,
+            "wal_buffers": 71220,
+            "work_mem": 6884
+        }
+    },
+    "28": {
+        "total_cost (c_unit)": 1305957692.8500001,
+        "config": {
+            "effective_cache_size": 960292,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 626017,
+            "max_wal_size": 5836,
+            "random_page_cost": 75.95774183919421,
+            "seq_page_cost": 1.1955561141597741,
+            "shared_buffers": 788852,
+            "wal_buffers": 47493,
+            "work_mem": 7837
+        }
+    },
+    "29": {
+        "total_cost (c_unit)": 1273044541.4199998,
+        "config": {
+            "effective_cache_size": 795985,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 826023,
+            "max_wal_size": 5708,
+            "random_page_cost": 80.74954739065912,
+            "seq_page_cost": 1.1397449590357056,
+            "shared_buffers": 645590,
+            "wal_buffers": 193061,
+            "work_mem": 6484
+        }
+    },
+    "30": {
+        "total_cost (c_unit)": 769940923.64,
+        "config": {
+            "effective_cache_size": 828333,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 724686,
+            "max_wal_size": 1162,
+            "random_page_cost": 76.28348677191971,
+            "seq_page_cost": 0.287986732708338,
+            "shared_buffers": 938995,
+            "wal_buffers": 11214,
+            "work_mem": 3395
+        }
+    },
+    "31": {
+        "total_cost (c_unit)": 1019681307.76,
+        "config": {
+            "effective_cache_size": 958516,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 773556,
+            "max_wal_size": 5973,
+            "random_page_cost": 56.33175453204249,
+            "seq_page_cost": 0.7117447446338983,
+            "shared_buffers": 846659,
+            "wal_buffers": 208835,
+            "work_mem": 6218
+        }
+    },
+    "32": {
+        "total_cost (c_unit)": 1024201060.21,
+        "config": {
+            "effective_cache_size": 784578,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 100857,
+            "max_wal_size": 377,
+            "random_page_cost": 83.29907472191765,
+            "seq_page_cost": 0.7188076775491078,
+            "shared_buffers": 411696,
+            "wal_buffers": 254102,
+            "work_mem": 7714
+        }
+    },
+    "33": {
+        "total_cost (c_unit)": 826191394.01,
+        "config": {
+            "effective_cache_size": 914004,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 134154,
+            "max_wal_size": 3683,
+            "random_page_cost": 93.7891137609834,
+            "seq_page_cost": 0.3825816241345455,
+            "shared_buffers": 402273,
+            "wal_buffers": 26986,
+            "work_mem": 4953
+        }
+    },
+    "34": {
+        "total_cost (c_unit)": 635738443.9,
+        "config": {
+            "effective_cache_size": 888043,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 705889,
+            "max_wal_size": 1577,
+            "random_page_cost": 95.61003838871461,
+            "seq_page_cost": 0.061484949945612925,
+            "shared_buffers": 669173,
+            "wal_buffers": 250859,
+            "work_mem": 5355
+        }
+    },
+    "35": {
+        "total_cost (c_unit)": 669751016.3499999,
+        "config": {
+            "effective_cache_size": 972935,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 149144,
+            "max_wal_size": 6567,
+            "random_page_cost": 80.03728917430108,
+            "seq_page_cost": 0.11698951590563783,
+            "shared_buffers": 747042,
+            "wal_buffers": 257406,
+            "work_mem": 1477
+        }
+    },
+    "36": {
+        "total_cost (c_unit)": 1012872869.0400001,
+        "config": {
+            "effective_cache_size": 971117,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 379091,
+            "max_wal_size": 2288,
+            "random_page_cost": 90.90754807075108,
+            "seq_page_cost": 0.6980403924919559,
+            "shared_buffers": 146041,
+            "wal_buffers": 96735,
+            "work_mem": 2624
+        }
+    },
+    "37": {
+        "total_cost (c_unit)": 622442242.5,
+        "config": {
+            "effective_cache_size": 881186,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 277489,
+            "max_wal_size": 3750,
+            "random_page_cost": 76.85589083960804,
+            "seq_page_cost": 0.039472999117677876,
+            "shared_buffers": 896536,
+            "wal_buffers": 187531,
+            "work_mem": 7432
+        }
+    },
+    "38": {
+        "total_cost (c_unit)": 835475503.0699999,
+        "config": {
+            "effective_cache_size": 770624,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 384599,
+            "max_wal_size": 7307,
+            "random_page_cost": 73.38568929756579,
+            "seq_page_cost": 0.39891203457802565,
+            "shared_buffers": 967940,
+            "wal_buffers": 137635,
+            "work_mem": 3500
+        }
+    },
+    "39": {
+        "total_cost (c_unit)": 1274344139.7,
+        "config": {
+            "effective_cache_size": 638407,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 672376,
+            "max_wal_size": 4694,
+            "random_page_cost": 58.62978368302776,
+            "seq_page_cost": 1.141618246194758,
+            "shared_buffers": 742190,
+            "wal_buffers": 210845,
+            "work_mem": 3385
+        }
+    },
+    "40": {
+        "total_cost (c_unit)": 707156928.25,
+        "config": {
+            "effective_cache_size": 991678,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 713668,
+            "max_wal_size": 2112,
+            "random_page_cost": 81.91150089299495,
+            "seq_page_cost": 0.18162810073460697,
+            "shared_buffers": 674270,
+            "wal_buffers": 219528,
+            "work_mem": 3308
+        }
+    },
+    "41": {
+        "total_cost (c_unit)": 1482472734.9499998,
+        "config": {
+            "effective_cache_size": 587417,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 648992,
+            "max_wal_size": 523,
+            "random_page_cost": 92.29217049118483,
+            "seq_page_cost": 1.4935658228681925,
+            "shared_buffers": 672262,
+            "wal_buffers": 51329,
+            "work_mem": 5155
+        }
+    },
+    "42": {
+        "total_cost (c_unit)": 603222402.9799999,
+        "config": {
+            "effective_cache_size": 968133,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 651879,
+            "max_wal_size": 5183,
+            "random_page_cost": 75.91682671051926,
+            "seq_page_cost": 0.006974194524896622,
+            "shared_buffers": 414648,
+            "wal_buffers": 157929,
+            "work_mem": 6939
+        }
+    },
+    "43": {
+        "total_cost (c_unit)": 634257479.5,
+        "config": {
+            "effective_cache_size": 455518,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 963523,
+            "max_wal_size": 1723,
+            "random_page_cost": 69.00738384070266,
+            "seq_page_cost": 0.059618507552874456,
+            "shared_buffers": 55660,
+            "wal_buffers": 261698,
+            "work_mem": 8175
+        }
+    },
+    "44": {
+        "total_cost (c_unit)": 1906977022.05,
+        "config": {
+            "effective_cache_size": 444951,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 959578,
+            "max_wal_size": 6230,
+            "random_page_cost": 81.67864556557775,
+            "seq_page_cost": 2.2107533978233307,
+            "shared_buffers": 831368,
+            "wal_buffers": 16831,
+            "work_mem": 2963
+        }
+    },
+    "45": {
+        "total_cost (c_unit)": 897565141.83,
+        "config": {
+            "effective_cache_size": 525376,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 478071,
+            "max_wal_size": 8168,
+            "random_page_cost": 88.88938189861867,
+            "seq_page_cost": 0.5033703540120913,
+            "shared_buffers": 98175,
+            "wal_buffers": 109613,
+            "work_mem": 2885
+        }
+    },
+    "46": {
+        "total_cost (c_unit)": 664507642.99,
+        "config": {
+            "effective_cache_size": 921317,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 508477,
+            "max_wal_size": 7628,
+            "random_page_cost": 82.08802749826853,
+            "seq_page_cost": 0.10888727350269775,
+            "shared_buffers": 150367,
+            "wal_buffers": 39814,
+            "work_mem": 2353
+        }
+    },
+    "47": {
+        "total_cost (c_unit)": 661191709.78,
+        "config": {
+            "effective_cache_size": 435729,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 143147,
+            "max_wal_size": 4351,
+            "random_page_cost": 73.92745747452753,
+            "seq_page_cost": 0.10418046148635857,
+            "shared_buffers": 295676,
+            "wal_buffers": 234418,
+            "work_mem": 3431
+        }
+    },
+    "48": {
+        "total_cost (c_unit)": 773904356.67,
+        "config": {
+            "effective_cache_size": 488908,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 981111,
+            "max_wal_size": 646,
+            "random_page_cost": 66.96353587461155,
+            "seq_page_cost": 0.29577082982427977,
+            "shared_buffers": 126048,
+            "wal_buffers": 237107,
+            "work_mem": 5749
+        }
+    },
+    "49": {
+        "total_cost (c_unit)": 605928523.45,
+        "config": {
+            "effective_cache_size": 399506,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 531093,
+            "max_wal_size": 1142,
+            "random_page_cost": 90.88397125218187,
+            "seq_page_cost": 0.010185741033203686,
+            "shared_buffers": 73130,
+            "wal_buffers": 172039,
+            "work_mem": 3056
+        }
+    }
+}

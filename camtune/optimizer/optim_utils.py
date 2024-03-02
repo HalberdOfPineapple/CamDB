@@ -24,3 +24,12 @@ def generate_random_discrete(num_evals: int, bounds: torch.Tensor, discrete_dims
     # Round the samples to the nearest integer
     rounded_samples = torch.round(scaled_samples)
     return rounded_samples
+
+def assign_after_check(cand_val, key, params):
+    return cand_val if key not in params else params[key]
+
+def round_by_bounds(X_cands: torch.Tensor, bounds: torch.Tensor) -> torch.Tensor:
+    return torch.max(
+        torch.min(
+            X_cands, bounds[1, :]), 
+        bounds[0, :])

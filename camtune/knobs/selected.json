@@ -42,7 +42,7 @@
         "context": "sighup",
         "scope": "global",
         "type": "integer",
-        "min": 2,
+        "min": 32,
         "max": 8192,
         "byte_unit": "MB"
     },

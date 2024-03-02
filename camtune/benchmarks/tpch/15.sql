@@ -9,9 +9,7 @@ DECLARE
     end_time timestamp;
 BEGIN
     -- Define your long query here
-    query := '-- using 1433771997 as a seed to the RNG
-
-create view revenue0 (supplier_no, total_revenue) as
+    query := 'create view revenue0 (supplier_no, total_revenue) as
 	select
 		l_suppkey,
 		sum(l_extendedprice * (1 - l_discount))
