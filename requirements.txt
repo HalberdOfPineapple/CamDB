@@ -1,5 +1,5 @@
 ConfigSpace==0.7.1
-cryptography==41.0.7
+cryptography>=42.0.4
 debugpy
 decorator 
 exceptiongroup 
@@ -10,7 +10,7 @@ more-itertools==10.1.0
 nest-asyncio 
 numpy
 packaging 
-paramiko==3.3.1
+paramiko>=3.4.0
 parso 
 pexpect 
 pickleshare 
@@ -34,3 +34,7 @@ traitlets
 typing_extensions 
 wcwidth 
 zipp 
+pyyaml
+torch
+botorch
+pyDOE

@@ -14,7 +14,7 @@ from camtune.database import PostgresqlDB
 from camtune.utils import (init_logger, get_logger, print_log, \
                            LOG_DIR, CONFIG_DIR, KNOB_DIR)
 
-
+BNECHMARKS = ['tpch', 'sysbench']
 DEFAULT_EXPR_NAME = 'postgre_tpch_remote'
 eval_counter = 0
 
@@ -203,16 +203,22 @@ def main(expr_name: str, expr_config: dict, test_tuning: bool=False):
     # Clean up
     # --------------------------------------------------------
     if db_config['benchmark'].lower() == 'sysbench' and db_config['sysbench_cleanup']:
-            db.prepare_sysbench_data()
+        # db.prepare_sysbench_data()
+        db.cleanup_sysbench_data()
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--expr_name', '-e', type=str, default=DEFAULT_EXPR_NAME, help='Experiment configuration file name')
     parser.add_argument('--test', '-t', action='store_true', help='Test tuning')
+    parser.add_argument('--benchmark', '-b', type=str, default='tpch', help='Benchmark name')
     args = parser.parse_args()
-
+    
+    benchmark_name: str = args.benchmark
+    if benchmark_name not in BNECHMARKS:
+        raise ValueError(f'Invalid benchmark name: {benchmark_name}')
+    
     expr_name: str = args.expr_name
-    config_file_path = os.path.join(CONFIG_DIR, f'{expr_name}.yaml')
+    config_file_path = os.path.join(CONFIG_DIR, benchmark_name, f'{expr_name}.yaml')
     with open(config_file_path, 'r') as f:
         config = yaml.safe_load(f)
 

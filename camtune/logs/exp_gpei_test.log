@@ -1,0 +1,526 @@
+2024-03-10 17:15:57,559 - INFO - 
+
+2024-03-10 17:15:57,560 - INFO - [PGExecutor] Exeucting queries listed in tpch_query_list.txt
+2024-03-10 17:15:57,565 - INFO - [Tuner] Start initial profiling by lhs
+2024-03-10 17:15:57,570 - INFO - ================================================================================
+2024-03-10 17:15:57,570 - INFO - [Tune] [Iteration 0]: using configuration: 
+2024-03-10 17:15:57,570 - INFO - 	effective_cache_size: 311184
+2024-03-10 17:15:57,571 - INFO - 	enable_mergejoin: on
+2024-03-10 17:15:57,571 - INFO - 	enable_nestloop: on
+2024-03-10 17:15:57,571 - INFO - 	maintenance_work_mem: 106282
+2024-03-10 17:15:57,571 - INFO - 	max_wal_size: 2504
+2024-03-10 17:15:57,571 - INFO - 	random_page_cost: 94.71585703740624
+2024-03-10 17:15:57,571 - INFO - 	seq_page_cost: 92.33538662696763
+2024-03-10 17:15:57,571 - INFO - 	shared_buffers: 811934
+2024-03-10 17:15:57,571 - INFO - 	wal_buffers: 131847
+2024-03-10 17:15:57,571 - INFO - 	work_mem: 5675
+2024-03-10 17:15:57,696 - INFO - ----------------------------------- Applying Knobs -----------------------------------
+2024-03-10 17:15:57,982 - INFO - [PGUtils] Local PostgreSQL server shut down successfully
+2024-03-10 17:15:58,044 - INFO - [PGKnobApplier] config file modification done (locally).
+2024-03-10 17:15:58,045 - INFO - [PGUtils] Locally starting PostgreSQL server...
+2024-03-10 17:15:58,045 - INFO - [PGUtils] Launch command: sudo -S -u postgres /usr/lib/postgresql/16/bin/postgres --config_file=/home/wl446/pg_data/postgresql/16/tune_conf.conf -D /home/wl446/pg_data/postgresql/16/main
+2024-03-10 17:15:58,046 - INFO - [PGUtils] Wait for connection to the started server...
+2024-03-10 17:16:01,087 - INFO - [PGUtils] Successfully connected to the started PostgreSQL Server
+2024-03-10 17:16:01,087 - INFO - [PGUtils] 3 seconds waiting for connection
+2024-03-10 17:16:01,087 - INFO - [PGUtils] PostgresSQL is successfully launched.
+2024-03-10 17:16:01,087 - INFO - [PGKnobApplier] Sleeping for 0 seconds after restarting postgres
+2024-03-10 17:16:01,087 - INFO - [PGKnobApplier] No knobs need to be applied online
+2024-03-10 17:16:01,113 - INFO - [PGKnobApplier] Knob max_wal_size is not successfully set to 2504 (actual value: 2504MB)
+2024-03-10 17:16:01,117 - INFO - [PGKnobApplier] 1 / 10 knobs not successfully applied offline.
+2024-03-10 17:16:01,118 - INFO - --------------------------------------------------------------------------------
+2024-03-10 17:16:01,132 - INFO - [PGExecutor] Connected to PostgreSQL server for query execution:
+2024-03-10 17:16:01,132 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/1.sql
+2024-03-10 17:16:01,232 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/2.sql
+2024-03-10 17:16:01,250 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/3.sql
+2024-03-10 17:16:01,257 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/4.sql
+2024-03-10 17:16:01,261 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/5.sql
+2024-03-10 17:16:01,266 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/6.sql
+2024-03-10 17:16:01,269 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/7.sql
+2024-03-10 17:16:01,275 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/8.sql
+2024-03-10 17:16:01,281 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/9.sql
+2024-03-10 17:16:01,286 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/10.sql
+2024-03-10 17:16:01,290 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/11.sql
+2024-03-10 17:16:01,310 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/12.sql
+2024-03-10 17:16:01,313 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/13.sql
+2024-03-10 17:16:01,315 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/14.sql
+2024-03-10 17:16:01,318 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/16.sql
+2024-03-10 17:16:01,326 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/17.sql
+2024-03-10 17:16:01,328 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/18.sql
+2024-03-10 17:16:01,332 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/19.sql
+2024-03-10 17:16:01,336 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/20.sql
+2024-03-10 17:16:01,339 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/21.sql
+2024-03-10 17:16:01,344 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/22.sql
+2024-03-10 17:16:02,581 - INFO - [Tune] [Iteration 0]: total_cost: 5674454211665.399 (c_unit)
+2024-03-10 17:16:02,583 - INFO - [Tuner] Start optimization using gp-bo for 9 iterations (external initialization)
+2024-03-10 17:16:02,687 - INFO - ================================================================================
+2024-03-10 17:16:02,688 - INFO - [Tune] [Iteration 1]: using configuration: 
+2024-03-10 17:16:02,688 - INFO - 	effective_cache_size: 514527
+2024-03-10 17:16:02,688 - INFO - 	enable_mergejoin: on
+2024-03-10 17:16:02,688 - INFO - 	enable_nestloop: on
+2024-03-10 17:16:02,688 - INFO - 	maintenance_work_mem: 170453
+2024-03-10 17:16:02,688 - INFO - 	max_wal_size: 7362
+2024-03-10 17:16:02,689 - INFO - 	random_page_cost: 4.056761608467795
+2024-03-10 17:16:02,689 - INFO - 	seq_page_cost: 13.59669131316098
+2024-03-10 17:16:02,689 - INFO - 	shared_buffers: 10940
+2024-03-10 17:16:02,689 - INFO - 	wal_buffers: 128185
+2024-03-10 17:16:02,689 - INFO - 	work_mem: 382
+2024-03-10 17:16:02,767 - INFO - ----------------------------------- Applying Knobs -----------------------------------
+2024-03-10 17:16:03,253 - INFO - [PGUtils] Local PostgreSQL server shut down successfully
+2024-03-10 17:16:03,330 - INFO - [PGKnobApplier] config file modification done (locally).
+2024-03-10 17:16:03,331 - INFO - [PGUtils] Locally starting PostgreSQL server...
+2024-03-10 17:16:03,331 - INFO - [PGUtils] Launch command: sudo -S -u postgres /usr/lib/postgresql/16/bin/postgres --config_file=/home/wl446/pg_data/postgresql/16/tune_conf.conf -D /home/wl446/pg_data/postgresql/16/main
+2024-03-10 17:16:03,332 - INFO - [PGUtils] Wait for connection to the started server...
+2024-03-10 17:16:06,368 - INFO - [PGUtils] Successfully connected to the started PostgreSQL Server
+2024-03-10 17:16:06,369 - INFO - [PGUtils] 3 seconds waiting for connection
+2024-03-10 17:16:06,370 - INFO - [PGUtils] PostgresSQL is successfully launched.
+2024-03-10 17:16:06,370 - INFO - [PGKnobApplier] Sleeping for 0 seconds after restarting postgres
+2024-03-10 17:16:06,370 - INFO - [PGKnobApplier] No knobs need to be applied online
+2024-03-10 17:16:06,394 - INFO - [PGKnobApplier] Knob max_wal_size is not successfully set to 7362 (actual value: 7362MB)
+2024-03-10 17:16:06,399 - INFO - [PGKnobApplier] 1 / 10 knobs not successfully applied offline.
+2024-03-10 17:16:06,399 - INFO - --------------------------------------------------------------------------------
+2024-03-10 17:16:06,418 - INFO - [PGExecutor] Connected to PostgreSQL server for query execution:
+2024-03-10 17:16:06,418 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/1.sql
+2024-03-10 17:16:06,525 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/2.sql
+2024-03-10 17:16:06,542 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/3.sql
+2024-03-10 17:16:06,548 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/4.sql
+2024-03-10 17:16:06,551 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/5.sql
+2024-03-10 17:16:06,556 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/6.sql
+2024-03-10 17:16:06,559 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/7.sql
+2024-03-10 17:16:06,565 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/8.sql
+2024-03-10 17:16:06,571 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/9.sql
+2024-03-10 17:16:06,576 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/10.sql
+2024-03-10 17:16:06,580 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/11.sql
+2024-03-10 17:16:06,583 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/12.sql
+2024-03-10 17:16:06,586 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/13.sql
+2024-03-10 17:16:06,589 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/14.sql
+2024-03-10 17:16:06,592 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/16.sql
+2024-03-10 17:16:06,594 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/17.sql
+2024-03-10 17:16:06,597 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/18.sql
+2024-03-10 17:16:06,600 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/19.sql
+2024-03-10 17:16:06,604 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/20.sql
+2024-03-10 17:16:06,607 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/21.sql
+2024-03-10 17:16:06,612 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/22.sql
+2024-03-10 17:16:07,898 - INFO - [Tune] [Iteration 1]: total_cost: 887692346949.630 (c_unit)
+2024-03-10 17:16:07,901 - INFO - Sample 2 | Best value: -887692346949.63 |
+2024-03-10 17:16:08,457 - INFO - ================================================================================
+2024-03-10 17:16:08,458 - INFO - [Tune] [Iteration 2]: using configuration: 
+2024-03-10 17:16:08,458 - INFO - 	effective_cache_size: 840817
+2024-03-10 17:16:08,458 - INFO - 	enable_mergejoin: on
+2024-03-10 17:16:08,458 - INFO - 	enable_nestloop: on
+2024-03-10 17:16:08,458 - INFO - 	maintenance_work_mem: 258865
+2024-03-10 17:16:08,458 - INFO - 	max_wal_size: 8192
+2024-03-10 17:16:08,458 - INFO - 	random_page_cost: 0.0
+2024-03-10 17:16:08,458 - INFO - 	seq_page_cost: 0.0
+2024-03-10 17:16:08,458 - INFO - 	shared_buffers: 128
+2024-03-10 17:16:08,458 - INFO - 	wal_buffers: 124205
+2024-03-10 17:16:08,458 - INFO - 	work_mem: 64
+2024-03-10 17:16:08,525 - INFO - ----------------------------------- Applying Knobs -----------------------------------
+2024-03-10 17:16:09,022 - INFO - [PGUtils] Local PostgreSQL server shut down successfully
+2024-03-10 17:16:09,104 - INFO - [PGKnobApplier] config file modification done (locally).
+2024-03-10 17:16:09,104 - INFO - [PGUtils] Locally starting PostgreSQL server...
+2024-03-10 17:16:09,104 - INFO - [PGUtils] Launch command: sudo -S -u postgres /usr/lib/postgresql/16/bin/postgres --config_file=/home/wl446/pg_data/postgresql/16/tune_conf.conf -D /home/wl446/pg_data/postgresql/16/main
+2024-03-10 17:16:09,105 - INFO - [PGUtils] Wait for connection to the started server...
+2024-03-10 17:16:12,141 - INFO - [PGUtils] Successfully connected to the started PostgreSQL Server
+2024-03-10 17:16:12,142 - INFO - [PGUtils] 3 seconds waiting for connection
+2024-03-10 17:16:12,143 - INFO - [PGUtils] PostgresSQL is successfully launched.
+2024-03-10 17:16:12,143 - INFO - [PGKnobApplier] Sleeping for 0 seconds after restarting postgres
+2024-03-10 17:16:12,143 - INFO - [PGKnobApplier] No knobs need to be applied online
+2024-03-10 17:16:12,166 - INFO - [PGKnobApplier] Knob max_wal_size is not successfully set to 8192 (actual value: 8GB)
+2024-03-10 17:16:12,170 - INFO - [PGKnobApplier] Knob shared_buffers is not successfully set to 128 (actual value: 1MB)
+2024-03-10 17:16:12,172 - INFO - [PGKnobApplier] 2 / 10 knobs not successfully applied offline.
+2024-03-10 17:16:12,172 - INFO - --------------------------------------------------------------------------------
+2024-03-10 17:16:12,186 - INFO - [PGExecutor] Connected to PostgreSQL server for query execution:
+2024-03-10 17:16:12,187 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/1.sql
+2024-03-10 17:16:12,288 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/2.sql
+2024-03-10 17:16:12,298 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/3.sql
+2024-03-10 17:16:12,305 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/4.sql
+2024-03-10 17:16:12,308 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/5.sql
+2024-03-10 17:16:12,316 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/6.sql
+2024-03-10 17:16:12,318 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/7.sql
+2024-03-10 17:16:12,325 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/8.sql
+2024-03-10 17:16:12,331 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/9.sql
+2024-03-10 17:16:12,336 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/10.sql
+2024-03-10 17:16:12,340 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/11.sql
+2024-03-10 17:16:12,344 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/12.sql
+2024-03-10 17:16:12,347 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/13.sql
+2024-03-10 17:16:12,350 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/14.sql
+2024-03-10 17:16:12,353 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/16.sql
+2024-03-10 17:16:12,356 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/17.sql
+2024-03-10 17:16:12,359 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/18.sql
+2024-03-10 17:16:12,362 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/19.sql
+2024-03-10 17:16:12,366 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/20.sql
+2024-03-10 17:16:12,369 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/21.sql
+2024-03-10 17:16:12,374 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/22.sql
+2024-03-10 17:16:13,681 - INFO - [Tune] [Iteration 2]: total_cost: 61545219303.630 (c_unit)
+2024-03-10 17:16:13,682 - INFO - Sample 3 | Best value: -61545219303.63 |
+2024-03-10 17:16:15,185 - INFO - ================================================================================
+2024-03-10 17:16:15,186 - INFO - [Tune] [Iteration 3]: using configuration: 
+2024-03-10 17:16:15,186 - INFO - 	effective_cache_size: 687278
+2024-03-10 17:16:15,186 - INFO - 	enable_mergejoin: on
+2024-03-10 17:16:15,186 - INFO - 	enable_nestloop: on
+2024-03-10 17:16:15,186 - INFO - 	maintenance_work_mem: 432213
+2024-03-10 17:16:15,186 - INFO - 	max_wal_size: 8192
+2024-03-10 17:16:15,187 - INFO - 	random_page_cost: 0.0
+2024-03-10 17:16:15,187 - INFO - 	seq_page_cost: 0.0
+2024-03-10 17:16:15,187 - INFO - 	shared_buffers: 128
+2024-03-10 17:16:15,187 - INFO - 	wal_buffers: 68265
+2024-03-10 17:16:15,187 - INFO - 	work_mem: 64
+2024-03-10 17:16:15,278 - INFO - ----------------------------------- Applying Knobs -----------------------------------
+2024-03-10 17:16:15,767 - INFO - [PGUtils] Local PostgreSQL server shut down successfully
+2024-03-10 17:16:15,849 - INFO - [PGKnobApplier] config file modification done (locally).
+2024-03-10 17:16:15,850 - INFO - [PGUtils] Locally starting PostgreSQL server...
+2024-03-10 17:16:15,850 - INFO - [PGUtils] Launch command: sudo -S -u postgres /usr/lib/postgresql/16/bin/postgres --config_file=/home/wl446/pg_data/postgresql/16/tune_conf.conf -D /home/wl446/pg_data/postgresql/16/main
+2024-03-10 17:16:15,852 - INFO - [PGUtils] Wait for connection to the started server...
+2024-03-10 17:16:17,889 - INFO - [PGUtils] Successfully connected to the started PostgreSQL Server
+2024-03-10 17:16:17,890 - INFO - [PGUtils] 2 seconds waiting for connection
+2024-03-10 17:16:17,891 - INFO - [PGUtils] PostgresSQL is successfully launched.
+2024-03-10 17:16:17,891 - INFO - [PGKnobApplier] Sleeping for 0 seconds after restarting postgres
+2024-03-10 17:16:17,891 - INFO - [PGKnobApplier] No knobs need to be applied online
+2024-03-10 17:16:17,913 - INFO - [PGKnobApplier] Knob max_wal_size is not successfully set to 8192 (actual value: 8GB)
+2024-03-10 17:16:17,914 - INFO - [PGKnobApplier] Knob shared_buffers is not successfully set to 128 (actual value: 1MB)
+2024-03-10 17:16:17,915 - INFO - [PGKnobApplier] 2 / 10 knobs not successfully applied offline.
+2024-03-10 17:16:17,915 - INFO - --------------------------------------------------------------------------------
+2024-03-10 17:16:17,933 - INFO - [PGExecutor] Connected to PostgreSQL server for query execution:
+2024-03-10 17:16:17,933 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/1.sql
+2024-03-10 17:16:18,034 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/2.sql
+2024-03-10 17:16:18,044 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/3.sql
+2024-03-10 17:16:18,050 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/4.sql
+2024-03-10 17:16:18,052 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/5.sql
+2024-03-10 17:16:18,058 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/6.sql
+2024-03-10 17:16:18,060 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/7.sql
+2024-03-10 17:16:18,065 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/8.sql
+2024-03-10 17:16:18,071 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/9.sql
+2024-03-10 17:16:18,076 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/10.sql
+2024-03-10 17:16:18,079 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/11.sql
+2024-03-10 17:16:18,082 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/12.sql
+2024-03-10 17:16:18,084 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/13.sql
+2024-03-10 17:16:18,086 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/14.sql
+2024-03-10 17:16:18,088 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/16.sql
+2024-03-10 17:16:18,091 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/17.sql
+2024-03-10 17:16:18,092 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/18.sql
+2024-03-10 17:16:18,095 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/19.sql
+2024-03-10 17:16:18,098 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/20.sql
+2024-03-10 17:16:18,101 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/21.sql
+2024-03-10 17:16:18,106 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/22.sql
+2024-03-10 17:16:19,342 - INFO - [Tune] [Iteration 3]: total_cost: 61545219303.630 (c_unit)
+2024-03-10 17:16:19,345 - INFO - Sample 4 | Best value: -61545219303.63 |
+2024-03-10 17:16:19,759 - INFO - ================================================================================
+2024-03-10 17:16:19,759 - INFO - [Tune] [Iteration 4]: using configuration: 
+2024-03-10 17:16:19,759 - INFO - 	effective_cache_size: 706881
+2024-03-10 17:16:19,760 - INFO - 	enable_mergejoin: on
+2024-03-10 17:16:19,760 - INFO - 	enable_nestloop: on
+2024-03-10 17:16:19,760 - INFO - 	maintenance_work_mem: 525510
+2024-03-10 17:16:19,760 - INFO - 	max_wal_size: 8184
+2024-03-10 17:16:19,760 - INFO - 	random_page_cost: 0.0
+2024-03-10 17:16:19,760 - INFO - 	seq_page_cost: 0.550070658111716
+2024-03-10 17:16:19,760 - INFO - 	shared_buffers: 128
+2024-03-10 17:16:19,760 - INFO - 	wal_buffers: 146296
+2024-03-10 17:16:19,760 - INFO - 	work_mem: 64
+2024-03-10 17:16:19,841 - INFO - ----------------------------------- Applying Knobs -----------------------------------
+2024-03-10 17:16:20,231 - INFO - [PGUtils] Local PostgreSQL server shut down successfully
+2024-03-10 17:16:20,304 - INFO - [PGKnobApplier] config file modification done (locally).
+2024-03-10 17:16:20,305 - INFO - [PGUtils] Locally starting PostgreSQL server...
+2024-03-10 17:16:20,305 - INFO - [PGUtils] Launch command: sudo -S -u postgres /usr/lib/postgresql/16/bin/postgres --config_file=/home/wl446/pg_data/postgresql/16/tune_conf.conf -D /home/wl446/pg_data/postgresql/16/main
+2024-03-10 17:16:20,306 - INFO - [PGUtils] Wait for connection to the started server...
+2024-03-10 17:16:23,340 - INFO - [PGUtils] Successfully connected to the started PostgreSQL Server
+2024-03-10 17:16:23,342 - INFO - [PGUtils] 3 seconds waiting for connection
+2024-03-10 17:16:23,343 - INFO - [PGUtils] PostgresSQL is successfully launched.
+2024-03-10 17:16:23,343 - INFO - [PGKnobApplier] Sleeping for 0 seconds after restarting postgres
+2024-03-10 17:16:23,343 - INFO - [PGKnobApplier] No knobs need to be applied online
+2024-03-10 17:16:23,373 - INFO - [PGKnobApplier] Knob max_wal_size is not successfully set to 8184 (actual value: 8184MB)
+2024-03-10 17:16:23,376 - INFO - [PGKnobApplier] Knob shared_buffers is not successfully set to 128 (actual value: 1MB)
+2024-03-10 17:16:23,379 - INFO - [PGKnobApplier] 2 / 10 knobs not successfully applied offline.
+2024-03-10 17:16:23,379 - INFO - --------------------------------------------------------------------------------
+2024-03-10 17:16:23,400 - INFO - [PGExecutor] Connected to PostgreSQL server for query execution:
+2024-03-10 17:16:23,400 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/1.sql
+2024-03-10 17:16:23,504 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/2.sql
+2024-03-10 17:16:23,521 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/3.sql
+2024-03-10 17:16:23,526 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/4.sql
+2024-03-10 17:16:23,528 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/5.sql
+2024-03-10 17:16:23,532 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/6.sql
+2024-03-10 17:16:23,534 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/7.sql
+2024-03-10 17:16:23,539 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/8.sql
+2024-03-10 17:16:23,544 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/9.sql
+2024-03-10 17:16:23,549 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/10.sql
+2024-03-10 17:16:23,569 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/11.sql
+2024-03-10 17:16:23,577 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/12.sql
+2024-03-10 17:16:23,582 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/13.sql
+2024-03-10 17:16:23,585 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/14.sql
+2024-03-10 17:16:23,589 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/16.sql
+2024-03-10 17:16:23,593 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/17.sql
+2024-03-10 17:16:23,595 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/18.sql
+2024-03-10 17:16:23,600 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/19.sql
+2024-03-10 17:16:23,604 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/20.sql
+2024-03-10 17:16:23,608 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/21.sql
+2024-03-10 17:16:23,614 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/22.sql
+2024-03-10 17:16:24,887 - INFO - [Tune] [Iteration 4]: total_cost: 94965711714.340 (c_unit)
+2024-03-10 17:16:24,889 - INFO - Sample 5 | Best value: -61545219303.63 |
+2024-03-10 17:16:25,307 - INFO - ================================================================================
+2024-03-10 17:16:25,308 - INFO - [Tune] [Iteration 5]: using configuration: 
+2024-03-10 17:16:25,308 - INFO - 	effective_cache_size: 775683
+2024-03-10 17:16:25,308 - INFO - 	enable_mergejoin: on
+2024-03-10 17:16:25,308 - INFO - 	enable_nestloop: on
+2024-03-10 17:16:25,308 - INFO - 	maintenance_work_mem: 413980
+2024-03-10 17:16:25,308 - INFO - 	max_wal_size: 8191
+2024-03-10 17:16:25,308 - INFO - 	random_page_cost: 0.0
+2024-03-10 17:16:25,308 - INFO - 	seq_page_cost: 6.083973610834166
+2024-03-10 17:16:25,308 - INFO - 	shared_buffers: 128
+2024-03-10 17:16:25,308 - INFO - 	wal_buffers: 108829
+2024-03-10 17:16:25,308 - INFO - 	work_mem: 64
+2024-03-10 17:16:25,375 - INFO - ----------------------------------- Applying Knobs -----------------------------------
+2024-03-10 17:16:25,859 - INFO - [PGUtils] Local PostgreSQL server shut down successfully
+2024-03-10 17:16:25,934 - INFO - [PGKnobApplier] config file modification done (locally).
+2024-03-10 17:16:25,934 - INFO - [PGUtils] Locally starting PostgreSQL server...
+2024-03-10 17:16:25,934 - INFO - [PGUtils] Launch command: sudo -S -u postgres /usr/lib/postgresql/16/bin/postgres --config_file=/home/wl446/pg_data/postgresql/16/tune_conf.conf -D /home/wl446/pg_data/postgresql/16/main
+2024-03-10 17:16:25,936 - INFO - [PGUtils] Wait for connection to the started server...
+2024-03-10 17:16:28,972 - INFO - [PGUtils] Successfully connected to the started PostgreSQL Server
+2024-03-10 17:16:28,974 - INFO - [PGUtils] 3 seconds waiting for connection
+2024-03-10 17:16:28,974 - INFO - [PGUtils] PostgresSQL is successfully launched.
+2024-03-10 17:16:28,975 - INFO - [PGKnobApplier] Sleeping for 0 seconds after restarting postgres
+2024-03-10 17:16:28,975 - INFO - [PGKnobApplier] No knobs need to be applied online
+2024-03-10 17:16:28,993 - INFO - [PGKnobApplier] Knob max_wal_size is not successfully set to 8191 (actual value: 8191MB)
+2024-03-10 17:16:28,995 - INFO - [PGKnobApplier] Knob shared_buffers is not successfully set to 128 (actual value: 1MB)
+2024-03-10 17:16:28,996 - INFO - [PGKnobApplier] 2 / 10 knobs not successfully applied offline.
+2024-03-10 17:16:28,996 - INFO - --------------------------------------------------------------------------------
+2024-03-10 17:16:29,015 - INFO - [PGExecutor] Connected to PostgreSQL server for query execution:
+2024-03-10 17:16:29,015 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/1.sql
+2024-03-10 17:16:29,116 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/2.sql
+2024-03-10 17:16:29,133 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/3.sql
+2024-03-10 17:16:29,138 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/4.sql
+2024-03-10 17:16:29,140 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/5.sql
+2024-03-10 17:16:29,144 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/6.sql
+2024-03-10 17:16:29,146 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/7.sql
+2024-03-10 17:16:29,152 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/8.sql
+2024-03-10 17:16:29,157 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/9.sql
+2024-03-10 17:16:29,161 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/10.sql
+2024-03-10 17:16:29,165 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/11.sql
+2024-03-10 17:16:29,168 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/12.sql
+2024-03-10 17:16:29,171 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/13.sql
+2024-03-10 17:16:29,173 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/14.sql
+2024-03-10 17:16:29,175 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/16.sql
+2024-03-10 17:16:29,177 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/17.sql
+2024-03-10 17:16:29,178 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/18.sql
+2024-03-10 17:16:29,182 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/19.sql
+2024-03-10 17:16:29,185 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/20.sql
+2024-03-10 17:16:29,187 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/21.sql
+2024-03-10 17:16:29,191 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/22.sql
+2024-03-10 17:16:30,413 - INFO - [Tune] [Iteration 5]: total_cost: 431163092381.070 (c_unit)
+2024-03-10 17:16:30,415 - INFO - Sample 6 | Best value: -61545219303.63 |
+2024-03-10 17:16:31,042 - INFO - ================================================================================
+2024-03-10 17:16:31,043 - INFO - [Tune] [Iteration 6]: using configuration: 
+2024-03-10 17:16:31,043 - INFO - 	effective_cache_size: 640113
+2024-03-10 17:16:31,043 - INFO - 	enable_mergejoin: on
+2024-03-10 17:16:31,043 - INFO - 	enable_nestloop: on
+2024-03-10 17:16:31,043 - INFO - 	maintenance_work_mem: 338594
+2024-03-10 17:16:31,043 - INFO - 	max_wal_size: 8192
+2024-03-10 17:16:31,043 - INFO - 	random_page_cost: 0.0
+2024-03-10 17:16:31,043 - INFO - 	seq_page_cost: 0.0
+2024-03-10 17:16:31,043 - INFO - 	shared_buffers: 128
+2024-03-10 17:16:31,043 - INFO - 	wal_buffers: 122036
+2024-03-10 17:16:31,043 - INFO - 	work_mem: 64
+2024-03-10 17:16:31,124 - INFO - ----------------------------------- Applying Knobs -----------------------------------
+2024-03-10 17:16:31,522 - INFO - [PGUtils] Local PostgreSQL server shut down successfully
+2024-03-10 17:16:31,605 - INFO - [PGKnobApplier] config file modification done (locally).
+2024-03-10 17:16:31,605 - INFO - [PGUtils] Locally starting PostgreSQL server...
+2024-03-10 17:16:31,605 - INFO - [PGUtils] Launch command: sudo -S -u postgres /usr/lib/postgresql/16/bin/postgres --config_file=/home/wl446/pg_data/postgresql/16/tune_conf.conf -D /home/wl446/pg_data/postgresql/16/main
+2024-03-10 17:16:31,607 - INFO - [PGUtils] Wait for connection to the started server...
+2024-03-10 17:16:34,642 - INFO - [PGUtils] Successfully connected to the started PostgreSQL Server
+2024-03-10 17:16:34,644 - INFO - [PGUtils] 3 seconds waiting for connection
+2024-03-10 17:16:34,645 - INFO - [PGUtils] PostgresSQL is successfully launched.
+2024-03-10 17:16:34,645 - INFO - [PGKnobApplier] Sleeping for 0 seconds after restarting postgres
+2024-03-10 17:16:34,645 - INFO - [PGKnobApplier] No knobs need to be applied online
+2024-03-10 17:16:34,663 - INFO - [PGKnobApplier] Knob max_wal_size is not successfully set to 8192 (actual value: 8GB)
+2024-03-10 17:16:34,665 - INFO - [PGKnobApplier] Knob shared_buffers is not successfully set to 128 (actual value: 1MB)
+2024-03-10 17:16:34,666 - INFO - [PGKnobApplier] 2 / 10 knobs not successfully applied offline.
+2024-03-10 17:16:34,666 - INFO - --------------------------------------------------------------------------------
+2024-03-10 17:16:34,684 - INFO - [PGExecutor] Connected to PostgreSQL server for query execution:
+2024-03-10 17:16:34,684 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/1.sql
+2024-03-10 17:16:34,790 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/2.sql
+2024-03-10 17:16:34,801 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/3.sql
+2024-03-10 17:16:34,808 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/4.sql
+2024-03-10 17:16:34,810 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/5.sql
+2024-03-10 17:16:34,817 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/6.sql
+2024-03-10 17:16:34,819 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/7.sql
+2024-03-10 17:16:34,824 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/8.sql
+2024-03-10 17:16:34,829 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/9.sql
+2024-03-10 17:16:34,834 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/10.sql
+2024-03-10 17:16:34,837 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/11.sql
+2024-03-10 17:16:34,840 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/12.sql
+2024-03-10 17:16:34,842 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/13.sql
+2024-03-10 17:16:34,844 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/14.sql
+2024-03-10 17:16:34,846 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/16.sql
+2024-03-10 17:16:34,848 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/17.sql
+2024-03-10 17:16:34,850 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/18.sql
+2024-03-10 17:16:34,853 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/19.sql
+2024-03-10 17:16:34,856 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/20.sql
+2024-03-10 17:16:34,858 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/21.sql
+2024-03-10 17:16:34,862 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/22.sql
+2024-03-10 17:16:36,141 - INFO - [Tune] [Iteration 6]: total_cost: 61545219303.630 (c_unit)
+2024-03-10 17:16:36,144 - INFO - Sample 7 | Best value: -61545219303.63 |
+2024-03-10 17:16:36,747 - INFO - ================================================================================
+2024-03-10 17:16:36,747 - INFO - [Tune] [Iteration 7]: using configuration: 
+2024-03-10 17:16:36,747 - INFO - 	effective_cache_size: 700951
+2024-03-10 17:16:36,747 - INFO - 	enable_mergejoin: on
+2024-03-10 17:16:36,747 - INFO - 	enable_nestloop: on
+2024-03-10 17:16:36,748 - INFO - 	maintenance_work_mem: 373101
+2024-03-10 17:16:36,748 - INFO - 	max_wal_size: 7940
+2024-03-10 17:16:36,748 - INFO - 	random_page_cost: 0.0
+2024-03-10 17:16:36,748 - INFO - 	seq_page_cost: 0.0
+2024-03-10 17:16:36,748 - INFO - 	shared_buffers: 128
+2024-03-10 17:16:36,748 - INFO - 	wal_buffers: 115496
+2024-03-10 17:16:36,748 - INFO - 	work_mem: 64
+2024-03-10 17:16:36,817 - INFO - ----------------------------------- Applying Knobs -----------------------------------
+2024-03-10 17:16:37,304 - INFO - [PGUtils] Local PostgreSQL server shut down successfully
+2024-03-10 17:16:37,389 - INFO - [PGKnobApplier] config file modification done (locally).
+2024-03-10 17:16:37,390 - INFO - [PGUtils] Locally starting PostgreSQL server...
+2024-03-10 17:16:37,390 - INFO - [PGUtils] Launch command: sudo -S -u postgres /usr/lib/postgresql/16/bin/postgres --config_file=/home/wl446/pg_data/postgresql/16/tune_conf.conf -D /home/wl446/pg_data/postgresql/16/main
+2024-03-10 17:16:37,391 - INFO - [PGUtils] Wait for connection to the started server...
+2024-03-10 17:16:40,426 - INFO - [PGUtils] Successfully connected to the started PostgreSQL Server
+2024-03-10 17:16:40,427 - INFO - [PGUtils] 3 seconds waiting for connection
+2024-03-10 17:16:40,428 - INFO - [PGUtils] PostgresSQL is successfully launched.
+2024-03-10 17:16:40,428 - INFO - [PGKnobApplier] Sleeping for 0 seconds after restarting postgres
+2024-03-10 17:16:40,428 - INFO - [PGKnobApplier] No knobs need to be applied online
+2024-03-10 17:16:40,456 - INFO - [PGKnobApplier] Knob max_wal_size is not successfully set to 7940 (actual value: 7940MB)
+2024-03-10 17:16:40,459 - INFO - [PGKnobApplier] Knob shared_buffers is not successfully set to 128 (actual value: 1MB)
+2024-03-10 17:16:40,462 - INFO - [PGKnobApplier] 2 / 10 knobs not successfully applied offline.
+2024-03-10 17:16:40,462 - INFO - --------------------------------------------------------------------------------
+2024-03-10 17:16:40,477 - INFO - [PGExecutor] Connected to PostgreSQL server for query execution:
+2024-03-10 17:16:40,478 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/1.sql
+2024-03-10 17:16:40,579 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/2.sql
+2024-03-10 17:16:40,589 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/3.sql
+2024-03-10 17:16:40,595 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/4.sql
+2024-03-10 17:16:40,598 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/5.sql
+2024-03-10 17:16:40,604 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/6.sql
+2024-03-10 17:16:40,606 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/7.sql
+2024-03-10 17:16:40,611 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/8.sql
+2024-03-10 17:16:40,617 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/9.sql
+2024-03-10 17:16:40,621 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/10.sql
+2024-03-10 17:16:40,624 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/11.sql
+2024-03-10 17:16:40,627 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/12.sql
+2024-03-10 17:16:40,629 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/13.sql
+2024-03-10 17:16:40,632 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/14.sql
+2024-03-10 17:16:40,633 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/16.sql
+2024-03-10 17:16:40,636 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/17.sql
+2024-03-10 17:16:40,637 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/18.sql
+2024-03-10 17:16:40,640 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/19.sql
+2024-03-10 17:16:40,643 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/20.sql
+2024-03-10 17:16:40,645 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/21.sql
+2024-03-10 17:16:40,649 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/22.sql
+2024-03-10 17:16:41,883 - INFO - [Tune] [Iteration 7]: total_cost: 61545219303.630 (c_unit)
+2024-03-10 17:16:41,885 - INFO - Sample 8 | Best value: -61545219303.63 |
+2024-03-10 17:16:42,627 - INFO - ================================================================================
+2024-03-10 17:16:42,628 - INFO - [Tune] [Iteration 8]: using configuration: 
+2024-03-10 17:16:42,628 - INFO - 	effective_cache_size: 711691
+2024-03-10 17:16:42,628 - INFO - 	enable_mergejoin: on
+2024-03-10 17:16:42,628 - INFO - 	enable_nestloop: on
+2024-03-10 17:16:42,628 - INFO - 	maintenance_work_mem: 368242
+2024-03-10 17:16:42,628 - INFO - 	max_wal_size: 8192
+2024-03-10 17:16:42,629 - INFO - 	random_page_cost: 0.0
+2024-03-10 17:16:42,629 - INFO - 	seq_page_cost: 0.0
+2024-03-10 17:16:42,629 - INFO - 	shared_buffers: 128
+2024-03-10 17:16:42,629 - INFO - 	wal_buffers: 120480
+2024-03-10 17:16:42,629 - INFO - 	work_mem: 1184
+2024-03-10 17:16:42,705 - INFO - ----------------------------------- Applying Knobs -----------------------------------
+2024-03-10 17:16:43,189 - INFO - [PGUtils] Local PostgreSQL server shut down successfully
+2024-03-10 17:16:43,269 - INFO - [PGKnobApplier] config file modification done (locally).
+2024-03-10 17:16:43,269 - INFO - [PGUtils] Locally starting PostgreSQL server...
+2024-03-10 17:16:43,270 - INFO - [PGUtils] Launch command: sudo -S -u postgres /usr/lib/postgresql/16/bin/postgres --config_file=/home/wl446/pg_data/postgresql/16/tune_conf.conf -D /home/wl446/pg_data/postgresql/16/main
+2024-03-10 17:16:43,271 - INFO - [PGUtils] Wait for connection to the started server...
+2024-03-10 17:16:46,306 - INFO - [PGUtils] Successfully connected to the started PostgreSQL Server
+2024-03-10 17:16:46,306 - INFO - [PGUtils] 3 seconds waiting for connection
+2024-03-10 17:16:46,306 - INFO - [PGUtils] PostgresSQL is successfully launched.
+2024-03-10 17:16:46,306 - INFO - [PGKnobApplier] Sleeping for 0 seconds after restarting postgres
+2024-03-10 17:16:46,306 - INFO - [PGKnobApplier] No knobs need to be applied online
+2024-03-10 17:16:46,334 - INFO - [PGKnobApplier] Knob max_wal_size is not successfully set to 8192 (actual value: 8GB)
+2024-03-10 17:16:46,337 - INFO - [PGKnobApplier] Knob shared_buffers is not successfully set to 128 (actual value: 1MB)
+2024-03-10 17:16:46,338 - INFO - [PGKnobApplier] 2 / 10 knobs not successfully applied offline.
+2024-03-10 17:16:46,339 - INFO - --------------------------------------------------------------------------------
+2024-03-10 17:16:46,356 - INFO - [PGExecutor] Connected to PostgreSQL server for query execution:
+2024-03-10 17:16:46,356 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/1.sql
+2024-03-10 17:16:46,459 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/2.sql
+2024-03-10 17:16:46,468 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/3.sql
+2024-03-10 17:16:46,474 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/4.sql
+2024-03-10 17:16:46,477 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/5.sql
+2024-03-10 17:16:46,485 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/6.sql
+2024-03-10 17:16:46,487 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/7.sql
+2024-03-10 17:16:46,493 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/8.sql
+2024-03-10 17:16:46,499 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/9.sql
+2024-03-10 17:16:46,504 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/10.sql
+2024-03-10 17:16:46,508 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/11.sql
+2024-03-10 17:16:46,511 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/12.sql
+2024-03-10 17:16:46,514 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/13.sql
+2024-03-10 17:16:46,517 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/14.sql
+2024-03-10 17:16:46,519 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/16.sql
+2024-03-10 17:16:46,522 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/17.sql
+2024-03-10 17:16:46,525 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/18.sql
+2024-03-10 17:16:46,528 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/19.sql
+2024-03-10 17:16:46,531 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/20.sql
+2024-03-10 17:16:46,534 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/21.sql
+2024-03-10 17:16:46,539 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/22.sql
+2024-03-10 17:16:47,776 - INFO - [Tune] [Iteration 8]: total_cost: 61544420822.450 (c_unit)
+2024-03-10 17:16:47,777 - INFO - Sample 9 | Best value: -61544420822.45 |
+2024-03-10 17:16:48,772 - INFO - ================================================================================
+2024-03-10 17:16:48,773 - INFO - [Tune] [Iteration 9]: using configuration: 
+2024-03-10 17:16:48,773 - INFO - 	effective_cache_size: 705786
+2024-03-10 17:16:48,773 - INFO - 	enable_mergejoin: on
+2024-03-10 17:16:48,773 - INFO - 	enable_nestloop: on
+2024-03-10 17:16:48,773 - INFO - 	maintenance_work_mem: 379077
+2024-03-10 17:16:48,773 - INFO - 	max_wal_size: 8192
+2024-03-10 17:16:48,773 - INFO - 	random_page_cost: 10.939071375737788
+2024-03-10 17:16:48,773 - INFO - 	seq_page_cost: 0.0
+2024-03-10 17:16:48,773 - INFO - 	shared_buffers: 128
+2024-03-10 17:16:48,774 - INFO - 	wal_buffers: 115557
+2024-03-10 17:16:48,774 - INFO - 	work_mem: 409
+2024-03-10 17:16:48,852 - INFO - ----------------------------------- Applying Knobs -----------------------------------
+2024-03-10 17:16:49,339 - INFO - [PGUtils] Local PostgreSQL server shut down successfully
+2024-03-10 17:16:49,412 - INFO - [PGKnobApplier] config file modification done (locally).
+2024-03-10 17:16:49,413 - INFO - [PGUtils] Locally starting PostgreSQL server...
+2024-03-10 17:16:49,413 - INFO - [PGUtils] Launch command: sudo -S -u postgres /usr/lib/postgresql/16/bin/postgres --config_file=/home/wl446/pg_data/postgresql/16/tune_conf.conf -D /home/wl446/pg_data/postgresql/16/main
+2024-03-10 17:16:49,414 - INFO - [PGUtils] Wait for connection to the started server...
+2024-03-10 17:16:52,451 - INFO - [PGUtils] Successfully connected to the started PostgreSQL Server
+2024-03-10 17:16:52,453 - INFO - [PGUtils] 3 seconds waiting for connection
+2024-03-10 17:16:52,453 - INFO - [PGUtils] PostgresSQL is successfully launched.
+2024-03-10 17:16:52,453 - INFO - [PGKnobApplier] Sleeping for 0 seconds after restarting postgres
+2024-03-10 17:16:52,454 - INFO - [PGKnobApplier] No knobs need to be applied online
+2024-03-10 17:16:52,483 - INFO - [PGKnobApplier] Knob max_wal_size is not successfully set to 8192 (actual value: 8GB)
+2024-03-10 17:16:52,486 - INFO - [PGKnobApplier] Knob shared_buffers is not successfully set to 128 (actual value: 1MB)
+2024-03-10 17:16:52,489 - INFO - [PGKnobApplier] 2 / 10 knobs not successfully applied offline.
+2024-03-10 17:16:52,489 - INFO - --------------------------------------------------------------------------------
+2024-03-10 17:16:52,510 - INFO - [PGExecutor] Connected to PostgreSQL server for query execution:
+2024-03-10 17:16:52,510 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/1.sql
+2024-03-10 17:16:52,610 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/2.sql
+2024-03-10 17:16:52,625 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/3.sql
+2024-03-10 17:16:52,630 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/4.sql
+2024-03-10 17:16:52,633 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/5.sql
+2024-03-10 17:16:52,638 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/6.sql
+2024-03-10 17:16:52,640 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/7.sql
+2024-03-10 17:16:52,645 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/8.sql
+2024-03-10 17:16:52,652 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/9.sql
+2024-03-10 17:16:52,656 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/10.sql
+2024-03-10 17:16:52,659 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/11.sql
+2024-03-10 17:16:52,663 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/12.sql
+2024-03-10 17:16:52,665 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/13.sql
+2024-03-10 17:16:52,667 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/14.sql
+2024-03-10 17:16:52,669 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/16.sql
+2024-03-10 17:16:52,671 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/17.sql
+2024-03-10 17:16:52,673 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/18.sql
+2024-03-10 17:16:52,676 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/19.sql
+2024-03-10 17:16:52,679 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/20.sql
+2024-03-10 17:16:52,681 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/21.sql
+2024-03-10 17:16:52,685 - INFO - [PGExecutor] Executing /home/wl446/CamDB/camtune/benchmarks/tpch_explain/22.sql
+2024-03-10 17:16:53,931 - INFO - [Tune] [Iteration 9]: total_cost: 61555231402.080 (c_unit)
+2024-03-10 17:16:53,933 - INFO - Sample 10 | Best value: -61544420822.45 |
+2024-03-10 17:16:53,936 - INFO - ================================================================================
+2024-03-10 17:16:53,936 - INFO - Best total_cost: 61544420822.450005
+2024-03-10 17:16:53,936 - INFO - Best config:
+2024-03-10 17:16:53,937 - INFO - 	effective_cache_size: 711691
+2024-03-10 17:16:53,937 - INFO - 	enable_mergejoin: on
+2024-03-10 17:16:53,937 - INFO - 	enable_nestloop: on
+2024-03-10 17:16:53,937 - INFO - 	maintenance_work_mem: 368242
+2024-03-10 17:16:53,937 - INFO - 	max_wal_size: 8192
+2024-03-10 17:16:53,937 - INFO - 	random_page_cost: 0.0
+2024-03-10 17:16:53,937 - INFO - 	seq_page_cost: 0.0
+2024-03-10 17:16:53,937 - INFO - 	shared_buffers: 128
+2024-03-10 17:16:53,937 - INFO - 	wal_buffers: 120480
+2024-03-10 17:16:53,937 - INFO - 	work_mem: 1184
+2024-03-10 17:16:53,937 - INFO - Elapsed time: 56.37 seconds

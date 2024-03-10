@@ -1,0 +1,45 @@
+ssh:
+  # SSH user is set to postgres for allowing access for pg_ctl and postgres server
+  # while the PostgresqlDB.user refers to the user of the database accessing data
+  pg_user_name: postgres
+  pg_user_pwd: '741286'
+
+database:
+  db_host: localhost
+  db_port: '5432'
+  db_user_name: wl446
+  db_passwd: '741286'
+  db_name: tpch
+
+  pg_ctl: /usr/lib/postgresql/16/bin/pg_ctl
+  pg_data:  /home/wl446/pg_data/postgresql/16/main
+  pg_server: /usr/lib/postgresql/16/bin/postgres
+  pg_conf: /home/wl446/pg_data/postgresql/16/tune_conf.conf
+  pg_sock: /var/run/postgresql/.s.PGSQL.5432
+
+  remote_mode: false
+  online_mode: false
+  perf_name: throughput
+  perf_unit: eps
+
+  benchmark: sysbench
+  sysbench_mode: read_write_test
+  sysbench_prepare: false # true
+  sysbench_cleanup: false # true
+
+  # saved locally
+  knob_definitions: selected.json
+  knob_num: -1
+  
+  negate: false
+
+tune:
+  seed: 1
+  num_evals: 10
+  batch_size: 1
+  extern_init: false
+
+  optimizer: turbo
+  optimizer_params:
+    n_init: 1
+    acqf: 'ts'

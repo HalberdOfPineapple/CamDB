@@ -77,7 +77,7 @@ class TuRBO(BaseOptimizer):
     
     def initial_sampling(self, num_init: int):
         sobol = SobolEngine(dimension=self.dimension, scramble=True, seed=self.seed)
-        X_init = sobol.draw(n=num_init).to(dtype=dtype, device=device)
+        X_init = sobol.draw(n=num_init).to(dtype=DTYPE, device=DEVICE)
 
         X_init = unnormalize(X_init, self.bounds)
         X_init[:, self.discrete_dims] = round_by_bounds(X_init[:, self.discrete_dims], self.bounds[:, self.discrete_dims])

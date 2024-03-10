@@ -12,11 +12,11 @@ camtune.egg-info/dependency_links.txt
 camtune.egg-info/requires.txt
 camtune.egg-info/top_level.txt
 camtune/database/__init__.py
-camtune/database/common_vars.py
 camtune/database/config_parser.py
 camtune/database/dbconnector.py
 camtune/database/postgresql_db.py
 camtune/database/utils.py
+camtune/database/workloads.py
 camtune/database/postgresql/__init__.py
 camtune/database/postgresql/connector.py
 camtune/database/postgresql/executor.py

@@ -2,18 +2,17 @@ import torch
 import numpy as np
 from typing import Callable, List, Dict, Any, Optional, Union, Tuple
 
-from botorch.utils.transforms import unnormalize, standardize, normalize
-
+from torch.quasirandom import SobolEngine
 from gpytorch.mlls import ExactMarginalLogLikelihood
+from botorch.utils.transforms import unnormalize, standardize, normalize
 from botorch.models import SingleTaskGP, MixedSingleTaskGP
 from botorch.fit import fit_gpytorch_model, fit_gpytorch_mll
-
 from botorch.acquisition import qExpectedImprovement
 from botorch.optim import optimize_acqf, optimize_acqf_mixed
 
 from .base_optimizer import BaseOptimizer
-from .optim_utils import ACQ_FUNC_MAP, generate_random_discrete
-from camtune.utils import print_log
+from .optim_utils import ACQ_FUNC_MAP, generate_random_discrete, round_by_bounds
+from camtune.utils import print_log, DTYPE, DEVICE
 
 GP_ATTRS = {
     'num_restarts': 10,
@@ -50,6 +49,20 @@ class GPBOOptimizer(BaseOptimizer):
                 setattr(self, k, v)
             else:
                 setattr(self, k, self.optimizer_params[k])
+            
+    def initial_sampling(self, num_init: int):
+        sobol = SobolEngine(dimension=self.dimension, scramble=True, seed=self.seed)
+        X_init = sobol.draw(n=num_init).to(dtype=DTYPE, device=DEVICE)
+
+        X_init = unnormalize(X_init, self.bounds)
+        X_init[:, self.discrete_dims] = round_by_bounds(X_init[:, self.discrete_dims], self.bounds[:, self.discrete_dims])
+
+        Y_init = torch.tensor(
+            [self.obj_func(x) for x in X_init], dtype=DTYPE, device=DEVICE,
+        ).unsqueeze(-1)
+
+        self.num_calls += len(X_init)
+        return X_init, Y_init
 
     def generate_batch_continuous(self, batch_size: int, acqf: Callable) -> torch.Tensor:
         X_next, acq_values = optimize_acqf(

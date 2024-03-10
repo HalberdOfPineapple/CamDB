@@ -1,0 +1,299 @@
+2024-03-10 17:50:00,281 - INFO - 
+
+2024-03-10 17:50:00,287 - INFO - [Tuner] Start optimization using turbo for 10 iterations (internal initialization)
+2024-03-10 17:50:00,289 - INFO - --------------------------------------------------------------------------------
+2024-03-10 17:50:00,289 - INFO - [TuRBO] Restart 0:
+2024-03-10 17:50:00,300 - INFO - ================================================================================
+2024-03-10 17:50:00,300 - INFO - [Tune] [Iteration 0]: using configuration: 
+2024-03-10 17:50:00,300 - INFO - 	effective_cache_size: 361755
+2024-03-10 17:50:00,301 - INFO - 	enable_mergejoin: on
+2024-03-10 17:50:00,301 - INFO - 	enable_nestloop: on
+2024-03-10 17:50:00,301 - INFO - 	maintenance_work_mem: 32005
+2024-03-10 17:50:00,301 - INFO - 	max_wal_size: 4461
+2024-03-10 17:50:00,301 - INFO - 	random_page_cost: 85.67346930503845
+2024-03-10 17:50:00,302 - INFO - 	seq_page_cost: 85.98138093948364
+2024-03-10 17:50:00,302 - INFO - 	shared_buffers: 267819
+2024-03-10 17:50:00,302 - INFO - 	wal_buffers: 102918
+2024-03-10 17:50:00,302 - INFO - 	work_mem: 5853
+2024-03-10 17:50:00,384 - INFO - ----------------------------------- Applying Knobs -----------------------------------
+2024-03-10 17:50:00,866 - INFO - [PGUtils] Local PostgreSQL server shut down successfully
+2024-03-10 17:50:00,944 - INFO - [PGKnobApplier] config file modification done (locally).
+2024-03-10 17:50:00,944 - INFO - [PGUtils] Locally starting PostgreSQL server...
+2024-03-10 17:50:00,944 - INFO - [PGUtils] Launch command: sudo -S -u postgres /usr/lib/postgresql/16/bin/postgres --config_file=/home/wl446/pg_data/postgresql/16/tune_conf.conf -D /home/wl446/pg_data/postgresql/16/main
+2024-03-10 17:50:00,946 - INFO - [PGUtils] Wait for connection to the started server...
+2024-03-10 17:50:03,987 - INFO - [PGUtils] Successfully connected to the started PostgreSQL Server
+2024-03-10 17:50:03,989 - INFO - [PGUtils] 3 seconds waiting for connection
+2024-03-10 17:50:03,990 - INFO - [PGUtils] PostgresSQL is successfully launched.
+2024-03-10 17:50:03,990 - INFO - [PGKnobApplier] Sleeping for 0 seconds after restarting postgres
+2024-03-10 17:50:03,990 - INFO - [PGKnobApplier] No knobs need to be applied online
+2024-03-10 17:50:04,022 - INFO - [PGKnobApplier] Knob max_wal_size is not successfully set to 4461 (actual value: 4461MB)
+2024-03-10 17:50:04,027 - INFO - [PGKnobApplier] 1 / 10 knobs not successfully applied offline.
+2024-03-10 17:50:04,027 - INFO - --------------------------------------------------------------------------------
+2024-03-10 17:50:10,480 - INFO - [Tune] [Iteration 0]: throughput: 148.554 (eps)
+2024-03-10 17:50:10,482 - INFO - [TuRBO] Start local modeling with 1 data points
+2024-03-10 17:50:12,722 - INFO - ================================================================================
+2024-03-10 17:50:12,723 - INFO - [Tune] [Iteration 1]: using configuration: 
+2024-03-10 17:50:12,723 - INFO - 	effective_cache_size: 714670
+2024-03-10 17:50:12,723 - INFO - 	enable_mergejoin: on
+2024-03-10 17:50:12,724 - INFO - 	enable_nestloop: on
+2024-03-10 17:50:12,724 - INFO - 	maintenance_work_mem: 284971
+2024-03-10 17:50:12,724 - INFO - 	max_wal_size: 7515
+2024-03-10 17:50:12,724 - INFO - 	random_page_cost: 95.7733486510169
+2024-03-10 17:50:12,724 - INFO - 	seq_page_cost: 92.68198321827654
+2024-03-10 17:50:12,724 - INFO - 	shared_buffers: 6672
+2024-03-10 17:50:12,724 - INFO - 	wal_buffers: 35249
+2024-03-10 17:50:12,724 - INFO - 	work_mem: 4090
+2024-03-10 17:50:12,797 - INFO - ----------------------------------- Applying Knobs -----------------------------------
+2024-03-10 17:50:13,492 - INFO - [PGUtils] Local PostgreSQL server shut down successfully
+2024-03-10 17:50:13,567 - INFO - [PGKnobApplier] config file modification done (locally).
+2024-03-10 17:50:13,568 - INFO - [PGUtils] Locally starting PostgreSQL server...
+2024-03-10 17:50:13,568 - INFO - [PGUtils] Launch command: sudo -S -u postgres /usr/lib/postgresql/16/bin/postgres --config_file=/home/wl446/pg_data/postgresql/16/tune_conf.conf -D /home/wl446/pg_data/postgresql/16/main
+2024-03-10 17:50:13,569 - INFO - [PGUtils] Wait for connection to the started server...
+2024-03-10 17:50:14,601 - INFO - [PGUtils] Successfully connected to the started PostgreSQL Server
+2024-03-10 17:50:14,602 - INFO - [PGUtils] 1 seconds waiting for connection
+2024-03-10 17:50:14,603 - INFO - [PGUtils] PostgresSQL is successfully launched.
+2024-03-10 17:50:14,603 - INFO - [PGKnobApplier] Sleeping for 0 seconds after restarting postgres
+2024-03-10 17:50:14,603 - INFO - [PGKnobApplier] No knobs need to be applied online
+2024-03-10 17:50:14,628 - INFO - [PGKnobApplier] Knob max_wal_size is not successfully set to 7515 (actual value: 7515MB)
+2024-03-10 17:50:14,630 - INFO - [PGKnobApplier] 1 / 10 knobs not successfully applied offline.
+2024-03-10 17:50:14,630 - INFO - --------------------------------------------------------------------------------
+2024-03-10 17:50:21,041 - INFO - [Tune] [Iteration 1]: throughput: 158.665 (eps)
+2024-03-10 17:50:21,044 - INFO - [TuRBO] [Restart 0] 2) Best value: 1.59e+02 | TR length: 8.00e-01 | num. restarts: 0/5 | num. successes: 1/3
+2024-03-10 17:50:23,654 - INFO - ================================================================================
+2024-03-10 17:50:23,655 - INFO - [Tune] [Iteration 2]: using configuration: 
+2024-03-10 17:50:23,656 - INFO - 	effective_cache_size: 731237
+2024-03-10 17:50:23,656 - INFO - 	enable_mergejoin: on
+2024-03-10 17:50:23,656 - INFO - 	enable_nestloop: on
+2024-03-10 17:50:23,656 - INFO - 	maintenance_work_mem: 937868
+2024-03-10 17:50:23,656 - INFO - 	max_wal_size: 7551
+2024-03-10 17:50:23,656 - INFO - 	random_page_cost: 87.5789225101471
+2024-03-10 17:50:23,656 - INFO - 	seq_page_cost: 29.24533188343048
+2024-03-10 17:50:23,656 - INFO - 	shared_buffers: 173675
+2024-03-10 17:50:23,656 - INFO - 	wal_buffers: 176432
+2024-03-10 17:50:23,656 - INFO - 	work_mem: 2517
+2024-03-10 17:50:23,732 - INFO - ----------------------------------- Applying Knobs -----------------------------------
+2024-03-10 17:50:24,210 - INFO - [PGUtils] Local PostgreSQL server shut down successfully
+2024-03-10 17:50:24,294 - INFO - [PGKnobApplier] config file modification done (locally).
+2024-03-10 17:50:24,295 - INFO - [PGUtils] Locally starting PostgreSQL server...
+2024-03-10 17:50:24,295 - INFO - [PGUtils] Launch command: sudo -S -u postgres /usr/lib/postgresql/16/bin/postgres --config_file=/home/wl446/pg_data/postgresql/16/tune_conf.conf -D /home/wl446/pg_data/postgresql/16/main
+2024-03-10 17:50:24,296 - INFO - [PGUtils] Wait for connection to the started server...
+2024-03-10 17:50:28,336 - INFO - [PGUtils] Successfully connected to the started PostgreSQL Server
+2024-03-10 17:50:28,337 - INFO - [PGUtils] 4 seconds waiting for connection
+2024-03-10 17:50:28,337 - INFO - [PGUtils] PostgresSQL is successfully launched.
+2024-03-10 17:50:28,338 - INFO - [PGKnobApplier] Sleeping for 0 seconds after restarting postgres
+2024-03-10 17:50:28,338 - INFO - [PGKnobApplier] No knobs need to be applied online
+2024-03-10 17:50:28,363 - INFO - [PGKnobApplier] Knob max_wal_size is not successfully set to 7551 (actual value: 7551MB)
+2024-03-10 17:50:28,365 - INFO - [PGKnobApplier] 1 / 10 knobs not successfully applied offline.
+2024-03-10 17:50:28,365 - INFO - --------------------------------------------------------------------------------
+2024-03-10 17:50:34,818 - INFO - [Tune] [Iteration 2]: throughput: 247.611 (eps)
+2024-03-10 17:50:34,821 - INFO - [TuRBO] [Restart 0] 3) Best value: 2.48e+02 | TR length: 8.00e-01 | num. restarts: 0/5 | num. successes: 2/3
+2024-03-10 17:50:37,268 - INFO - ================================================================================
+2024-03-10 17:50:37,270 - INFO - [Tune] [Iteration 3]: using configuration: 
+2024-03-10 17:50:37,270 - INFO - 	effective_cache_size: 933230
+2024-03-10 17:50:37,270 - INFO - 	enable_mergejoin: on
+2024-03-10 17:50:37,270 - INFO - 	enable_nestloop: on
+2024-03-10 17:50:37,270 - INFO - 	maintenance_work_mem: 513748
+2024-03-10 17:50:37,270 - INFO - 	max_wal_size: 3891
+2024-03-10 17:50:37,270 - INFO - 	random_page_cost: 42.7053050923854
+2024-03-10 17:50:37,270 - INFO - 	seq_page_cost: 30.681058842706722
+2024-03-10 17:50:37,270 - INFO - 	shared_buffers: 74928
+2024-03-10 17:50:37,270 - INFO - 	wal_buffers: 260698
+2024-03-10 17:50:37,270 - INFO - 	work_mem: 6237
+2024-03-10 17:50:37,364 - INFO - ----------------------------------- Applying Knobs -----------------------------------
+2024-03-10 17:50:38,159 - INFO - [PGUtils] Local PostgreSQL server shut down successfully
+2024-03-10 17:50:38,239 - INFO - [PGKnobApplier] config file modification done (locally).
+2024-03-10 17:50:38,239 - INFO - [PGUtils] Locally starting PostgreSQL server...
+2024-03-10 17:50:38,239 - INFO - [PGUtils] Launch command: sudo -S -u postgres /usr/lib/postgresql/16/bin/postgres --config_file=/home/wl446/pg_data/postgresql/16/tune_conf.conf -D /home/wl446/pg_data/postgresql/16/main
+2024-03-10 17:50:38,240 - INFO - [PGUtils] Wait for connection to the started server...
+2024-03-10 17:50:43,283 - INFO - [PGUtils] Successfully connected to the started PostgreSQL Server
+2024-03-10 17:50:43,285 - INFO - [PGUtils] 5 seconds waiting for connection
+2024-03-10 17:50:43,285 - INFO - [PGUtils] PostgresSQL is successfully launched.
+2024-03-10 17:50:43,285 - INFO - [PGKnobApplier] Sleeping for 0 seconds after restarting postgres
+2024-03-10 17:50:43,285 - INFO - [PGKnobApplier] No knobs need to be applied online
+2024-03-10 17:50:43,315 - INFO - [PGKnobApplier] Knob max_wal_size is not successfully set to 3891 (actual value: 3891MB)
+2024-03-10 17:50:43,320 - INFO - [PGKnobApplier] 1 / 10 knobs not successfully applied offline.
+2024-03-10 17:50:43,320 - INFO - --------------------------------------------------------------------------------
+2024-03-10 17:50:49,811 - INFO - [Tune] [Iteration 3]: throughput: 312.895 (eps)
+2024-03-10 17:50:49,814 - INFO - [TuRBO] [Restart 0] 4) Best value: 3.13e+02 | TR length: 1.60e+00 | num. restarts: 0/5 | num. successes: 0/3
+2024-03-10 17:50:52,468 - INFO - ================================================================================
+2024-03-10 17:50:52,469 - INFO - [Tune] [Iteration 4]: using configuration: 
+2024-03-10 17:50:52,470 - INFO - 	effective_cache_size: 643803
+2024-03-10 17:50:52,470 - INFO - 	enable_mergejoin: on
+2024-03-10 17:50:52,470 - INFO - 	enable_nestloop: on
+2024-03-10 17:50:52,470 - INFO - 	maintenance_work_mem: 711616
+2024-03-10 17:50:52,470 - INFO - 	max_wal_size: 7565
+2024-03-10 17:50:52,470 - INFO - 	random_page_cost: 32.22833769757737
+2024-03-10 17:50:52,470 - INFO - 	seq_page_cost: 37.80778262673191
+2024-03-10 17:50:52,470 - INFO - 	shared_buffers: 489819
+2024-03-10 17:50:52,470 - INFO - 	wal_buffers: 38460
+2024-03-10 17:50:52,470 - INFO - 	work_mem: 7360
+2024-03-10 17:50:52,563 - INFO - ----------------------------------- Applying Knobs -----------------------------------
+2024-03-10 17:50:53,564 - INFO - [PGUtils] Local PostgreSQL server shut down successfully
+2024-03-10 17:50:53,648 - INFO - [PGKnobApplier] config file modification done (locally).
+2024-03-10 17:50:53,648 - INFO - [PGUtils] Locally starting PostgreSQL server...
+2024-03-10 17:50:53,648 - INFO - [PGUtils] Launch command: sudo -S -u postgres /usr/lib/postgresql/16/bin/postgres --config_file=/home/wl446/pg_data/postgresql/16/tune_conf.conf -D /home/wl446/pg_data/postgresql/16/main
+2024-03-10 17:50:53,650 - INFO - [PGUtils] Wait for connection to the started server...
+2024-03-10 17:50:55,706 - INFO - [PGUtils] Successfully connected to the started PostgreSQL Server
+2024-03-10 17:50:55,707 - INFO - [PGUtils] 2 seconds waiting for connection
+2024-03-10 17:50:55,708 - INFO - [PGUtils] PostgresSQL is successfully launched.
+2024-03-10 17:50:55,708 - INFO - [PGKnobApplier] Sleeping for 0 seconds after restarting postgres
+2024-03-10 17:50:55,708 - INFO - [PGKnobApplier] No knobs need to be applied online
+2024-03-10 17:50:55,733 - INFO - [PGKnobApplier] Knob max_wal_size is not successfully set to 7565 (actual value: 7565MB)
+2024-03-10 17:50:55,735 - INFO - [PGKnobApplier] 1 / 10 knobs not successfully applied offline.
+2024-03-10 17:50:55,735 - INFO - --------------------------------------------------------------------------------
+2024-03-10 17:51:02,216 - INFO - [Tune] [Iteration 4]: throughput: 183.804 (eps)
+2024-03-10 17:51:02,218 - INFO - [TuRBO] [Restart 0] 5) Best value: 3.13e+02 | TR length: 1.60e+00 | num. restarts: 1/5 | num. successes: 0/3
+2024-03-10 17:51:04,941 - INFO - ================================================================================
+2024-03-10 17:51:04,945 - INFO - [Tune] [Iteration 5]: using configuration: 
+2024-03-10 17:51:04,948 - INFO - 	effective_cache_size: 358046
+2024-03-10 17:51:04,948 - INFO - 	enable_mergejoin: on
+2024-03-10 17:51:04,948 - INFO - 	enable_nestloop: on
+2024-03-10 17:51:04,949 - INFO - 	maintenance_work_mem: 24045
+2024-03-10 17:51:04,949 - INFO - 	max_wal_size: 32
+2024-03-10 17:51:04,949 - INFO - 	random_page_cost: 50.21907687187195
+2024-03-10 17:51:04,950 - INFO - 	seq_page_cost: 90.27876853942871
+2024-03-10 17:51:04,950 - INFO - 	shared_buffers: 86003
+2024-03-10 17:51:04,950 - INFO - 	wal_buffers: 260156
+2024-03-10 17:51:04,950 - INFO - 	work_mem: 771
+2024-03-10 17:51:05,033 - INFO - ----------------------------------- Applying Knobs -----------------------------------
+2024-03-10 17:51:05,629 - INFO - [PGUtils] Local PostgreSQL server shut down successfully
+2024-03-10 17:51:05,711 - INFO - [PGKnobApplier] config file modification done (locally).
+2024-03-10 17:51:05,712 - INFO - [PGUtils] Locally starting PostgreSQL server...
+2024-03-10 17:51:05,712 - INFO - [PGUtils] Launch command: sudo -S -u postgres /usr/lib/postgresql/16/bin/postgres --config_file=/home/wl446/pg_data/postgresql/16/tune_conf.conf -D /home/wl446/pg_data/postgresql/16/main
+2024-03-10 17:51:05,713 - INFO - [PGUtils] Wait for connection to the started server...
+2024-03-10 17:51:11,766 - INFO - [PGUtils] Successfully connected to the started PostgreSQL Server
+2024-03-10 17:51:11,768 - INFO - [PGUtils] 6 seconds waiting for connection
+2024-03-10 17:51:11,768 - INFO - [PGUtils] PostgresSQL is successfully launched.
+2024-03-10 17:51:11,768 - INFO - [PGKnobApplier] Sleeping for 0 seconds after restarting postgres
+2024-03-10 17:51:11,768 - INFO - [PGKnobApplier] No knobs need to be applied online
+2024-03-10 17:51:11,791 - INFO - [PGKnobApplier] Knob max_wal_size is not successfully set to 32 (actual value: 32MB)
+2024-03-10 17:51:11,794 - INFO - [PGKnobApplier] 1 / 10 knobs not successfully applied offline.
+2024-03-10 17:51:11,794 - INFO - --------------------------------------------------------------------------------
+2024-03-10 17:51:18,266 - INFO - [Tune] [Iteration 5]: throughput: 215.036 (eps)
+2024-03-10 17:51:18,269 - INFO - [TuRBO] [Restart 0] 6) Best value: 3.13e+02 | TR length: 1.60e+00 | num. restarts: 2/5 | num. successes: 0/3
+2024-03-10 17:51:21,939 - INFO - ================================================================================
+2024-03-10 17:51:21,943 - INFO - [Tune] [Iteration 6]: using configuration: 
+2024-03-10 17:51:21,946 - INFO - 	effective_cache_size: 951736
+2024-03-10 17:51:21,946 - INFO - 	enable_mergejoin: on
+2024-03-10 17:51:21,946 - INFO - 	enable_nestloop: on
+2024-03-10 17:51:21,947 - INFO - 	maintenance_work_mem: 878490
+2024-03-10 17:51:21,947 - INFO - 	max_wal_size: 6851
+2024-03-10 17:51:21,947 - INFO - 	random_page_cost: 58.928102254867554
+2024-03-10 17:51:21,947 - INFO - 	seq_page_cost: 14.102948664154603
+2024-03-10 17:51:21,947 - INFO - 	shared_buffers: 6344
+2024-03-10 17:51:21,947 - INFO - 	wal_buffers: 257417
+2024-03-10 17:51:21,947 - INFO - 	work_mem: 5351
+2024-03-10 17:51:22,035 - INFO - ----------------------------------- Applying Knobs -----------------------------------
+2024-03-10 17:51:23,030 - INFO - [PGUtils] Local PostgreSQL server shut down successfully
+2024-03-10 17:51:23,119 - INFO - [PGKnobApplier] config file modification done (locally).
+2024-03-10 17:51:23,120 - INFO - [PGUtils] Locally starting PostgreSQL server...
+2024-03-10 17:51:23,120 - INFO - [PGUtils] Launch command: sudo -S -u postgres /usr/lib/postgresql/16/bin/postgres --config_file=/home/wl446/pg_data/postgresql/16/tune_conf.conf -D /home/wl446/pg_data/postgresql/16/main
+2024-03-10 17:51:23,122 - INFO - [PGUtils] Wait for connection to the started server...
+2024-03-10 17:51:28,161 - INFO - [PGUtils] Successfully connected to the started PostgreSQL Server
+2024-03-10 17:51:28,162 - INFO - [PGUtils] 5 seconds waiting for connection
+2024-03-10 17:51:28,162 - INFO - [PGUtils] PostgresSQL is successfully launched.
+2024-03-10 17:51:28,163 - INFO - [PGKnobApplier] Sleeping for 0 seconds after restarting postgres
+2024-03-10 17:51:28,163 - INFO - [PGKnobApplier] No knobs need to be applied online
+2024-03-10 17:51:28,188 - INFO - [PGKnobApplier] Knob max_wal_size is not successfully set to 6851 (actual value: 6851MB)
+2024-03-10 17:51:28,189 - INFO - [PGKnobApplier] 1 / 10 knobs not successfully applied offline.
+2024-03-10 17:51:28,190 - INFO - --------------------------------------------------------------------------------
+2024-03-10 17:51:34,660 - INFO - [Tune] [Iteration 6]: throughput: 123.618 (eps)
+2024-03-10 17:51:34,663 - INFO - [TuRBO] [Restart 0] 7) Best value: 3.13e+02 | TR length: 1.60e+00 | num. restarts: 3/5 | num. successes: 0/3
+2024-03-10 17:51:36,988 - INFO - ================================================================================
+2024-03-10 17:51:36,990 - INFO - [Tune] [Iteration 7]: using configuration: 
+2024-03-10 17:51:36,990 - INFO - 	effective_cache_size: 856273
+2024-03-10 17:51:36,990 - INFO - 	enable_mergejoin: on
+2024-03-10 17:51:36,990 - INFO - 	enable_nestloop: on
+2024-03-10 17:51:36,990 - INFO - 	maintenance_work_mem: 925875
+2024-03-10 17:51:36,990 - INFO - 	max_wal_size: 7330
+2024-03-10 17:51:36,990 - INFO - 	random_page_cost: 23.541945219039917
+2024-03-10 17:51:36,990 - INFO - 	seq_page_cost: 7.516133040189743
+2024-03-10 17:51:36,990 - INFO - 	shared_buffers: 820847
+2024-03-10 17:51:36,990 - INFO - 	wal_buffers: 185191
+2024-03-10 17:51:36,990 - INFO - 	work_mem: 122
+2024-03-10 17:51:37,086 - INFO - ----------------------------------- Applying Knobs -----------------------------------
+2024-03-10 17:51:38,090 - INFO - [PGUtils] Local PostgreSQL server shut down successfully
+2024-03-10 17:51:38,183 - INFO - [PGKnobApplier] config file modification done (locally).
+2024-03-10 17:51:38,184 - INFO - [PGUtils] Locally starting PostgreSQL server...
+2024-03-10 17:51:38,184 - INFO - [PGUtils] Launch command: sudo -S -u postgres /usr/lib/postgresql/16/bin/postgres --config_file=/home/wl446/pg_data/postgresql/16/tune_conf.conf -D /home/wl446/pg_data/postgresql/16/main
+2024-03-10 17:51:38,186 - INFO - [PGUtils] Wait for connection to the started server...
+2024-03-10 17:51:42,226 - INFO - [PGUtils] Successfully connected to the started PostgreSQL Server
+2024-03-10 17:51:42,228 - INFO - [PGUtils] 4 seconds waiting for connection
+2024-03-10 17:51:42,228 - INFO - [PGUtils] PostgresSQL is successfully launched.
+2024-03-10 17:51:42,229 - INFO - [PGKnobApplier] Sleeping for 0 seconds after restarting postgres
+2024-03-10 17:51:42,229 - INFO - [PGKnobApplier] No knobs need to be applied online
+2024-03-10 17:51:42,253 - INFO - [PGKnobApplier] Knob max_wal_size is not successfully set to 7330 (actual value: 7330MB)
+2024-03-10 17:51:42,257 - INFO - [PGKnobApplier] 1 / 10 knobs not successfully applied offline.
+2024-03-10 17:51:42,257 - INFO - --------------------------------------------------------------------------------
+2024-03-10 17:51:48,666 - INFO - [Tune] [Iteration 7]: throughput: 259.244 (eps)
+2024-03-10 17:51:48,671 - INFO - [TuRBO] [Restart 0] 8) Best value: 3.13e+02 | TR length: 1.60e+00 | num. restarts: 4/5 | num. successes: 0/3
+2024-03-10 17:51:51,224 - INFO - ================================================================================
+2024-03-10 17:51:51,226 - INFO - [Tune] [Iteration 8]: using configuration: 
+2024-03-10 17:51:51,226 - INFO - 	effective_cache_size: 950805
+2024-03-10 17:51:51,226 - INFO - 	enable_mergejoin: on
+2024-03-10 17:51:51,226 - INFO - 	enable_nestloop: on
+2024-03-10 17:51:51,227 - INFO - 	maintenance_work_mem: 230551
+2024-03-10 17:51:51,227 - INFO - 	max_wal_size: 5474
+2024-03-10 17:51:51,227 - INFO - 	random_page_cost: 89.22321796417236
+2024-03-10 17:51:51,227 - INFO - 	seq_page_cost: 9.964313358068466
+2024-03-10 17:51:51,227 - INFO - 	shared_buffers: 155773
+2024-03-10 17:51:51,227 - INFO - 	wal_buffers: 229155
+2024-03-10 17:51:51,227 - INFO - 	work_mem: 5990
+2024-03-10 17:51:51,319 - INFO - ----------------------------------- Applying Knobs -----------------------------------
+2024-03-10 17:51:52,312 - INFO - [PGUtils] Local PostgreSQL server shut down successfully
+2024-03-10 17:51:52,398 - INFO - [PGKnobApplier] config file modification done (locally).
+2024-03-10 17:51:52,399 - INFO - [PGUtils] Locally starting PostgreSQL server...
+2024-03-10 17:51:52,399 - INFO - [PGUtils] Launch command: sudo -S -u postgres /usr/lib/postgresql/16/bin/postgres --config_file=/home/wl446/pg_data/postgresql/16/tune_conf.conf -D /home/wl446/pg_data/postgresql/16/main
+2024-03-10 17:51:52,401 - INFO - [PGUtils] Wait for connection to the started server...
+2024-03-10 17:51:57,446 - INFO - [PGUtils] Successfully connected to the started PostgreSQL Server
+2024-03-10 17:51:57,448 - INFO - [PGUtils] 5 seconds waiting for connection
+2024-03-10 17:51:57,448 - INFO - [PGUtils] PostgresSQL is successfully launched.
+2024-03-10 17:51:57,449 - INFO - [PGKnobApplier] Sleeping for 0 seconds after restarting postgres
+2024-03-10 17:51:57,450 - INFO - [PGKnobApplier] No knobs need to be applied online
+2024-03-10 17:51:57,474 - INFO - [PGKnobApplier] Knob max_wal_size is not successfully set to 5474 (actual value: 5474MB)
+2024-03-10 17:51:57,476 - INFO - [PGKnobApplier] 1 / 10 knobs not successfully applied offline.
+2024-03-10 17:51:57,476 - INFO - --------------------------------------------------------------------------------
+2024-03-10 17:52:03,890 - INFO - [Tune] [Iteration 8]: throughput: 122.884 (eps)
+2024-03-10 17:52:03,893 - INFO - [TuRBO] [Restart 0] 9) Best value: 3.13e+02 | TR length: 8.00e-01 | num. restarts: 0/5 | num. successes: 0/3
+2024-03-10 17:52:06,289 - INFO - ================================================================================
+2024-03-10 17:52:06,291 - INFO - [Tune] [Iteration 9]: using configuration: 
+2024-03-10 17:52:06,292 - INFO - 	effective_cache_size: 895769
+2024-03-10 17:52:06,292 - INFO - 	enable_mergejoin: on
+2024-03-10 17:52:06,292 - INFO - 	enable_nestloop: on
+2024-03-10 17:52:06,292 - INFO - 	maintenance_work_mem: 576639
+2024-03-10 17:52:06,292 - INFO - 	max_wal_size: 6701
+2024-03-10 17:52:06,292 - INFO - 	random_page_cost: 38.74858504531659
+2024-03-10 17:52:06,293 - INFO - 	seq_page_cost: 67.9663896560669
+2024-03-10 17:52:06,293 - INFO - 	shared_buffers: 9331
+2024-03-10 17:52:06,293 - INFO - 	wal_buffers: 224542
+2024-03-10 17:52:06,293 - INFO - 	work_mem: 1750
+2024-03-10 17:52:06,386 - INFO - ----------------------------------- Applying Knobs -----------------------------------
+2024-03-10 17:52:07,388 - INFO - [PGUtils] Local PostgreSQL server shut down successfully
+2024-03-10 17:52:07,471 - INFO - [PGKnobApplier] config file modification done (locally).
+2024-03-10 17:52:07,472 - INFO - [PGUtils] Locally starting PostgreSQL server...
+2024-03-10 17:52:07,472 - INFO - [PGUtils] Launch command: sudo -S -u postgres /usr/lib/postgresql/16/bin/postgres --config_file=/home/wl446/pg_data/postgresql/16/tune_conf.conf -D /home/wl446/pg_data/postgresql/16/main
+2024-03-10 17:52:07,474 - INFO - [PGUtils] Wait for connection to the started server...
+2024-03-10 17:52:12,518 - INFO - [PGUtils] Successfully connected to the started PostgreSQL Server
+2024-03-10 17:52:12,519 - INFO - [PGUtils] 5 seconds waiting for connection
+2024-03-10 17:52:12,519 - INFO - [PGUtils] PostgresSQL is successfully launched.
+2024-03-10 17:52:12,520 - INFO - [PGKnobApplier] Sleeping for 0 seconds after restarting postgres
+2024-03-10 17:52:12,520 - INFO - [PGKnobApplier] No knobs need to be applied online
+2024-03-10 17:52:12,546 - INFO - [PGKnobApplier] Knob max_wal_size is not successfully set to 6701 (actual value: 6701MB)
+2024-03-10 17:52:12,551 - INFO - [PGKnobApplier] 1 / 10 knobs not successfully applied offline.
+2024-03-10 17:52:12,552 - INFO - --------------------------------------------------------------------------------
+2024-03-10 17:52:18,975 - INFO - [Tune] [Iteration 9]: throughput: 153.398 (eps)
+2024-03-10 17:52:18,978 - INFO - [TuRBO] [Restart 0] 10) Best value: 3.13e+02 | TR length: 8.00e-01 | num. restarts: 1/5 | num. successes: 0/3
+2024-03-10 17:52:18,980 - INFO - ================================================================================
+2024-03-10 17:52:18,980 - INFO - Best throughput: 312.8949
+2024-03-10 17:52:18,980 - INFO - Best config:
+2024-03-10 17:52:18,981 - INFO - 	effective_cache_size: 933230
+2024-03-10 17:52:18,981 - INFO - 	enable_mergejoin: on
+2024-03-10 17:52:18,981 - INFO - 	enable_nestloop: on
+2024-03-10 17:52:18,981 - INFO - 	maintenance_work_mem: 513748
+2024-03-10 17:52:18,981 - INFO - 	max_wal_size: 3891
+2024-03-10 17:52:18,981 - INFO - 	random_page_cost: 42.7053050923854
+2024-03-10 17:52:18,981 - INFO - 	seq_page_cost: 30.681058842706722
+2024-03-10 17:52:18,981 - INFO - 	shared_buffers: 74928
+2024-03-10 17:52:18,981 - INFO - 	wal_buffers: 260698
+2024-03-10 17:52:18,981 - INFO - 	work_mem: 6237
+2024-03-10 17:52:18,981 - INFO - Elapsed time: 138.69 seconds

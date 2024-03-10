@@ -1,390 +1,323 @@
-2024-02-22 16:00:14,995 - INFO - 
+2024-03-03 00:17:38,771 - INFO - 
 
-2024-02-22 16:00:14,996 - INFO - --------------------------------------------------
-2024-02-22 16:00:14,996 - INFO - benchmark: ackley
-2024-02-22 16:00:14,996 - INFO - benchmark_params:
-2024-02-22 16:00:14,996 - INFO -     dim: 20
-2024-02-22 16:00:14,996 - INFO -     lb: -5
-2024-02-22 16:00:14,996 - INFO -     ub: 10
-2024-02-22 16:00:14,997 - INFO - tuner_params:
-2024-02-22 16:00:14,997 - INFO -     seed: 1024
-2024-02-22 16:00:14,997 - INFO -     num_evals: 200
-2024-02-22 16:00:14,997 - INFO -     batch_size: 1
-2024-02-22 16:00:14,997 - INFO -     init_design: lhs
-2024-02-22 16:00:14,997 - INFO -     init_by_dim: True
-2024-02-22 16:00:14,997 - INFO -     optimizer: mcts
-2024-02-22 16:00:14,998 - INFO -     optimizer_params: {'local_optimizer_type': 'turbo'}
-2024-02-22 16:00:14,998 - INFO - expr_name: MCTS_TuRBO_ackley_20
-2024-02-22 16:00:14,998 - INFO - --------------------------------------------------
-2024-02-22 16:00:14,998 - INFO - [ackley] Using Ackley 20D
-2024-02-22 16:00:16,437 - INFO - [Tuner] Start initial profiling by lhs
-2024-02-22 16:00:16,469 - INFO - [Tuner] Start optimization using mcts for 160 iterations (external initialization)
-2024-02-22 16:07:39,776 - INFO - 
+2024-03-03 00:17:38,771 - INFO - --------------------------------------------------
+2024-03-03 00:17:38,771 - INFO - benchmark: ackley
+2024-03-03 00:17:38,771 - INFO - benchmark_params:
+2024-03-03 00:17:38,771 - INFO -     dim: 20
+2024-03-03 00:17:38,771 - INFO -     lb: -5
+2024-03-03 00:17:38,771 - INFO -     ub: 10
+2024-03-03 00:17:38,771 - INFO - tuner_params:
+2024-03-03 00:17:38,771 - INFO -     seed: 1024
+2024-03-03 00:17:38,772 - INFO -     num_evals: 500
+2024-03-03 00:17:38,772 - INFO -     batch_size: 4
+2024-03-03 00:17:38,772 - INFO -     extern_init: False
+2024-03-03 00:17:38,772 - INFO -     init_design: lhs
+2024-03-03 00:17:38,772 - INFO -     init_by_dim: True
+2024-03-03 00:17:38,772 - INFO -     optimizer: mcts
+2024-03-03 00:17:38,772 - INFO -     optimizer_params: {'local_optimizer_type': 'turbo'}
+2024-03-03 00:17:38,772 - INFO - expr_name: MCTS_TuRBO_ackley_20
+2024-03-03 00:17:38,772 - INFO - --------------------------------------------------
+2024-03-03 00:17:38,772 - INFO - [ackley] Using Ackley 20D
+2024-03-03 00:17:38,776 - INFO - [Tuner] Start optimization using mcts for 500 iterations (internal initialization)
+2024-03-03 00:17:38,776 - INFO - [MCTS] Initial Sampling: 10 samples
+2024-03-03 00:17:38,790 - INFO - ------------------------------------------------------------
+2024-03-03 00:17:38,790 - INFO - [MCTS] optimize: Building tree from call: 10
+2024-03-03 00:17:38,853 - INFO - [MCTS] Build Tree: Split onto 5 positive samples (node: 1) and 5 negative samples (node: 2) where pos label is 1
+2024-03-03 00:17:38,857 - INFO - [MCTS] Build Tree: Split onto 2 positive samples (node: 3) and 3 negative samples (node: 4) where pos label is 0
+2024-03-03 00:17:38,874 - INFO - [MCTS] Build Tree: Split onto 3 positive samples (node: 5) and 2 negative samples (node: 6) where pos label is 1
+2024-03-03 00:17:38,882 - INFO - [MCTS] Build Tree: Split onto 1 positive samples (node: 7) and 2 negative samples (node: 8) where pos label is 1
+2024-03-03 00:17:38,886 - INFO - [MCTS] Build Tree: Split onto 2 positive samples (node: 9) and 1 negative samples (node: 10) where pos label is 0
+2024-03-03 00:17:38,886 - INFO - ------------------------------
+2024-03-03 00:17:38,887 - INFO - Selected Path: 
+2024-03-03 00:17:38,887 - INFO - Node 0 with 10 samples ->
+2024-03-03 00:17:38,887 - INFO - Node 1 with 5 samples ->
+2024-03-03 00:17:38,887 - INFO - Node 3 with 2 samples ->
+2024-03-03 00:17:38,887 - INFO - 
 
-2024-02-22 16:07:39,777 - INFO - --------------------------------------------------
-2024-02-22 16:07:39,777 - INFO - benchmark: ackley
-2024-02-22 16:07:39,777 - INFO - benchmark_params:
-2024-02-22 16:07:39,777 - INFO -     dim: 20
-2024-02-22 16:07:39,778 - INFO -     lb: -5
-2024-02-22 16:07:39,778 - INFO -     ub: 10
-2024-02-22 16:07:39,778 - INFO - tuner_params:
-2024-02-22 16:07:39,778 - INFO -     seed: 1024
-2024-02-22 16:07:39,778 - INFO -     num_evals: 200
-2024-02-22 16:07:39,778 - INFO -     batch_size: 4
-2024-02-22 16:07:39,779 - INFO -     extern_init: False
-2024-02-22 16:07:39,779 - INFO -     init_design: lhs
-2024-02-22 16:07:39,779 - INFO -     init_by_dim: True
-2024-02-22 16:07:39,779 - INFO -     optimizer: mcts
-2024-02-22 16:07:39,779 - INFO -     optimizer_params: {'local_optimizer_type': 'turbo'}
-2024-02-22 16:07:39,780 - INFO - expr_name: MCTS_TuRBO_ackley_20
-2024-02-22 16:07:39,780 - INFO - --------------------------------------------------
-2024-02-22 16:07:39,780 - INFO - [ackley] Using Ackley 20D
-2024-02-22 16:07:41,117 - INFO - [Tuner] Start optimization using mcts for 200 iterations (internal initialization)
-2024-02-22 16:07:41,118 - INFO - ------------------------------------------------------------
-2024-02-22 16:09:07,169 - INFO - 
+2024-03-03 00:17:38,887 - INFO - ------------------------------
+2024-03-03 00:17:38,889 - INFO - --------------------------------------------------------------------------------
+2024-03-03 00:17:38,890 - INFO - [TuRBO] Restart 0:
+2024-03-03 00:17:38,896 - INFO - [TuRBO] (MCTS) Start local modeling with 10 data points
+2024-03-03 00:17:41,131 - INFO - [TuRBO] [Restart 0] 14) Best value: -1.17e+01 | TR length: 8.00e-01 | num. restarts: 0/5 | num. successes: 1/3
+2024-03-03 00:17:43,761 - INFO - [TuRBO] [Restart 0] 18) Best value: -1.17e+01 | TR length: 8.00e-01 | num. restarts: 1/5 | num. successes: 0/3
+2024-03-03 00:17:46,856 - INFO - [TuRBO] [Restart 0] 22) Best value: -1.17e+01 | TR length: 8.00e-01 | num. restarts: 2/5 | num. successes: 0/3
+2024-03-03 00:17:49,086 - INFO - [TuRBO] [Restart 0] 26) Best value: -1.17e+01 | TR length: 8.00e-01 | num. restarts: 3/5 | num. successes: 0/3
+2024-03-03 00:17:51,488 - INFO - [TuRBO] [Restart 0] 30) Best value: -1.17e+01 | TR length: 8.00e-01 | num. restarts: 4/5 | num. successes: 0/3
+2024-03-03 00:17:54,337 - INFO - [TuRBO] [Restart 0] 34) Best value: -1.12e+01 | TR length: 8.00e-01 | num. restarts: 0/5 | num. successes: 1/3
+2024-03-03 00:17:56,648 - INFO - [TuRBO] [Restart 0] 38) Best value: -1.12e+01 | TR length: 8.00e-01 | num. restarts: 1/5 | num. successes: 0/3
+2024-03-03 00:17:58,929 - INFO - [TuRBO] [Restart 0] 42) Best value: -1.12e+01 | TR length: 8.00e-01 | num. restarts: 2/5 | num. successes: 0/3
+2024-03-03 00:18:01,243 - INFO - [TuRBO] [Restart 0] 46) Best value: -1.01e+01 | TR length: 8.00e-01 | num. restarts: 0/5 | num. successes: 1/3
+2024-03-03 00:18:04,099 - INFO - [TuRBO] [Restart 0] 50) Best value: -1.01e+01 | TR length: 8.00e-01 | num. restarts: 1/5 | num. successes: 0/3
+2024-03-03 00:18:06,484 - INFO - [TuRBO] [Restart 0] 54) Best value: -1.01e+01 | TR length: 8.00e-01 | num. restarts: 2/5 | num. successes: 0/3
+2024-03-03 00:18:08,908 - INFO - [TuRBO] [Restart 0] 58) Best value: -1.01e+01 | TR length: 8.00e-01 | num. restarts: 3/5 | num. successes: 0/3
+2024-03-03 00:18:12,011 - INFO - [TuRBO] [Restart 0] 62) Best value: -1.01e+01 | TR length: 8.00e-01 | num. restarts: 4/5 | num. successes: 0/3
+2024-03-03 00:18:14,709 - INFO - [TuRBO] [Restart 0] 66) Best value: -9.53e+00 | TR length: 8.00e-01 | num. restarts: 0/5 | num. successes: 1/3
+2024-03-03 00:18:17,731 - INFO - [TuRBO] [Restart 0] 70) Best value: -8.25e+00 | TR length: 8.00e-01 | num. restarts: 0/5 | num. successes: 2/3
+2024-03-03 00:18:20,121 - INFO - [TuRBO] [Restart 0] 74) Best value: -8.25e+00 | TR length: 8.00e-01 | num. restarts: 1/5 | num. successes: 0/3
+2024-03-03 00:18:22,934 - INFO - [TuRBO] [Restart 0] 78) Best value: -8.25e+00 | TR length: 8.00e-01 | num. restarts: 2/5 | num. successes: 0/3
+2024-03-03 00:18:25,587 - INFO - [TuRBO] [Restart 0] 82) Best value: -8.25e+00 | TR length: 8.00e-01 | num. restarts: 3/5 | num. successes: 0/3
+2024-03-03 00:18:28,015 - INFO - [TuRBO] [Restart 0] 86) Best value: -8.25e+00 | TR length: 8.00e-01 | num. restarts: 4/5 | num. successes: 0/3
+2024-03-03 00:18:30,473 - INFO - [TuRBO] [Restart 0] 90) Best value: -8.25e+00 | TR length: 4.00e-01 | num. restarts: 0/5 | num. successes: 0/3
+2024-03-03 00:18:33,232 - INFO - [TuRBO] [Restart 0] 94) Best value: -8.21e+00 | TR length: 4.00e-01 | num. restarts: 0/5 | num. successes: 1/3
+2024-03-03 00:18:35,916 - INFO - [TuRBO] [Restart 0] 98) Best value: -6.84e+00 | TR length: 4.00e-01 | num. restarts: 0/5 | num. successes: 2/3
+2024-03-03 00:18:38,382 - INFO - [TuRBO] [Restart 0] 102) Best value: -6.80e+00 | TR length: 8.00e-01 | num. restarts: 0/5 | num. successes: 0/3
+2024-03-03 00:18:41,582 - INFO - [TuRBO] [Restart 0] 106) Best value: -6.80e+00 | TR length: 8.00e-01 | num. restarts: 1/5 | num. successes: 0/3
+2024-03-03 00:18:43,985 - INFO - [TuRBO] [Restart 0] 110) Best value: -6.80e+00 | TR length: 8.00e-01 | num. restarts: 2/5 | num. successes: 0/3
+2024-03-03 00:18:46,332 - INFO - [TuRBO] [Restart 0] 114) Best value: -6.80e+00 | TR length: 8.00e-01 | num. restarts: 3/5 | num. successes: 0/3
+2024-03-03 00:18:48,831 - INFO - [TuRBO] [Restart 0] 118) Best value: -6.80e+00 | TR length: 8.00e-01 | num. restarts: 4/5 | num. successes: 0/3
+2024-03-03 00:18:51,236 - INFO - [TuRBO] [Restart 0] 122) Best value: -6.80e+00 | TR length: 4.00e-01 | num. restarts: 0/5 | num. successes: 0/3
+2024-03-03 00:18:53,948 - INFO - [TuRBO] [Restart 0] 126) Best value: -6.27e+00 | TR length: 4.00e-01 | num. restarts: 0/5 | num. successes: 1/3
+2024-03-03 00:18:56,460 - INFO - [TuRBO] [Restart 0] 130) Best value: -6.27e+00 | TR length: 4.00e-01 | num. restarts: 1/5 | num. successes: 0/3
+2024-03-03 00:18:58,996 - INFO - [TuRBO] [Restart 0] 134) Best value: -6.27e+00 | TR length: 4.00e-01 | num. restarts: 2/5 | num. successes: 0/3
+2024-03-03 00:19:01,633 - INFO - [TuRBO] [Restart 0] 138) Best value: -6.00e+00 | TR length: 4.00e-01 | num. restarts: 0/5 | num. successes: 1/3
+2024-03-03 00:19:04,654 - INFO - [TuRBO] [Restart 0] 142) Best value: -6.00e+00 | TR length: 4.00e-01 | num. restarts: 1/5 | num. successes: 0/3
+2024-03-03 00:19:07,591 - INFO - [TuRBO] [Restart 0] 146) Best value: -6.00e+00 | TR length: 4.00e-01 | num. restarts: 2/5 | num. successes: 0/3
+2024-03-03 00:19:10,566 - INFO - [TuRBO] [Restart 0] 150) Best value: -6.00e+00 | TR length: 4.00e-01 | num. restarts: 0/5 | num. successes: 1/3
+2024-03-03 00:19:14,105 - INFO - [TuRBO] [Restart 0] 154) Best value: -6.00e+00 | TR length: 4.00e-01 | num. restarts: 1/5 | num. successes: 0/3
+2024-03-03 00:19:16,743 - INFO - [TuRBO] [Restart 0] 158) Best value: -6.00e+00 | TR length: 4.00e-01 | num. restarts: 2/5 | num. successes: 0/3
+2024-03-03 00:19:19,276 - INFO - [TuRBO] [Restart 0] 162) Best value: -6.00e+00 | TR length: 4.00e-01 | num. restarts: 3/5 | num. successes: 0/3
+2024-03-03 00:19:21,927 - INFO - [TuRBO] [Restart 0] 166) Best value: -6.00e+00 | TR length: 4.00e-01 | num. restarts: 4/5 | num. successes: 0/3
+2024-03-03 00:19:24,542 - INFO - [TuRBO] [Restart 0] 170) Best value: -6.00e+00 | TR length: 2.00e-01 | num. restarts: 0/5 | num. successes: 0/3
+2024-03-03 00:19:27,134 - INFO - [TuRBO] [Restart 0] 174) Best value: -4.96e+00 | TR length: 2.00e-01 | num. restarts: 0/5 | num. successes: 1/3
+2024-03-03 00:19:29,527 - INFO - [TuRBO] [Restart 0] 178) Best value: -4.60e+00 | TR length: 2.00e-01 | num. restarts: 0/5 | num. successes: 2/3
+2024-03-03 00:19:32,317 - INFO - [TuRBO] [Restart 0] 182) Best value: -4.04e+00 | TR length: 4.00e-01 | num. restarts: 0/5 | num. successes: 0/3
+2024-03-03 00:19:34,800 - INFO - [TuRBO] [Restart 0] 186) Best value: -4.04e+00 | TR length: 4.00e-01 | num. restarts: 1/5 | num. successes: 0/3
+2024-03-03 00:19:37,522 - INFO - [TuRBO] [Restart 0] 190) Best value: -4.04e+00 | TR length: 4.00e-01 | num. restarts: 2/5 | num. successes: 0/3
+2024-03-03 00:19:40,234 - INFO - [TuRBO] [Restart 0] 194) Best value: -4.04e+00 | TR length: 4.00e-01 | num. restarts: 3/5 | num. successes: 0/3
+2024-03-03 00:19:43,390 - INFO - [TuRBO] [Restart 0] 198) Best value: -4.04e+00 | TR length: 4.00e-01 | num. restarts: 4/5 | num. successes: 0/3
+2024-03-03 00:19:46,069 - INFO - [TuRBO] [Restart 0] 202) Best value: -4.04e+00 | TR length: 2.00e-01 | num. restarts: 0/5 | num. successes: 0/3
+2024-03-03 00:19:48,729 - INFO - [TuRBO] [Restart 0] 206) Best value: -4.04e+00 | TR length: 2.00e-01 | num. restarts: 1/5 | num. successes: 0/3
+2024-03-03 00:19:51,652 - INFO - [TuRBO] [Restart 0] 210) Best value: -4.04e+00 | TR length: 2.00e-01 | num. restarts: 2/5 | num. successes: 0/3
+2024-03-03 00:19:54,465 - INFO - [TuRBO] [Restart 0] 214) Best value: -4.04e+00 | TR length: 2.00e-01 | num. restarts: 3/5 | num. successes: 0/3
+2024-03-03 00:19:57,180 - INFO - [TuRBO] [Restart 0] 218) Best value: -4.04e+00 | TR length: 2.00e-01 | num. restarts: 4/5 | num. successes: 0/3
+2024-03-03 00:19:59,991 - INFO - [TuRBO] [Restart 0] 222) Best value: -4.04e+00 | TR length: 1.00e-01 | num. restarts: 0/5 | num. successes: 0/3
+2024-03-03 00:20:03,434 - INFO - [TuRBO] [Restart 0] 226) Best value: -3.55e+00 | TR length: 1.00e-01 | num. restarts: 0/5 | num. successes: 1/3
+2024-03-03 00:20:06,034 - INFO - [TuRBO] [Restart 0] 230) Best value: -3.40e+00 | TR length: 1.00e-01 | num. restarts: 0/5 | num. successes: 2/3
+2024-03-03 00:20:08,810 - INFO - [TuRBO] [Restart 0] 234) Best value: -3.40e+00 | TR length: 1.00e-01 | num. restarts: 1/5 | num. successes: 0/3
+2024-03-03 00:20:11,711 - INFO - [TuRBO] [Restart 0] 238) Best value: -3.40e+00 | TR length: 1.00e-01 | num. restarts: 2/5 | num. successes: 0/3
+2024-03-03 00:20:14,336 - INFO - [TuRBO] [Restart 0] 242) Best value: -3.36e+00 | TR length: 1.00e-01 | num. restarts: 0/5 | num. successes: 1/3
+2024-03-03 00:20:17,585 - INFO - [TuRBO] [Restart 0] 246) Best value: -2.80e+00 | TR length: 1.00e-01 | num. restarts: 0/5 | num. successes: 2/3
+2024-03-03 00:20:20,723 - INFO - [TuRBO] [Restart 0] 250) Best value: -2.80e+00 | TR length: 1.00e-01 | num. restarts: 1/5 | num. successes: 0/3
+2024-03-03 00:20:23,798 - INFO - [TuRBO] [Restart 0] 254) Best value: -2.80e+00 | TR length: 1.00e-01 | num. restarts: 2/5 | num. successes: 0/3
+2024-03-03 00:20:27,170 - INFO - [TuRBO] [Restart 0] 258) Best value: -2.80e+00 | TR length: 1.00e-01 | num. restarts: 3/5 | num. successes: 0/3
+2024-03-03 00:20:30,306 - INFO - [TuRBO] [Restart 0] 262) Best value: -2.80e+00 | TR length: 1.00e-01 | num. restarts: 4/5 | num. successes: 0/3
+2024-03-03 00:20:33,488 - INFO - [TuRBO] [Restart 0] 266) Best value: -2.80e+00 | TR length: 5.00e-02 | num. restarts: 0/5 | num. successes: 0/3
+2024-03-03 00:20:36,598 - INFO - [TuRBO] [Restart 0] 270) Best value: -2.44e+00 | TR length: 5.00e-02 | num. restarts: 0/5 | num. successes: 1/3
+2024-03-03 00:20:39,840 - INFO - [TuRBO] [Restart 0] 274) Best value: -2.38e+00 | TR length: 5.00e-02 | num. restarts: 0/5 | num. successes: 2/3
+2024-03-03 00:20:43,119 - INFO - [TuRBO] [Restart 0] 278) Best value: -2.38e+00 | TR length: 5.00e-02 | num. restarts: 1/5 | num. successes: 0/3
+2024-03-03 00:20:46,072 - INFO - [TuRBO] [Restart 0] 282) Best value: -2.01e+00 | TR length: 5.00e-02 | num. restarts: 0/5 | num. successes: 1/3
+2024-03-03 00:20:49,093 - INFO - [TuRBO] [Restart 0] 286) Best value: -2.01e+00 | TR length: 5.00e-02 | num. restarts: 1/5 | num. successes: 0/3
+2024-03-03 00:20:52,673 - INFO - [TuRBO] [Restart 0] 290) Best value: -2.01e+00 | TR length: 5.00e-02 | num. restarts: 2/5 | num. successes: 0/3
+2024-03-03 00:20:55,697 - INFO - [TuRBO] [Restart 0] 294) Best value: -2.01e+00 | TR length: 5.00e-02 | num. restarts: 3/5 | num. successes: 0/3
+2024-03-03 00:20:58,765 - INFO - [TuRBO] [Restart 0] 298) Best value: -2.01e+00 | TR length: 5.00e-02 | num. restarts: 4/5 | num. successes: 0/3
+2024-03-03 00:21:02,059 - INFO - [TuRBO] [Restart 0] 302) Best value: -2.01e+00 | TR length: 2.50e-02 | num. restarts: 0/5 | num. successes: 0/3
+2024-03-03 00:21:05,193 - INFO - [TuRBO] [Restart 0] 306) Best value: -1.68e+00 | TR length: 2.50e-02 | num. restarts: 0/5 | num. successes: 1/3
+2024-03-03 00:21:08,501 - INFO - [TuRBO] [Restart 0] 310) Best value: -1.68e+00 | TR length: 2.50e-02 | num. restarts: 1/5 | num. successes: 0/3
+2024-03-03 00:21:12,319 - INFO - [TuRBO] [Restart 0] 314) Best value: -1.68e+00 | TR length: 2.50e-02 | num. restarts: 2/5 | num. successes: 0/3
+2024-03-03 00:21:16,017 - INFO - [TuRBO] [Restart 0] 318) Best value: -1.68e+00 | TR length: 2.50e-02 | num. restarts: 3/5 | num. successes: 0/3
+2024-03-03 00:21:19,336 - INFO - [TuRBO] [Restart 0] 322) Best value: -1.68e+00 | TR length: 2.50e-02 | num. restarts: 4/5 | num. successes: 0/3
+2024-03-03 00:21:23,360 - INFO - [TuRBO] [Restart 0] 326) Best value: -1.68e+00 | TR length: 1.25e-02 | num. restarts: 0/5 | num. successes: 0/3
+2024-03-03 00:21:27,321 - INFO - [TuRBO] [Restart 0] 330) Best value: -1.62e+00 | TR length: 1.25e-02 | num. restarts: 0/5 | num. successes: 1/3
+2024-03-03 00:21:31,759 - INFO - [TuRBO] [Restart 0] 334) Best value: -1.56e+00 | TR length: 1.25e-02 | num. restarts: 0/5 | num. successes: 2/3
+2024-03-03 00:21:36,492 - INFO - [TuRBO] [Restart 0] 338) Best value: -1.56e+00 | TR length: 1.25e-02 | num. restarts: 1/5 | num. successes: 0/3
+2024-03-03 00:21:41,398 - INFO - [TuRBO] [Restart 0] 342) Best value: -1.56e+00 | TR length: 1.25e-02 | num. restarts: 2/5 | num. successes: 0/3
+2024-03-03 00:21:45,685 - INFO - [TuRBO] [Restart 0] 346) Best value: -1.56e+00 | TR length: 1.25e-02 | num. restarts: 3/5 | num. successes: 0/3
+2024-03-03 00:21:49,898 - INFO - [TuRBO] [Restart 0] 350) Best value: -1.56e+00 | TR length: 1.25e-02 | num. restarts: 4/5 | num. successes: 0/3
+2024-03-03 00:21:54,388 - INFO - [TuRBO] [Restart 0] 354) Best value: -1.56e+00 | TR length: 6.25e-03 | num. restarts: 0/5 | num. successes: 0/3
+2024-03-03 00:21:54,389 - INFO - ------------------------------
+2024-03-03 00:21:54,390 - INFO - [MCTS] optimize: Best value found: -1.557e+00 after 364 calls in total
+2024-03-03 00:21:54,390 - INFO - ------------------------------------------------------------
+2024-03-03 00:21:54,390 - INFO - ------------------------------------------------------------
+2024-03-03 00:21:54,390 - INFO - [MCTS] optimize: Building tree from call: 364
+2024-03-03 00:21:54,434 - INFO - [MCTS] Build Tree: Split onto 295 positive samples (node: 1) and 69 negative samples (node: 2) where pos label is 0
+2024-03-03 00:21:54,447 - INFO - [MCTS] Build Tree: Split onto 222 positive samples (node: 3) and 73 negative samples (node: 4) where pos label is 0
+2024-03-03 00:21:54,459 - INFO - [MCTS] Build Tree: Split onto 20 positive samples (node: 5) and 49 negative samples (node: 6) where pos label is 0
+2024-03-03 00:21:54,468 - INFO - [MCTS] Build Tree: Split onto 139 positive samples (node: 7) and 83 negative samples (node: 8) where pos label is 1
+2024-03-03 00:21:54,478 - INFO - [MCTS] Build Tree: Split onto 36 positive samples (node: 9) and 37 negative samples (node: 10) where pos label is 0
+2024-03-03 00:21:54,488 - INFO - [MCTS] Build Tree: Split onto 13 positive samples (node: 11) and 7 negative samples (node: 12) where pos label is 0
+2024-03-03 00:21:54,495 - INFO - [MCTS] Build Tree: Split onto 29 positive samples (node: 13) and 20 negative samples (node: 14) where pos label is 0
+2024-03-03 00:21:54,500 - INFO - [MCTS] Build Tree: Split onto 112 positive samples (node: 15) and 27 negative samples (node: 16) where pos label is 0
+2024-03-03 00:21:54,505 - INFO - [MCTS] Build Tree: Split onto 45 positive samples (node: 17) and 38 negative samples (node: 18) where pos label is 1
+2024-03-03 00:21:54,509 - INFO - [MCTS] Build Tree: Split onto 34 positive samples (node: 19) and 2 negative samples (node: 20) where pos label is 1
+2024-03-03 00:21:54,513 - INFO - [MCTS] Build Tree: Split onto 15 positive samples (node: 21) and 22 negative samples (node: 22) where pos label is 1
+2024-03-03 00:21:54,516 - INFO - [MCTS] Build Tree: Split onto 8 positive samples (node: 23) and 5 negative samples (node: 24) where pos label is 0
+2024-03-03 00:21:54,520 - INFO - [MCTS] Build Tree: Split onto 5 positive samples (node: 25) and 2 negative samples (node: 26) where pos label is 0
+2024-03-03 00:21:54,525 - INFO - [MCTS] Build Tree: Split onto 13 positive samples (node: 27) and 16 negative samples (node: 28) where pos label is 0
+2024-03-03 00:21:54,529 - INFO - [MCTS] Build Tree: Split onto 14 positive samples (node: 29) and 6 negative samples (node: 30) where pos label is 0
+2024-03-03 00:21:54,534 - INFO - [MCTS] Build Tree: Split onto 57 positive samples (node: 31) and 55 negative samples (node: 32) where pos label is 0
+2024-03-03 00:21:54,537 - INFO - [MCTS] Build Tree: Split onto 19 positive samples (node: 33) and 8 negative samples (node: 34) where pos label is 0
+2024-03-03 00:21:54,541 - INFO - [MCTS] Build Tree: Split onto 36 positive samples (node: 35) and 9 negative samples (node: 36) where pos label is 1
+2024-03-03 00:21:54,545 - INFO - [MCTS] Build Tree: Split onto 29 positive samples (node: 37) and 9 negative samples (node: 38) where pos label is 1
+2024-03-03 00:21:54,549 - INFO - [MCTS] Build Tree: Split onto 23 positive samples (node: 39) and 11 negative samples (node: 40) where pos label is 1
+2024-03-03 00:21:54,552 - INFO - [MCTS] Build Tree: Split onto 9 positive samples (node: 41) and 6 negative samples (node: 42) where pos label is 0
+2024-03-03 00:21:54,556 - INFO - [MCTS] Build Tree: Split onto 17 positive samples (node: 43) and 5 negative samples (node: 44) where pos label is 1
+2024-03-03 00:21:54,559 - INFO - [MCTS] Build Tree: Split onto 4 positive samples (node: 45) and 4 negative samples (node: 46) where pos label is 1
+2024-03-03 00:21:54,562 - INFO - [MCTS] Build Tree: Split onto 2 positive samples (node: 47) and 3 negative samples (node: 48) where pos label is 1
+2024-03-03 00:21:54,565 - INFO - [MCTS] Build Tree: Split onto 1 positive samples (node: 49) and 4 negative samples (node: 50) where pos label is 1
+2024-03-03 00:21:54,569 - INFO - [MCTS] Build Tree: Split onto 7 positive samples (node: 51) and 6 negative samples (node: 52) where pos label is 1
+2024-03-03 00:21:54,572 - INFO - [MCTS] Build Tree: Split onto 13 positive samples (node: 53) and 3 negative samples (node: 54) where pos label is 1
+2024-03-03 00:21:54,576 - INFO - [MCTS] Build Tree: Split onto 13 positive samples (node: 55) and 1 negative samples (node: 56) where pos label is 0
+2024-03-03 00:21:54,579 - INFO - [MCTS] Build Tree: Split onto 5 positive samples (node: 57) and 1 negative samples (node: 58) where pos label is 0
+2024-03-03 00:21:54,588 - INFO - [MCTS] Build Tree: Split onto 18 positive samples (node: 59) and 1 negative samples (node: 60) where pos label is 1
+2024-03-03 00:21:54,595 - INFO - [MCTS] Build Tree: Split onto 31 positive samples (node: 61) and 5 negative samples (node: 62) where pos label is 1
+2024-03-03 00:21:54,598 - INFO - [MCTS] Build Tree: Split onto 8 positive samples (node: 63) and 1 negative samples (node: 64) where pos label is 1
+2024-03-03 00:21:54,601 - INFO - [MCTS] Build Tree: Split onto 21 positive samples (node: 65) and 8 negative samples (node: 66) where pos label is 1
+2024-03-03 00:21:54,605 - INFO - [MCTS] Build Tree: Split onto 8 positive samples (node: 67) and 1 negative samples (node: 68) where pos label is 0
+2024-03-03 00:21:54,608 - INFO - [MCTS] Build Tree: Split onto 21 positive samples (node: 69) and 2 negative samples (node: 70) where pos label is 1
+2024-03-03 00:21:54,611 - INFO - [MCTS] Build Tree: Split onto 10 positive samples (node: 71) and 1 negative samples (node: 72) where pos label is 1
+2024-03-03 00:21:54,614 - INFO - [MCTS] Build Tree: Split onto 7 positive samples (node: 73) and 2 negative samples (node: 74) where pos label is 0
+2024-03-03 00:21:54,617 - INFO - [MCTS] Build Tree: Split onto 1 positive samples (node: 75) and 5 negative samples (node: 76) where pos label is 1
+2024-03-03 00:21:54,621 - INFO - [MCTS] Build Tree: Split onto 14 positive samples (node: 77) and 3 negative samples (node: 78) where pos label is 0
+2024-03-03 00:21:54,624 - INFO - [MCTS] Build Tree: Split onto 4 positive samples (node: 79) and 1 negative samples (node: 80) where pos label is 0
+2024-03-03 00:21:54,627 - INFO - [MCTS] Build Tree: Split onto 2 positive samples (node: 81) and 2 negative samples (node: 82) where pos label is 1
+2024-03-03 00:21:54,630 - INFO - [MCTS] Build Tree: Split onto 3 positive samples (node: 83) and 1 negative samples (node: 84) where pos label is 0
+2024-03-03 00:21:54,634 - INFO - [MCTS] Build Tree: Split onto 1 positive samples (node: 85) and 2 negative samples (node: 86) where pos label is 1
+2024-03-03 00:21:54,637 - INFO - [MCTS] Build Tree: Split onto 3 positive samples (node: 87) and 1 negative samples (node: 88) where pos label is 0
+2024-03-03 00:21:54,640 - INFO - [MCTS] Build Tree: Split onto 6 positive samples (node: 89) and 1 negative samples (node: 90) where pos label is 0
+2024-03-03 00:21:54,643 - INFO - [MCTS] Build Tree: Split onto 5 positive samples (node: 91) and 1 negative samples (node: 92) where pos label is 0
+2024-03-03 00:21:54,647 - INFO - [MCTS] Build Tree: Split onto 9 positive samples (node: 93) and 4 negative samples (node: 94) where pos label is 1
+2024-03-03 00:21:54,650 - INFO - [MCTS] Build Tree: Split onto 2 positive samples (node: 95) and 1 negative samples (node: 96) where pos label is 0
+2024-03-03 00:21:54,653 - INFO - [MCTS] Build Tree: Split onto 1 positive samples (node: 97) and 12 negative samples (node: 98) where pos label is 1
+2024-03-03 00:21:54,656 - INFO - [MCTS] Build Tree: Split onto 2 positive samples (node: 99) and 3 negative samples (node: 100) where pos label is 0
+2024-03-03 00:21:54,659 - INFO - [MCTS] Build Tree: Split onto 17 positive samples (node: 101) and 1 negative samples (node: 102) where pos label is 1
+2024-03-03 00:21:54,663 - INFO - [MCTS] Build Tree: Split onto 28 positive samples (node: 103) and 3 negative samples (node: 104) where pos label is 0
+2024-03-03 00:21:54,666 - INFO - [MCTS] Build Tree: Split onto 3 positive samples (node: 105) and 2 negative samples (node: 106) where pos label is 1
+2024-03-03 00:21:54,669 - INFO - [MCTS] Build Tree: Split onto 6 positive samples (node: 107) and 2 negative samples (node: 108) where pos label is 0
+2024-03-03 00:21:54,673 - INFO - [MCTS] Build Tree: Split onto 12 positive samples (node: 109) and 9 negative samples (node: 110) where pos label is 0
+2024-03-03 00:21:54,676 - INFO - [MCTS] Build Tree: Split onto 7 positive samples (node: 111) and 1 negative samples (node: 112) where pos label is 1
+2024-03-03 00:21:54,679 - INFO - [MCTS] Build Tree: Split onto 7 positive samples (node: 113) and 1 negative samples (node: 114) where pos label is 0
+2024-03-03 00:21:54,682 - INFO - [MCTS] Build Tree: Split onto 18 positive samples (node: 115) and 3 negative samples (node: 116) where pos label is 1
+2024-03-03 00:21:54,686 - INFO - [MCTS] Build Tree: Split onto 9 positive samples (node: 117) and 1 negative samples (node: 118) where pos label is 1
+2024-03-03 00:21:54,689 - INFO - [MCTS] Build Tree: Split onto 6 positive samples (node: 119) and 1 negative samples (node: 120) where pos label is 1
+2024-03-03 00:21:54,692 - INFO - [MCTS] Build Tree: Split onto 3 positive samples (node: 121) and 2 negative samples (node: 122) where pos label is 0
+2024-03-03 00:21:54,695 - INFO - [MCTS] Build Tree: Split onto 2 positive samples (node: 123) and 12 negative samples (node: 124) where pos label is 1
+2024-03-03 00:21:54,698 - INFO - [MCTS] Build Tree: Split onto 2 positive samples (node: 125) and 1 negative samples (node: 126) where pos label is 0
+2024-03-03 00:21:54,702 - INFO - [MCTS] Build Tree: Split onto 3 positive samples (node: 127) and 1 negative samples (node: 128) where pos label is 0
+2024-03-03 00:21:54,705 - INFO - [MCTS] Build Tree: Split onto 1 positive samples (node: 129) and 2 negative samples (node: 130) where pos label is 1
+2024-03-03 00:21:54,708 - INFO - [MCTS] Build Tree: Split onto 2 positive samples (node: 131) and 1 negative samples (node: 132) where pos label is 0
+2024-03-03 00:21:54,711 - INFO - [MCTS] Build Tree: Split onto 5 positive samples (node: 133) and 1 negative samples (node: 134) where pos label is 0
+2024-03-03 00:21:54,714 - INFO - [MCTS] Build Tree: Split onto 4 positive samples (node: 135) and 1 negative samples (node: 136) where pos label is 1
+2024-03-03 00:21:54,717 - INFO - [MCTS] Build Tree: Split onto 2 positive samples (node: 137) and 7 negative samples (node: 138) where pos label is 0
+2024-03-03 00:21:54,720 - INFO - [MCTS] Build Tree: Split onto 2 positive samples (node: 139) and 2 negative samples (node: 140) where pos label is 0
+2024-03-03 00:21:54,723 - INFO - [MCTS] Build Tree: Split onto 1 positive samples (node: 141) and 11 negative samples (node: 142) where pos label is 1
+2024-03-03 00:21:54,727 - INFO - [MCTS] Build Tree: Split onto 2 positive samples (node: 143) and 1 negative samples (node: 144) where pos label is 0
+2024-03-03 00:21:54,733 - INFO - [MCTS] Build Tree: Split onto 22 positive samples (node: 145) and 6 negative samples (node: 146) where pos label is 0
+2024-03-03 00:21:54,740 - INFO - [MCTS] Build Tree: Split onto 2 positive samples (node: 147) and 1 negative samples (node: 148) where pos label is 0
+2024-03-03 00:21:54,743 - INFO - [MCTS] Build Tree: Split onto 2 positive samples (node: 149) and 1 negative samples (node: 150) where pos label is 0
+2024-03-03 00:21:54,746 - INFO - [MCTS] Build Tree: Split onto 5 positive samples (node: 151) and 1 negative samples (node: 152) where pos label is 0
+2024-03-03 00:21:54,750 - INFO - [MCTS] Build Tree: Split onto 7 positive samples (node: 153) and 5 negative samples (node: 154) where pos label is 1
+2024-03-03 00:21:54,753 - INFO - [MCTS] Build Tree: Split onto 7 positive samples (node: 155) and 2 negative samples (node: 156) where pos label is 1
+2024-03-03 00:21:54,756 - INFO - [MCTS] Build Tree: Split onto 6 positive samples (node: 157) and 1 negative samples (node: 158) where pos label is 1
+2024-03-03 00:21:54,759 - INFO - [MCTS] Build Tree: Split onto 6 positive samples (node: 159) and 1 negative samples (node: 160) where pos label is 0
+2024-03-03 00:21:54,762 - INFO - [MCTS] Build Tree: Split onto 6 positive samples (node: 161) and 12 negative samples (node: 162) where pos label is 0
+2024-03-03 00:21:54,765 - INFO - [MCTS] Build Tree: Split onto 2 positive samples (node: 163) and 1 negative samples (node: 164) where pos label is 1
+2024-03-03 00:21:54,769 - INFO - [MCTS] Build Tree: Split onto 4 positive samples (node: 165) and 5 negative samples (node: 166) where pos label is 1
+2024-03-03 00:21:54,772 - INFO - [MCTS] Build Tree: Split onto 1 positive samples (node: 167) and 5 negative samples (node: 168) where pos label is 1
+2024-03-03 00:21:54,775 - INFO - [MCTS] Build Tree: Split onto 2 positive samples (node: 169) and 1 negative samples (node: 170) where pos label is 0
+2024-03-03 00:21:54,778 - INFO - [MCTS] Build Tree: Split onto 9 positive samples (node: 171) and 3 negative samples (node: 172) where pos label is 1
+2024-03-03 00:21:54,781 - INFO - [MCTS] Build Tree: Split onto 2 positive samples (node: 173) and 1 negative samples (node: 174) where pos label is 0
+2024-03-03 00:21:54,784 - INFO - [MCTS] Build Tree: Split onto 1 positive samples (node: 175) and 4 negative samples (node: 176) where pos label is 0
+2024-03-03 00:21:54,787 - INFO - [MCTS] Build Tree: Split onto 2 positive samples (node: 177) and 2 negative samples (node: 178) where pos label is 0
+2024-03-03 00:21:54,790 - INFO - [MCTS] Build Tree: Split onto 1 positive samples (node: 179) and 6 negative samples (node: 180) where pos label is 0
+2024-03-03 00:21:54,796 - INFO - [MCTS] Build Tree: Split onto 9 positive samples (node: 181) and 13 negative samples (node: 182) where pos label is 0
+2024-03-03 00:21:54,799 - INFO - [MCTS] Build Tree: Split onto 5 positive samples (node: 183) and 1 negative samples (node: 184) where pos label is 0
+2024-03-03 00:21:54,803 - INFO - [MCTS] Build Tree: Split onto 4 positive samples (node: 185) and 1 negative samples (node: 186) where pos label is 0
+2024-03-03 00:21:54,808 - INFO - [MCTS] Build Tree: Split onto 4 positive samples (node: 187) and 1 negative samples (node: 188) where pos label is 1
+2024-03-03 00:21:54,811 - INFO - [MCTS] Build Tree: Split onto 6 positive samples (node: 189) and 1 negative samples (node: 190) where pos label is 0
+2024-03-03 00:21:54,814 - INFO - [MCTS] Build Tree: Split onto 4 positive samples (node: 191) and 2 negative samples (node: 192) where pos label is 1
+2024-03-03 00:21:54,818 - INFO - [MCTS] Build Tree: Split onto 5 positive samples (node: 193) and 1 negative samples (node: 194) where pos label is 0
+2024-03-03 00:21:54,821 - INFO - [MCTS] Build Tree: Split onto 5 positive samples (node: 195) and 1 negative samples (node: 196) where pos label is 1
+2024-03-03 00:21:54,824 - INFO - [MCTS] Build Tree: Split onto 7 positive samples (node: 197) and 5 negative samples (node: 198) where pos label is 0
+2024-03-03 00:21:54,827 - INFO - [MCTS] Build Tree: Split onto 3 positive samples (node: 199) and 1 negative samples (node: 200) where pos label is 1
+2024-03-03 00:21:54,830 - INFO - [MCTS] Build Tree: Split onto 2 positive samples (node: 201) and 3 negative samples (node: 202) where pos label is 0
+2024-03-03 00:21:54,833 - INFO - [MCTS] Build Tree: Split onto 4 positive samples (node: 203) and 1 negative samples (node: 204) where pos label is 0
+2024-03-03 00:21:54,836 - INFO - [MCTS] Build Tree: Split onto 1 positive samples (node: 205) and 8 negative samples (node: 206) where pos label is 0
+2024-03-03 00:21:54,839 - INFO - [MCTS] Build Tree: Split onto 2 positive samples (node: 207) and 1 negative samples (node: 208) where pos label is 0
+2024-03-03 00:21:54,843 - INFO - [MCTS] Build Tree: Split onto 3 positive samples (node: 209) and 1 negative samples (node: 210) where pos label is 0
+2024-03-03 00:21:54,846 - INFO - [MCTS] Build Tree: Split onto 4 positive samples (node: 211) and 2 negative samples (node: 212) where pos label is 1
+2024-03-03 00:21:54,851 - INFO - [MCTS] Build Tree: Split onto 10 positive samples (node: 213) and 3 negative samples (node: 214) where pos label is 0
+2024-03-03 00:21:54,855 - INFO - [MCTS] Build Tree: Split onto 4 positive samples (node: 215) and 1 negative samples (node: 216) where pos label is 0
+2024-03-03 00:21:54,860 - INFO - [MCTS] Build Tree: Split onto 3 positive samples (node: 217) and 1 negative samples (node: 218) where pos label is 1
+2024-03-03 00:21:54,863 - INFO - [MCTS] Build Tree: Split onto 2 positive samples (node: 219) and 4 negative samples (node: 220) where pos label is 0
+2024-03-03 00:21:54,866 - INFO - [MCTS] Build Tree: Split onto 2 positive samples (node: 221) and 2 negative samples (node: 222) where pos label is 1
+2024-03-03 00:21:54,870 - INFO - [MCTS] Build Tree: Split onto 3 positive samples (node: 223) and 2 negative samples (node: 224) where pos label is 0
+2024-03-03 00:21:54,873 - INFO - [MCTS] Build Tree: Split onto 4 positive samples (node: 225) and 1 negative samples (node: 226) where pos label is 1
+2024-03-03 00:21:54,876 - INFO - [MCTS] Build Tree: Split onto 5 positive samples (node: 227) and 2 negative samples (node: 228) where pos label is 1
+2024-03-03 00:21:54,879 - INFO - [MCTS] Build Tree: Split onto 3 positive samples (node: 229) and 2 negative samples (node: 230) where pos label is 0
+2024-03-03 00:21:54,882 - INFO - [MCTS] Build Tree: Split onto 2 positive samples (node: 231) and 1 negative samples (node: 232) where pos label is 0
+2024-03-03 00:21:54,885 - INFO - [MCTS] Build Tree: Split onto 2 positive samples (node: 233) and 1 negative samples (node: 234) where pos label is 0
+2024-03-03 00:21:54,888 - INFO - [MCTS] Build Tree: Split onto 1 positive samples (node: 235) and 3 negative samples (node: 236) where pos label is 1
+2024-03-03 00:21:54,891 - INFO - [MCTS] Build Tree: Split onto 7 positive samples (node: 237) and 1 negative samples (node: 238) where pos label is 0
+2024-03-03 00:21:54,894 - INFO - [MCTS] Build Tree: Split onto 2 positive samples (node: 239) and 1 negative samples (node: 240) where pos label is 0
+2024-03-03 00:21:54,897 - INFO - [MCTS] Build Tree: Split onto 3 positive samples (node: 241) and 1 negative samples (node: 242) where pos label is 0
+2024-03-03 00:21:54,901 - INFO - [MCTS] Build Tree: Split onto 7 positive samples (node: 243) and 3 negative samples (node: 244) where pos label is 0
+2024-03-03 00:21:54,909 - INFO - [MCTS] Build Tree: Split onto 2 positive samples (node: 245) and 1 negative samples (node: 246) where pos label is 1
+2024-03-03 00:21:54,912 - INFO - [MCTS] Build Tree: Split onto 1 positive samples (node: 247) and 3 negative samples (node: 248) where pos label is 1
+2024-03-03 00:21:54,915 - INFO - [MCTS] Build Tree: Split onto 2 positive samples (node: 249) and 1 negative samples (node: 250) where pos label is 0
+2024-03-03 00:21:54,918 - INFO - [MCTS] Build Tree: Split onto 3 positive samples (node: 251) and 1 negative samples (node: 252) where pos label is 1
+2024-03-03 00:21:54,921 - INFO - [MCTS] Build Tree: Split onto 4 positive samples (node: 253) and 1 negative samples (node: 254) where pos label is 1
+2024-03-03 00:21:54,924 - INFO - [MCTS] Build Tree: Split onto 2 positive samples (node: 255) and 1 negative samples (node: 256) where pos label is 0
+2024-03-03 00:21:54,930 - INFO - [MCTS] Build Tree: Split onto 4 positive samples (node: 257) and 3 negative samples (node: 258) where pos label is 1
+2024-03-03 00:21:54,933 - INFO - [MCTS] Build Tree: Split onto 2 positive samples (node: 259) and 1 negative samples (node: 260) where pos label is 0
+2024-03-03 00:21:54,936 - INFO - [MCTS] Build Tree: Split onto 5 positive samples (node: 261) and 2 negative samples (node: 262) where pos label is 1
+2024-03-03 00:21:54,939 - INFO - [MCTS] Build Tree: Split onto 2 positive samples (node: 263) and 1 negative samples (node: 264) where pos label is 0
+2024-03-03 00:21:54,945 - INFO - [MCTS] Build Tree: Split onto 2 positive samples (node: 265) and 1 negative samples (node: 266) where pos label is 0
+2024-03-03 00:21:54,948 - INFO - [MCTS] Build Tree: Split onto 1 positive samples (node: 267) and 3 negative samples (node: 268) where pos label is 0
+2024-03-03 00:21:54,951 - INFO - [MCTS] Build Tree: Split onto 3 positive samples (node: 269) and 1 negative samples (node: 270) where pos label is 0
+2024-03-03 00:21:54,954 - INFO - [MCTS] Build Tree: Split onto 2 positive samples (node: 271) and 1 negative samples (node: 272) where pos label is 1
+2024-03-03 00:21:54,957 - INFO - [MCTS] Build Tree: Split onto 4 positive samples (node: 273) and 1 negative samples (node: 274) where pos label is 0
+2024-03-03 00:21:54,960 - INFO - [MCTS] Build Tree: Split onto 2 positive samples (node: 275) and 1 negative samples (node: 276) where pos label is 0
+2024-03-03 00:21:54,963 - INFO - [MCTS] Build Tree: Split onto 1 positive samples (node: 277) and 2 negative samples (node: 278) where pos label is 0
+2024-03-03 00:21:54,966 - INFO - ------------------------------
+2024-03-03 00:21:54,969 - INFO - Selected Path: 
+2024-03-03 00:21:54,969 - INFO - Node 0 with 364 samples ->
+2024-03-03 00:21:54,969 - INFO - Node 1 with 295 samples ->
+2024-03-03 00:21:54,969 - INFO - Node 3 with 222 samples ->
+2024-03-03 00:21:54,969 - INFO - Node 7 with 139 samples ->
+2024-03-03 00:21:54,969 - INFO - Node 15 with 112 samples ->
+2024-03-03 00:21:54,969 - INFO - Node 31 with 57 samples ->
+2024-03-03 00:21:54,969 - INFO - 
 
-2024-02-22 16:09:07,170 - INFO - --------------------------------------------------
-2024-02-22 16:09:07,170 - INFO - benchmark: ackley
-2024-02-22 16:09:07,170 - INFO - benchmark_params:
-2024-02-22 16:09:07,170 - INFO -     dim: 20
-2024-02-22 16:09:07,170 - INFO -     lb: -5
-2024-02-22 16:09:07,170 - INFO -     ub: 10
-2024-02-22 16:09:07,171 - INFO - tuner_params:
-2024-02-22 16:09:07,171 - INFO -     seed: 1024
-2024-02-22 16:09:07,171 - INFO -     num_evals: 200
-2024-02-22 16:09:07,171 - INFO -     batch_size: 4
-2024-02-22 16:09:07,171 - INFO -     extern_init: False
-2024-02-22 16:09:07,171 - INFO -     init_design: lhs
-2024-02-22 16:09:07,171 - INFO -     init_by_dim: True
-2024-02-22 16:09:07,172 - INFO -     optimizer: mcts
-2024-02-22 16:09:07,172 - INFO -     optimizer_params: {'local_optimizer_type': 'turbo'}
-2024-02-22 16:09:07,172 - INFO - expr_name: MCTS_TuRBO_ackley_20
-2024-02-22 16:09:07,172 - INFO - --------------------------------------------------
-2024-02-22 16:09:07,172 - INFO - [ackley] Using Ackley 20D
-2024-02-22 16:09:08,482 - INFO - [Tuner] Start optimization using mcts for 200 iterations (internal initialization)
-2024-02-22 16:09:08,483 - INFO - ------------------------------------------------------------
-2024-02-22 16:09:08,483 - INFO - [MCTS] optimize: Building tree from call: 40
-2024-02-22 16:10:00,550 - INFO - 
-
-2024-02-22 16:10:00,551 - INFO - --------------------------------------------------
-2024-02-22 16:10:00,551 - INFO - benchmark: ackley
-2024-02-22 16:10:00,551 - INFO - benchmark_params:
-2024-02-22 16:10:00,551 - INFO -     dim: 20
-2024-02-22 16:10:00,551 - INFO -     lb: -5
-2024-02-22 16:10:00,552 - INFO -     ub: 10
-2024-02-22 16:10:00,552 - INFO - tuner_params:
-2024-02-22 16:10:00,552 - INFO -     seed: 1024
-2024-02-22 16:10:00,552 - INFO -     num_evals: 200
-2024-02-22 16:10:00,552 - INFO -     batch_size: 4
-2024-02-22 16:10:00,552 - INFO -     extern_init: False
-2024-02-22 16:10:00,553 - INFO -     init_design: lhs
-2024-02-22 16:10:00,553 - INFO -     init_by_dim: True
-2024-02-22 16:10:00,553 - INFO -     optimizer: mcts
-2024-02-22 16:10:00,553 - INFO -     optimizer_params: {'local_optimizer_type': 'turbo'}
-2024-02-22 16:10:00,553 - INFO - expr_name: MCTS_TuRBO_ackley_20
-2024-02-22 16:10:00,554 - INFO - --------------------------------------------------
-2024-02-22 16:10:00,554 - INFO - [ackley] Using Ackley 20D
-2024-02-22 16:10:01,828 - INFO - [Tuner] Start optimization using mcts for 200 iterations (internal initialization)
-2024-02-22 16:10:01,851 - INFO - ------------------------------------------------------------
-2024-02-22 16:10:01,851 - INFO - [MCTS] optimize: Building tree from call: 40
-2024-02-22 16:10:01,885 - INFO - ------------------------------
-2024-02-22 16:10:01,885 - INFO - Selected Path: 
-2024-02-22 16:10:01,885 - INFO - Node 0 with 40 samples ->
-2024-02-22 16:10:01,886 - INFO - 
-2024-02-22 16:10:01,886 - INFO - ------------------------------
-2024-02-22 16:10:52,214 - INFO - 
-
-2024-02-22 16:10:52,215 - INFO - --------------------------------------------------
-2024-02-22 16:10:52,215 - INFO - benchmark: ackley
-2024-02-22 16:10:52,215 - INFO - benchmark_params:
-2024-02-22 16:10:52,216 - INFO -     dim: 20
-2024-02-22 16:10:52,216 - INFO -     lb: -5
-2024-02-22 16:10:52,216 - INFO -     ub: 10
-2024-02-22 16:10:52,216 - INFO - tuner_params:
-2024-02-22 16:10:52,216 - INFO -     seed: 1024
-2024-02-22 16:10:52,217 - INFO -     num_evals: 200
-2024-02-22 16:10:52,217 - INFO -     batch_size: 4
-2024-02-22 16:10:52,217 - INFO -     extern_init: False
-2024-02-22 16:10:52,217 - INFO -     init_design: lhs
-2024-02-22 16:10:52,217 - INFO -     init_by_dim: True
-2024-02-22 16:10:52,218 - INFO -     optimizer: mcts
-2024-02-22 16:10:52,218 - INFO -     optimizer_params: {'local_optimizer_type': 'turbo'}
-2024-02-22 16:10:52,218 - INFO - expr_name: MCTS_TuRBO_ackley_20
-2024-02-22 16:10:52,218 - INFO - --------------------------------------------------
-2024-02-22 16:10:52,218 - INFO - [ackley] Using Ackley 20D
-2024-02-22 16:10:53,561 - INFO - [Tuner] Start optimization using mcts for 200 iterations (internal initialization)
-2024-02-22 16:10:53,570 - INFO - ------------------------------------------------------------
-2024-02-22 16:10:53,570 - INFO - [MCTS] optimize: Building tree from call: 40
-2024-02-22 16:10:53,597 - INFO - ------------------------------
-2024-02-22 16:10:53,597 - INFO - Selected Path: 
-2024-02-22 16:10:53,597 - INFO - Node 0 with 40 samples ->
-2024-02-22 16:10:53,597 - INFO - 
-2024-02-22 16:10:53,598 - INFO - ------------------------------
-2024-02-22 16:10:53,598 - INFO - --------------------------------------------------------------------------------
-2024-02-22 16:10:53,598 - INFO - Restart 0:
-2024-02-22 16:10:53,624 - INFO - [TuRBO] Start local modeling with 40 data points
-2024-02-22 16:10:56,276 - INFO - [TuRBO] [Restart 0] 44) Best value: -7.39e+00 | TR length: 8.00e-01 | num. restarts: 0/5 | num. successes: 1/10
-2024-02-22 16:10:56,699 - INFO - [TuRBO] [Restart 0] 48) Best value: -7.39e+00 | TR length: 8.00e-01 | num. restarts: 1/5 | num. successes: 0/10
-2024-02-22 16:10:57,336 - INFO - [TuRBO] [Restart 0] 52) Best value: -7.39e+00 | TR length: 8.00e-01 | num. restarts: 2/5 | num. successes: 0/10
-2024-02-22 16:10:57,859 - INFO - [TuRBO] [Restart 0] 56) Best value: -7.39e+00 | TR length: 8.00e-01 | num. restarts: 3/5 | num. successes: 0/10
-2024-02-22 16:10:58,539 - INFO - [TuRBO] [Restart 0] 60) Best value: -7.39e+00 | TR length: 8.00e-01 | num. restarts: 4/5 | num. successes: 0/10
-2024-02-22 16:10:59,250 - INFO - [TuRBO] [Restart 0] 64) Best value: -7.39e+00 | TR length: 4.00e-01 | num. restarts: 0/5 | num. successes: 0/10
-2024-02-22 16:10:59,673 - INFO - [TuRBO] [Restart 0] 68) Best value: -7.39e+00 | TR length: 4.00e-01 | num. restarts: 1/5 | num. successes: 0/10
-2024-02-22 16:11:00,369 - INFO - [TuRBO] [Restart 0] 72) Best value: -7.39e+00 | TR length: 4.00e-01 | num. restarts: 2/5 | num. successes: 0/10
-2024-02-22 16:11:01,147 - INFO - [TuRBO] [Restart 0] 76) Best value: -6.89e+00 | TR length: 4.00e-01 | num. restarts: 0/5 | num. successes: 1/10
-2024-02-22 16:11:01,888 - INFO - [TuRBO] [Restart 0] 80) Best value: -6.26e+00 | TR length: 4.00e-01 | num. restarts: 0/5 | num. successes: 2/10
-2024-02-22 16:11:02,546 - INFO - [TuRBO] [Restart 0] 84) Best value: -5.98e+00 | TR length: 4.00e-01 | num. restarts: 0/5 | num. successes: 3/10
-2024-02-22 16:11:03,266 - INFO - [TuRBO] [Restart 0] 88) Best value: -5.98e+00 | TR length: 4.00e-01 | num. restarts: 1/5 | num. successes: 0/10
-2024-02-22 16:11:03,960 - INFO - [TuRBO] [Restart 0] 92) Best value: -5.07e+00 | TR length: 4.00e-01 | num. restarts: 0/5 | num. successes: 1/10
-2024-02-22 16:11:04,568 - INFO - [TuRBO] [Restart 0] 96) Best value: -5.07e+00 | TR length: 4.00e-01 | num. restarts: 1/5 | num. successes: 0/10
-2024-02-22 16:11:05,120 - INFO - [TuRBO] [Restart 0] 100) Best value: -5.07e+00 | TR length: 4.00e-01 | num. restarts: 2/5 | num. successes: 0/10
-2024-02-22 16:11:05,709 - INFO - [TuRBO] [Restart 0] 104) Best value: -5.07e+00 | TR length: 4.00e-01 | num. restarts: 3/5 | num. successes: 0/10
-2024-02-22 16:11:06,287 - INFO - [TuRBO] [Restart 0] 108) Best value: -5.07e+00 | TR length: 4.00e-01 | num. restarts: 4/5 | num. successes: 0/10
-2024-02-22 16:11:06,849 - INFO - [TuRBO] [Restart 0] 112) Best value: -5.07e+00 | TR length: 2.00e-01 | num. restarts: 0/5 | num. successes: 0/10
-2024-02-22 16:11:07,389 - INFO - [TuRBO] [Restart 0] 116) Best value: -3.55e+00 | TR length: 2.00e-01 | num. restarts: 0/5 | num. successes: 1/10
-2024-02-22 16:11:07,984 - INFO - [TuRBO] [Restart 0] 120) Best value: -3.55e+00 | TR length: 2.00e-01 | num. restarts: 1/5 | num. successes: 0/10
-2024-02-22 16:11:08,549 - INFO - [TuRBO] [Restart 0] 124) Best value: -3.55e+00 | TR length: 2.00e-01 | num. restarts: 2/5 | num. successes: 0/10
-2024-02-22 16:11:09,119 - INFO - [TuRBO] [Restart 0] 128) Best value: -3.55e+00 | TR length: 2.00e-01 | num. restarts: 3/5 | num. successes: 0/10
-2024-02-22 16:11:09,684 - INFO - [TuRBO] [Restart 0] 132) Best value: -3.55e+00 | TR length: 2.00e-01 | num. restarts: 4/5 | num. successes: 0/10
-2024-02-22 16:11:10,291 - INFO - [TuRBO] [Restart 0] 136) Best value: -3.55e+00 | TR length: 1.00e-01 | num. restarts: 0/5 | num. successes: 0/10
-2024-02-22 16:11:10,884 - INFO - [TuRBO] [Restart 0] 140) Best value: -3.25e+00 | TR length: 1.00e-01 | num. restarts: 0/5 | num. successes: 1/10
-2024-02-22 16:11:11,490 - INFO - [TuRBO] [Restart 0] 144) Best value: -2.97e+00 | TR length: 1.00e-01 | num. restarts: 0/5 | num. successes: 2/10
-2024-02-22 16:11:12,045 - INFO - [TuRBO] [Restart 0] 148) Best value: -2.97e+00 | TR length: 1.00e-01 | num. restarts: 1/5 | num. successes: 0/10
-2024-02-22 16:11:12,626 - INFO - [TuRBO] [Restart 0] 152) Best value: -2.97e+00 | TR length: 1.00e-01 | num. restarts: 2/5 | num. successes: 0/10
-2024-02-22 16:11:13,214 - INFO - [TuRBO] [Restart 0] 156) Best value: -2.63e+00 | TR length: 1.00e-01 | num. restarts: 0/5 | num. successes: 1/10
-2024-02-22 16:11:13,886 - INFO - [TuRBO] [Restart 0] 160) Best value: -2.63e+00 | TR length: 1.00e-01 | num. restarts: 1/5 | num. successes: 0/10
-2024-02-22 16:11:14,603 - INFO - [TuRBO] [Restart 0] 164) Best value: -2.63e+00 | TR length: 1.00e-01 | num. restarts: 2/5 | num. successes: 0/10
-2024-02-22 16:11:15,347 - INFO - [TuRBO] [Restart 0] 168) Best value: -2.63e+00 | TR length: 1.00e-01 | num. restarts: 3/5 | num. successes: 0/10
-2024-02-22 16:11:15,975 - INFO - [TuRBO] [Restart 0] 172) Best value: -2.63e+00 | TR length: 1.00e-01 | num. restarts: 4/5 | num. successes: 0/10
-2024-02-22 16:11:16,598 - INFO - [TuRBO] [Restart 0] 176) Best value: -2.63e+00 | TR length: 5.00e-02 | num. restarts: 0/5 | num. successes: 0/10
-2024-02-22 16:11:17,312 - INFO - [TuRBO] [Restart 0] 180) Best value: -2.33e+00 | TR length: 5.00e-02 | num. restarts: 0/5 | num. successes: 1/10
-2024-02-22 16:11:17,992 - INFO - [TuRBO] [Restart 0] 184) Best value: -1.73e+00 | TR length: 5.00e-02 | num. restarts: 0/5 | num. successes: 2/10
-2024-02-22 16:11:18,816 - INFO - [TuRBO] [Restart 0] 188) Best value: -1.73e+00 | TR length: 5.00e-02 | num. restarts: 1/5 | num. successes: 0/10
-2024-02-22 16:11:19,732 - INFO - [TuRBO] [Restart 0] 192) Best value: -1.73e+00 | TR length: 5.00e-02 | num. restarts: 2/5 | num. successes: 0/10
-2024-02-22 16:11:20,673 - INFO - [TuRBO] [Restart 0] 196) Best value: -1.73e+00 | TR length: 5.00e-02 | num. restarts: 3/5 | num. successes: 0/10
-2024-02-22 16:11:22,019 - INFO - [TuRBO] [Restart 0] 200) Best value: -1.73e+00 | TR length: 5.00e-02 | num. restarts: 4/5 | num. successes: 0/10
-2024-02-22 16:11:22,020 - INFO - ------------------------------
-2024-02-22 16:11:22,021 - INFO - [MCTS] optimize: Best value found: -1.732 after 240 calls in total
-2024-02-22 16:11:22,021 - INFO - ------------------------------------------------------------
-2024-02-22 16:11:22,022 - INFO - --------------------------------------------------
-2024-02-22 16:11:22,022 - INFO - Best X: [-0.01661589142162523, -0.0753873798192064, -0.08625671773053867, 0.0033286877654292724, -0.3746224703658019, 0.12392745555544327, -0.09832599879952753, 0.08883512638336022, -0.6795524942544402, 0.044377497833003154, -0.12622859166353706, -0.15379622129491377, 0.09368513343467022, -0.29564698021555635, 0.002116597590141822, -0.09575543695459388, 0.03253894146909797, -0.05279327772795206, 0.028840295009034733, 0.33319276813764453]
-2024-02-22 16:11:22,023 - INFO - Best Y: 1.7323011578401233
-2024-02-22 16:11:22,023 - INFO - Elapsed time: 28.46 seconds
-2024-02-22 16:11:49,345 - INFO - 
-
-2024-02-22 16:11:49,346 - INFO - --------------------------------------------------
-2024-02-22 16:11:49,346 - INFO - benchmark: ackley
-2024-02-22 16:11:49,346 - INFO - benchmark_params:
-2024-02-22 16:11:49,346 - INFO -     dim: 20
-2024-02-22 16:11:49,346 - INFO -     lb: -5
-2024-02-22 16:11:49,346 - INFO -     ub: 10
-2024-02-22 16:11:49,346 - INFO - tuner_params:
-2024-02-22 16:11:49,346 - INFO -     seed: 1024
-2024-02-22 16:11:49,347 - INFO -     num_evals: 500
-2024-02-22 16:11:49,347 - INFO -     batch_size: 4
-2024-02-22 16:11:49,347 - INFO -     extern_init: False
-2024-02-22 16:11:49,347 - INFO -     init_design: lhs
-2024-02-22 16:11:49,347 - INFO -     init_by_dim: True
-2024-02-22 16:11:49,347 - INFO -     optimizer: mcts
-2024-02-22 16:11:49,347 - INFO -     optimizer_params: {'local_optimizer_type': 'turbo'}
-2024-02-22 16:11:49,347 - INFO - expr_name: MCTS_TuRBO_ackley_20
-2024-02-22 16:11:49,347 - INFO - --------------------------------------------------
-2024-02-22 16:11:49,348 - INFO - [ackley] Using Ackley 20D
-2024-02-22 16:11:50,592 - INFO - [Tuner] Start optimization using mcts for 500 iterations (internal initialization)
-2024-02-22 16:11:50,605 - INFO - ------------------------------------------------------------
-2024-02-22 16:11:50,605 - INFO - [MCTS] optimize: Building tree from call: 40
-2024-02-22 16:11:50,627 - INFO - ------------------------------
-2024-02-22 16:11:50,627 - INFO - Selected Path: 
-2024-02-22 16:11:50,628 - INFO - Node 0 with 40 samples ->
-2024-02-22 16:11:50,628 - INFO - 
-2024-02-22 16:11:50,628 - INFO - ------------------------------
-2024-02-22 16:11:50,628 - INFO - --------------------------------------------------------------------------------
-2024-02-22 16:11:50,629 - INFO - Restart 0:
-2024-02-22 16:11:50,641 - INFO - [TuRBO] Start local modeling with 40 data points
-2024-02-22 16:11:52,518 - INFO - [TuRBO] [Restart 0] 44) Best value: -7.39e+00 | TR length: 8.00e-01 | num. restarts: 0/5 | num. successes: 1/10
-2024-02-22 16:11:52,940 - INFO - [TuRBO] [Restart 0] 48) Best value: -7.39e+00 | TR length: 8.00e-01 | num. restarts: 1/5 | num. successes: 0/10
-2024-02-22 16:11:53,578 - INFO - [TuRBO] [Restart 0] 52) Best value: -7.39e+00 | TR length: 8.00e-01 | num. restarts: 2/5 | num. successes: 0/10
-2024-02-22 16:11:54,118 - INFO - [TuRBO] [Restart 0] 56) Best value: -7.39e+00 | TR length: 8.00e-01 | num. restarts: 3/5 | num. successes: 0/10
-2024-02-22 16:11:54,803 - INFO - [TuRBO] [Restart 0] 60) Best value: -7.39e+00 | TR length: 8.00e-01 | num. restarts: 4/5 | num. successes: 0/10
-2024-02-22 16:11:55,556 - INFO - [TuRBO] [Restart 0] 64) Best value: -7.39e+00 | TR length: 4.00e-01 | num. restarts: 0/5 | num. successes: 0/10
-2024-02-22 16:11:55,979 - INFO - [TuRBO] [Restart 0] 68) Best value: -7.39e+00 | TR length: 4.00e-01 | num. restarts: 1/5 | num. successes: 0/10
-2024-02-22 16:11:56,669 - INFO - [TuRBO] [Restart 0] 72) Best value: -7.39e+00 | TR length: 4.00e-01 | num. restarts: 2/5 | num. successes: 0/10
-2024-02-22 16:11:57,414 - INFO - [TuRBO] [Restart 0] 76) Best value: -6.89e+00 | TR length: 4.00e-01 | num. restarts: 0/5 | num. successes: 1/10
-2024-02-22 16:11:58,128 - INFO - [TuRBO] [Restart 0] 80) Best value: -6.26e+00 | TR length: 4.00e-01 | num. restarts: 0/5 | num. successes: 2/10
-2024-02-22 16:11:58,782 - INFO - [TuRBO] [Restart 0] 84) Best value: -5.98e+00 | TR length: 4.00e-01 | num. restarts: 0/5 | num. successes: 3/10
-2024-02-22 16:11:59,471 - INFO - [TuRBO] [Restart 0] 88) Best value: -5.98e+00 | TR length: 4.00e-01 | num. restarts: 1/5 | num. successes: 0/10
-2024-02-22 16:12:00,143 - INFO - [TuRBO] [Restart 0] 92) Best value: -5.07e+00 | TR length: 4.00e-01 | num. restarts: 0/5 | num. successes: 1/10
-2024-02-22 16:12:00,747 - INFO - [TuRBO] [Restart 0] 96) Best value: -5.07e+00 | TR length: 4.00e-01 | num. restarts: 1/5 | num. successes: 0/10
-2024-02-22 16:12:01,302 - INFO - [TuRBO] [Restart 0] 100) Best value: -5.07e+00 | TR length: 4.00e-01 | num. restarts: 2/5 | num. successes: 0/10
-2024-02-22 16:12:01,902 - INFO - [TuRBO] [Restart 0] 104) Best value: -5.07e+00 | TR length: 4.00e-01 | num. restarts: 3/5 | num. successes: 0/10
-2024-02-22 16:12:02,488 - INFO - [TuRBO] [Restart 0] 108) Best value: -5.07e+00 | TR length: 4.00e-01 | num. restarts: 4/5 | num. successes: 0/10
-2024-02-22 16:12:03,063 - INFO - [TuRBO] [Restart 0] 112) Best value: -5.07e+00 | TR length: 2.00e-01 | num. restarts: 0/5 | num. successes: 0/10
-2024-02-22 16:12:03,617 - INFO - [TuRBO] [Restart 0] 116) Best value: -3.55e+00 | TR length: 2.00e-01 | num. restarts: 0/5 | num. successes: 1/10
-2024-02-22 16:12:04,206 - INFO - [TuRBO] [Restart 0] 120) Best value: -3.55e+00 | TR length: 2.00e-01 | num. restarts: 1/5 | num. successes: 0/10
-2024-02-22 16:12:04,774 - INFO - [TuRBO] [Restart 0] 124) Best value: -3.55e+00 | TR length: 2.00e-01 | num. restarts: 2/5 | num. successes: 0/10
-2024-02-22 16:12:05,336 - INFO - [TuRBO] [Restart 0] 128) Best value: -3.55e+00 | TR length: 2.00e-01 | num. restarts: 3/5 | num. successes: 0/10
-2024-02-22 16:12:05,909 - INFO - [TuRBO] [Restart 0] 132) Best value: -3.55e+00 | TR length: 2.00e-01 | num. restarts: 4/5 | num. successes: 0/10
-2024-02-22 16:12:06,509 - INFO - [TuRBO] [Restart 0] 136) Best value: -3.55e+00 | TR length: 1.00e-01 | num. restarts: 0/5 | num. successes: 0/10
-2024-02-22 16:12:07,085 - INFO - [TuRBO] [Restart 0] 140) Best value: -3.25e+00 | TR length: 1.00e-01 | num. restarts: 0/5 | num. successes: 1/10
-2024-02-22 16:12:07,690 - INFO - [TuRBO] [Restart 0] 144) Best value: -2.97e+00 | TR length: 1.00e-01 | num. restarts: 0/5 | num. successes: 2/10
-2024-02-22 16:12:08,238 - INFO - [TuRBO] [Restart 0] 148) Best value: -2.97e+00 | TR length: 1.00e-01 | num. restarts: 1/5 | num. successes: 0/10
-2024-02-22 16:12:08,829 - INFO - [TuRBO] [Restart 0] 152) Best value: -2.97e+00 | TR length: 1.00e-01 | num. restarts: 2/5 | num. successes: 0/10
-2024-02-22 16:12:09,405 - INFO - [TuRBO] [Restart 0] 156) Best value: -2.63e+00 | TR length: 1.00e-01 | num. restarts: 0/5 | num. successes: 1/10
-2024-02-22 16:12:10,079 - INFO - [TuRBO] [Restart 0] 160) Best value: -2.63e+00 | TR length: 1.00e-01 | num. restarts: 1/5 | num. successes: 0/10
-2024-02-22 16:12:10,785 - INFO - [TuRBO] [Restart 0] 164) Best value: -2.63e+00 | TR length: 1.00e-01 | num. restarts: 2/5 | num. successes: 0/10
-2024-02-22 16:12:11,508 - INFO - [TuRBO] [Restart 0] 168) Best value: -2.63e+00 | TR length: 1.00e-01 | num. restarts: 3/5 | num. successes: 0/10
-2024-02-22 16:12:12,152 - INFO - [TuRBO] [Restart 0] 172) Best value: -2.63e+00 | TR length: 1.00e-01 | num. restarts: 4/5 | num. successes: 0/10
-2024-02-22 16:12:12,788 - INFO - [TuRBO] [Restart 0] 176) Best value: -2.63e+00 | TR length: 5.00e-02 | num. restarts: 0/5 | num. successes: 0/10
-2024-02-22 16:12:13,507 - INFO - [TuRBO] [Restart 0] 180) Best value: -2.33e+00 | TR length: 5.00e-02 | num. restarts: 0/5 | num. successes: 1/10
-2024-02-22 16:12:14,206 - INFO - [TuRBO] [Restart 0] 184) Best value: -1.73e+00 | TR length: 5.00e-02 | num. restarts: 0/5 | num. successes: 2/10
-2024-02-22 16:12:15,044 - INFO - [TuRBO] [Restart 0] 188) Best value: -1.73e+00 | TR length: 5.00e-02 | num. restarts: 1/5 | num. successes: 0/10
-2024-02-22 16:12:15,900 - INFO - [TuRBO] [Restart 0] 192) Best value: -1.73e+00 | TR length: 5.00e-02 | num. restarts: 2/5 | num. successes: 0/10
-2024-02-22 16:12:16,865 - INFO - [TuRBO] [Restart 0] 196) Best value: -1.73e+00 | TR length: 5.00e-02 | num. restarts: 3/5 | num. successes: 0/10
-2024-02-22 16:12:18,243 - INFO - [TuRBO] [Restart 0] 200) Best value: -1.73e+00 | TR length: 5.00e-02 | num. restarts: 4/5 | num. successes: 0/10
-2024-02-22 16:12:19,560 - INFO - [TuRBO] [Restart 0] 204) Best value: -1.73e+00 | TR length: 2.50e-02 | num. restarts: 0/5 | num. successes: 0/10
-2024-02-22 16:12:20,324 - INFO - [TuRBO] [Restart 0] 208) Best value: -1.73e+00 | TR length: 2.50e-02 | num. restarts: 1/5 | num. successes: 0/10
-2024-02-22 16:12:21,085 - INFO - [TuRBO] [Restart 0] 212) Best value: -1.62e+00 | TR length: 2.50e-02 | num. restarts: 0/5 | num. successes: 1/10
-2024-02-22 16:12:22,626 - INFO - [TuRBO] [Restart 0] 216) Best value: -1.62e+00 | TR length: 2.50e-02 | num. restarts: 1/5 | num. successes: 0/10
-2024-02-22 16:12:23,622 - INFO - [TuRBO] [Restart 0] 220) Best value: -1.62e+00 | TR length: 2.50e-02 | num. restarts: 2/5 | num. successes: 0/10
-2024-02-22 16:12:24,596 - INFO - [TuRBO] [Restart 0] 224) Best value: -1.60e+00 | TR length: 2.50e-02 | num. restarts: 0/5 | num. successes: 1/10
-2024-02-22 16:12:25,600 - INFO - [TuRBO] [Restart 0] 228) Best value: -1.47e+00 | TR length: 2.50e-02 | num. restarts: 0/5 | num. successes: 2/10
-2024-02-22 16:12:26,870 - INFO - [TuRBO] [Restart 0] 232) Best value: -1.47e+00 | TR length: 2.50e-02 | num. restarts: 1/5 | num. successes: 0/10
-2024-02-22 16:12:28,185 - INFO - [TuRBO] [Restart 0] 236) Best value: -1.45e+00 | TR length: 2.50e-02 | num. restarts: 0/5 | num. successes: 1/10
-2024-02-22 16:12:29,148 - INFO - [TuRBO] [Restart 0] 240) Best value: -1.45e+00 | TR length: 2.50e-02 | num. restarts: 1/5 | num. successes: 0/10
-2024-02-22 16:12:30,117 - INFO - [TuRBO] [Restart 0] 244) Best value: -1.26e+00 | TR length: 2.50e-02 | num. restarts: 0/5 | num. successes: 1/10
-2024-02-22 16:12:31,225 - INFO - [TuRBO] [Restart 0] 248) Best value: -1.26e+00 | TR length: 2.50e-02 | num. restarts: 1/5 | num. successes: 0/10
-2024-02-22 16:12:32,378 - INFO - [TuRBO] [Restart 0] 252) Best value: -1.21e+00 | TR length: 2.50e-02 | num. restarts: 0/5 | num. successes: 1/10
-2024-02-22 16:12:33,532 - INFO - [TuRBO] [Restart 0] 256) Best value: -1.17e+00 | TR length: 2.50e-02 | num. restarts: 0/5 | num. successes: 2/10
-2024-02-22 16:12:34,511 - INFO - [TuRBO] [Restart 0] 260) Best value: -1.17e+00 | TR length: 2.50e-02 | num. restarts: 1/5 | num. successes: 0/10
-2024-02-22 16:12:35,614 - INFO - [TuRBO] [Restart 0] 264) Best value: -1.06e+00 | TR length: 2.50e-02 | num. restarts: 0/5 | num. successes: 1/10
-2024-02-22 16:12:37,274 - INFO - [TuRBO] [Restart 0] 268) Best value: -1.06e+00 | TR length: 2.50e-02 | num. restarts: 1/5 | num. successes: 0/10
-2024-02-22 16:12:38,834 - INFO - [TuRBO] [Restart 0] 272) Best value: -7.62e-01 | TR length: 2.50e-02 | num. restarts: 0/5 | num. successes: 1/10
-2024-02-22 16:12:39,998 - INFO - [TuRBO] [Restart 0] 276) Best value: -7.62e-01 | TR length: 2.50e-02 | num. restarts: 1/5 | num. successes: 0/10
-2024-02-22 16:12:40,704 - INFO - [TuRBO] [Restart 0] 280) Best value: -7.62e-01 | TR length: 2.50e-02 | num. restarts: 2/5 | num. successes: 0/10
-2024-02-22 16:12:42,073 - INFO - [TuRBO] [Restart 0] 284) Best value: -7.51e-01 | TR length: 2.50e-02 | num. restarts: 0/5 | num. successes: 1/10
-2024-02-22 16:12:43,395 - INFO - [TuRBO] [Restart 0] 288) Best value: -7.31e-01 | TR length: 2.50e-02 | num. restarts: 0/5 | num. successes: 2/10
-2024-02-22 16:12:44,518 - INFO - [TuRBO] [Restart 0] 292) Best value: -7.05e-01 | TR length: 2.50e-02 | num. restarts: 0/5 | num. successes: 3/10
-2024-02-22 16:12:45,837 - INFO - [TuRBO] [Restart 0] 296) Best value: -7.05e-01 | TR length: 2.50e-02 | num. restarts: 1/5 | num. successes: 0/10
-2024-02-22 16:12:47,025 - INFO - [TuRBO] [Restart 0] 300) Best value: -6.37e-01 | TR length: 2.50e-02 | num. restarts: 0/5 | num. successes: 1/10
-2024-02-22 16:12:48,296 - INFO - [TuRBO] [Restart 0] 304) Best value: -5.96e-01 | TR length: 2.50e-02 | num. restarts: 0/5 | num. successes: 2/10
-2024-02-22 16:12:49,442 - INFO - [TuRBO] [Restart 0] 308) Best value: -5.34e-01 | TR length: 2.50e-02 | num. restarts: 0/5 | num. successes: 3/10
-2024-02-22 16:12:50,792 - INFO - [TuRBO] [Restart 0] 312) Best value: -5.34e-01 | TR length: 2.50e-02 | num. restarts: 1/5 | num. successes: 0/10
-2024-02-22 16:12:52,123 - INFO - [TuRBO] [Restart 0] 316) Best value: -5.34e-01 | TR length: 2.50e-02 | num. restarts: 2/5 | num. successes: 0/10
-2024-02-22 16:12:53,571 - INFO - [TuRBO] [Restart 0] 320) Best value: -4.58e-01 | TR length: 2.50e-02 | num. restarts: 0/5 | num. successes: 1/10
-2024-02-22 16:12:54,983 - INFO - [TuRBO] [Restart 0] 324) Best value: -4.58e-01 | TR length: 2.50e-02 | num. restarts: 1/5 | num. successes: 0/10
-2024-02-22 16:12:56,421 - INFO - [TuRBO] [Restart 0] 328) Best value: -4.58e-01 | TR length: 2.50e-02 | num. restarts: 2/5 | num. successes: 0/10
-2024-02-22 16:12:58,008 - INFO - [TuRBO] [Restart 0] 332) Best value: -4.58e-01 | TR length: 2.50e-02 | num. restarts: 3/5 | num. successes: 0/10
-2024-02-22 16:12:59,348 - INFO - [TuRBO] [Restart 0] 336) Best value: -4.58e-01 | TR length: 2.50e-02 | num. restarts: 4/5 | num. successes: 0/10
-2024-02-22 16:13:00,668 - INFO - [TuRBO] [Restart 0] 340) Best value: -4.58e-01 | TR length: 1.25e-02 | num. restarts: 0/5 | num. successes: 0/10
-2024-02-22 16:13:02,049 - INFO - [TuRBO] [Restart 0] 344) Best value: -2.97e-01 | TR length: 1.25e-02 | num. restarts: 0/5 | num. successes: 1/10
-2024-02-22 16:13:03,532 - INFO - [TuRBO] [Restart 0] 348) Best value: -2.25e-01 | TR length: 1.25e-02 | num. restarts: 0/5 | num. successes: 2/10
-2024-02-22 16:13:04,819 - INFO - [TuRBO] [Restart 0] 352) Best value: -2.25e-01 | TR length: 1.25e-02 | num. restarts: 1/5 | num. successes: 0/10
-2024-02-22 16:13:06,269 - INFO - [TuRBO] [Restart 0] 356) Best value: -2.03e-01 | TR length: 1.25e-02 | num. restarts: 0/5 | num. successes: 1/10
-2024-02-22 16:13:07,420 - INFO - [TuRBO] [Restart 0] 360) Best value: -2.03e-01 | TR length: 1.25e-02 | num. restarts: 1/5 | num. successes: 0/10
-2024-02-22 16:13:08,726 - INFO - [TuRBO] [Restart 0] 364) Best value: -2.03e-01 | TR length: 1.25e-02 | num. restarts: 2/5 | num. successes: 0/10
-2024-02-22 16:13:09,807 - INFO - [TuRBO] [Restart 0] 368) Best value: -2.03e-01 | TR length: 1.25e-02 | num. restarts: 3/5 | num. successes: 0/10
-2024-02-22 16:13:10,870 - INFO - [TuRBO] [Restart 0] 372) Best value: -2.03e-01 | TR length: 1.25e-02 | num. restarts: 4/5 | num. successes: 0/10
-2024-02-22 16:13:12,118 - INFO - [TuRBO] [Restart 0] 376) Best value: -2.03e-01 | TR length: 6.25e-03 | num. restarts: 0/5 | num. successes: 0/10
-2024-02-22 16:13:12,119 - INFO - ------------------------------
-2024-02-22 16:13:12,120 - INFO - [MCTS] optimize: Best value found: -0.203 after 416 calls in total
-2024-02-22 16:13:12,120 - INFO - ------------------------------------------------------------
-2024-02-22 16:13:12,120 - INFO - ------------------------------------------------------------
-2024-02-22 16:13:12,121 - INFO - [MCTS] optimize: Building tree from call: 416
-2024-02-22 16:13:12,131 - INFO - [MCTS] Build Tree: Split onto 340 positive samples (node: 1) and 76 negative samples (node: 2) where pos label is 0
-2024-02-22 16:13:12,136 - INFO - [MCTS] Build Tree: Split onto 286 positive samples (node: 3) and 54 negative samples (node: 4) where pos label is 0
-2024-02-22 16:13:12,140 - INFO - [MCTS] Build Tree: Split onto 27 positive samples (node: 5) and 49 negative samples (node: 6) where pos label is 0
-2024-02-22 16:13:12,158 - INFO - [MCTS] Build Tree: Split onto 177 positive samples (node: 7) and 109 negative samples (node: 8) where pos label is 0
-2024-02-22 16:13:12,164 - INFO - [MCTS] Build Tree: Split onto 28 positive samples (node: 9) and 26 negative samples (node: 10) where pos label is 0
-2024-02-22 16:13:12,171 - INFO - [MCTS] Build Tree: Split onto 9 positive samples (node: 11) and 18 negative samples (node: 12) where pos label is 0
-2024-02-22 16:13:12,179 - INFO - [MCTS] Build Tree: Split onto 4 positive samples (node: 13) and 45 negative samples (node: 14) where pos label is 1
-2024-02-22 16:13:12,190 - INFO - [MCTS] Build Tree: Split onto 139 positive samples (node: 15) and 38 negative samples (node: 16) where pos label is 0
-2024-02-22 16:13:12,196 - INFO - [MCTS] Build Tree: Split onto 67 positive samples (node: 17) and 42 negative samples (node: 18) where pos label is 0
-2024-02-22 16:13:12,203 - INFO - [MCTS] Build Tree: Split onto 18 positive samples (node: 19) and 10 negative samples (node: 20) where pos label is 0
-2024-02-22 16:13:12,210 - INFO - [MCTS] Build Tree: Split onto 13 positive samples (node: 21) and 13 negative samples (node: 22) where pos label is 0
-2024-02-22 16:13:12,216 - INFO - [MCTS] Build Tree: Split onto 4 positive samples (node: 23) and 41 negative samples (node: 24) where pos label is 1
-2024-02-22 16:13:12,232 - INFO - [MCTS] Build Tree: Split onto 49 positive samples (node: 25) and 18 negative samples (node: 26) where pos label is 0
-2024-02-22 16:13:12,240 - INFO - [MCTS] Build Tree: Split onto 1 positive samples (node: 27) and 40 negative samples (node: 28) where pos label is 1
-2024-02-22 16:13:12,247 - INFO - [MCTS] Build Tree: Split onto 46 positive samples (node: 29) and 3 negative samples (node: 30) where pos label is 0
-2024-02-22 16:13:12,252 - INFO - [MCTS] Build Tree: Split onto 1 positive samples (node: 31) and 39 negative samples (node: 32) where pos label is 1
-2024-02-22 16:13:12,257 - INFO - [MCTS] Build Tree: Split onto 2 positive samples (node: 33) and 44 negative samples (node: 34) where pos label is 1
-2024-02-22 16:13:12,263 - INFO - [MCTS] Build Tree: Split onto 1 positive samples (node: 35) and 38 negative samples (node: 36) where pos label is 1
-2024-02-22 16:13:12,269 - INFO - [MCTS] Build Tree: Split onto 32 positive samples (node: 37) and 12 negative samples (node: 38) where pos label is 0
-2024-02-22 16:13:12,280 - INFO - ------------------------------
-2024-02-22 16:13:12,287 - INFO - Selected Path: 
-2024-02-22 16:13:12,287 - INFO - Node 0 with 416 samples ->
-2024-02-22 16:13:12,287 - INFO - Node 1 with 340 samples ->
-2024-02-22 16:13:12,288 - INFO - Node 3 with 286 samples ->
-2024-02-22 16:13:12,288 - INFO - Node 7 with 177 samples ->
-2024-02-22 16:13:12,288 - INFO - Node 15 with 139 samples ->
-2024-02-22 16:13:12,288 - INFO - 
-2024-02-22 16:13:12,289 - INFO - ------------------------------
-2024-02-22 16:13:12,289 - INFO - --------------------------------------------------------------------------------
-2024-02-22 16:13:12,289 - INFO - Restart 0:
-2024-02-22 16:13:12,299 - INFO - [TuRBO] Start local modeling with 40 data points
-2024-02-22 16:13:12,839 - INFO - [TuRBO] [Restart 0] 44) Best value: -5.33e+00 | TR length: 8.00e-01 | num. restarts: 0/5 | num. successes: 1/10
-2024-02-22 16:13:13,487 - INFO - [TuRBO] [Restart 0] 48) Best value: -5.33e+00 | TR length: 8.00e-01 | num. restarts: 1/5 | num. successes: 0/10
-2024-02-22 16:13:14,110 - INFO - [TuRBO] [Restart 0] 52) Best value: -5.33e+00 | TR length: 8.00e-01 | num. restarts: 2/5 | num. successes: 0/10
-2024-02-22 16:13:14,883 - INFO - [TuRBO] [Restart 0] 56) Best value: -5.33e+00 | TR length: 8.00e-01 | num. restarts: 3/5 | num. successes: 0/10
-2024-02-22 16:13:15,495 - INFO - [TuRBO] [Restart 0] 60) Best value: -5.33e+00 | TR length: 8.00e-01 | num. restarts: 4/5 | num. successes: 0/10
-2024-02-22 16:13:16,131 - INFO - [TuRBO] [Restart 0] 64) Best value: -5.33e+00 | TR length: 4.00e-01 | num. restarts: 0/5 | num. successes: 0/10
-2024-02-22 16:13:16,846 - INFO - [TuRBO] [Restart 0] 68) Best value: -5.33e+00 | TR length: 4.00e-01 | num. restarts: 1/5 | num. successes: 0/10
-2024-02-22 16:13:17,621 - INFO - [TuRBO] [Restart 0] 72) Best value: -5.33e+00 | TR length: 4.00e-01 | num. restarts: 2/5 | num. successes: 0/10
-2024-02-22 16:13:18,346 - INFO - [TuRBO] [Restart 0] 76) Best value: -5.33e+00 | TR length: 4.00e-01 | num. restarts: 3/5 | num. successes: 0/10
-2024-02-22 16:13:19,369 - INFO - [TuRBO] [Restart 0] 80) Best value: -5.33e+00 | TR length: 4.00e-01 | num. restarts: 4/5 | num. successes: 0/10
-2024-02-22 16:13:20,249 - INFO - [TuRBO] [Restart 0] 84) Best value: -5.33e+00 | TR length: 2.00e-01 | num. restarts: 0/5 | num. successes: 0/10
-2024-02-22 16:13:21,294 - INFO - [TuRBO] [Restart 0] 88) Best value: -5.33e+00 | TR length: 2.00e-01 | num. restarts: 1/5 | num. successes: 0/10
-2024-02-22 16:13:22,151 - INFO - [TuRBO] [Restart 0] 92) Best value: -5.33e+00 | TR length: 2.00e-01 | num. restarts: 0/5 | num. successes: 1/10
-2024-02-22 16:13:22,959 - INFO - [TuRBO] [Restart 0] 96) Best value: -4.25e+00 | TR length: 2.00e-01 | num. restarts: 0/5 | num. successes: 2/10
-2024-02-22 16:13:23,995 - INFO - [TuRBO] [Restart 0] 100) Best value: -4.25e+00 | TR length: 2.00e-01 | num. restarts: 1/5 | num. successes: 0/10
-2024-02-22 16:13:24,987 - INFO - [TuRBO] [Restart 0] 104) Best value: -4.21e+00 | TR length: 2.00e-01 | num. restarts: 0/5 | num. successes: 1/10
-2024-02-22 16:13:25,734 - INFO - [TuRBO] [Restart 0] 108) Best value: -4.21e+00 | TR length: 2.00e-01 | num. restarts: 1/5 | num. successes: 0/10
-2024-02-22 16:13:26,606 - INFO - [TuRBO] [Restart 0] 112) Best value: -3.11e+00 | TR length: 2.00e-01 | num. restarts: 0/5 | num. successes: 1/10
-2024-02-22 16:13:27,403 - INFO - [TuRBO] [Restart 0] 116) Best value: -3.11e+00 | TR length: 2.00e-01 | num. restarts: 1/5 | num. successes: 0/10
-2024-02-22 16:13:28,396 - INFO - [TuRBO] [Restart 0] 120) Best value: -3.11e+00 | TR length: 2.00e-01 | num. restarts: 2/5 | num. successes: 0/10
-2024-02-22 16:13:29,239 - INFO - [TuRBO] [Restart 0] 124) Best value: -3.11e+00 | TR length: 2.00e-01 | num. restarts: 3/5 | num. successes: 0/10
-2024-02-22 16:13:29,239 - INFO - ------------------------------
-2024-02-22 16:13:29,240 - INFO - [MCTS] optimize: Best value found: -0.197 after 540 calls in total
-2024-02-22 16:13:29,240 - INFO - ------------------------------------------------------------
-2024-02-22 16:13:29,241 - INFO - --------------------------------------------------
-2024-02-22 16:13:29,241 - INFO - Best X: [0.07436211766196354, -0.054146279250725016, 0.01874613464085506, -0.004460312271014288, 0.033837923724329144, 0.013736803729814895, 0.007665435576642565, 0.04202518158669122, -0.013113348549323334, 0.012668060701772177, 0.041934071504097226, 0.0025544289928163266, 0.01190036640335812, -0.0463143300317741, -0.02796262351735379, -0.01982158530850242, -0.01966137172781135, 0.036110425132154234, -0.04798046469049133, -0.04212023222458239]
-2024-02-22 16:13:29,241 - INFO - Best Y: 0.19741742520697558
-2024-02-22 16:13:29,241 - INFO - Elapsed time: 98.65 seconds
-2024-02-22 23:40:40,098 - INFO - 
-
-2024-02-22 23:40:40,099 - INFO - --------------------------------------------------
-2024-02-22 23:40:40,099 - INFO - benchmark: ackley
-2024-02-22 23:40:40,099 - INFO - benchmark_params:
-2024-02-22 23:40:40,100 - INFO -     dim: 20
-2024-02-22 23:40:40,100 - INFO -     lb: -5
-2024-02-22 23:40:40,100 - INFO -     ub: 10
-2024-02-22 23:40:40,100 - INFO - tuner_params:
-2024-02-22 23:40:40,100 - INFO -     seed: 1024
-2024-02-22 23:40:40,100 - INFO -     num_evals: 500
-2024-02-22 23:40:40,100 - INFO -     batch_size: 4
-2024-02-22 23:40:40,101 - INFO -     extern_init: False
-2024-02-22 23:40:40,101 - INFO -     init_design: lhs
-2024-02-22 23:40:40,101 - INFO -     init_by_dim: True
-2024-02-22 23:40:40,101 - INFO -     optimizer: mcts
-2024-02-22 23:40:40,101 - INFO -     optimizer_params: {'local_optimizer_type': 'turbo'}
-2024-02-22 23:40:40,102 - INFO - expr_name: MCTS_TuRBO_ackley_20
-2024-02-22 23:40:40,102 - INFO - --------------------------------------------------
-2024-02-22 23:40:40,102 - INFO - [ackley] Using Ackley 20D
-2024-02-22 23:40:41,445 - INFO - [Tuner] Start optimization using mcts for 500 iterations (internal initialization)
-2024-02-22 23:40:41,487 - INFO - ------------------------------------------------------------
-2024-02-22 23:40:41,488 - INFO - [MCTS] optimize: Building tree from call: 40
-2024-02-22 23:40:41,523 - INFO - ------------------------------
-2024-02-22 23:40:41,523 - INFO - Selected Path: 
-2024-02-22 23:40:41,523 - INFO - Node 0 with 40 samples ->
-2024-02-22 23:40:41,524 - INFO - 
-
-2024-02-22 23:40:41,524 - INFO - ------------------------------
-2024-02-22 23:40:41,524 - INFO - --------------------------------------------------------------------------------
-2024-02-22 23:40:41,524 - INFO - Restart 0:
-2024-02-22 23:40:41,546 - INFO - [TuRBO] Start local modeling with 40 data points
-2024-02-22 23:40:44,049 - INFO - [TuRBO] [Restart 0] 44) Best value: -7.39e+00 | TR length: 8.00e-01 | num. restarts: 0/5 | num. successes: 1/10
-2024-02-22 23:40:44,482 - INFO - [TuRBO] [Restart 0] 48) Best value: -7.39e+00 | TR length: 8.00e-01 | num. restarts: 1/5 | num. successes: 0/10
-2024-02-22 23:40:45,127 - INFO - [TuRBO] [Restart 0] 52) Best value: -7.39e+00 | TR length: 8.00e-01 | num. restarts: 2/5 | num. successes: 0/10
-2024-02-22 23:40:45,641 - INFO - [TuRBO] [Restart 0] 56) Best value: -7.39e+00 | TR length: 8.00e-01 | num. restarts: 3/5 | num. successes: 0/10
-2024-02-22 23:40:46,297 - INFO - [TuRBO] [Restart 0] 60) Best value: -7.39e+00 | TR length: 8.00e-01 | num. restarts: 4/5 | num. successes: 0/10
-2024-02-22 23:40:47,026 - INFO - [TuRBO] [Restart 0] 64) Best value: -7.39e+00 | TR length: 4.00e-01 | num. restarts: 0/5 | num. successes: 0/10
-2024-02-22 23:40:47,461 - INFO - [TuRBO] [Restart 0] 68) Best value: -7.39e+00 | TR length: 4.00e-01 | num. restarts: 1/5 | num. successes: 0/10
+2024-03-03 00:21:54,969 - INFO - ------------------------------
+2024-03-03 00:21:54,971 - INFO - --------------------------------------------------------------------------------
+2024-03-03 00:21:54,971 - INFO - [TuRBO] Restart 0:
+2024-03-03 00:21:54,986 - INFO - [TuRBO] (MCTS) Start local modeling with 10 data points
+2024-03-03 00:21:57,248 - INFO - [TuRBO] [Restart 0] 14) Best value: -8.17e+00 | TR length: 8.00e-01 | num. restarts: 0/5 | num. successes: 1/3
+2024-03-03 00:21:59,556 - INFO - [TuRBO] [Restart 0] 18) Best value: -8.17e+00 | TR length: 8.00e-01 | num. restarts: 1/5 | num. successes: 0/3
+2024-03-03 00:22:01,803 - INFO - [TuRBO] [Restart 0] 22) Best value: -8.17e+00 | TR length: 8.00e-01 | num. restarts: 2/5 | num. successes: 0/3
+2024-03-03 00:22:04,363 - INFO - [TuRBO] [Restart 0] 26) Best value: -8.17e+00 | TR length: 8.00e-01 | num. restarts: 3/5 | num. successes: 0/3
+2024-03-03 00:22:06,823 - INFO - [TuRBO] [Restart 0] 30) Best value: -8.17e+00 | TR length: 8.00e-01 | num. restarts: 4/5 | num. successes: 0/3
+2024-03-03 00:22:09,346 - INFO - [TuRBO] [Restart 0] 34) Best value: -8.17e+00 | TR length: 4.00e-01 | num. restarts: 0/5 | num. successes: 0/3
+2024-03-03 00:22:11,866 - INFO - [TuRBO] [Restart 0] 38) Best value: -8.17e+00 | TR length: 4.00e-01 | num. restarts: 1/5 | num. successes: 0/3
+2024-03-03 00:22:14,372 - INFO - [TuRBO] [Restart 0] 42) Best value: -8.17e+00 | TR length: 4.00e-01 | num. restarts: 2/5 | num. successes: 0/3
+2024-03-03 00:22:17,418 - INFO - [TuRBO] [Restart 0] 46) Best value: -8.17e+00 | TR length: 4.00e-01 | num. restarts: 3/5 | num. successes: 0/3
+2024-03-03 00:22:20,282 - INFO - [TuRBO] [Restart 0] 50) Best value: -8.17e+00 | TR length: 4.00e-01 | num. restarts: 4/5 | num. successes: 0/3
+2024-03-03 00:22:23,030 - INFO - [TuRBO] [Restart 0] 54) Best value: -8.17e+00 | TR length: 2.00e-01 | num. restarts: 0/5 | num. successes: 0/3
+2024-03-03 00:22:25,996 - INFO - [TuRBO] [Restart 0] 58) Best value: -8.17e+00 | TR length: 2.00e-01 | num. restarts: 1/5 | num. successes: 0/3
+2024-03-03 00:22:29,376 - INFO - [TuRBO] [Restart 0] 62) Best value: -5.79e+00 | TR length: 2.00e-01 | num. restarts: 0/5 | num. successes: 1/3
+2024-03-03 00:22:32,455 - INFO - [TuRBO] [Restart 0] 66) Best value: -5.72e+00 | TR length: 2.00e-01 | num. restarts: 0/5 | num. successes: 2/3
+2024-03-03 00:22:36,050 - INFO - [TuRBO] [Restart 0] 70) Best value: -5.72e+00 | TR length: 2.00e-01 | num. restarts: 1/5 | num. successes: 0/3
+2024-03-03 00:22:39,127 - INFO - [TuRBO] [Restart 0] 74) Best value: -4.44e+00 | TR length: 2.00e-01 | num. restarts: 0/5 | num. successes: 1/3
+2024-03-03 00:22:42,335 - INFO - [TuRBO] [Restart 0] 78) Best value: -4.44e+00 | TR length: 2.00e-01 | num. restarts: 1/5 | num. successes: 0/3
+2024-03-03 00:22:46,404 - INFO - [TuRBO] [Restart 0] 82) Best value: -4.44e+00 | TR length: 2.00e-01 | num. restarts: 2/5 | num. successes: 0/3
+2024-03-03 00:22:50,636 - INFO - [TuRBO] [Restart 0] 86) Best value: -4.44e+00 | TR length: 2.00e-01 | num. restarts: 3/5 | num. successes: 0/3
+2024-03-03 00:22:53,836 - INFO - [TuRBO] [Restart 0] 90) Best value: -4.44e+00 | TR length: 2.00e-01 | num. restarts: 4/5 | num. successes: 0/3
+2024-03-03 00:22:56,953 - INFO - [TuRBO] [Restart 0] 94) Best value: -4.32e+00 | TR length: 2.00e-01 | num. restarts: 0/5 | num. successes: 1/3
+2024-03-03 00:23:00,060 - INFO - [TuRBO] [Restart 0] 98) Best value: -4.16e+00 | TR length: 2.00e-01 | num. restarts: 0/5 | num. successes: 2/3
+2024-03-03 00:23:03,366 - INFO - [TuRBO] [Restart 0] 102) Best value: -4.16e+00 | TR length: 2.00e-01 | num. restarts: 1/5 | num. successes: 0/3
+2024-03-03 00:23:06,807 - INFO - [TuRBO] [Restart 0] 106) Best value: -4.16e+00 | TR length: 2.00e-01 | num. restarts: 2/5 | num. successes: 0/3
+2024-03-03 00:23:09,866 - INFO - [TuRBO] [Restart 0] 110) Best value: -4.16e+00 | TR length: 2.00e-01 | num. restarts: 3/5 | num. successes: 0/3
+2024-03-03 00:23:13,108 - INFO - [TuRBO] [Restart 0] 114) Best value: -3.96e+00 | TR length: 2.00e-01 | num. restarts: 0/5 | num. successes: 1/3
+2024-03-03 00:23:16,115 - INFO - [TuRBO] [Restart 0] 118) Best value: -3.96e+00 | TR length: 2.00e-01 | num. restarts: 1/5 | num. successes: 0/3
+2024-03-03 00:23:19,015 - INFO - [TuRBO] [Restart 0] 122) Best value: -3.68e+00 | TR length: 2.00e-01 | num. restarts: 0/5 | num. successes: 1/3
+2024-03-03 00:23:22,277 - INFO - [TuRBO] [Restart 0] 126) Best value: -3.68e+00 | TR length: 2.00e-01 | num. restarts: 1/5 | num. successes: 0/3
+2024-03-03 00:23:25,149 - INFO - [TuRBO] [Restart 0] 130) Best value: -3.44e+00 | TR length: 2.00e-01 | num. restarts: 0/5 | num. successes: 1/3
+2024-03-03 00:23:28,350 - INFO - [TuRBO] [Restart 0] 134) Best value: -3.44e+00 | TR length: 2.00e-01 | num. restarts: 1/5 | num. successes: 0/3
+2024-03-03 00:23:32,753 - INFO - [TuRBO] [Restart 0] 136) Best value: -3.44e+00 | TR length: 2.00e-01 | num. restarts: 2/5 | num. successes: 0/3
+2024-03-03 00:23:32,754 - INFO - ------------------------------
+2024-03-03 00:23:32,755 - INFO - [MCTS] optimize: Best value found: -1.553e+00 after 500 calls in total
+2024-03-03 00:23:32,755 - INFO - ------------------------------------------------------------
+2024-03-03 00:23:32,755 - INFO - --------------------------------------------------
+2024-03-03 00:23:32,756 - INFO - Best X: [0.1938551308433496, 0.02481156576429555, -0.07662629066696436, 0.17266629077685192, -0.05350104560001245, 0.1400074414516972, 0.04110883098708484, -0.053794687227421534, -0.03709548632170012, -0.8252144957265806, -0.144231471521735, 0.0536334145252777, 0.1285553533457806, 0.11031404687649005, -0.0038358577082302503, -0.2455233967803352, -0.07567750237498316, 0.06033898949441685, -0.0337393532748651, 0.28817162742215086]
+2024-03-03 00:23:32,756 - INFO - Best Y: 1.5531558377103
+2024-03-03 00:23:32,756 - INFO - Elapsed time: 353.98 seconds

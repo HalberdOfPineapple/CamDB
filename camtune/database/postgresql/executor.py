@@ -141,7 +141,7 @@ class PostgreExecutor():
     # Assume the query files are stored locally (to be executed remotely)
     def exec_queries(self, json: bool=True):
         queries = []
-        for query_file in self.query_file_name:
+        for query_file in self.query_file_names:
             with open(query_file, 'r') as f:
                 query_lines = f.readlines()
             query = ' '.join(query_lines)
@@ -187,7 +187,7 @@ class PostgreExecutor():
     def exec_queries_pgbench_local(self):
         res: dict = {}
         failed = []
-        for query_file_name in self.query_file_name:
+        for query_file_name in self.query_file_names:
             command = f"pgbench -f {query_file_name} {self.db_name} -n"
             result = run_as_postgre(command, self.postgre_pwd)
             if result.returncode != 0:
@@ -206,7 +206,7 @@ class PostgreExecutor():
         ssh.connect(DB_HOST, username=POSTGRE_USER, password=POSTGRE_PWD,
                     disabled_algorithms={'pubkeys': ['rsa-sha2-256', 'rsa-sha2-512']})
                 
-        for query_file_name in self.query_file_name:
+        for query_file_name in self.query_file_names:
             sftp = ssh.open_sftp()
             try:
                 # Put local query file into a temporary file in remote server
@@ -264,7 +264,7 @@ class PostgreExecutor():
         if self.remote_mode:
             raise NotImplementedError("[PGExecutor] (prepare) Remote execution of sysbench is not supported yet")
         else:
-            print_log(f"[PGExecutor] Preparing sysbench for {self.sysbench_mode} mode")
+            print_log(f"[PGExecutor] Preparing sysbench for {self.sysbench_mode} mode", print_msg=True)
             sysbench_config: dict = SYSBENCH_WORKLOADS[self.sysbench_mode]
             script_path = os.path.join(SYSBENCH_SCRIPTS_DIR, sysbench_config['script'])
             command = SYSBENCH_CMD_PREPARE.format(

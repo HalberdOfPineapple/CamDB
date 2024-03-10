@@ -1,37 +1,38 @@
-#   db_host: localhost
-#   db_port: '5432'
-#   db_user_name: viktor
-#   db_passwd: '741286'
-#   db_name: tpch
+# ----------------------------------------------------------------------------
+# In Local WSL:
+# DB_HOST = "localhost"
+# DB_PORT = "5432"
+# DB_USER = "viktor"
+# DB_PWD = "741286"
+# DB_NAME = "tpch"
 
-#   pg_ctl: /usr/lib/postgresql/16/bin/pg_ctl
-#   pg_data: /var/lib/postgresql/16/main
-#   pg_server: /usr/lib/postgresql/16/bin/postgres
-#   pg_conf: /var/lib/postgresql/experiment/conf/tune_cnf.conf
-#   pg_sock: /var/run/postgresql/.s.PGSQL.543
+# PG_CTL = "/usr/lib/postgresql/14/bin/pg_ctl"
+# PG_DATA = "/var/lib/postgresql/14/main"
+# PG_SERVER = "/usr/lib/postgresql/14/bin/postgres"
+# PG_CONF = "/var/lib/postgresql/14/experiment/conf/tune_conf.conf"
+# PG_DEFAULT_CONF = "/var/lib/postgresql/14/experiment/conf/default_conf.conf"
+# PG_SOCK = "/var/run/postgresql/.s.PGSQL.543"
 
+# POSTGRE_USER = "postgres"
+# POSTGRE_PWD = "741286"
+
+# ----------------------------------------------------------------------------
+# In Remote VM:
 DB_HOST = "localhost"
 DB_PORT = "5432"
-DB_USER = "viktor"
+DB_USER = "wl446"
 DB_PWD = "741286"
 DB_NAME = "tpch"
 
-# PG_CTL = "/usr/lib/postgresql/16/bin/pg_ctl"
-# PG_DATA = "/var/lib/postgresql/16/main"
-# PG_SERVER = "/usr/lib/postgresql/16/bin/postgres"
-# PG_CONF = "/var/lib/postgresql/experiment/conf/tune_cnf.conf"
-# PG_DEFAULT_CONF = "/var/lib/postgresql/experiment/conf/default_cnf.conf"
-# PG_SOCK = "/var/run/postgresql/.s.PGSQL.543"
-
-PG_CTL = "/usr/lib/postgresql/14/bin/pg_ctl"
-PG_DATA = "/var/lib/postgresql/14/main"
-PG_SERVER = "/usr/lib/postgresql/14/bin/postgres"
-PG_CONF = "/var/lib/postgresql/14/experiment/conf/tune_conf.conf"
-PG_DEFAULT_CONF = "/var/lib/postgresql/14/experiment/conf/default_conf.conf"
-PG_SOCK = "/var/run/postgresql/.s.PGSQL.543"
+PG_CTL = "/usr/lib/postgresql/16/bin/pg_ctl"
+PG_DATA = "/home/wl446/pg_data/postgresql/16/main"
+PG_SERVER = "/usr/lib/postgresql/16/bin/postgres"
+PG_CONF = "/home/wl446/pg_data/postgresql/16/tune_conf.conf"
+PG_DEFAULT_CONF = "/home/wl446/pg_data/postgresql/16/template_conf.conf"
+PG_SOCK = "/var/run/postgresql/.s.PGSQL.5432"
 
 POSTGRE_USER = "postgres"
-POSTGRE_PWD = "741286"
+POSTGRE_PWD = "CL741286%"
 
 RESTART_WAIT_TIME = 0 # 20
 TIMEOUT_CLOSE = 5 # 60

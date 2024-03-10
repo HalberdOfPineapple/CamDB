@@ -22,10 +22,4 @@ class LHSSampler(BaseSampler):
         lhs_arr = lhs(self.dimension, samples=n_init) # (n_init, dim)
         X_init = torch.tensor(lhs_arr, dtype=self.dtype, device=self.device)
         
-        X_init[:, self.continuous_dims] = unnormalize(
-            X_init[:, self.continuous_dims], self.bounds[:, self.continuous_dims])
-        X_init[:, self.discrete_dims] = torch.round(
-            unnormalize(X_init[:, self.discrete_dims], self.bounds[:, self.discrete_dims])
-        )
-
         return X_init

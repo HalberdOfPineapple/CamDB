@@ -7,6 +7,7 @@ from typing import List, Callable, Optional, Union, Tuple
 
 from camtune.utils import print_log, DTYPE, DEVICE
 from camtune.optimizer import build_optimizer, build_init_design, BaseOptimizer
+from camtune.optimizer.optim_utils import round_by_bounds
 
 # tuner_params:
 #   seed: 1024
@@ -49,6 +50,7 @@ class Tuner:
 
         self.dimension = self.bounds.shape[1]
         self.discrete_dims = discrete_dims
+        self.continuous_dims = [i for i in range(self.dimension) if i not in discrete_dims]
 
         self.num_evals = self.args['num_evals']
         self.batch_size = self.args['batch_size']
@@ -93,12 +95,17 @@ class Tuner:
             if self.num_init != 0 and self.args['optimizer'] != 'MCTS':
                 print_log(f'[Tuner] Start initial profiling by {self.args["init_design"]}', print_msg=True)
                 X_init: torch.Tensor = self.init_sampler.generate(self.num_init)
+                
+                X_init = unnormalize(X_init, self.bounds)
+                X_init[:, self.discrete_dims] = round_by_bounds(X_init[:, self.discrete_dims], self.bounds[:, self.discrete_dims])
+
                 Y_init: torch.Tensor = torch.tensor(
                         [self.obj_func(x) for x in X_init], dtype=DTYPE, device=DEVICE,
                     ).unsqueeze(-1)
             else:
                 X_init: torch.Tensor = torch.empty((0, self.dimension), dtype=DTYPE, device=DEVICE)
                 Y_init: torch.Tensor = torch.empty((0, 1), dtype=DTYPE, device=DEVICE)
+
             num_evals = self.num_evals - self.num_init
             print_log(f'[Tuner] Start optimization using {self.args["optimizer"]} for {num_evals} iterations (external initialization)', print_msg=True)
             result_X, result_Y = self.optimizer.optimize(num_evals, X_init, Y_init)

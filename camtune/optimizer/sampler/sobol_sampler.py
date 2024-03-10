@@ -19,9 +19,5 @@ class SobolSampler(BaseSampler):
         """
         sobol = SobolEngine(dimension=self.bounds.shape[1], scramble=True, seed=self.seed)
         X_init = sobol.draw(n=n_init).to(dtype=self.dtype, device=self.device)
-
-        X_init[:, self.continuous_dims] = unnormalize(
-            X_init[:, self.continuous_dims], self.bounds[:, self.continuous_dims])
-        X_init[:, self.discrete_dims] = generate_random_discrete(n_init, self.bounds, self.discrete_dims)
-
+        
         return X_init

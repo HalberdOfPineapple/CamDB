@@ -1,6 +1,6 @@
 {
     "0": {
-        "total_cost (c_unit)": 51398381663.74,
+        "total_cost (c_unit)": 5288195219033.2705,
         "config": {
             "effective_cache_size": 361755,
             "enable_mergejoin": "on",
@@ -15,7 +15,7 @@
         }
     },
     "1": {
-        "total_cost (c_unit)": 11356218686.569998,
+        "total_cost (c_unit)": 1168339188162.75,
         "config": {
             "effective_cache_size": 626202,
             "enable_mergejoin": "on",
@@ -30,7 +30,7 @@
         }
     },
     "2": {
-        "total_cost (c_unit)": 34720521531.69,
+        "total_cost (c_unit)": 3571951768567.04,
         "config": {
             "effective_cache_size": 143496,
             "enable_mergejoin": "on",
@@ -45,7 +45,7 @@
         }
     },
     "3": {
-        "total_cost (c_unit)": 23088348552.22,
+        "total_cost (c_unit)": 2374815957691.99,
         "config": {
             "effective_cache_size": 845353,
             "enable_mergejoin": "on",
@@ -60,93 +60,93 @@
         }
     },
     "4": {
-        "total_cost (c_unit)": 44913505543.42,
+        "total_cost (c_unit)": 4263424627386.8105,
         "config": {
-            "effective_cache_size": 377207,
-            "enable_mergejoin": "off",
+            "effective_cache_size": 54001,
+            "enable_mergejoin": "on",
             "enable_nestloop": "on",
-            "maintenance_work_mem": 579478,
-            "max_wal_size": 848,
-            "random_page_cost": 80.10811805725098,
-            "seq_page_cost": 75.00340938568115,
-            "shared_buffers": 113362,
-            "wal_buffers": 58476,
-            "work_mem": 7112
+            "maintenance_work_mem": 815079,
+            "max_wal_size": 6258,
+            "random_page_cost": 49.20201897621155,
+            "seq_page_cost": 69.11365389823914,
+            "shared_buffers": 240339,
+            "wal_buffers": 72406,
+            "work_mem": 1414
         }
     },
     "5": {
-        "total_cost (c_unit)": 22326664974.06,
+        "total_cost (c_unit)": 1635534119075.18,
         "config": {
-            "effective_cache_size": 610438,
+            "effective_cache_size": 941525,
             "enable_mergejoin": "on",
-            "enable_nestloop": "off",
-            "maintenance_work_mem": 96519,
-            "max_wal_size": 7003,
-            "random_page_cost": 9.08094346523285,
-            "seq_page_cost": 19.818323850631714,
-            "shared_buffers": 995918,
-            "wal_buffers": 211025,
-            "work_mem": 3713
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 363323,
+            "max_wal_size": 46,
+            "random_page_cost": 65.56687355041504,
+            "seq_page_cost": 25.903773307800293,
+            "shared_buffers": 873202,
+            "wal_buffers": 181992,
+            "work_mem": 4305
         }
     },
     "6": {
-        "total_cost (c_unit)": 43859401875.6,
+        "total_cost (c_unit)": 2635617513568.31,
         "config": {
-            "effective_cache_size": 96548,
+            "effective_cache_size": 961988,
             "enable_mergejoin": "on",
-            "enable_nestloop": "off",
-            "maintenance_work_mem": 969857,
-            "max_wal_size": 5692,
-            "random_page_cost": 33.730873465538025,
-            "seq_page_cost": 56.16763234138489,
-            "shared_buffers": 707058,
-            "wal_buffers": 170307,
-            "work_mem": 5349
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 91311,
+            "max_wal_size": 387,
+            "random_page_cost": 16.77907109260559,
+            "seq_page_cost": 42.34420383182107,
+            "shared_buffers": 782643,
+            "wal_buffers": 253737,
+            "work_mem": 492
         }
     },
     "7": {
-        "total_cost (c_unit)": 29555284894.59,
+        "total_cost (c_unit)": 734377690259.04,
         "config": {
-            "effective_cache_size": 892128,
-            "enable_mergejoin": "off",
+            "effective_cache_size": 981685,
+            "enable_mergejoin": "on",
             "enable_nestloop": "on",
-            "maintenance_work_mem": 453729,
-            "max_wal_size": 3688,
-            "random_page_cost": 54.86633777618408,
-            "seq_page_cost": 49.00529086589813,
-            "shared_buffers": 339790,
-            "wal_buffers": 83322,
-            "work_mem": 362
+            "maintenance_work_mem": 762897,
+            "max_wal_size": 80,
+            "random_page_cost": 59.857637946335906,
+            "seq_page_cost": 11.07274343188057,
+            "shared_buffers": 988166,
+            "wal_buffers": 160623,
+            "work_mem": 6450
         }
     },
     "8": {
-        "total_cost (c_unit)": 19336270907.65,
+        "total_cost (c_unit)": 378003674943.97,
         "config": {
-            "effective_cache_size": 80977,
-            "enable_mergejoin": "off",
-            "enable_nestloop": "off",
-            "maintenance_work_mem": 699687,
-            "max_wal_size": 7518,
-            "random_page_cost": 36.476826667785645,
-            "seq_page_cost": 14.760996401309967,
-            "shared_buffers": 368828,
-            "wal_buffers": 199465,
-            "work_mem": 7205
+            "effective_cache_size": 417937,
+            "enable_mergejoin": "on",
+            "enable_nestloop": "on",
+            "maintenance_work_mem": 385259,
+            "max_wal_size": 1773,
+            "random_page_cost": 69.91662649255245,
+            "seq_page_cost": 5.207616097314958,
+            "shared_buffers": 875345,
+            "wal_buffers": 27352,
+            "work_mem": 5628
         }
     },
     "9": {
-        "total_cost (c_unit)": 50313186259.78,
+        "total_cost (c_unit)": 216469757260.18002,
         "config": {
-            "effective_cache_size": 907957,
+            "effective_cache_size": 216251,
             "enable_mergejoin": "on",
             "enable_nestloop": "on",
-            "maintenance_work_mem": 248057,
-            "max_wal_size": 1369,
-            "random_page_cost": 52.85279154777527,
-            "seq_page_cost": 84.16725993156433,
-            "shared_buffers": 736112,
-            "wal_buffers": 55062,
-            "work_mem": 2603
+            "maintenance_work_mem": 78464,
+            "max_wal_size": 2287,
+            "random_page_cost": 33.87259542942047,
+            "seq_page_cost": 2.5485684783612297,
+            "shared_buffers": 983975,
+            "wal_buffers": 45485,
+            "work_mem": 7798
         }
     }
 }

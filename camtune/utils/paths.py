@@ -2,7 +2,8 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-CONFIG_DIR = os.path.join(BASE_DIR, 'config')
+# CONFIG_DIR = os.path.join(BASE_DIR, 'config')
+CONFIG_DIR = os.path.join(BASE_DIR, 'config_vm')
 
 KNOB_DIR = os.path.join(BASE_DIR, 'knobs')
 LOG_DIR = os.path.join(BASE_DIR, 'logs')

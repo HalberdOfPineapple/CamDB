@@ -3,6 +3,7 @@ import subprocess
 
 def run_as_user(command, user, password):
     # Prepend the 'sudo' and '-u' options to run the command as the specified user
+    # Note that the passsword here is essentially the password of default user (viktor or wl446)
     sudo_command = ['sudo', '-u', user, '-S'] + command.split()
     sudo_command = f"echo {password} | {' '.join(sudo_command)}"
         
